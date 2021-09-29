@@ -3,7 +3,7 @@
 <p align="center">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
 
-  <h3 align="center">GameProg-OO</h3>
+  <h3 align="center">TP-JOO</h3>
 
   <p align="center">
     Projeto de OO. Disciplina de Técnicas de Programação
@@ -19,7 +19,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#GameProg-OO">About The Project</a>
+      <a href="#TP-JOO">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
