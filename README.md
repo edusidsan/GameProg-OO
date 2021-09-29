@@ -40,7 +40,7 @@
   </ol>
 </details>
 
-# GameProg-OO
+# TP-JOO
 Projeto de OO. Disciplina de Técnicas de Programação
 
 ## Compiladores
