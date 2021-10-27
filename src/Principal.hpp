@@ -1,24 +1,27 @@
-#ifndef _PRINCIPAL_H_
-#define _PRINCIPAL_H_ 
+#ifndef _PRINCIPAL_HPP_
+#define _PRINCIPAL_HPP_
 
 // #include <SFML/Graphics.hpp>
 #include "Personagem.hpp"
 
-class Principal
+namespace jogoOO
 {
-private:
-    // Atributo da janela criada para o jogo.
-    sf::RenderWindow *janela;
-    // Atributo referente ao personagem "amigo".
-    Personagens::Personagem amigo;
+    class Principal
+    {
+    private:
+        // Atributo da janela criada para o jogo.
+        sf::RenderWindow *janela;
+        // Atributo referente ao personagem "amigo".
+        Personagens::Personagem amigo;
 
-public:
-    // Construtora de Principal.
-    Principal();
-    // Destrutora de Principal.
-    ~Principal();
-    // Método executar de Principal.
-    int executar();
-};
+    public:
+        // Construtora de Principal.
+        Principal();
+        // Destrutora de Principal.
+        ~Principal();
+        // Método executar de Principal.
+        int executar();
+    };
+}
 
 #endif //

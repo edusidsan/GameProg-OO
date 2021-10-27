@@ -1,21 +1,23 @@
-#ifndef _PERSONAGEM_H_
-#define _PERSONAGEM_H_ 
+#ifndef _PERSONAGEM_HPP_
+#define _PERSONAGEM_HPP_
 #include <SFML/Graphics.hpp>
-
-namespace Personagens
+namespace jogoOO
 {
-    class Personagem
+    namespace Personagens
     {
-    private:
-        sf::Texture *text;
-        sf::RectangleShape corpo;
-        float x, y;
+        class Personagem
+        {
+        private:
+            sf::Texture *text;
+            sf::RectangleShape corpo;
+            float x, y;
 
-    public:
-        Personagem(float xInicial, float yInicial, const char *caminhoTextura);
-        ~Personagem();
-        void atualizar();
-        void desenhar(sf::RenderWindow *janela);
-    };
+        public:
+            Personagem(float xInicial, float yInicial, const char *caminhoTextura);
+            ~Personagem();
+            void atualizar();
+            void desenhar(sf::RenderWindow *janela);
+        };
+    }
 }
 #endif //

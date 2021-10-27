@@ -1,26 +1,29 @@
 #include <SFML/Graphics.hpp>
 #include "Principal.hpp"
 
-// Construtora de Principal
-Principal::Principal() : janela{new sf::RenderWindow(sf::VideoMode(800, 600), "Game-OO")},
-                         amigo{0, 0, "../images/player.png"}
+namespace jogoOO
 {
-    Principal::executar();
-}
-// Destrutora de Principal
-Principal::~Principal()
-{
-    delete janela;
-}
-// Método executar de Principal
-int Principal::executar()
-{
-    while (true)
+    // Construtora de Principal
+    Principal::Principal() : janela{new sf::RenderWindow(sf::VideoMode(800, 600), "Game-OO")},
+                             amigo{0, 0, "../assets/player.png"}
     {
-        janela->clear();
-        amigo.atualizar();
-        amigo.desenhar(janela);
-        janela->display();
+        Principal::executar();
     }
-    return 0;
+    // Destrutora de Principal
+    Principal::~Principal()
+    {
+        delete janela;
+    }
+    // Método executar de Principal
+    int Principal::executar()
+    {
+        while (true)
+        {
+            janela->clear();
+            amigo.atualizar();
+            amigo.desenhar(janela);
+            janela->display();
+        }
+        return 0;
+    }
 }
