@@ -1,0 +1,17 @@
+[
+{
+  "directory": "D:/UTFPR/Engenharia da Computacao/2 PERIODO/TECNICAS DE PROGRAMACAO/GameProg-OO/build",
+  "command": "C:/msys64/mingw64/bin/c++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles/main.dir/Principal.cpp.obj -c \"D:/UTFPR/Engenharia da Computacao/2 PERIODO/TECNICAS DE PROGRAMACAO/GameProg-OO/src/Principal.cpp\"",
+  "file": "D:/UTFPR/Engenharia da Computacao/2 PERIODO/TECNICAS DE PROGRAMACAO/GameProg-OO/src/Principal.cpp"
+},
+{
+  "directory": "D:/UTFPR/Engenharia da Computacao/2 PERIODO/TECNICAS DE PROGRAMACAO/GameProg-OO/build",
+  "command": "C:/msys64/mingw64/bin/c++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles/main.dir/Personagem.cpp.obj -c \"D:/UTFPR/Engenharia da Computacao/2 PERIODO/TECNICAS DE PROGRAMACAO/GameProg-OO/src/Personagem.cpp\"",
+  "file": "D:/UTFPR/Engenharia da Computacao/2 PERIODO/TECNICAS DE PROGRAMACAO/GameProg-OO/src/Personagem.cpp"
+},
+{
+  "directory": "D:/UTFPR/Engenharia da Computacao/2 PERIODO/TECNICAS DE PROGRAMACAO/GameProg-OO/build",
+  "command": "C:/msys64/mingw64/bin/c++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles/main.dir/main.cpp.obj -c \"D:/UTFPR/Engenharia da Computacao/2 PERIODO/TECNICAS DE PROGRAMACAO/GameProg-OO/src/main.cpp\"",
+  "file": "D:/UTFPR/Engenharia da Computacao/2 PERIODO/TECNICAS DE PROGRAMACAO/GameProg-OO/src/main.cpp"
+}
+]
