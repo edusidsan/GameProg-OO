@@ -55,5 +55,8 @@
         "typeinfo": "cpp"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/src",
+    "cSpell.words": [
+        "CMAKE"
+    ],
 
 }

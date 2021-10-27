@@ -51,7 +51,7 @@ git push origin --delete develop
 # Descartar alterações feitas no branch
 git checkout -- <nome do arquivo>
 
-# Esconder alterações / guardar em um arquivo para fusar outra branch naquele momento e depois voltar pro mesmo lugar
+# Esconder alterações / guardar em um arquivo para usar outra branch naquele momento e depois voltar pro mesmo lugar
 git stash
 # Encontrar alterações escondidas
 git stash list
@@ -70,10 +70,10 @@ git clone <endereço>
 git commit -m "New message" --amend 
 git push --force repository-name branch-name
 
-# Apagar os ultimos 3 commits realizados mas não perder o conterudo que foi alterado 
+# Apagar os últimos 3 commits realizados mas não perder o conteúdo que foi alterado 
  git reset --soft HEAD~3 
 
-# Renomear varios commits de gorma interativa
+# Renomear vários commits de forma interativa
 Git rebase -i
 
 # Remover arquivo único do STAGE (pronto para commit)
@@ -83,10 +83,10 @@ Git reset --         (tira todos)
 # Adicionar arquivos de forma interativa 
 Git add -i
 
-# Multplos commit de um único arquivo, cada alteração fazer em um commit diferente
+# Múltiplos commit de um único arquivo, cada alteração fazer em um commit diferente
 Git add -p
 
-# Reservar diretorio vazio, git trabalha com conteudo, por isso pastas vazias não sobem. Criar arquivo
+# Reservar diretório vazio, git trabalha com conteúdo, por isso pastas vazias não sobem. Criar arquivo
 .gitkeep
 
 git reset --soft HEAD~1 
