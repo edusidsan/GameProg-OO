@@ -1,18 +1,5 @@
 # Não sobe a pasta build
-build
-
 /build
-/build*
-/build/*
-*/build/*
-
-build/
-build/*
-*build/
-*build/*
-
-*build*
-
 # Não sobe a pasta obj
 /obj
 
