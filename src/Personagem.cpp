@@ -3,39 +3,36 @@ namespace jogoOO
 {
     namespace Personagens
     {
-        Personagem::Personagem(float xInicial, float yInicial, const char *caminhoTextura) : x{xInicial},
-                                                                                             y{yInicial},
-                                                                                             text{nullptr}
+        Personagem::Personagem(sf::Vector2f pos, sf::Vector2f s, const char *texturePath) : position{pos},
+                                                                                            speed{s},
+                                                                                            texture{nullptr}
         {
-            x = xInicial;
-            y = yInicial;
-            // Tamanho do corpo
-            corpo.setSize(sf::Vector2f(200.0f, 200.0f));
-            // Origem do corpo
-            corpo.setOrigin(corpo.getSize() / 2.0f);
-            // Textura do corpo
-            if (caminhoTextura)
+            // Tamanho do body
+            body.setSize(sf::Vector2f(200.0f, 200.0f));
+            // Origem do body
+            body.setOrigin(body.getSize() / 2.0f);
+            // Textura do body
+            if (texturePath)
             {
-                text = new sf::Texture;
-                text->loadFromFile(caminhoTextura);
-                corpo.setTexture(text);
+                texture = new sf::Texture;
+                texture->loadFromFile(texturePath);
+                body.setTexture(texture);
             }
         }
 
         Personagem::~Personagem()
         {
-            delete text;
+            delete texture;
         }
-        void Personagem::atualizar()
+        void Personagem::update(float t)
         {
-            x += 0.008;
-            y += 0.006;
-
-            corpo.setPosition(sf::Vector2f(x, y));
+            position = speed * t;
+            body.setPosition(position);
+            // body.move(speed * t);
         }
-        void Personagem::desenhar(sf::RenderWindow *janela)
+        void Personagem::draw(sf::RenderWindow *window)
         {
-            janela->draw(corpo);
+            window->draw(body);
         }
     }
 }

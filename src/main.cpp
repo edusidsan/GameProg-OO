@@ -1,8 +1,9 @@
 #include "Principal.hpp"
 #include <iostream>
+#include <ctime>
 
 int main()
 {
     jogoOO::Principal principal;
-    return principal.executar();
+    return principal.run();
 }

@@ -8,15 +8,15 @@ namespace jogoOO
         class Personagem
         {
         private:
-            sf::Texture *text;
-            sf::RectangleShape corpo;
-            float x, y;
+            sf::Texture *texture;
+            sf::RectangleShape body;
+            sf::Vector2f position, speed;
 
         public:
-            Personagem(float xInicial, float yInicial, const char *caminhoTextura);
+            Personagem(sf::Vector2f pos = sf::Vector2f(0.0f, 0.0f), sf::Vector2f s = sf::Vector2f(0.0f, 0.0f), const char *texturePath = nullptr);
             ~Personagem();
-            void atualizar();
-            void desenhar(sf::RenderWindow *janela);
+            void update(float t);
+            void draw(sf::RenderWindow *window);
         };
     }
 }

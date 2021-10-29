@@ -4,25 +4,25 @@
 namespace jogoOO
 {
     // Construtora de Principal
-    Principal::Principal() : janela{new sf::RenderWindow(sf::VideoMode(800, 600), "Game-OO")},
-                             amigo{0, 0, "../assets/player.png"}
+    Principal::Principal() : window{new sf::RenderWindow(sf::VideoMode(800, 600), "Game-OO")},
+                             player1{"../assets/player.png"}
     {
-        Principal::executar();
+        Principal::run();
     }
     // Destrutora de Principal
     Principal::~Principal()
     {
-        delete janela;
+        delete window;
     }
     // Método executar de Principal
-    int Principal::executar()
+    int Principal::run()
     {
         while (true)
         {
-            janela->clear();
-            amigo.atualizar();
-            amigo.desenhar(janela);
-            janela->display();
+            window->clear();
+            player1.update();
+            player1.draw(window);
+            window->display();
         }
         return 0;
     }

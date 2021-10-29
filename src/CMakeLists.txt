@@ -12,11 +12,13 @@ set(
     SOURCES
     Principal.cpp
     Personagem.cpp
+    Lists/listPersonagens.cpp
 )
 set(
     HEADERS
     Principal.hpp
     Personagem.hpp
+    Lists/listPersonagens.hpp
 )
 target_sources(
     main 

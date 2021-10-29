@@ -95,6 +95,13 @@ git rm -r --cached .
 git tag -a v0.1.0 -m "my version 1.4"
 git push origin --tags
 
+
+#### Processo de trabalho em dupla para manter sempre sincronizado ####
+# Primeiro clonar repositório
+git clone https://github.com/
+# ver as branchs
+git branch -a
+
 ################################################################################################
 
 ################################################################################################
