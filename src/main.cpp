@@ -1,9 +1,6 @@
-#include "Principal.hpp"
-#include <iostream>
-#include <ctime>
-
+#include "OtherGrandRandomOgre.hpp"
 int main()
 {
-    jogoOO::Principal principal;
-    return principal.run();
+    OgrO::OtherGrandRandomOgre shrek;
+    return shrek.run();
 }
