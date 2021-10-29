@@ -1,24 +1,24 @@
 cmake_minimum_required(VERSION 3.15)
-project(gameOO VERSION 0.1.0)
-# project(gameOO CXX)
+project(OgrO VERSION 0.1.0)
+# project(OgrO CXX)
 
 set(SFML_DIR "../lib/SFML-2.5.1/lib/cmake/SFML")
-find_package(SFML 2.5 COMPONENTS system window graphics network audio)
+find_package(SFML COMPONENTS system window graphics network audio)
 
 ###############################################################################
 add_library(main)
 # Create a sources variable with a link to all cpp files to compile
 set(
     SOURCES
-    Principal.cpp
-    Personagem.cpp
-    Lists/listPersonagens.cpp
+    OtherGrandRandomOgre.cpp
+    Entities/Character.cpp
+    Lists/listCharacters.cpp
 )
 set(
     HEADERS
-    Principal.hpp
-    Personagem.hpp
-    Lists/listPersonagens.hpp
+    OtherGrandRandomOgre.hpp
+    Entities/Character.hpp
+    Lists/listCharacters.hpp
 )
 target_sources(
     main 
@@ -35,7 +35,7 @@ target_link_libraries(
 ###############################################################################
 
 ###############################################################################
-add_executable(gameOO)
+add_executable(OgrO)
 
 target_sources(
     main
@@ -43,7 +43,7 @@ target_sources(
         main.cpp
 )
 target_link_libraries(
-    gameOO 
+    OgrO 
     PRIVATE
         main
 )
