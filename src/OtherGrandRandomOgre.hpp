@@ -3,7 +3,7 @@
 
 #include "Entities/Character.hpp"
 #include "Lists/ListCharacters.hpp"
-#include <SFML/Graphics.hpp>
+#include "Managers/GraphicManager.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -13,7 +13,7 @@ namespace OgrO // Namespace com o nome do jogo.
         // Atributo que verifica se botão de fechar da janela do SFML foi clicado.
         bool closeWindowEvent;
         // Atributo da janela criada para o jogo.
-        sf::RenderWindow *window;
+        Managers::GraphicManager graphicManager;
         // Atributo de um relógio que será útil para verificação do tempo.
         sf::Clock clock;
         // Atributo referente a lista de personagens.

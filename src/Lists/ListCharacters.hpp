@@ -58,10 +58,12 @@ namespace OgrO // Namespace com o nome do jogo.
             Characters::Character *backStart();
             // Método desloca o ponteiro para o próximo elemento da lista e retorna o mesmo.
             Characters::Character *goNext();
+            // Método carrega as texturas dos personagens na window.
+            void initializeCharacters(Managers::GraphicManager &gm);
             // Método atualiza cada elemento dentro da lista dos Personagens, passando como parametro o tempo da aplicação em segundos.
             void updateCharacters(float t);
             // Método desenha na window cada elemento dentro da lista dos Personagens.
-            void drawCharacters(sf::RenderWindow *window);
+            void drawCharacters(Managers::GraphicManager &gm);
             // Método desaloca cada objetos dentro da lista dos Personagens.
             void destroyCharacters();
         };

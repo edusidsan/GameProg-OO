@@ -130,6 +130,21 @@ namespace OgrO // Namespace com o nome do jogo.
             // Caso a lista exista, retorna o próximo elemento da lista.
             return (pCurrent) ? pCurrent->getInfo() : nullptr;
         }
+        // Método carrega as texturas dos personagens na window.
+        void ListCharacters::initializeCharacters(Managers::GraphicManager &gm)
+        {
+            // Ponteiro auxiliar que recebe o primeiro elemento da lista.
+            Characters::Character *p = backStart();
+            // Enquanto p ainda encontrar elementos na lista.
+            while (p)
+            {
+                // Inicializa o elemento.
+                p->initializeCharacter(gm);
+                // Recebe o endereço do próximo elemento da lista.
+                p = goNext();
+            }
+        }
+
         // Método atualiza cada elemento dentro da lista dos Personagens, passando como parametro o tempo da aplicação em segundos.
         void ListCharacters::updateCharacters(float t)
         {
@@ -145,7 +160,7 @@ namespace OgrO // Namespace com o nome do jogo.
             }
         }
         // Método desenha na window cada elemento dentro da lista dos Personagens.
-        void ListCharacters::drawCharacters(sf::RenderWindow *window)
+        void ListCharacters::drawCharacters(Managers::GraphicManager &gm)
         {
             // Ponteiro auxiliar que recebe o primeiro elemento da lista.
             Characters::Character *p = backStart();
@@ -153,7 +168,7 @@ namespace OgrO // Namespace com o nome do jogo.
             while (p)
             {
                 // Desenha o elemento na window.
-                p->draw(window);
+                p->draw(gm);
                 // Recebe o endereço do próximo elemento da lista.
                 p = goNext();
             }

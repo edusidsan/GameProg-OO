@@ -1,4 +1,3 @@
-
 #include "OtherGrandRandomOgre.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
@@ -8,21 +7,20 @@ namespace OgrO // Namespace com o nome do jogo.
         booleana closedWindowEvent setada para false,
         object Window é instanciada para um tamanho de 800px X 600px e com o nome OgrO.
     */
-    OtherGrandRandomOgre::OtherGrandRandomOgre() : closeWindowEvent{false},
-                                                   window{new sf::RenderWindow(sf::VideoMode(800, 600), "OgrO")}
+    OtherGrandRandomOgre::OtherGrandRandomOgre() : closeWindowEvent{false}
     {
         // Criação de instâncias de novos personagens.
-        players.insert(new Characters::Character(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(5, 5), "../assets/player.png"));
-        players.insert(new Characters::Character(sf::Vector2f(400.0f, 300.0f), sf::Vector2f(10, 0), "../assets/player.png"));
-        players.insert(new Characters::Character(sf::Vector2f(200.0f, 200.0f), sf::Vector2f(0, 5), "../assets/player.png"));
+        players.insert(new Characters::Character(Utilities::myVector2F(0.0f, 0.0f), Utilities::myVector2F(5, 5), "../assets/player.png"));
+        players.insert(new Characters::Character(Utilities::myVector2F(400.0f, 300.0f), Utilities::myVector2F(10, 0), "../assets/player.png"));
+        players.insert(new Characters::Character(Utilities::myVector2F(200.0f, 200.0f), Utilities::myVector2F(0, 5), "../assets/player.png"));
+        // Carrega as imagens nos personagens.
+        players.initializeCharacters(graphicManager);
         // Executa o jogo.
         OtherGrandRandomOgre::run();
     }
     // Destrutora da classe OtherGrandRandomOgre
     OtherGrandRandomOgre::~OtherGrandRandomOgre()
     {
-        // Deleta dinamicamente o objeto Window.
-        delete window;
         // Deleta dinamicamente os objetos dos Personagens.
         players.destroyCharacters();
     }
@@ -41,7 +39,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // Reseta a contagem do clock.
             clock.restart();
             // Caso o método pollEvent de window ocorra.
-            if (window->pollEvent(event))
+            if (graphicManager.getWindow()->pollEvent(event))
             {
                 // Caso o código do event seja referente ao clique no botão fechar da window.
                 if (event.type == sf::Event::Closed)
@@ -50,13 +48,13 @@ namespace OgrO // Namespace com o nome do jogo.
                 }
             }
             // Limpa a window.
-            window->clear();
+            graphicManager.clear();
             // Atualiza a lista dos Personagens, passando como parametro o tempo da aplicação em segundos.
             players.updateCharacters(t.asSeconds());
             // Desenha os personagens na window.
-            players.drawCharacters(window);
+            players.drawCharacters(graphicManager);
             // Mostra a window para o usuário.
-            window->display();
+            graphicManager.display();
         }
         return 0;
     }
