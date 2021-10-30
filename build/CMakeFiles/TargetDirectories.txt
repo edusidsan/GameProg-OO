@@ -1,4 +1,0 @@
-D:/UTFPR/Engenharia da Computacao/2 PERIODO/TECNICAS DE PROGRAMACAO/GameProg-OO/build/CMakeFiles/main.dir
-D:/UTFPR/Engenharia da Computacao/2 PERIODO/TECNICAS DE PROGRAMACAO/GameProg-OO/build/CMakeFiles/gameOO.dir
-D:/UTFPR/Engenharia da Computacao/2 PERIODO/TECNICAS DE PROGRAMACAO/GameProg-OO/build/CMakeFiles/edit_cache.dir
-D:/UTFPR/Engenharia da Computacao/2 PERIODO/TECNICAS DE PROGRAMACAO/GameProg-OO/build/CMakeFiles/rebuild_cache.dir
