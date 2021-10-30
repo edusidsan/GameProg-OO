@@ -12,13 +12,17 @@ set(
     SOURCES
     OtherGrandRandomOgre.cpp
     Entities/Character.cpp
-    Lists/listCharacters.cpp
+    Lists/ListCharacters.cpp
+    Managers/GraphicManager.cpp
 )
 set(
     HEADERS
     OtherGrandRandomOgre.hpp
     Entities/Character.hpp
-    Lists/listCharacters.hpp
+    Lists/ListCharacters.hpp
+    Managers/GraphicManager.hpp
+    Utilities/Vector2D.hpp
+    Utilities/Vector2DMethods.hpp
 )
 target_sources(
     main 
