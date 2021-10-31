@@ -48,11 +48,11 @@ namespace OgrO // Namespace com o nome do jogo.
             Element<TL> *pCurrent;
 
         public:
-            // Construtora da classe ListCharacters.
+            // Construtora da classe List.
             List();
-            // Destrutora da classe ListCharacters.
+            // Destrutora da classe List.
             ~List();
-            // Método insere personagens na lista de personagens.
+            // Método insere elemento de "qualquer tipo" na lista.
             void insert(TL info);
             // Método desaloca e aterra objetos e atributos usados na classe.
             void clear();
@@ -82,7 +82,7 @@ namespace OgrO // Namespace com o nome do jogo.
             pPrev = nullptr;
             pNext = nullptr;
         }
-        // Retorna ponteiro com as informações daquele personagem a partir do atributo privado pInfo.
+        // Retorna ponteiro com as informações daquele elemento a partir do atributo privado pInfo.
         template <typename TL>
         template <typename TE>
         TE List<TL>::Element<TE>::getInfo()
@@ -141,7 +141,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // Método desaloca e aterra objetos e atributos usados na classe.
             clear();
         }
-        // Método insere personagens na lista de personagens.
+        // Método insere elemento de "qualquer tipo" na lista.
         template <typename TL>
         void List<TL>::insert(TL info)
         {
