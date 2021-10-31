@@ -10,19 +10,21 @@ add_library(main)
 # Create a sources variable with a link to all cpp files to compile
 set(
     SOURCES
-    OtherGrandRandomOgre.cpp
-    Entities/Character.cpp
-    Lists/ListCharacters.cpp
+    Lists/PhysicalEntityList.cpp
+    Managers/EventsManager.cpp
     Managers/GraphicManager.cpp
+    PhysicalEntities/PhysicalEntity.cpp
+    OtherGrandRandomOgre.cpp
 )
 set(
     HEADERS
-    OtherGrandRandomOgre.hpp
-    Entities/Character.hpp
-    Lists/ListCharacters.hpp
+    # Lists/List.hpp
+    Lists/PhysicalEntityList.hpp
+    Managers/EventsManager.hpp
     Managers/GraphicManager.hpp
+    PhysicalEntities/PhysicalEntity.hpp
     Utilities/Vector2D.hpp
-    Utilities/Vector2DMethods.hpp
+    OtherGrandRandomOgre.hpp
 )
 target_sources(
     main 
