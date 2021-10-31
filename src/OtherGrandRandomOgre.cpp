@@ -9,20 +9,20 @@ namespace OgrO // Namespace com o nome do jogo.
     */
     OtherGrandRandomOgre::OtherGrandRandomOgre() : closeWindowEvent{false}
     {
-        // Criação de instâncias de novos personagens.
-        players.insert(new Characters::Character(Utilities::myVector2F(0.0f, 0.0f), Utilities::myVector2F(5, 5), "../assets/player.png"));
-        players.insert(new Characters::Character(Utilities::myVector2F(400.0f, 300.0f), Utilities::myVector2F(10, 0), "../assets/player.png"));
-        players.insert(new Characters::Character(Utilities::myVector2F(200.0f, 200.0f), Utilities::myVector2F(0, 5), "../assets/player.png"));
-        // Carrega as imagens nos personagens.
-        players.initializeCharacters(graphicManager);
+        // Criação de instâncias de novas entidades físicas.
+        players.insert(new PhysicalEntities::PhysicalEntity(Utilities::myVector2F(0.0f, 0.0f), Utilities::myVector2F(5, 5), "../assets/player.png"));
+        players.insert(new PhysicalEntities::PhysicalEntity(Utilities::myVector2F(400.0f, 300.0f), Utilities::myVector2F(10, 0), "../assets/player.png"));
+        players.insert(new PhysicalEntities::PhysicalEntity(Utilities::myVector2F(200.0f, 200.0f), Utilities::myVector2F(0, 5), "../assets/player.png"));
+        // Carrega as imagens nas entidades físicas e inicializa os gerenciadores de eventos.
+        players.initializePhysicalEntities(graphicManager, eventsManager);
         // Executa o jogo.
         OtherGrandRandomOgre::run();
     }
     // Destrutora da classe OtherGrandRandomOgre
     OtherGrandRandomOgre::~OtherGrandRandomOgre()
     {
-        // Deleta dinamicamente os objetos dos Personagens.
-        players.destroyCharacters();
+        // Deleta dinamicamente os objetos das entidades físicas.
+        // players.destroyCharacters();
     }
     // Método executar de OtherGrandRandomOgre
     int OtherGrandRandomOgre::run()
@@ -50,9 +50,9 @@ namespace OgrO // Namespace com o nome do jogo.
             // Limpa a window.
             graphicManager.clear();
             // Atualiza a lista dos Personagens, passando como parametro o tempo da aplicação em segundos.
-            players.updateCharacters(t.asSeconds());
+            players.updatePhysicalEntities(t.asSeconds());
             // Desenha os personagens na window.
-            players.drawCharacters(graphicManager);
+            players.drawPhysicalEntities(graphicManager);
             // Mostra a window para o usuário.
             graphicManager.display();
         }

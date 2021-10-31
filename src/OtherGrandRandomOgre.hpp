@@ -1,10 +1,9 @@
 #ifndef _OTHERGRANDRANDOMOGRE_HPP_
 #define _OTHERGRANDRANDOMOGRE_HPP_
 
-#include "Entities/Character.hpp"
-#include "Lists/ListCharacters.hpp"
+#include "PhysicalEntities/PhysicalEntity.hpp"
+#include "Lists/PhysicalEntityList.hpp"
 #include "Managers/GraphicManager.hpp"
-
 namespace OgrO // Namespace com o nome do jogo.
 {
     class OtherGrandRandomOgre
@@ -12,12 +11,14 @@ namespace OgrO // Namespace com o nome do jogo.
     private:
         // Atributo que verifica se botão de fechar da janela do SFML foi clicado.
         bool closeWindowEvent;
-        // Atributo da janela criada para o jogo.
+        // Atributo do gerenciador gráfico criado para o jogo.
         Managers::GraphicManager graphicManager;
+        // Atributo do gerenciador de eventos criado para o jogo.
+        Managers::EventsManager eventsManager;
         // Atributo de um relógio que será útil para verificação do tempo.
         sf::Clock clock;
-        // Atributo referente a lista de personagens.
-        Lists::ListCharacters players;
+        // Atributo referente a lista de entidades físicas.
+        Lists::PhysicalEntityList players;
 
     public:
         // Construtora da classe OtherGrandRandomOgre.
