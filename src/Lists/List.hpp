@@ -130,8 +130,8 @@ namespace OgrO // Namespace com o nome do jogo.
         // Construtora da classe List<T>.
         template <typename TL>
         List<TL>::List() : pFirst{nullptr},
-                           pLast{nullptr},
-                           pCurrent{nullptr}
+                           pLast{nullptr}
+                        //    pCurrent{nullptr}
         {
         }
         // Destrutora da classe List<T>.
@@ -192,6 +192,7 @@ namespace OgrO // Namespace com o nome do jogo.
             pFirst = nullptr;
             pLast = nullptr;
             pCurrent = nullptr;
+
         }
         // Método retorna o primeiro elemento da lista.
         template <typename TL>

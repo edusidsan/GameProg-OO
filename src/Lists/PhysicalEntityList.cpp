@@ -32,6 +32,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 p->initialize(gm, em);
                 // Recebe o endereço do próximo elemento da lista.
                 p = list.goNext();
+                
             }
         }
 

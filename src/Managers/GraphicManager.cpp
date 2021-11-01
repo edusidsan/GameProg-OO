@@ -55,6 +55,8 @@ namespace OgrO // Namespace com o nome do jogo.
                 sf::Texture *textureAux = textures[path];
                 //  Classe referente a biblioteca SFML que é uma representação "desenhavel" de uma textura.
                 sf::Sprite sprite(*textureAux);
+                // sprite.setTextureRect(sf::IntRect(9,16,36,43));
+                sprite.setTextureRect(sf::IntRect(0,0,40,56));
 
                 // sprite.setTexture(*textureAux);
                 // Atribui ao sprite a posição na qual será desenhada na window.
