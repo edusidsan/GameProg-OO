@@ -4,6 +4,7 @@
 #include "PhysicalEntities/PhysicalEntity.hpp"
 #include "Lists/PhysicalEntityList.hpp"
 #include "Managers/GraphicManager.hpp"
+
 namespace OgrO // Namespace com o nome do jogo.
 {
     class OtherGrandRandomOgre
@@ -15,6 +16,8 @@ namespace OgrO // Namespace com o nome do jogo.
         Managers::GraphicManager graphicManager;
         // Atributo do gerenciador de eventos criado para o jogo.
         Managers::EventsManager eventsManager;
+        // Atributo que indica a chave única do evento de fechar a window do jogo.
+        unsigned int idClosedWindow;
         // Atributo de um relógio que será útil para verificação do tempo.
         sf::Clock clock;
         // Atributo referente a lista de entidades físicas.
@@ -27,6 +30,8 @@ namespace OgrO // Namespace com o nome do jogo.
         ~OtherGrandRandomOgre();
         // Método executar de OtherGrandRandomOgre.
         int run();
+        // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.
+        void closedWindow(const sf::Event& event);
     };
 }
 #endif
