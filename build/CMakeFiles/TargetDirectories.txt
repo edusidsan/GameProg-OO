@@ -1,4 +1,0 @@
-C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build/CMakeFiles/edit_cache.dir
-C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build/CMakeFiles/main.dir
-C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build/CMakeFiles/OgrO.dir
-C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build/CMakeFiles/rebuild_cache.dir
