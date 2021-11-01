@@ -14,6 +14,9 @@ set(
     Managers/EventsManager.cpp
     Managers/GraphicManager.cpp
     PhysicalEntities/PhysicalEntity.cpp
+    PhysicalEntities/Characters/Character.cpp
+    PhysicalEntities/Characters/Enemies/Enemy.cpp
+    PhysicalEntities/Characters/Players/Shrek.cpp
     OtherGrandRandomOgre.cpp
 )
 set(
@@ -23,6 +26,9 @@ set(
     Managers/EventsManager.hpp
     Managers/GraphicManager.hpp
     PhysicalEntities/PhysicalEntity.hpp
+    PhysicalEntities/Characters/Character.hpp
+    PhysicalEntities/Characters/Enemies/Enemy.hpp
+    PhysicalEntities/Characters/Players/Shrek.hpp
     Utilities/Vector2D.hpp
     OtherGrandRandomOgre.hpp
 )
