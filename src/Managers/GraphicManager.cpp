@@ -6,7 +6,7 @@ namespace OgrO // Namespace com o nome do jogo.
     {
         // Construtora da classe GraphicManager.
         GraphicManager::GraphicManager() : window{new sf::RenderWindow(sf::VideoMode(800, 600), "OgrO")},
-                                           camera{sf::Vector2f(400, 300), sf::Vector2f(800, 600)}
+                                           camera{sf::Vector2f(400, 300), sf::Vector2f(400, 300)}
 
         {
             // Atribuindo view Camera para a window.
@@ -85,7 +85,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Indica término anormal do programa, por não ter encontrado o caminho da imagem.
                     exit(1);
                 }
-                // Adiciona dentro da estrutura de dados Map a chave com o caminho path e a textura com a nova texturaAux.
+                // Adiciona na estrutura de dados Map a chave com o caminho path e a textura com a nova texturaAux.
                 textures.emplace(path, textureAux);
                 // Retorna true, dando a entender que a textura foi carregada.
                 return true;
