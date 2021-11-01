@@ -2,34 +2,39 @@
 
 namespace OgrO // Namespace com o nome do jogo.
 {
-    namespace Characters // Namespace do Pacote Characters.
+    namespace PhysicalEntities // Namespace do Pacote Entities.
     {
-        // Construtora da classe Personagem.
-        Character::Character(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath) : position{pos},
-                                                                                                      speed{s},
-                                                                                                      texturePath{tPath}
+        namespace Characters // Namespace do Pacote Characters.
         {
-        }
-        // Destrutora da classe Personagem.
-        Character::~Character()
-        {
-        }
-        // Método carrega a textura do personagem na window.
-        void Character::initializeCharacter(Managers::GraphicManager &gm)
-        {
-            gm.loadAsset(texturePath);
-        }
-        // Método atualizar de Personagem. Tem como parâmetro uma variável float que representa o tempo.
-        void Character::update(float t)
-        {
-            // Relação de posição da forma no espaço-tempo. Equação de Movimento Uniforme da Cinemática.
-            position += speed * t;
-        }
-        // Método desenhar de Personagem. Tem como parâmetro o endereço do gerenciador gráfico que irá desenhar o persoangem na window.
-        void Character::draw(Managers::GraphicManager &gm)
-        {
-            // Desenha a forma do personagem atual na window.
-            gm.draw(texturePath, position);
+            // Construtora da classe Personagem.
+            Character::Character(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath) : PhysicalEntity(pos, s, tPath)
+            {
+            }
+            // Destrutora da classe Personagem.
+            Character::~Character()
+            {
+            }
+            // Método carrega a textura do personagem na window.
+            void Character::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em)
+            {
+                gm.loadAsset(texturePath);
+            }
+            // Método atualizar de Personagem. Tem como parâmetro uma variável float que representa o tempo.
+            void Character::update(float t)
+            {
+                // Relação de posição da forma no espaço-tempo. Equação de Movimento Uniforme da Cinemática.
+                position += speed * t;
+            }
+            // Método desenhar de Personagem. Tem como parâmetro o endereço do gerenciador gráfico que irá desenhar o persoangem na window.
+            void Character::draw(Managers::GraphicManager &gm)
+            {
+                // Desenha a forma do personagem atual na window.
+                gm.draw(texturePath, position);
+            }
+            // Método de tratamento de evento ocorrido.
+            void handleEvent(const sf::Event &ev)
+            {
+            }
         }
     }
 }
