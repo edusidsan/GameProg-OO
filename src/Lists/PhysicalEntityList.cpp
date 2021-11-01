@@ -26,12 +26,14 @@ namespace OgrO // Namespace com o nome do jogo.
             // Ponteiro auxiliar que recebe o primeiro elemento da lista.
             PhysicalEntities::PhysicalEntity *p = list.backStart();
             // Enquanto p ainda encontrar elementos na lista.
+            //aux = firts
             while (p)
             {
                 // Inicializa o elemento.
                 p->initialize(gm, em);
                 // Recebe o endereço do próximo elemento da lista.
                 p = list.goNext();
+                //
             }
         }
 

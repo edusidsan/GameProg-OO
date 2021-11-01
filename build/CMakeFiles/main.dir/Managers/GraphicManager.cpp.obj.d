@@ -255,7 +255,6 @@ CMakeFiles/main.dir/Managers/GraphicManager.cpp.obj: \
  C:/msys64/mingw64/include/c++/11.2.0/istream \
  C:/msys64/mingw64/include/c++/11.2.0/bits/istream.tcc \
  C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Utilities/Vector2D.hpp \
- C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Utilities/Vector2DMethods.hpp \
  C:/msys64/mingw64/include/c++/11.2.0/cmath \
  C:/msys64/mingw64/x86_64-w64-mingw32/include/math.h \
  C:/msys64/mingw64/include/c++/11.2.0/bits/specfun.h \

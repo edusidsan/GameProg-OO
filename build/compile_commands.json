@@ -1,23 +1,48 @@
 [
 {
   "directory": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build",
-  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\OtherGrandRandomOgre.cpp.obj -c C:\\Users\\Marco\\Desktop\\T.P_Jogo\\Git\\GameProg-OO\\src\\OtherGrandRandomOgre.cpp",
-  "file": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/OtherGrandRandomOgre.cpp"
+  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\Lists\\PhysicalEntityList.cpp.obj -c C:\\Users\\Marco\\Desktop\\T.P_Jogo\\Git\\GameProg-OO\\src\\Lists\\PhysicalEntityList.cpp",
+  "file": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Lists/PhysicalEntityList.cpp"
 },
 {
   "directory": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build",
-  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\Entities\\Character.cpp.obj -c C:\\Users\\Marco\\Desktop\\T.P_Jogo\\Git\\GameProg-OO\\src\\Entities\\Character.cpp",
-  "file": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Entities/Character.cpp"
-},
-{
-  "directory": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build",
-  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\Lists\\ListCharacters.cpp.obj -c C:\\Users\\Marco\\Desktop\\T.P_Jogo\\Git\\GameProg-OO\\src\\Lists\\ListCharacters.cpp",
-  "file": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Lists/ListCharacters.cpp"
+  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\Managers\\EventsManager.cpp.obj -c C:\\Users\\Marco\\Desktop\\T.P_Jogo\\Git\\GameProg-OO\\src\\Managers\\EventsManager.cpp",
+  "file": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Managers/EventsManager.cpp"
 },
 {
   "directory": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build",
   "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\Managers\\GraphicManager.cpp.obj -c C:\\Users\\Marco\\Desktop\\T.P_Jogo\\Git\\GameProg-OO\\src\\Managers\\GraphicManager.cpp",
   "file": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Managers/GraphicManager.cpp"
+},
+{
+  "directory": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build",
+  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\PhysicalEntities\\PhysicalEntity.cpp.obj -c C:\\Users\\Marco\\Desktop\\T.P_Jogo\\Git\\GameProg-OO\\src\\PhysicalEntities\\PhysicalEntity.cpp",
+  "file": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/PhysicalEntities/PhysicalEntity.cpp"
+},
+{
+  "directory": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build",
+  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\PhysicalEntities\\Characters\\Character.cpp.obj -c C:\\Users\\Marco\\Desktop\\T.P_Jogo\\Git\\GameProg-OO\\src\\PhysicalEntities\\Characters\\Character.cpp",
+  "file": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/PhysicalEntities/Characters/Character.cpp"
+},
+{
+  "directory": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build",
+  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\PhysicalEntities\\Characters\\Enemies\\Enemy.cpp.obj -c C:\\Users\\Marco\\Desktop\\T.P_Jogo\\Git\\GameProg-OO\\src\\PhysicalEntities\\Characters\\Enemies\\Enemy.cpp",
+  "file": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/PhysicalEntities/Characters/Enemies/Enemy.cpp"
+},
+{
+  "directory": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build",
+  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\PhysicalEntities\\Characters\\Players\\Shrek.cpp.obj -c C:\\Users\\Marco\\Desktop\\T.P_Jogo\\Git\\GameProg-OO\\src\\PhysicalEntities\\Characters\\Players\\Shrek.cpp",
+  "file": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/PhysicalEntities/Characters/Players/Shrek.cpp"
+},
+{
+  "directory": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build",
+  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\OtherGrandRandomOgre.cpp.obj -c C:\\Users\\Marco\\Desktop\\T.P_Jogo\\Git\\GameProg-OO\\src\\OtherGrandRandomOgre.cpp",
+  "file": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/OtherGrandRandomOgre.cpp"
+},
+{
+  "directory": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build",
+  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\Entity.cpp.obj -c C:\\Users\\Marco\\Desktop\\T.P_Jogo\\Git\\GameProg-OO\\src\\Entity.cpp",
+  "file": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Entity.cpp"
 },
 {
   "directory": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build",

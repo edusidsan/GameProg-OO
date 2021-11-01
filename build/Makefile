@@ -141,53 +141,77 @@ OgrO/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\OgrO.dir\build.make CMakeFiles/OgrO.dir/build
 .PHONY : OgrO/fast
 
-Entities/Character.obj: Entities/Character.cpp.obj
-.PHONY : Entities/Character.obj
+Entity.obj: Entity.cpp.obj
+.PHONY : Entity.obj
 
 # target to build an object file
-Entities/Character.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Entities/Character.cpp.obj
-.PHONY : Entities/Character.cpp.obj
+Entity.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Entity.cpp.obj
+.PHONY : Entity.cpp.obj
 
-Entities/Character.i: Entities/Character.cpp.i
-.PHONY : Entities/Character.i
+Entity.i: Entity.cpp.i
+.PHONY : Entity.i
 
 # target to preprocess a source file
-Entities/Character.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Entities/Character.cpp.i
-.PHONY : Entities/Character.cpp.i
+Entity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Entity.cpp.i
+.PHONY : Entity.cpp.i
 
-Entities/Character.s: Entities/Character.cpp.s
-.PHONY : Entities/Character.s
+Entity.s: Entity.cpp.s
+.PHONY : Entity.s
 
 # target to generate assembly for a file
-Entities/Character.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Entities/Character.cpp.s
-.PHONY : Entities/Character.cpp.s
+Entity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Entity.cpp.s
+.PHONY : Entity.cpp.s
 
-Lists/ListCharacters.obj: Lists/ListCharacters.cpp.obj
-.PHONY : Lists/ListCharacters.obj
+Lists/PhysicalEntityList.obj: Lists/PhysicalEntityList.cpp.obj
+.PHONY : Lists/PhysicalEntityList.obj
 
 # target to build an object file
-Lists/ListCharacters.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Lists/ListCharacters.cpp.obj
-.PHONY : Lists/ListCharacters.cpp.obj
+Lists/PhysicalEntityList.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Lists/PhysicalEntityList.cpp.obj
+.PHONY : Lists/PhysicalEntityList.cpp.obj
 
-Lists/ListCharacters.i: Lists/ListCharacters.cpp.i
-.PHONY : Lists/ListCharacters.i
+Lists/PhysicalEntityList.i: Lists/PhysicalEntityList.cpp.i
+.PHONY : Lists/PhysicalEntityList.i
 
 # target to preprocess a source file
-Lists/ListCharacters.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Lists/ListCharacters.cpp.i
-.PHONY : Lists/ListCharacters.cpp.i
+Lists/PhysicalEntityList.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Lists/PhysicalEntityList.cpp.i
+.PHONY : Lists/PhysicalEntityList.cpp.i
 
-Lists/ListCharacters.s: Lists/ListCharacters.cpp.s
-.PHONY : Lists/ListCharacters.s
+Lists/PhysicalEntityList.s: Lists/PhysicalEntityList.cpp.s
+.PHONY : Lists/PhysicalEntityList.s
 
 # target to generate assembly for a file
-Lists/ListCharacters.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Lists/ListCharacters.cpp.s
-.PHONY : Lists/ListCharacters.cpp.s
+Lists/PhysicalEntityList.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Lists/PhysicalEntityList.cpp.s
+.PHONY : Lists/PhysicalEntityList.cpp.s
+
+Managers/EventsManager.obj: Managers/EventsManager.cpp.obj
+.PHONY : Managers/EventsManager.obj
+
+# target to build an object file
+Managers/EventsManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Managers/EventsManager.cpp.obj
+.PHONY : Managers/EventsManager.cpp.obj
+
+Managers/EventsManager.i: Managers/EventsManager.cpp.i
+.PHONY : Managers/EventsManager.i
+
+# target to preprocess a source file
+Managers/EventsManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Managers/EventsManager.cpp.i
+.PHONY : Managers/EventsManager.cpp.i
+
+Managers/EventsManager.s: Managers/EventsManager.cpp.s
+.PHONY : Managers/EventsManager.s
+
+# target to generate assembly for a file
+Managers/EventsManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Managers/EventsManager.cpp.s
+.PHONY : Managers/EventsManager.cpp.s
 
 Managers/GraphicManager.obj: Managers/GraphicManager.cpp.obj
 .PHONY : Managers/GraphicManager.obj
@@ -237,6 +261,102 @@ OtherGrandRandomOgre.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.s
 .PHONY : OtherGrandRandomOgre.cpp.s
 
+PhysicalEntities/Characters/Character.obj: PhysicalEntities/Characters/Character.cpp.obj
+.PHONY : PhysicalEntities/Characters/Character.obj
+
+# target to build an object file
+PhysicalEntities/Characters/Character.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/PhysicalEntities/Characters/Character.cpp.obj
+.PHONY : PhysicalEntities/Characters/Character.cpp.obj
+
+PhysicalEntities/Characters/Character.i: PhysicalEntities/Characters/Character.cpp.i
+.PHONY : PhysicalEntities/Characters/Character.i
+
+# target to preprocess a source file
+PhysicalEntities/Characters/Character.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/PhysicalEntities/Characters/Character.cpp.i
+.PHONY : PhysicalEntities/Characters/Character.cpp.i
+
+PhysicalEntities/Characters/Character.s: PhysicalEntities/Characters/Character.cpp.s
+.PHONY : PhysicalEntities/Characters/Character.s
+
+# target to generate assembly for a file
+PhysicalEntities/Characters/Character.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/PhysicalEntities/Characters/Character.cpp.s
+.PHONY : PhysicalEntities/Characters/Character.cpp.s
+
+PhysicalEntities/Characters/Enemies/Enemy.obj: PhysicalEntities/Characters/Enemies/Enemy.cpp.obj
+.PHONY : PhysicalEntities/Characters/Enemies/Enemy.obj
+
+# target to build an object file
+PhysicalEntities/Characters/Enemies/Enemy.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/PhysicalEntities/Characters/Enemies/Enemy.cpp.obj
+.PHONY : PhysicalEntities/Characters/Enemies/Enemy.cpp.obj
+
+PhysicalEntities/Characters/Enemies/Enemy.i: PhysicalEntities/Characters/Enemies/Enemy.cpp.i
+.PHONY : PhysicalEntities/Characters/Enemies/Enemy.i
+
+# target to preprocess a source file
+PhysicalEntities/Characters/Enemies/Enemy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/PhysicalEntities/Characters/Enemies/Enemy.cpp.i
+.PHONY : PhysicalEntities/Characters/Enemies/Enemy.cpp.i
+
+PhysicalEntities/Characters/Enemies/Enemy.s: PhysicalEntities/Characters/Enemies/Enemy.cpp.s
+.PHONY : PhysicalEntities/Characters/Enemies/Enemy.s
+
+# target to generate assembly for a file
+PhysicalEntities/Characters/Enemies/Enemy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/PhysicalEntities/Characters/Enemies/Enemy.cpp.s
+.PHONY : PhysicalEntities/Characters/Enemies/Enemy.cpp.s
+
+PhysicalEntities/Characters/Players/Shrek.obj: PhysicalEntities/Characters/Players/Shrek.cpp.obj
+.PHONY : PhysicalEntities/Characters/Players/Shrek.obj
+
+# target to build an object file
+PhysicalEntities/Characters/Players/Shrek.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/PhysicalEntities/Characters/Players/Shrek.cpp.obj
+.PHONY : PhysicalEntities/Characters/Players/Shrek.cpp.obj
+
+PhysicalEntities/Characters/Players/Shrek.i: PhysicalEntities/Characters/Players/Shrek.cpp.i
+.PHONY : PhysicalEntities/Characters/Players/Shrek.i
+
+# target to preprocess a source file
+PhysicalEntities/Characters/Players/Shrek.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/PhysicalEntities/Characters/Players/Shrek.cpp.i
+.PHONY : PhysicalEntities/Characters/Players/Shrek.cpp.i
+
+PhysicalEntities/Characters/Players/Shrek.s: PhysicalEntities/Characters/Players/Shrek.cpp.s
+.PHONY : PhysicalEntities/Characters/Players/Shrek.s
+
+# target to generate assembly for a file
+PhysicalEntities/Characters/Players/Shrek.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/PhysicalEntities/Characters/Players/Shrek.cpp.s
+.PHONY : PhysicalEntities/Characters/Players/Shrek.cpp.s
+
+PhysicalEntities/PhysicalEntity.obj: PhysicalEntities/PhysicalEntity.cpp.obj
+.PHONY : PhysicalEntities/PhysicalEntity.obj
+
+# target to build an object file
+PhysicalEntities/PhysicalEntity.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/PhysicalEntities/PhysicalEntity.cpp.obj
+.PHONY : PhysicalEntities/PhysicalEntity.cpp.obj
+
+PhysicalEntities/PhysicalEntity.i: PhysicalEntities/PhysicalEntity.cpp.i
+.PHONY : PhysicalEntities/PhysicalEntity.i
+
+# target to preprocess a source file
+PhysicalEntities/PhysicalEntity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/PhysicalEntities/PhysicalEntity.cpp.i
+.PHONY : PhysicalEntities/PhysicalEntity.cpp.i
+
+PhysicalEntities/PhysicalEntity.s: PhysicalEntities/PhysicalEntity.cpp.s
+.PHONY : PhysicalEntities/PhysicalEntity.s
+
+# target to generate assembly for a file
+PhysicalEntities/PhysicalEntity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/PhysicalEntities/PhysicalEntity.cpp.s
+.PHONY : PhysicalEntities/PhysicalEntity.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -271,18 +391,33 @@ help:
 	@echo ... rebuild_cache
 	@echo ... OgrO
 	@echo ... main
-	@echo ... Entities/Character.obj
-	@echo ... Entities/Character.i
-	@echo ... Entities/Character.s
-	@echo ... Lists/ListCharacters.obj
-	@echo ... Lists/ListCharacters.i
-	@echo ... Lists/ListCharacters.s
+	@echo ... Entity.obj
+	@echo ... Entity.i
+	@echo ... Entity.s
+	@echo ... Lists/PhysicalEntityList.obj
+	@echo ... Lists/PhysicalEntityList.i
+	@echo ... Lists/PhysicalEntityList.s
+	@echo ... Managers/EventsManager.obj
+	@echo ... Managers/EventsManager.i
+	@echo ... Managers/EventsManager.s
 	@echo ... Managers/GraphicManager.obj
 	@echo ... Managers/GraphicManager.i
 	@echo ... Managers/GraphicManager.s
 	@echo ... OtherGrandRandomOgre.obj
 	@echo ... OtherGrandRandomOgre.i
 	@echo ... OtherGrandRandomOgre.s
+	@echo ... PhysicalEntities/Characters/Character.obj
+	@echo ... PhysicalEntities/Characters/Character.i
+	@echo ... PhysicalEntities/Characters/Character.s
+	@echo ... PhysicalEntities/Characters/Enemies/Enemy.obj
+	@echo ... PhysicalEntities/Characters/Enemies/Enemy.i
+	@echo ... PhysicalEntities/Characters/Enemies/Enemy.s
+	@echo ... PhysicalEntities/Characters/Players/Shrek.obj
+	@echo ... PhysicalEntities/Characters/Players/Shrek.i
+	@echo ... PhysicalEntities/Characters/Players/Shrek.s
+	@echo ... PhysicalEntities/PhysicalEntity.obj
+	@echo ... PhysicalEntities/PhysicalEntity.i
+	@echo ... PhysicalEntities/PhysicalEntity.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

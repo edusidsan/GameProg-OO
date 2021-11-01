@@ -18,6 +18,7 @@ set(
     PhysicalEntities/Characters/Enemies/Enemy.cpp
     PhysicalEntities/Characters/Players/Shrek.cpp
     OtherGrandRandomOgre.cpp
+    Entity.cpp
 )
 set(
     HEADERS
@@ -31,6 +32,7 @@ set(
     PhysicalEntities/Characters/Players/Shrek.hpp
     Utilities/Vector2D.hpp
     OtherGrandRandomOgre.hpp
+    Entity.hpp
 )
 target_sources(
     main 

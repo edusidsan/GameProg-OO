@@ -1,9 +1,8 @@
 CMakeFiles/main.dir/main.cpp.obj: \
  C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\main.cpp \
  C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\OtherGrandRandomOgre.hpp \
- C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Entities/Character.hpp \
+ C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\PhysicalEntities/PhysicalEntity.hpp \
  C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Utilities/Vector2D.hpp \
- C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Utilities/Vector2DMethods.hpp \
  C:/msys64/mingw64/include/c++/11.2.0/cmath \
  C:/msys64/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/c++config.h \
  C:/msys64/mingw64/include/c++/11.2.0/x86_64-w64-mingw32/bits/os_defines.h \
@@ -275,6 +274,8 @@ CMakeFiles/main.dir/main.cpp.obj: \
  C:/msys64/mingw64/include/c++/11.2.0/istream \
  C:/msys64/mingw64/include/c++/11.2.0/bits/istream.tcc \
  C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Utilities/Vector2D.hpp \
- C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Lists/ListCharacters.hpp \
- C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Entities/Character.hpp \
+ C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Managers/EventsManager.hpp \
+ C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Lists/PhysicalEntityList.hpp \
+ C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Lists/List.hpp \
+ C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/PhysicalEntities/PhysicalEntity.hpp \
  C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Managers/GraphicManager.hpp

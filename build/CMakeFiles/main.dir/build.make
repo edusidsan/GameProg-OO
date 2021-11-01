@@ -68,56 +68,41 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
-CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.obj: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
-CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.obj: C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/OtherGrandRandomOgre.cpp
-CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.obj"
-	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.obj -MF CMakeFiles\main.dir\OtherGrandRandomOgre.cpp.obj.d -o CMakeFiles\main.dir\OtherGrandRandomOgre.cpp.obj -c C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\OtherGrandRandomOgre.cpp
+CMakeFiles/main.dir/Lists/PhysicalEntityList.cpp.obj: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/Lists/PhysicalEntityList.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
+CMakeFiles/main.dir/Lists/PhysicalEntityList.cpp.obj: C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Lists/PhysicalEntityList.cpp
+CMakeFiles/main.dir/Lists/PhysicalEntityList.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/Lists/PhysicalEntityList.cpp.obj"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Lists/PhysicalEntityList.cpp.obj -MF CMakeFiles\main.dir\Lists\PhysicalEntityList.cpp.obj.d -o CMakeFiles\main.dir\Lists\PhysicalEntityList.cpp.obj -c C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Lists\PhysicalEntityList.cpp
 
-CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.i"
-	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\OtherGrandRandomOgre.cpp > CMakeFiles\main.dir\OtherGrandRandomOgre.cpp.i
+CMakeFiles/main.dir/Lists/PhysicalEntityList.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/Lists/PhysicalEntityList.cpp.i"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Lists\PhysicalEntityList.cpp > CMakeFiles\main.dir\Lists\PhysicalEntityList.cpp.i
 
-CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.s"
-	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\OtherGrandRandomOgre.cpp -o CMakeFiles\main.dir\OtherGrandRandomOgre.cpp.s
+CMakeFiles/main.dir/Lists/PhysicalEntityList.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Lists/PhysicalEntityList.cpp.s"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Lists\PhysicalEntityList.cpp -o CMakeFiles\main.dir\Lists\PhysicalEntityList.cpp.s
 
-CMakeFiles/main.dir/Entities/Character.cpp.obj: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/Entities/Character.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
-CMakeFiles/main.dir/Entities/Character.cpp.obj: C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Entities/Character.cpp
-CMakeFiles/main.dir/Entities/Character.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/Entities/Character.cpp.obj"
-	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Entities/Character.cpp.obj -MF CMakeFiles\main.dir\Entities\Character.cpp.obj.d -o CMakeFiles\main.dir\Entities\Character.cpp.obj -c C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Entities\Character.cpp
+CMakeFiles/main.dir/Managers/EventsManager.cpp.obj: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/Managers/EventsManager.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
+CMakeFiles/main.dir/Managers/EventsManager.cpp.obj: C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Managers/EventsManager.cpp
+CMakeFiles/main.dir/Managers/EventsManager.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/Managers/EventsManager.cpp.obj"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Managers/EventsManager.cpp.obj -MF CMakeFiles\main.dir\Managers\EventsManager.cpp.obj.d -o CMakeFiles\main.dir\Managers\EventsManager.cpp.obj -c C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Managers\EventsManager.cpp
 
-CMakeFiles/main.dir/Entities/Character.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/Entities/Character.cpp.i"
-	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Entities\Character.cpp > CMakeFiles\main.dir\Entities\Character.cpp.i
+CMakeFiles/main.dir/Managers/EventsManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/Managers/EventsManager.cpp.i"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Managers\EventsManager.cpp > CMakeFiles\main.dir\Managers\EventsManager.cpp.i
 
-CMakeFiles/main.dir/Entities/Character.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Entities/Character.cpp.s"
-	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Entities\Character.cpp -o CMakeFiles\main.dir\Entities\Character.cpp.s
-
-CMakeFiles/main.dir/Lists/ListCharacters.cpp.obj: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/Lists/ListCharacters.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
-CMakeFiles/main.dir/Lists/ListCharacters.cpp.obj: C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Lists/ListCharacters.cpp
-CMakeFiles/main.dir/Lists/ListCharacters.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/Lists/ListCharacters.cpp.obj"
-	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Lists/ListCharacters.cpp.obj -MF CMakeFiles\main.dir\Lists\ListCharacters.cpp.obj.d -o CMakeFiles\main.dir\Lists\ListCharacters.cpp.obj -c C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Lists\ListCharacters.cpp
-
-CMakeFiles/main.dir/Lists/ListCharacters.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/Lists/ListCharacters.cpp.i"
-	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Lists\ListCharacters.cpp > CMakeFiles\main.dir\Lists\ListCharacters.cpp.i
-
-CMakeFiles/main.dir/Lists/ListCharacters.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Lists/ListCharacters.cpp.s"
-	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Lists\ListCharacters.cpp -o CMakeFiles\main.dir\Lists\ListCharacters.cpp.s
+CMakeFiles/main.dir/Managers/EventsManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Managers/EventsManager.cpp.s"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Managers\EventsManager.cpp -o CMakeFiles\main.dir\Managers\EventsManager.cpp.s
 
 CMakeFiles/main.dir/Managers/GraphicManager.cpp.obj: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/Managers/GraphicManager.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
 CMakeFiles/main.dir/Managers/GraphicManager.cpp.obj: C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Managers/GraphicManager.cpp
 CMakeFiles/main.dir/Managers/GraphicManager.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/Managers/GraphicManager.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/Managers/GraphicManager.cpp.obj"
 	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Managers/GraphicManager.cpp.obj -MF CMakeFiles\main.dir\Managers\GraphicManager.cpp.obj.d -o CMakeFiles\main.dir\Managers\GraphicManager.cpp.obj -c C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Managers\GraphicManager.cpp
 
 CMakeFiles/main.dir/Managers/GraphicManager.cpp.i: cmake_force
@@ -128,11 +113,101 @@ CMakeFiles/main.dir/Managers/GraphicManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Managers/GraphicManager.cpp.s"
 	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Managers\GraphicManager.cpp -o CMakeFiles\main.dir\Managers\GraphicManager.cpp.s
 
+CMakeFiles/main.dir/PhysicalEntities/PhysicalEntity.cpp.obj: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/PhysicalEntities/PhysicalEntity.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
+CMakeFiles/main.dir/PhysicalEntities/PhysicalEntity.cpp.obj: C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/PhysicalEntities/PhysicalEntity.cpp
+CMakeFiles/main.dir/PhysicalEntities/PhysicalEntity.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/PhysicalEntities/PhysicalEntity.cpp.obj"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/PhysicalEntities/PhysicalEntity.cpp.obj -MF CMakeFiles\main.dir\PhysicalEntities\PhysicalEntity.cpp.obj.d -o CMakeFiles\main.dir\PhysicalEntities\PhysicalEntity.cpp.obj -c C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\PhysicalEntities\PhysicalEntity.cpp
+
+CMakeFiles/main.dir/PhysicalEntities/PhysicalEntity.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/PhysicalEntities/PhysicalEntity.cpp.i"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\PhysicalEntities\PhysicalEntity.cpp > CMakeFiles\main.dir\PhysicalEntities\PhysicalEntity.cpp.i
+
+CMakeFiles/main.dir/PhysicalEntities/PhysicalEntity.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/PhysicalEntities/PhysicalEntity.cpp.s"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\PhysicalEntities\PhysicalEntity.cpp -o CMakeFiles\main.dir\PhysicalEntities\PhysicalEntity.cpp.s
+
+CMakeFiles/main.dir/PhysicalEntities/Characters/Character.cpp.obj: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/PhysicalEntities/Characters/Character.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
+CMakeFiles/main.dir/PhysicalEntities/Characters/Character.cpp.obj: C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/PhysicalEntities/Characters/Character.cpp
+CMakeFiles/main.dir/PhysicalEntities/Characters/Character.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/PhysicalEntities/Characters/Character.cpp.obj"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/PhysicalEntities/Characters/Character.cpp.obj -MF CMakeFiles\main.dir\PhysicalEntities\Characters\Character.cpp.obj.d -o CMakeFiles\main.dir\PhysicalEntities\Characters\Character.cpp.obj -c C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\PhysicalEntities\Characters\Character.cpp
+
+CMakeFiles/main.dir/PhysicalEntities/Characters/Character.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/PhysicalEntities/Characters/Character.cpp.i"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\PhysicalEntities\Characters\Character.cpp > CMakeFiles\main.dir\PhysicalEntities\Characters\Character.cpp.i
+
+CMakeFiles/main.dir/PhysicalEntities/Characters/Character.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/PhysicalEntities/Characters/Character.cpp.s"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\PhysicalEntities\Characters\Character.cpp -o CMakeFiles\main.dir\PhysicalEntities\Characters\Character.cpp.s
+
+CMakeFiles/main.dir/PhysicalEntities/Characters/Enemies/Enemy.cpp.obj: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/PhysicalEntities/Characters/Enemies/Enemy.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
+CMakeFiles/main.dir/PhysicalEntities/Characters/Enemies/Enemy.cpp.obj: C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/PhysicalEntities/Characters/Enemies/Enemy.cpp
+CMakeFiles/main.dir/PhysicalEntities/Characters/Enemies/Enemy.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/PhysicalEntities/Characters/Enemies/Enemy.cpp.obj"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/PhysicalEntities/Characters/Enemies/Enemy.cpp.obj -MF CMakeFiles\main.dir\PhysicalEntities\Characters\Enemies\Enemy.cpp.obj.d -o CMakeFiles\main.dir\PhysicalEntities\Characters\Enemies\Enemy.cpp.obj -c C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\PhysicalEntities\Characters\Enemies\Enemy.cpp
+
+CMakeFiles/main.dir/PhysicalEntities/Characters/Enemies/Enemy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/PhysicalEntities/Characters/Enemies/Enemy.cpp.i"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\PhysicalEntities\Characters\Enemies\Enemy.cpp > CMakeFiles\main.dir\PhysicalEntities\Characters\Enemies\Enemy.cpp.i
+
+CMakeFiles/main.dir/PhysicalEntities/Characters/Enemies/Enemy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/PhysicalEntities/Characters/Enemies/Enemy.cpp.s"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\PhysicalEntities\Characters\Enemies\Enemy.cpp -o CMakeFiles\main.dir\PhysicalEntities\Characters\Enemies\Enemy.cpp.s
+
+CMakeFiles/main.dir/PhysicalEntities/Characters/Players/Shrek.cpp.obj: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/PhysicalEntities/Characters/Players/Shrek.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
+CMakeFiles/main.dir/PhysicalEntities/Characters/Players/Shrek.cpp.obj: C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/PhysicalEntities/Characters/Players/Shrek.cpp
+CMakeFiles/main.dir/PhysicalEntities/Characters/Players/Shrek.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/PhysicalEntities/Characters/Players/Shrek.cpp.obj"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/PhysicalEntities/Characters/Players/Shrek.cpp.obj -MF CMakeFiles\main.dir\PhysicalEntities\Characters\Players\Shrek.cpp.obj.d -o CMakeFiles\main.dir\PhysicalEntities\Characters\Players\Shrek.cpp.obj -c C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\PhysicalEntities\Characters\Players\Shrek.cpp
+
+CMakeFiles/main.dir/PhysicalEntities/Characters/Players/Shrek.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/PhysicalEntities/Characters/Players/Shrek.cpp.i"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\PhysicalEntities\Characters\Players\Shrek.cpp > CMakeFiles\main.dir\PhysicalEntities\Characters\Players\Shrek.cpp.i
+
+CMakeFiles/main.dir/PhysicalEntities/Characters/Players/Shrek.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/PhysicalEntities/Characters/Players/Shrek.cpp.s"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\PhysicalEntities\Characters\Players\Shrek.cpp -o CMakeFiles\main.dir\PhysicalEntities\Characters\Players\Shrek.cpp.s
+
+CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.obj: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
+CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.obj: C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/OtherGrandRandomOgre.cpp
+CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.obj"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.obj -MF CMakeFiles\main.dir\OtherGrandRandomOgre.cpp.obj.d -o CMakeFiles\main.dir\OtherGrandRandomOgre.cpp.obj -c C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\OtherGrandRandomOgre.cpp
+
+CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.i"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\OtherGrandRandomOgre.cpp > CMakeFiles\main.dir\OtherGrandRandomOgre.cpp.i
+
+CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.s"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\OtherGrandRandomOgre.cpp -o CMakeFiles\main.dir\OtherGrandRandomOgre.cpp.s
+
+CMakeFiles/main.dir/Entity.cpp.obj: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/Entity.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
+CMakeFiles/main.dir/Entity.cpp.obj: C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Entity.cpp
+CMakeFiles/main.dir/Entity.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/Entity.cpp.obj"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/Entity.cpp.obj -MF CMakeFiles\main.dir\Entity.cpp.obj.d -o CMakeFiles\main.dir\Entity.cpp.obj -c C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Entity.cpp
+
+CMakeFiles/main.dir/Entity.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/Entity.cpp.i"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Entity.cpp > CMakeFiles\main.dir\Entity.cpp.i
+
+CMakeFiles/main.dir/Entity.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Entity.cpp.s"
+	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\Entity.cpp -o CMakeFiles\main.dir\Entity.cpp.s
+
 CMakeFiles/main.dir/main.cpp.obj: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/main.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
 CMakeFiles/main.dir/main.cpp.obj: C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/main.cpp
 CMakeFiles/main.dir/main.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.dir/main.cpp.obj"
 	C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.obj -MF CMakeFiles\main.dir\main.cpp.obj.d -o CMakeFiles\main.dir\main.cpp.obj -c C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\src\main.cpp
 
 CMakeFiles/main.dir/main.cpp.i: cmake_force
@@ -145,23 +220,33 @@ CMakeFiles/main.dir/main.cpp.s: cmake_force
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.obj" \
-"CMakeFiles/main.dir/Entities/Character.cpp.obj" \
-"CMakeFiles/main.dir/Lists/ListCharacters.cpp.obj" \
+"CMakeFiles/main.dir/Lists/PhysicalEntityList.cpp.obj" \
+"CMakeFiles/main.dir/Managers/EventsManager.cpp.obj" \
 "CMakeFiles/main.dir/Managers/GraphicManager.cpp.obj" \
+"CMakeFiles/main.dir/PhysicalEntities/PhysicalEntity.cpp.obj" \
+"CMakeFiles/main.dir/PhysicalEntities/Characters/Character.cpp.obj" \
+"CMakeFiles/main.dir/PhysicalEntities/Characters/Enemies/Enemy.cpp.obj" \
+"CMakeFiles/main.dir/PhysicalEntities/Characters/Players/Shrek.cpp.obj" \
+"CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.obj" \
+"CMakeFiles/main.dir/Entity.cpp.obj" \
 "CMakeFiles/main.dir/main.cpp.obj"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-libmain.a: CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.obj
-libmain.a: CMakeFiles/main.dir/Entities/Character.cpp.obj
-libmain.a: CMakeFiles/main.dir/Lists/ListCharacters.cpp.obj
+libmain.a: CMakeFiles/main.dir/Lists/PhysicalEntityList.cpp.obj
+libmain.a: CMakeFiles/main.dir/Managers/EventsManager.cpp.obj
 libmain.a: CMakeFiles/main.dir/Managers/GraphicManager.cpp.obj
+libmain.a: CMakeFiles/main.dir/PhysicalEntities/PhysicalEntity.cpp.obj
+libmain.a: CMakeFiles/main.dir/PhysicalEntities/Characters/Character.cpp.obj
+libmain.a: CMakeFiles/main.dir/PhysicalEntities/Characters/Enemies/Enemy.cpp.obj
+libmain.a: CMakeFiles/main.dir/PhysicalEntities/Characters/Players/Shrek.cpp.obj
+libmain.a: CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.obj
+libmain.a: CMakeFiles/main.dir/Entity.cpp.obj
 libmain.a: CMakeFiles/main.dir/main.cpp.obj
 libmain.a: CMakeFiles/main.dir/build.make
 libmain.a: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libmain.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Marco\Desktop\T.P_Jogo\Git\GameProg-OO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX static library libmain.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\main.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\main.dir\link.txt --verbose=$(VERBOSE)
 
