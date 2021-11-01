@@ -1,8 +1,7 @@
 #ifndef _CHARACTER_HPP_
 #define _CHARACTER_HPP_
 
-#include "../../Utilities/Vector2D.hpp"
-#include "../../Managers/GraphicManager.hpp"
+#include "../PhysicalEntity.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -10,27 +9,27 @@ namespace OgrO // Namespace com o nome do jogo.
     {
         namespace Characters // Namespace do Pacote Personagens.
         {
-            class Character
+            class Character : public PhysicalEntity
             {
-            private:
-                // Ponteiro que indica o caminho da textura.
-                const char *texturePath;
-                Utilities::myVector2F position, // Atributo de posição do personagem
-                    speed;                      // Atributo de velocidade do personagem
+            // protected:
+            //     // Ponteiro que indica o caminho da textura.
+            //     const char *texturePath;
+            //     Utilities::myVector2F position, // Atributo de posição do personagem
+            //         speed;                      // Atributo de velocidade do personagem
 
             public:
-                // Construtora da classe Personagem. Atributos default configurados
-                Character(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath = nullptr);
+                // Construtora da classe Personagem. Atributos default configurados.
+                Character(Utilities::myVector2F pos = {0.0f, 0.0f}, Utilities::myVector2F = {0.0f, 0.0f}, const char *tPath = nullptr);
                 // Destrutora da classe Personagem.
-                ~Character();
+                virtual ~Character();
                 // Método carrega a textura do personagem na window.
-                void initializeCharacter(Managers::GraphicManager &gm);
+                virtual void initialize(Managers::GraphicManager &gm, Managers::EventsManager &em);
                 // Método atualizar de Personagem. Tem como parâmetro uma variável float que representa o tempo.
-                void update(float t);
+                virtual void update(float t);
                 // Método desenhar de Personagem. Tem como parâmetro o endereço do gerenciador gráfico que irá desenhar o persoangem na window.
-                void draw(Managers::GraphicManager &gm);
+                virtual void draw(Managers::GraphicManager &gm);
             };
         }
     }
 }
-#endif //
+#endif
