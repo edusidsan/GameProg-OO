@@ -1,6 +1,7 @@
 #ifndef _PHYSICALENTITY_HPP_
 #define _PHYSICALENTITY_HPP_
 
+#include "../Entity.hpp"
 #include "../Utilities/Vector2D.hpp"
 #include "../Managers/GraphicManager.hpp"
 #include "../Managers/EventsManager.hpp"
@@ -9,7 +10,7 @@ namespace OgrO // Namespace com o nome do jogo.
 {
     namespace PhysicalEntities // Namespace do Pacote Entities.
     {
-        class PhysicalEntity
+        class PhysicalEntity:public Entity
         {
         protected:
             // Ponteiro que indica o caminho da textura.

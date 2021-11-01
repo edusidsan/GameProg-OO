@@ -18,13 +18,14 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Ponteiro apontando para o endereço das informações do elemento.
                 TE pInfo;
                 // Ponteiro apontando para o endereço do próximo elemento da lista.
-                Element<TE> *pPrev;
+                //Element<TE> *pPrev;
                 // Ponteiro apontando para o endereço do elemento anterior da lista.
                 Element<TE> *pNext;
 
             public:
                 // Construtora da classe Element.
-                Element(TE info = nullptr, Element *prev = nullptr, Element *next = nullptr);
+                // Element(TE info = nullptr, Element *prev = nullptr, Element *next = nullptr);
+                Element(TE info = nullptr, Element *next = nullptr);
                 // Destrutora da classe Element.
                 ~Element();
                 // Retorna ponteiro com as informações daquele elemento a partir do atributo privado pInfo.
@@ -32,9 +33,9 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Atribui ao atributo privado pInfo o endereço do parâmetro info.
                 void setInfo(TE info);
                 // Retorna ponteiro com o endereço do elemento anterior a partir do atributo privado pPrev.
-                Element<TE> *getPrev();
+                // Element<TE> *getPrev();
                 // Atribui ao atributo privado pPrev o endereço do parâmetro prev.
-                void setPrev(Element *prev);
+                // void setPrev(Element *prev);
                 // Retorna ponteiro com o endereço do próximo elemento a partir do atributo privado pNext.
                 Element<TE> *getNext();
                 // Atribui ao atributo privado pNext o endereço do parâmetro next.
@@ -67,9 +68,8 @@ namespace OgrO // Namespace com o nome do jogo.
         // Construtora da classe Element.
         template <typename TL>
         template <typename TE>
-        List<TL>::Element<TE>::Element(TE info, Element *prev, Element *next) : pInfo{info},
-                                                                                pPrev{prev},
-                                                                                pNext{next}
+        List<TL>::Element<TE>::Element(TE info, Element *next) : pInfo{info},
+                                                                 pNext{next}
         {
         }
         // Destrutora da classe Element.
@@ -79,7 +79,7 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             // Aterra os atribuitos que são ponteiros.
             pInfo = nullptr;
-            pPrev = nullptr;
+            // pPrev = nullptr;
             pNext = nullptr;
         }
         // Retorna ponteiro com as informações daquele elemento a partir do atributo privado pInfo.
@@ -97,19 +97,19 @@ namespace OgrO // Namespace com o nome do jogo.
             pInfo = info;
         }
         // Retorna ponteiro com o endereço do elemento anterior a partir do atributo privado pPrev.
-        template <typename TL>
-        template <typename TE>
-        List<TL>::Element<TE> *List<TL>::Element<TE>::getPrev()
-        {
-            return pPrev;
-        }
+        // template <typename TL>
+        // template <typename TE>
+        // List<TL>::Element<TE> *List<TL>::Element<TE>::getPrev()
+        // {
+        //     return pPrev;
+        // }
         // Atribui ao atributo privado pPrev o endereço do parâmetro prev.
-        template <typename TL>
-        template <typename TE>
-        void List<TL>::Element<TE>::setPrev(Element<TE> *prev)
-        {
-            pPrev = prev;
-        }
+        // template <typename TL>
+        // template <typename TE>
+        // void List<TL>::Element<TE>::setPrev(Element<TE> *prev)
+        // {
+        //     pPrev = prev;
+        // }
         // Retorna ponteiro com o endereço do próximo elemento a partir do atributo privado pNext.
         template <typename TL>
         template <typename TE>
@@ -131,13 +131,13 @@ namespace OgrO // Namespace com o nome do jogo.
         template <typename TL>
         List<TL>::List() : pFirst{nullptr},
                            pLast{nullptr}
-                        //    pCurrent{nullptr}
+        //    pCurrent{nullptr}
         {
         }
         // Destrutora da classe List<T>.
         template <typename TL>
         List<TL>::~List()
-        {
+        { //prev
             // Método desaloca e aterra objetos e atributos usados na classe.
             clear();
         }
@@ -161,10 +161,11 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Caso a lista não esteja vazia.
                 else
                 {
+
                     // Atribui o endereço do novo elemento ao ponteiro PRÓXIMO no último elemento da lista.
                     pLast->setNext(newElement);
                     // O ponteiro ANTERIOR do novo elemento aponta para o, até então, último elemento da lista.
-                    newElement->setPrev(pLast);
+                    //newElement->setPrev(pLast);
                     // O novo elemento é o ultimo elemento da lista.
                     pLast = newElement;
                 }
@@ -194,6 +195,7 @@ namespace OgrO // Namespace com o nome do jogo.
             pCurrent = nullptr;
 
         }
+
         // Método retorna o primeiro elemento da lista.
         template <typename TL>
         TL List<TL>::backStart()
@@ -213,5 +215,6 @@ namespace OgrO // Namespace com o nome do jogo.
             return (pCurrent) ? pCurrent->getInfo() : nullptr;
         }
     }
+
 }
 #endif
