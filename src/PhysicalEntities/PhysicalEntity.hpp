@@ -11,7 +11,7 @@ namespace OgrO // Namespace com o nome do jogo.
     {
         class PhysicalEntity
         {
-        private:
+        protected:
             // Ponteiro que indica o caminho da textura.
             const char *texturePath;
             Utilities::myVector2F position, // Atributo de posição do PhysicalEntity
