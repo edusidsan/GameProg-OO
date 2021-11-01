@@ -6,8 +6,8 @@ namespace OgrO // Namespace com o nome do jogo.
     {
         // Construtora da classe PhysicalEntity. Atributos default configurados
         PhysicalEntity::PhysicalEntity(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath) : position{pos},
-                                                                                                                          speed{s},
-                                                                                                                          texturePath{tPath}
+                                                                                                                speed{s},
+                                                                                                                texturePath{tPath}
         {
         }
         // Destrutora da classe PhysicalEntity.
