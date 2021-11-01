@@ -1,11 +1,7 @@
-#include "Principal.hpp"
+#include "OtherGrandRandomOgre.hpp"
 #include <iostream>
-using namespace std;
-
 int main()
 {
-    // std::cout << "ENTROU NO PROGRAMA!!" << std::endl;
-    Principal principal;
-    return principal.executar();
-    //  return 0;
+    OgrO::OtherGrandRandomOgre shrek;
+    return shrek.run();
 }

@@ -1,0 +1,2 @@
+C:\msys64\mingw64\bin\ar.exe qc libmain.a CMakeFiles/main.dir/OtherGrandRandomOgre.cpp.obj CMakeFiles/main.dir/Entities/Character.cpp.obj CMakeFiles/main.dir/Lists/ListCharacters.cpp.obj CMakeFiles/main.dir/Managers/GraphicManager.cpp.obj CMakeFiles/main.dir/main.cpp.obj
+C:\msys64\mingw64\bin\ranlib.exe libmain.a

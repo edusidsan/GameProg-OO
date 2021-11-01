@@ -1,0 +1,27 @@
+[
+{
+  "directory": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build",
+  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\OtherGrandRandomOgre.cpp.obj -c C:\\Users\\Marco\\Desktop\\T.P_Jogo\\Git\\GameProg-OO\\src\\OtherGrandRandomOgre.cpp",
+  "file": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/OtherGrandRandomOgre.cpp"
+},
+{
+  "directory": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build",
+  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\Entities\\Character.cpp.obj -c C:\\Users\\Marco\\Desktop\\T.P_Jogo\\Git\\GameProg-OO\\src\\Entities\\Character.cpp",
+  "file": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Entities/Character.cpp"
+},
+{
+  "directory": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build",
+  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\Lists\\ListCharacters.cpp.obj -c C:\\Users\\Marco\\Desktop\\T.P_Jogo\\Git\\GameProg-OO\\src\\Lists\\ListCharacters.cpp",
+  "file": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Lists/ListCharacters.cpp"
+},
+{
+  "directory": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build",
+  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\Managers\\GraphicManager.cpp.obj -c C:\\Users\\Marco\\Desktop\\T.P_Jogo\\Git\\GameProg-OO\\src\\Managers\\GraphicManager.cpp",
+  "file": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/Managers/GraphicManager.cpp"
+},
+{
+  "directory": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/build",
+  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\main.cpp.obj -c C:\\Users\\Marco\\Desktop\\T.P_Jogo\\Git\\GameProg-OO\\src\\main.cpp",
+  "file": "C:/Users/Marco/Desktop/T.P_Jogo/Git/GameProg-OO/src/main.cpp"
+}
+]

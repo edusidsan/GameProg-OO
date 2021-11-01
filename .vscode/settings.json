@@ -55,5 +55,6 @@
         "typeinfo": "cpp"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/src",
+    "C_Cpp.errorSquiggles": "Enabled",
 
 }
