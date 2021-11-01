@@ -1,0 +1,35 @@
+#ifndef _CHARACTER_HPP_
+#define _CHARACTER_HPP_
+
+#include "../PhysicalEntity.hpp"
+
+namespace OgrO // Namespace com o nome do jogo.
+{
+    namespace PhysicalEntities // Namespace do Pacote Entities.
+    {
+        namespace Characters // Namespace do Pacote Personagens.
+        {
+            class Character : public PhysicalEntity
+            {
+            // protected:
+            //     // Ponteiro que indica o caminho da textura.
+            //     const char *texturePath;
+            //     Utilities::myVector2F position, // Atributo de posição do personagem
+            //         speed;                      // Atributo de velocidade do personagem
+
+            public:
+                // Construtora da classe Personagem. Atributos default configurados.
+                Character(Utilities::myVector2F pos = {0.0f, 0.0f}, Utilities::myVector2F = {0.0f, 0.0f}, const char *tPath = nullptr);
+                // Destrutora da classe Personagem.
+                virtual ~Character();
+                // Método carrega a textura do personagem na window.
+                virtual void initialize(Managers::GraphicManager &gm, Managers::EventsManager &em);
+                // Método atualizar de Personagem. Tem como parâmetro uma variável float que representa o tempo.
+                virtual void update(float t);
+                // Método desenhar de Personagem. Tem como parâmetro o endereço do gerenciador gráfico que irá desenhar o persoangem na window.
+                virtual void draw(Managers::GraphicManager &gm);
+            };
+        }
+    }
+}
+#endif
