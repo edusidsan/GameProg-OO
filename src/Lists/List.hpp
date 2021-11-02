@@ -1,6 +1,5 @@
 #ifndef _LIST_HPP_
 #define _LIST_HPP_
-
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Lists // Namespace do Pacote Lists.
@@ -17,8 +16,6 @@ namespace OgrO // Namespace com o nome do jogo.
             private:
                 // Ponteiro apontando para o endereço das informações do elemento.
                 TE pInfo;
-                // Ponteiro apontando para o endereço do próximo elemento da lista.
-                //Element<TE> *pPrev;
                 // Ponteiro apontando para o endereço do elemento anterior da lista.
                 Element<TE> *pNext;
 
@@ -32,10 +29,6 @@ namespace OgrO // Namespace com o nome do jogo.
                 TE getInfo();
                 // Atribui ao atributo privado pInfo o endereço do parâmetro info.
                 void setInfo(TE info);
-                // Retorna ponteiro com o endereço do elemento anterior a partir do atributo privado pPrev.
-                // Element<TE> *getPrev();
-                // Atribui ao atributo privado pPrev o endereço do parâmetro prev.
-                // void setPrev(Element *prev);
                 // Retorna ponteiro com o endereço do próximo elemento a partir do atributo privado pNext.
                 Element<TE> *getNext();
                 // Atribui ao atributo privado pNext o endereço do parâmetro next.
@@ -96,20 +89,6 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             pInfo = info;
         }
-        // Retorna ponteiro com o endereço do elemento anterior a partir do atributo privado pPrev.
-        // template <typename TL>
-        // template <typename TE>
-        // List<TL>::Element<TE> *List<TL>::Element<TE>::getPrev()
-        // {
-        //     return pPrev;
-        // }
-        // Atribui ao atributo privado pPrev o endereço do parâmetro prev.
-        // template <typename TL>
-        // template <typename TE>
-        // void List<TL>::Element<TE>::setPrev(Element<TE> *prev)
-        // {
-        //     pPrev = prev;
-        // }
         // Retorna ponteiro com o endereço do próximo elemento a partir do atributo privado pNext.
         template <typename TL>
         template <typename TE>
@@ -131,7 +110,7 @@ namespace OgrO // Namespace com o nome do jogo.
         template <typename TL>
         List<TL>::List() : pFirst{nullptr},
                            pLast{nullptr}
-        //    pCurrent{nullptr}
+        // pCurrent{nullptr}
         {
         }
         // Destrutora da classe List<T>.
@@ -161,7 +140,6 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Caso a lista não esteja vazia.
                 else
                 {
-
                     // Atribui o endereço do novo elemento ao ponteiro PRÓXIMO no último elemento da lista.
                     pLast->setNext(newElement);
                     // O ponteiro ANTERIOR do novo elemento aponta para o, até então, último elemento da lista.
@@ -193,9 +171,7 @@ namespace OgrO // Namespace com o nome do jogo.
             pFirst = nullptr;
             pLast = nullptr;
             pCurrent = nullptr;
-
         }
-
         // Método retorna o primeiro elemento da lista.
         template <typename TL>
         TL List<TL>::backStart()
@@ -215,6 +191,5 @@ namespace OgrO // Namespace com o nome do jogo.
             return (pCurrent) ? pCurrent->getInfo() : nullptr;
         }
     }
-
 }
 #endif

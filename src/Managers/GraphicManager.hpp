@@ -39,6 +39,8 @@ namespace OgrO // Namespace com o nome do jogo.
             void centerCamera(const Utilities::myVector2F center);
             // Método utilizado para retornar window do tipo *RenderWindow e assim, ser possível utilizar seus métodos.
             sf::RenderWindow *getWindow() const;
+            // Método retorna as dimensões da imagem.
+            const Utilities::myVector2F getDimensionsOfAsset(const std::string &id) const;
         };
     }
 }

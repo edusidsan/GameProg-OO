@@ -15,7 +15,7 @@ namespace OgrO // Namespace com o nome do jogo.
             {
             }
             // Método carrega a textura do personagem na window.
-            void Character::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em)
+            void Character::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
             {
                 gm.loadAsset(texturePath);
             }
@@ -31,10 +31,10 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Desenha a forma do personagem atual na window.
                 gm.draw(texturePath, position);
             }
-            // Método de tratamento de evento ocorrido.
-            void handleEvent(const sf::Event &ev)
-            {
-            }
+            // // Método de tratamento de evento ocorrido.
+            // void Character::handleEvent(const sf::Event &ev)
+            // {
+            // }
         }
     }
 }

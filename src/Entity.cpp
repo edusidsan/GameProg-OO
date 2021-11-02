@@ -10,12 +10,12 @@ namespace OgrO // Namespace com o nome do jogo.
     Entity::~Entity()
     {
     }
-    // Método desenhar de Entity. Tem como parâmetro o endereço do gerenciador gráfico que irá desenhar o persoangem na window.
-    void Entity::draw(Managers::GraphicManager &gm)
+    // Método desenhar de Entity.
+    void Entity::draw()
     {
     }
     //
-    void Entity::run()
-    {
-    }
+    // void Entity::run()
+    // {
+    // }
 }

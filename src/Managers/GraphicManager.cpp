@@ -56,7 +56,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 //  Classe referente a biblioteca SFML que é uma representação "desenhavel" de uma textura.
                 sf::Sprite sprite(*textureAux);
                 // sprite.setTextureRect(sf::IntRect(9,16,36,43));
-                sprite.setTextureRect(sf::IntRect(0,0,40,56));
+                sprite.setTextureRect(sf::IntRect(0, 0, 40, 56));
 
                 // sprite.setTexture(*textureAux);
                 // Atribui ao sprite a posição na qual será desenhada na window.
@@ -98,11 +98,28 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             // Centraliza o View (camera)
             camera.setCenter(sf::Vector2f(center.coordX, center.coordY));
+            window->setView(camera);
         }
         // Método utilizado para retornar window do tipo *RenderWindow e assim, ser possível utilizar seus métodos.
         sf::RenderWindow *GraphicManager::getWindow() const
         {
             return window;
+        }
+        // Método retorna as dimensões da imagem.
+        const Utilities::myVector2F GraphicManager::getDimensionsOfAsset(const std::string &path) const
+        {
+            // Caso não encontre alguma textura que tenha a chave unitária de map igual o parâmetro passado por path, encerra.
+            if (textures.count(path) == 0)
+            {
+                std::cout << "Nao foi possivel encontrar a imagem em: " << path << " !" << std::endl;
+                std::cout << "Programa finalizado!" << std::endl;
+                // Indica término anormal do programa, por não ter encontrado o caminho da imagem.
+                exit(1);
+            }
+            // Variavel dimension unsigned recebe dimensões da textura encontrada.
+            sf::Vector2u dimension = (textures.at(path))->getSize();
+            // Retorna dimensões.
+            return Utilities::myVector2F(dimension.x, dimension.y);
         }
     }
 }

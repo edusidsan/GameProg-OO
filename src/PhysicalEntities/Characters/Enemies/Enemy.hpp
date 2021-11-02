@@ -18,6 +18,10 @@ namespace OgrO // Namespace com o nome do jogo.
                     Enemy(Utilities::myVector2F pos, Utilities::myVector2F s);
                     // Destrutora da classe Enemy.
                     ~Enemy();
+                    // Método carrega a textura do enemy na window.
+                    void initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm);
+                     // Método verifica colisão entre dois objetos da classe Entidade Física.
+                    void collided(int IDOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther);
                 };
             }
         }

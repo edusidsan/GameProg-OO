@@ -20,20 +20,18 @@ namespace OgrO // Namespace com o nome do jogo.
             list.insert(info);
         }
 
-        // Método carrega as texturas e inicializa o gerenciador de eventos das entidades físicas na window.
-        void PhysicalEntityList::initializePhysicalEntities(Managers::GraphicManager &gm, Managers::EventsManager &em)
+        // Método carrega as texturas e inicializa o gerenciador de eventos e de colisão das entidades físicas na window.
+        void PhysicalEntityList::initializePhysicalEntities(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
         {
             // Ponteiro auxiliar que recebe o primeiro elemento da lista.
             PhysicalEntities::PhysicalEntity *p = list.backStart();
             // Enquanto p ainda encontrar elementos na lista.
-            //aux = firts
             while (p)
             {
                 // Inicializa o elemento.
-                p->initialize(gm, em);
+                p->initialize(gm, em, cm);
                 // Recebe o endereço do próximo elemento da lista.
                 p = list.goNext();
-                
             }
         }
 

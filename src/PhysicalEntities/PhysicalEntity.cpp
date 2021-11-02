@@ -16,7 +16,7 @@ namespace OgrO // Namespace com o nome do jogo.
         {
         }
         // Método carrega a textura do PhysicalEntity na window.
-        void PhysicalEntity::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em)
+        void PhysicalEntity::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
         {
             gm.loadAsset(texturePath);
         }
@@ -31,6 +31,26 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             // Desenha a forma da entidade fisica na window.
             gm.draw(texturePath, position);
+        }
+        // Método retorna a posição da entidade física.
+        const Utilities::myVector2F PhysicalEntity::getPosition() const
+        {
+            return position;
+        }
+        // Método retorna a dimensão da entidade fisica.
+        const Utilities::myVector2F PhysicalEntity::getDimension() const
+        {
+            return dimension;
+        }
+        // Método retorna ID atribuído ao ente.
+        // Caso ID > 100, ente é entidade física.
+        const int PhysicalEntity::getID() const
+        {
+            return id;
+        }
+        // Método verifica colisão entre dois objetos da classe Entidade Física.
+        void PhysicalEntity::collided(int Id, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
+        {
         }
     }
 }

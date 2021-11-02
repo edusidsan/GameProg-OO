@@ -10,14 +10,43 @@ namespace OgrO // Namespace com o nome do jogo.
             {
 
                 // Construtora da classe Enemy.
-                Enemy::Enemy(Utilities::myVector2F pos, Utilities::myVector2F s) : Character(pos, s, "../assets/Witch-all.png")
+                Enemy::Enemy(Utilities::myVector2F pos, Utilities::myVector2F s) : Character(pos, s, "../assets/Witch.png")
                 {
+                    // Atribui um ID ao Enemy.
+                    id = 102;
                 }
                 // Destrutora da classe Enemy.
                 Enemy::~Enemy()
                 {
                 }
-
+                // Método carrega a textura do Enemy na window.
+                void Enemy::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
+                {
+                    // Carrega textura no player.
+                    gm.loadAsset(texturePath);
+                    // Retorna dimensão da imagem.
+                    dimension = gm.getDimensionsOfAsset(texturePath);
+                    // Adiciona enemy na lista de entidades físicas colidiveis.
+                    cm.addToLCollidablesPhysicalEntities((this));
+                }
+                // Método verifica colisão entre dois objetos da classe Entidade Física.
+                void Enemy::collided(int IDOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
+                {
+                    // Caso colida com Player1.
+                    if (IDOther == 101)
+                    {
+                        std::cout << "OBJETO ENEMY >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
+                    }
+                    // Caso colida com Enemy.
+                    else if (IDOther == 102)
+                    {
+                        Utilities::myVector2F distance = position - positionOther;
+                        position += distance * (1 / 2);
+                        std::cout << "OBJETO ENEMY >>> COLISAO COM OBJETO ENEMY." << std::endl;
+                        speed.coordX *= -1;
+                        speed.coordY *= -1;
+                    }
+                }
             }
         }
     }
