@@ -11,19 +11,13 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             class Character : public PhysicalEntity
             {
-            // protected:
-            //     // Ponteiro que indica o caminho da textura.
-            //     const char *texturePath;
-            //     Utilities::myVector2F position, // Atributo de posição do personagem
-            //         speed;                      // Atributo de velocidade do personagem
-
             public:
                 // Construtora da classe Personagem. Atributos default configurados.
-                Character(Utilities::myVector2F pos = {0.0f, 0.0f}, Utilities::myVector2F = {0.0f, 0.0f}, const char *tPath = nullptr);
+                Character(Utilities::myVector2F pos = {0.0f, 0.0f}, Utilities::myVector2F s = {0.0f, 0.0f}, const char *tPath = nullptr);
                 // Destrutora da classe Personagem.
                 virtual ~Character();
                 // Método carrega a textura do personagem na window.
-                virtual void initialize(Managers::GraphicManager &gm, Managers::EventsManager &em);
+                virtual void initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm);
                 // Método atualizar de Personagem. Tem como parâmetro uma variável float que representa o tempo.
                 virtual void update(float t);
                 // Método desenhar de Personagem. Tem como parâmetro o endereço do gerenciador gráfico que irá desenhar o persoangem na window.

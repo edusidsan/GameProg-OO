@@ -10,27 +10,33 @@ add_library(main)
 # Create a sources variable with a link to all cpp files to compile
 set(
     SOURCES
-    Lists/PhysicalEntityList.cpp
+    Managers/CollisionManager.cpp
     Managers/EventsManager.cpp
     Managers/GraphicManager.cpp
-    PhysicalEntities/PhysicalEntity.cpp
-    PhysicalEntities/Characters/Character.cpp
+    Lists/PhysicalEntityList.cpp
     PhysicalEntities/Characters/Enemies/Enemy.cpp
     PhysicalEntities/Characters/Players/Shrek.cpp
+    PhysicalEntities/Characters/Character.cpp
+    PhysicalEntities/Obstacles/Obstacle.cpp
+    PhysicalEntities/PhysicalEntity.cpp
     OtherGrandRandomOgre.cpp
+    Entity.cpp
 )
 set(
     HEADERS
     # Lists/List.hpp
-    Lists/PhysicalEntityList.hpp
+    Managers/CollisionManager.hpp
     Managers/EventsManager.hpp
     Managers/GraphicManager.hpp
-    PhysicalEntities/PhysicalEntity.hpp
-    PhysicalEntities/Characters/Character.hpp
+    Lists/PhysicalEntityList.hpp
     PhysicalEntities/Characters/Enemies/Enemy.hpp
     PhysicalEntities/Characters/Players/Shrek.hpp
-    Utilities/Vector2D.hpp
+    PhysicalEntities/Characters/Character.hpp
+    PhysicalEntities/Obstacles/Obstacle.hpp
+    PhysicalEntities/PhysicalEntity.hpp
+    # Utilities/Vector2D.hpp
     OtherGrandRandomOgre.hpp
+    Entity.hpp
 )
 target_sources(
     main 

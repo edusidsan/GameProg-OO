@@ -4,6 +4,7 @@
 #include "PhysicalEntities/PhysicalEntity.hpp"
 #include "Lists/PhysicalEntityList.hpp"
 #include "Managers/GraphicManager.hpp"
+#include "Managers/CollisionManager.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -16,6 +17,8 @@ namespace OgrO // Namespace com o nome do jogo.
         Managers::GraphicManager graphicManager;
         // Atributo do gerenciador de eventos criado para o jogo.
         Managers::EventsManager eventsManager;
+        // Atributo do gerenciador de colisões criado para o jogo.
+        Managers::CollisionManager collisionManager;
         // Atributo que indica a chave única do evento de fechar a window do jogo.
         unsigned int idClosedWindow;
         // Atributo de um relógio que será útil para verificação do tempo.

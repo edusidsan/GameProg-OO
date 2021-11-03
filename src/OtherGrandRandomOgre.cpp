@@ -13,13 +13,13 @@ namespace OgrO // Namespace com o nome do jogo.
                                                                                                  { closedWindow(event); })}
     {
         // Criação de instâncias de novas entidades físicas.
-        players.insert(new PhysicalEntities::Characters::Players::Shrek(Utilities::myVector2F(400.0f, 300.0f)));
-        players.insert(new PhysicalEntities::Characters::Enemies::Enemy(Utilities::myVector2F(400.0f, 300.0f), Utilities::myVector2F(10, 0)));
-        players.insert(new PhysicalEntities::Characters::Enemies::Enemy(Utilities::myVector2F(200.0f, 200.0f), Utilities::myVector2F(0, 5)));
-        players.insert(new PhysicalEntities::Characters::Enemies::Enemy(Utilities::myVector2F(300.0f, 50.0f), Utilities::myVector2F(0, 5)));
-        players.insert(new PhysicalEntities::Characters::Enemies::Enemy(Utilities::myVector2F(100.0f, 0.0f), Utilities::myVector2F(0, 5)));
+        players.insert(new PhysicalEntities::Characters::Players::Shrek(Utilities::myVector2F(0.0f, 0.0f)));
+        players.insert(new PhysicalEntities::Characters::Enemies::Enemy(Utilities::myVector2F(-40.0f, -50.0f), Utilities::myVector2F(0, 5)));
+        players.insert(new PhysicalEntities::Characters::Enemies::Enemy(Utilities::myVector2F(-40.0f, 50.0f), Utilities::myVector2F(0, -5)));
+        players.insert(new PhysicalEntities::Characters::Enemies::Enemy(Utilities::myVector2F(40.0f, 50.0f), Utilities::myVector2F(0, -5)));
+        players.insert(new PhysicalEntities::Characters::Enemies::Enemy(Utilities::myVector2F(40.0f, -50.0f), Utilities::myVector2F(0, 5)));
         // Carrega as imagens nas entidades físicas e inicializa os gerenciadores de eventos.
-        players.initializePhysicalEntities(graphicManager, eventsManager);
+        players.initializePhysicalEntities(graphicManager, eventsManager, collisionManager);
         // Atribui ao gerenciador de eventos a window que está sendo utilizada pelo gerenciador gráfico.
         eventsManager.setWindow(graphicManager.getWindow());
         // Executa o jogo.
@@ -29,7 +29,7 @@ namespace OgrO // Namespace com o nome do jogo.
     OtherGrandRandomOgre::~OtherGrandRandomOgre()
     {
         // Deleta dinamicamente os objetos das entidades físicas.
-        // players.destroyCharacters();
+        players.destroyPhysicalEntities();
     }
     // Método executar de OtherGrandRandomOgre
     int OtherGrandRandomOgre::run()
@@ -48,6 +48,8 @@ namespace OgrO // Namespace com o nome do jogo.
             graphicManager.clear();
             // Atualiza a lista das entidades físicas, passando como parametro o tempo da aplicação em segundos.
             players.updatePhysicalEntities(t.asSeconds());
+            // Gerenciador de colissões verifica se houve colisão entre entidades físicas.
+            collisionManager.checkCollisions();
             // Desenha as entidades físicas na window.
             players.drawPhysicalEntities(graphicManager);
             // Mostra a window para o usuário.
