@@ -98,6 +98,7 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             // Centraliza o View (camera)
             camera.setCenter(sf::Vector2f(center.coordX, center.coordY));
+            // Atribui essa camera ao view da window.
             window->setView(camera);
         }
         // Método utilizado para retornar window do tipo *RenderWindow e assim, ser possível utilizar seus métodos.

@@ -31,10 +31,6 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Desenha a forma do personagem atual na window.
                 gm.draw(texturePath, position);
             }
-            // // Método de tratamento de evento ocorrido.
-            // void Character::handleEvent(const sf::Event &ev)
-            // {
-            // }
         }
     }
 }

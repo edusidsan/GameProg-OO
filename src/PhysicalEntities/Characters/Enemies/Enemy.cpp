@@ -19,7 +19,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 Enemy::~Enemy()
                 {
                 }
-                // Método carrega a textura do Enemy na window.
+                // Método carrega a textura do enemy na window e inicializa gerenciadores do mesmo.
                 void Enemy::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
                 {
                     // Carrega textura no player.
@@ -40,10 +40,14 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Caso colida com Enemy.
                     else if (IDOther == 102)
                     {
+                        // Cálculo da distância entre os enemy no momento da colisão.
                         Utilities::myVector2F distance = position - positionOther;
+                        // Medida para não manter um enemy preso dentro do outro.
                         position += distance * (1 / 2);
                         std::cout << "OBJETO ENEMY >>> COLISAO COM OBJETO ENEMY." << std::endl;
+                        // Muda o sentido da velocidade em x.
                         speed.coordX *= -1;
+                        // Muda o sentido da velocidade em y.
                         speed.coordY *= -1;
                     }
                 }

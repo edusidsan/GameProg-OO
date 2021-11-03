@@ -3,7 +3,6 @@ namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Managers // Namespace do Pacote Managers.
     {
-
         // Inicialização do static nextKey.
         unsigned int EventsManager::nextKey{0};
 
