@@ -2,8 +2,8 @@
 #define _VECTOR2D_HPP_
 
 #include <cmath>
-
-namespace OgrO // Namespace com o nome do jogo.
+#include <ostream> // Biblioteca que gerencia saídas fluxos de saída.
+namespace OgrO     // Namespace com o nome do jogo.
 {
     namespace Utilities // Namespace do Pacote Utilidades.
     {
@@ -19,15 +19,15 @@ namespace OgrO // Namespace com o nome do jogo.
             // Destrutora da classe Template Vector2D.
             ~Vector2D();
             // Sobrecarga do operador (+) entre objetos da classe Vector2D.
-            Vector2D operator+(Vector2D v);
+            Vector2D operator+(Vector2D v) const;
             // Sobrecarga do operador (-) entre objetos da classe Vector2D.
-            Vector2D operator-(Vector2D v);
+            Vector2D operator-(Vector2D v) const;
             // Sobrecarga do operador (*) entre objetos da classe Vector2D e um inteiro.
-            Vector2D operator*(int i);
+            Vector2D operator*(int i) const;
             // Sobrecarga do operador (*) entre objetos da classe Vector2D e um float.
-            Vector2D operator*(float f);
+            Vector2D operator*(float f) const;
             // Sobrecarga do operador (*) entre objetos da classe Vector2D e um double.
-            Vector2D operator*(double d);
+            Vector2D operator*(double d) const;
 
             // Sobrecarga do operador (+=) entre objetos da classe Vector2D.
             void operator+=(Vector2D v);
@@ -41,19 +41,24 @@ namespace OgrO // Namespace com o nome do jogo.
             void operator*=(double d);
 
             // Sobrecarga do operador (*) entre objetos da classe Vector2D. Retorna o produto interno dos Vector2D.
-            T operator*(Vector2D v);
+            float operator*(Vector2D v) const;
             // Retorna o módulo do Vector2D.
             T vModule();
             // Retorna o vetor unitário do Vector2D.
             Vector2D unitVector();
             // Retorna a projeção ortogonal desse vetor na direção do parâmetro v do tipo Vector2D.
-            Vector2D projection(Vector2D v);
+            Vector2D projection(Vector2D v) const;
         };
         // Define um novo nome para o Vector2D de float.
         typedef Vector2D<float> myVector2F;
         // Define um novo nome para o Vector2D de unsigned.
         typedef Vector2D<unsigned> myVector2U;
 
+        // Sobrecarga do operador do fluxo de saída (<<).
+        template <typename T>
+        std::ostream &operator<<(std::ostream &out, const Vector2D<T> &vector);
+
+        //*************************************************************************************************************************
         /*Implementação dos métodos do template*/
         // Construtora da classe Template Vector2D.
         template <typename T>
@@ -70,35 +75,35 @@ namespace OgrO // Namespace com o nome do jogo.
 
         // Sobrecarga do operador (+) entre objetos da classe Vector2D.
         template <typename T>
-        Vector2D<T> Vector2D<T>::operator+(Vector2D<T> v)
+        Vector2D<T> Vector2D<T>::operator+(Vector2D<T> v) const
         {
             return Vector2D<T>(coordX + (v.coordX), coordY + (v.coordY));
         }
 
         // Sobrecarga do operador (-) entre objetos da classe Vector2D.
         template <typename T>
-        Vector2D<T> Vector2D<T>::operator-(Vector2D<T> v)
+        Vector2D<T> Vector2D<T>::operator-(Vector2D<T> v) const
         {
             return Vector2D<T>(coordX - (v.coordX), coordY - (v.coordY));
         }
 
         // Sobrecarga do operador (*) entre objetos da classe Vector2D e um inteiro.
         template <typename T>
-        Vector2D<T> Vector2D<T>::operator*(int i)
+        Vector2D<T> Vector2D<T>::operator*(int i) const
         {
             return Vector2D<T>(coordX * i, coordY * i);
         }
 
         // Sobrecarga do operador (*) entre objetos da classe Vector2D e um float.
         template <typename T>
-        Vector2D<T> Vector2D<T>::operator*(float f)
+        Vector2D<T> Vector2D<T>::operator*(float f) const
         {
             return Vector2D<T>(coordX * f, coordY * f);
         }
 
         // Sobrecarga do operador (*) entre objetos da classe Vector2D e um double.
         template <typename T>
-        Vector2D<T> Vector2D<T>::operator*(double d)
+        Vector2D<T> Vector2D<T>::operator*(double d) const
         {
             return Vector2D<T>(coordX * d, coordY * d);
         }
@@ -145,7 +150,7 @@ namespace OgrO // Namespace com o nome do jogo.
 
         // Sobrecarga do operador (*) entre objetos da classe Vector2D. Retorna o produto interno dos Vector2D.
         template <typename T>
-        T Vector2D<T>::operator*(Vector2D v)
+        float Vector2D<T>::operator*(Vector2D v) const
         {
             return (coordX * v.coordX + coordY * v.coordY);
         }
@@ -156,7 +161,6 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             return sqrt(pow(coordX, 2) + pow(coordY, 2));
         }
-
         // Retorna o vetor unitário do Vector2D.
         template <typename T>
         Vector2D<T> Vector2D<T>::unitVector()
@@ -167,10 +171,19 @@ namespace OgrO // Namespace com o nome do jogo.
 
         // Retorna a projeção ortogonal desse vetor na direção do parâmetro v do tipo Vector2D<T>.
         template <typename T>
-        Vector2D<T> Vector2D<T>::projection(Vector2D<T> v)
+        Vector2D<T> Vector2D<T>::projection(Vector2D<T> v) const
         {
             // ProjeçãoOrtogonal = prodExt(v,prodInt(u,v)/(||v||²))
             return v * (this->operator*(v) / pow(v.vModule(), 2));
+        }
+
+        // Sobrecarga do operador do fluxo de saída (<<).
+        template <typename T>
+        std::ostream &operator<<(std::ostream &out, const Vector2D<T> &vector)
+        {
+            // Retorna (1.0 , 5.0)
+            out << '(' << vector.coordX << " , " << vector.coordY << ')';
+            return out;
         }
     }
 }

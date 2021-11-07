@@ -54,6 +54,8 @@ namespace OgrO // Namespace com o nome do jogo.
             TL backStart();
             // Método desloca o ponteiro para o próximo elemento da lista e retorna o mesmo.
             TL goNext();
+            // Método remove o primeiro elemento da lista.
+            void removeFirst(TL element);
         };
 
         //----------------------------------------------------------------
@@ -189,6 +191,32 @@ namespace OgrO // Namespace com o nome do jogo.
             pCurrent = pCurrent->getNext();
             // Caso a lista exista, retorna o próximo elemento da lista.
             return (pCurrent) ? pCurrent->getInfo() : nullptr;
+        }
+        // Método remove o primeiro elemento da lista.
+        template <typename TL>
+        void List<TL>::removeFirst(TL element)
+        {
+            // Retorna para o início da lista.
+            backStart();
+            // Laço de iteração que percorre a lista toda.
+            for (backStart(); pCurrent != nullptr; goNext())
+            {
+                // Se o elemento apontado pelo pCurrent for igual ao passado por parâmetro.
+                if (pCurrent->getInfo() == element)
+                {
+                    // Se o elemento apontado pelo pCurrent for igual ao primeiro elemento.
+                    if (pCurrent == pFirst)
+                    {
+                        // Desloca o primeiro elemento para o próximo.
+                        pFirst = pCurrent->getNext();
+                    }
+                    // Desaloca dinamicamente elemento.
+                    delete pCurrent;
+                    // Retorna para o início da lista.
+                    backStart();
+                    return;
+                }
+            }
         }
     }
 }

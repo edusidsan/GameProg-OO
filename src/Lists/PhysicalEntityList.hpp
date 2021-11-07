@@ -20,6 +20,8 @@ namespace OgrO // Namespace com o nome do jogo.
             ~PhysicalEntityList();
             // Método insere entidades físicas na lista de entidades físicas.
             void insert(PhysicalEntities::PhysicalEntity *info);
+            // Método remove o primeiro elemento da lista de entidades físicas..
+            void removeFirst(PhysicalEntities::PhysicalEntity *p);
             // Método retorna o primeiro elemento da lista de entidades físicas.
             PhysicalEntities::PhysicalEntity *backStart();
             // Método desloca o ponteiro para o próximo elemento da lista e retorna o mesmo.

@@ -31,6 +31,9 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Desenha a forma do personagem atual na window.
                 gm.draw(texturePath, position);
             }
+            // void Character::run()
+            // {
+            // }
         }
     }
 }

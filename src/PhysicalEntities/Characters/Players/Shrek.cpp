@@ -9,8 +9,12 @@ namespace OgrO // Namespace com o nome do jogo.
             {
 
                 // Construtora da classe Shrek.
-                Shrek::Shrek(Utilities::myVector2F pos) : Character(pos, Utilities::myVector2F(), "../assets/Shrek.png")
+                Shrek::Shrek(Utilities::myVector2F pos) : Character(pos, Utilities::myVector2F(), "../assets/Shrek.png"),
+                                                          gravity{700.f},
+                                                          direction{0}
+
                 {
+
                     // Atribui um ID ao player.
                     id = 101;
                 }
@@ -38,12 +42,14 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                     // Relação de posição da forma no espaço-tempo. Equação de Movimento Uniforme da Cinemática.
                     position += speed * t;
+                    speed.coordY += 98.1f * t;
                 }
                 // Método desenhar do Player.
                 void Shrek::draw(Managers::GraphicManager &gm)
                 {
                     // Desenha a forma do player atual na window.
-                    gm.draw(texturePath, position);
+                    // gm.draw(texturePath, position, {1, 6}, {0, 5});
+                    gm.draw(texturePath, position, this->direction);
                     // Atribui a posição do player na posição da view.
                     gm.centerCamera(position);
                 }
@@ -55,16 +61,19 @@ namespace OgrO // Namespace com o nome do jogo.
                         switch (ev.key.code)
                         {
                         case sf::Keyboard::Key::Right:
-                            speed.coordX += 10;
+                            speed.coordX += 75;
+                            this->direction = 0;
                             break;
                         case sf::Keyboard::Key::Left:
-                            speed.coordX -= 10;
+                            speed.coordX -= 75;
+                            this->direction = 1;
                             break;
                         case sf::Keyboard::Key::Up:
-                            speed.coordY -= 10;
+                            // speed.coordY -= 75;
+                            speed.coordY = -sqrt(2 * 9.81f * gravity);
                             break;
                         case sf::Keyboard::Key::Down:
-                            speed.coordY += 10;
+                            // speed.coordY += 75;
                             break;
 
                         default:
@@ -76,16 +85,18 @@ namespace OgrO // Namespace com o nome do jogo.
                         switch (ev.key.code)
                         {
                         case sf::Keyboard::Key::Right:
-                            speed.coordX -= 10;
+                            // speed.coordX -= 75;
+                            speed.coordX = 0;
                             break;
                         case sf::Keyboard::Key::Left:
-                            speed.coordX += 10;
+                            // speed.coordX += 75;
+                            speed.coordX = 0;
                             break;
                         case sf::Keyboard::Key::Up:
-                            speed.coordY += 10;
+                            // speed.coordY = 0.5f;
                             break;
                         case sf::Keyboard::Key::Down:
-                            speed.coordY -= 10;
+                            // speed.coordY -= 75;
                             break;
 
                         default:
@@ -94,9 +105,44 @@ namespace OgrO // Namespace com o nome do jogo.
                     }
                 }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
-                void Shrek::collided(int Id, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
+                void Shrek::collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
                 {
-                    std::cout << "OBJETO PLAYER1::SHREK >>> COLISAO COM INIMIGO." << std::endl;
+                    // std::string terminalPrint;
+
+                    switch (idOther)
+                    {
+                    case 22:
+                    case 23:
+                    case 24:
+                        // terminalPrint = "Bate no chão!";
+                        speed.coordY = 0;
+                        break;
+                    // case 2:
+                    //     terminalPrint = "fui ludibriado";
+                    //     break;
+                    case 3:
+                        // terminalPrint = "escada";
+                        speed.coordX = 0;
+                        speed.coordY = 0;
+                        break;
+                    // case 4:
+                    //     terminalPrint = "mano o que ta acontecendo";
+                    //     break;
+                    // case 5:
+                    //     terminalPrint = "pontudo";
+                    //     break;
+                    // case 6:
+                    //     terminalPrint = "estou livre";
+                    //     break;
+                    // case 7:
+                    //     terminalPrint = "bonk";
+                    //     break;
+                    default:
+                        break;
+                        // terminalPrint = "eita";
+                    }
+
+                    // std::cout << terminalPrint << " idOther: " << idOther << std::endl;
                 }
 
             }

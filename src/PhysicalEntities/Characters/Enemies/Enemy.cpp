@@ -35,7 +35,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Caso colida com Player1.
                     if (IDOther == 101)
                     {
-                        std::cout << "OBJETO ENEMY >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
+                        // std::cout << "OBJETO ENEMY >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
                     }
                     // Caso colida com Enemy.
                     else if (IDOther == 102)
@@ -44,7 +44,7 @@ namespace OgrO // Namespace com o nome do jogo.
                         Utilities::myVector2F distance = position - positionOther;
                         // Medida para não manter um enemy preso dentro do outro.
                         position += distance * (1 / 2);
-                        std::cout << "OBJETO ENEMY >>> COLISAO COM OBJETO ENEMY." << std::endl;
+                        // std::cout << "OBJETO ENEMY >>> COLISAO COM OBJETO ENEMY." << std::endl;
                         // Muda o sentido da velocidade em x.
                         speed.coordX *= -1;
                         // Muda o sentido da velocidade em y.

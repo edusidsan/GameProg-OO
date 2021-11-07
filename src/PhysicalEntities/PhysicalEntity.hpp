@@ -40,6 +40,8 @@ namespace OgrO // Namespace com o nome do jogo.
             virtual const int getID() const;
             // Método verifica colisão entre dois objetos da classe Entidade Física.
             virtual void collided(int Id, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther) = 0;
+            // Método run virtual puro -> TORNA CLASSE ABSTRATA.
+            // virtual void run() = 0;
         };
     }
 }

@@ -19,7 +19,11 @@ namespace OgrO // Namespace com o nome do jogo.
             // Insere Entidade física na lista.
             list.insert(info);
         }
-
+        // Método remove o primeiro elemento da lista de entidades físicas.
+        void PhysicalEntityList::removeFirst(PhysicalEntities::PhysicalEntity *p)
+        {
+            list.removeFirst(p);
+        }
         // Método carrega as texturas e inicializa o gerenciador de eventos e de colisão das entidades físicas na window.
         void PhysicalEntityList::initializePhysicalEntities(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
         {

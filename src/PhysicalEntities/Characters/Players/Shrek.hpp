@@ -16,8 +16,11 @@ namespace OgrO // Namespace com o nome do jogo.
                 private:
                     // Atributo que indica o código do evento ocorrido.
                     unsigned int keyEvent;
+                    float gravity;
 
+                    int direction;
                 public:
+
                     // Construtora da classe Enemy.
                     Shrek(Utilities::myVector2F pos = {0.0f, 0.0f});
                     // Destrutora da classe Enemy.
@@ -31,7 +34,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Método de tratamento de evento ocorrido.
                     void handleEvent(const sf::Event &ev);
                     // Método verifica colisão entre dois objetos da classe Entidade Física.
-                    void collided(int Id, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther);
+                    void collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther);
                 };
             }
         }

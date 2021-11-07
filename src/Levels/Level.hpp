@@ -7,10 +7,13 @@ namespace OgrO // Namespace com o nome do jogo.
         class Level
         {
         public:
+        
             // Construtora da classe Level.
             Level();
             // Destrutora da classe Level.
-            ~Level();
+            virtual ~Level();
+            // Método run virtual puro -> TORNA CLASSE ABSTRATA.
+            virtual void run() = 0;
         };
     }
 }
