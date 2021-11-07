@@ -120,7 +120,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // case 2:
                     //     terminalPrint = "fui ludibriado";
                     //     break;
-                    case 3:
+                    case 1:
                         // terminalPrint = "escada";
                         speed.coordX = 0;
                         speed.coordY = 0;
