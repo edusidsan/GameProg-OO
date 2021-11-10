@@ -17,8 +17,10 @@ namespace OgrO // Namespace com o nome do jogo.
         }
         // Método carrega a textura do PhysicalEntity na window.
         void PhysicalEntity::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
+        // void PhysicalEntity::initialize( Managers::EventsManager &em, Managers::CollisionManager &cm)
         {
             gm.loadAsset(texturePath);
+            // pGraphicManager->loadAsset(texturePath);
         }
         // Método atualizar de PhysicalEntity. Tem como parâmetro uma variável float que representa o tempo.
         void PhysicalEntity::update(float t)

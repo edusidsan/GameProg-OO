@@ -1,21 +1,22 @@
 #ifndef _MENU_HPP_
 #define _MENU_HPP_
 
-
+// #include "../Managers/GraphicManager.hpp"
+#include "../Entity.hpp"
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Menus // Namespace do Pacote Menus.
     {
-        class Menu
+        class Menu : public Entity
         {
         public:
         
-            // Construtora da classe Level.
+            // Construtora da classe Menu.
+            // Menu(Managers::GraphicManager &gm);
             Menu();
-            // Destrutora da classe Level.
+            // Menu(Managers::GraphicManager &gm);
+            // Destrutora da classe Menu.
             virtual ~Menu();
-            // Método run virtual puro -> TORNA CLASSE ABSTRATA.
-            virtual void run() = 0;
         };
     }
 }

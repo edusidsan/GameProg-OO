@@ -13,10 +13,11 @@ namespace OgrO // Namespace com o nome do jogo.
         private:
             // Atributo de List template com parâmetro de ponteiro de Entidades Físicas (que são representáveis).
             List<PhysicalEntities::PhysicalEntity *> list;
+
         public:
-            // Construtora da classe EntityList.
+            // Construtora da classe PhysicalEntityList.
             PhysicalEntityList();
-            // Destrutora da classe EntityList.
+            // Destrutora da classe PhysicalEntityList.
             ~PhysicalEntityList();
             // Método insere entidades físicas na lista de entidades físicas.
             void insert(PhysicalEntities::PhysicalEntity *info);
@@ -28,6 +29,7 @@ namespace OgrO // Namespace com o nome do jogo.
             PhysicalEntities::PhysicalEntity *goNext();
             // Método carrega as texturas e inicializa o gerenciador de eventos e de colisões das entidades físicas na window.
             void initializePhysicalEntities(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm);
+            // void initializePhysicalEntities(Managers::EventsManager &em, Managers::CollisionManager &cm);
             // Método atualiza cada elemento dentro da lista de entidades físicas, passando como parametro o tempo da aplicação em segundos.
             void updatePhysicalEntities(float t);
             // Método desenha na window cada elemento dentro da lista de entidades físicas.

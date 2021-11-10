@@ -1,15 +1,17 @@
 #include "GraphicManager.hpp"
-
+#include <cstring>
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Managers // Namespace do Pacote Managers.
     {
         // Construtora da classe GraphicManager.
         GraphicManager::GraphicManager() : window{new sf::RenderWindow(sf::VideoMode(800, 600), "OgrO")},
-                                           camera{sf::Vector2f(400, 300), sf::Vector2f(400, 300)}
+                                           camera{sf::Vector2f(400, 300), sf::Vector2f(400, 300)},
+                                           textures{}
         //    camera{sf::Vector2f(800, 600), sf::Vector2f(800, 600)}
 
         {
+            textures.clear();
             // Atribuindo view Camera para a window.
             window->setView(camera);
         }
@@ -169,29 +171,48 @@ namespace OgrO // Namespace com o nome do jogo.
         // Método carrega a textura de acordo com o caminho passado como parâmetro.
         // Caso textura não exista, o método já se encarrega de criar, se possível.
         bool GraphicManager::loadAsset(const std::string path)
+        // bool GraphicManager::loadAsset(const char *path)
         {
+            // textures.clear();
             // Caso encontre alguma textura que tenha a chave unitária de map igual o parâmetro passado por path, retorna true.
             if (textures.count(path) == 1)
             {
                 // Retorna true, dando a entender que a textura foi carregada.
                 return true;
             }
+
+            // std::map<const char *, sf::Texture *>::iterator it = textures.begin();
+            // // std::cout << it->first << " " << path << std::endl;
+            // std::cout << "textures.size(): " << textures.size() << std::endl;
+            // std::cout << "path:" << path << std::endl;
+            // while (it != textures.end())
+            // {
+            //     // if (!strcmp(it->first, path))
+            //     std::cout << "eNTREI " << std::endl;
+            //     if (!strcmp(it->first, path))
+            //         return true;
+            //     it++;
+            // }
+
             else
             {
-                // Cria dinamicamente uma textura nova e atribui endereço ao ponteiro textureAux.
-                sf::Texture *textureAux = new sf::Texture();
-                // Verifica se caminho de imagem passado por parâmetro é válido.
-                if (!textureAux->loadFromFile(path))
-                {
-                    std::cout << "Nao foi possivel encontrar a imagem em: " << path << " !" << std::endl;
-                    std::cout << "Programa finalizado!" << std::endl;
-                    // Indica término anormal do programa, por não ter encontrado o caminho da imagem.
-                    exit(1);
-                }
-                // Adiciona na estrutura de dados Map a chave com o caminho path e a textura com a nova texturaAux.
-                textures.emplace(path, textureAux);
-                // Retorna true, dando a entender que a textura foi carregada.
-                return true;
+            // Cria dinamicamente uma textura nova e atribui endereço ao ponteiro textureAux.
+            sf::Texture *textureAux = new sf::Texture();
+            // Verifica se caminho de imagem passado por parâmetro é válido.
+            if (!textureAux->loadFromFile(path))
+            {
+                std::cout << "Nao foi possivel encontrar a imagem em: " << path << " !" << std::endl;
+                std::cout << "Programa finalizado!" << std::endl;
+                // Indica término anormal do programa, por não ter encontrado o caminho da imagem.
+                exit(1);
+            }
+            // Adiciona na estrutura de dados Map a chave com o caminho path e a textura com a nova texturaAux.
+            textures.emplace(path, textureAux);
+
+            // textures.insert(std::pair<const char *, sf::Texture *>(path, textureAux));
+
+            // Retorna true, dando a entender que a textura foi carregada.
+            return true;
             }
         }
         // Método utilizado para centralizar a View.
@@ -222,6 +243,7 @@ namespace OgrO // Namespace com o nome do jogo.
             sf::Vector2u dimension = (textures.at(path))->getSize();
             // Retorna dimensões.
             return Utilities::myVector2F(dimension.x, dimension.y);
+            return Utilities::myVector2F(0.0f, 0.0f);
         }
     }
 }

@@ -7,7 +7,7 @@
 // #include "Managers/EventsManager.hpp"
 // #include "Managers/CollisionManager.hpp"
 // #include "Tiles/TilesManager.hpp"
-
+#include "Menus/Menu.hpp"
 #include "PhysicalEntities/Characters/Players/Shrek.hpp"
 #include "Levels/MedievalRuins.hpp"
 
@@ -24,6 +24,8 @@ namespace OgrO // Namespace com o nome do jogo.
         bool endLevel;
 
         Levels::MedievalRuins firstLevel;
+        
+        Menus::Menu menu;
 
     public:
         // Construtora da classe OtherGrandRandomOgre.

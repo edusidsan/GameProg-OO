@@ -1,4 +1,5 @@
 #include "Shrek.hpp"
+#include <cmath>
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace PhysicalEntities // Namespace do Pacote Entities.
@@ -10,7 +11,10 @@ namespace OgrO // Namespace com o nome do jogo.
 
                 // Construtora da classe Shrek.
                 Shrek::Shrek(Utilities::myVector2F pos) : Character(pos, Utilities::myVector2F(), "../assets/Shrek.png"),
-                                                          gravity{700.f},
+                                                          maxSpeedX{80},
+                                                          maxSpeedY{220},
+                                                          jumping(false),
+                                                          adjusts{Utilities::myVector2F(0, 0)},
                                                           direction{0}
 
                 {
@@ -24,11 +28,18 @@ namespace OgrO // Namespace com o nome do jogo.
                 }
                 // Método carrega a textura do Player na window.
                 void Shrek::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
+                // void Shrek::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
                 {
                     // Carrega textura no player.
                     gm.loadAsset(texturePath);
                     // Retorna dimensão da imagem.
                     dimension = gm.getDimensionsOfAsset(texturePath);
+
+                    // // Carrega textura no player.
+                    // pGraphicManager->loadAsset(texturePath);
+                    // // Retorna dimensão da imagem.
+                    // dimension = pGraphicManager->getDimensionsOfAsset(texturePath);
+                    
                     // Adiciona chave ouvinte de teclado.
                     keyEvent = em.addKeyboardListener([this](const sf::Event &event)
                                                       { handleEvent(event); });
@@ -40,9 +51,23 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Método atualizar do Player. Tem como parâmetro uma variável float que representa o tempo.
                 void Shrek::update(float t)
                 {
+                    if (abs(speed.coordY) <= 5)
+                        jumping = false;
+                    else
+                        jumping = true;
+                    speed.coordY += 100 * t;
+                    if (abs(speed.coordX) > maxSpeedX)
+                    {
+                        speed.coordX = maxSpeedX * (speed.coordX > 0 ? 1 : -1);
+                    }
+                    if (abs(speed.coordY) > maxSpeedY)
+                    {
+                        speed.coordY = maxSpeedY * (speed.coordY > 0 ? 1 : -1);
+                    }
                     // Relação de posição da forma no espaço-tempo. Equação de Movimento Uniforme da Cinemática.
                     position += speed * t;
-                    speed.coordY += 98.1f * t;
+                    position += adjusts;
+                    adjusts = Utilities::myVector2F(0, 0);
                 }
                 // Método desenhar do Player.
                 void Shrek::draw(Managers::GraphicManager &gm)
@@ -61,16 +86,19 @@ namespace OgrO // Namespace com o nome do jogo.
                         switch (ev.key.code)
                         {
                         case sf::Keyboard::Key::Right:
-                            speed.coordX += 75;
+                            speed.coordX += maxSpeedX;
                             this->direction = 0;
                             break;
                         case sf::Keyboard::Key::Left:
-                            speed.coordX -= 75;
+                            speed.coordX -= maxSpeedX;
                             this->direction = 1;
                             break;
                         case sf::Keyboard::Key::Up:
-                            // speed.coordY -= 75;
-                            speed.coordY = -sqrt(2 * 9.81f * gravity);
+                            if (!jumping)
+                            {
+                                jumping = true;
+                                speed.coordY -= 0.5 * maxSpeedY;
+                            }
                             break;
                         case sf::Keyboard::Key::Down:
                             // speed.coordY += 75;
@@ -86,10 +114,12 @@ namespace OgrO // Namespace com o nome do jogo.
                         {
                         case sf::Keyboard::Key::Right:
                             // speed.coordX -= 75;
+                            // speed.coordX -= maxSpeedX;
                             speed.coordX = 0;
                             break;
                         case sf::Keyboard::Key::Left:
                             // speed.coordX += 75;
+                            // speed.coordX += maxSpeedX;
                             speed.coordX = 0;
                             break;
                         case sf::Keyboard::Key::Up:
@@ -107,45 +137,66 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
                 void Shrek::collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
                 {
-                    // std::string terminalPrint;
-
-                    switch (idOther)
+                    if ((idOther == 22) || (idOther == 23) || (idOther == 24))
                     {
-                    case 22:
-                    case 23:
-                    case 24:
-                        // terminalPrint = "Bate no chão!";
-                        speed.coordY = 0;
-                        break;
-                    // case 2:
-                    //     terminalPrint = "fui ludibriado";
-                    //     break;
-                    case 1:
-                        // terminalPrint = "escada";
-                        speed.coordX = 0;
-                        speed.coordY = 0;
-                        break;
-                    // case 4:
-                    //     terminalPrint = "mano o que ta acontecendo";
-                    //     break;
-                    // case 5:
-                    //     terminalPrint = "pontudo";
-                    //     break;
-                    // case 6:
-                    //     terminalPrint = "estou livre";
-                    //     break;
-                    // case 7:
-                    //     terminalPrint = "bonk";
-                    //     break;
-                    default:
-                        break;
-                        // terminalPrint = "eita";
+                        float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));
+                        float distY = (position.coordY + (dimension.coordY / 2)) - abs(positionOther.coordY - (dimensionOther.coordY / 2));
+                        if (distX * distY > .001 * dimension.coordX * dimension.coordY)
+                        { // passa a ignorar colisões ignoráveis (bem as problemáticas)
+                            if (distX < distY)
+                            {
+                                // colisão em X
+                                if (distX > abs(adjusts.coordX))
+                                {
+                                    adjusts.coordX = distX * (position.coordX + (dimension.coordX) / 2 > positionOther.coordX + dimensionOther.coordX / 2 ? -0.5 : 0.5);
+                                }
+                            }
+                            else
+                            {
+                                // colisão em Y
+                                if (distY > abs(adjusts.coordY))
+                                {
+                                    adjusts.coordY = distY * (position.coordY + (dimension.coordY / 2) > positionOther.coordY - (dimensionOther.coordY / 2) ? -0.5 : 0.5);
+                                }
+                            }
+                        }
+                        speed.coordY = 0.f;
                     }
-
-                    // std::cout << terminalPrint << " idOther: " << idOther << std::endl;
+                    // Espinho
+                    else if (idOther == 51)
+                    {
+                        float distY = (position.coordY + (dimension.coordY / 2)) - abs(positionOther.coordY - (dimensionOther.coordY / 2));
+                        // colisão em Y
+                        if (distY > abs(adjusts.coordY))
+                        {
+                            adjusts.coordY = distY * (position.coordY + (dimension.coordY / 2) > positionOther.coordY - (dimensionOther.coordY / 2) ? -0.5 : 0.5);
+                        }
+                        speed.coordY = 0.f;
+                    }
+                    // Obstaculo que faz pular.
+                    else if (idOther == 49)
+                    {
+                        float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));
+                        // colisão em X
+                        if (distX > abs(adjusts.coordX))
+                        {
+                            position.coordY -= 0.5f;
+                            speed.coordY -= maxSpeedY;
+                        }
+                    }
+                    // Obstaculo troca de fase.
+                    else if (idOther == 35)
+                    {
+                    }
+                    // Obstaculo pedra que impede de andar reto.
+                    else if (idOther == 1)
+                    {
+                        position.coordX += 0;
+                        speed.coordX = 0;
+                    }
                 }
-
             }
+
         }
     }
 }

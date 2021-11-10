@@ -6,6 +6,11 @@ namespace OgrO // Namespace com o nome do jogo.
     Entity::Entity() : id{0}
     {
     }
+    // Entity::Entity(Managers::GraphicManager &gm) : id{0}
+    // //    pGraphicManager(&gm)
+    // {
+    //     pGraphicManager = &gm;
+    // }
     // Destrutora da classe Entity.
     Entity::~Entity()
     {
@@ -14,7 +19,11 @@ namespace OgrO // Namespace com o nome do jogo.
     void Entity::draw()
     {
     }
-    
+    // void Entity::setGraphicManager(Managers::GraphicManager &gm)
+    // {
+    //     pGraphicManager = &gm;
+    // }
+
     // void Entity::run()
     // {
     // }

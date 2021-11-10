@@ -18,6 +18,7 @@ set(
     Managers/CollisionManager.cpp
     Managers/EventsManager.cpp
     Managers/GraphicManager.cpp
+    Menus/Menu.cpp
     Lists/PhysicalEntityList.cpp
     PhysicalEntities/Characters/Enemies/Enemy.cpp
     PhysicalEntities/Characters/Players/Shrek.cpp
@@ -38,6 +39,7 @@ set(
     Managers/CollisionManager.hpp
     Managers/EventsManager.hpp
     Managers/GraphicManager.hpp
+    Menus/Menu.hpp
     Lists/PhysicalEntityList.hpp
     PhysicalEntities/Characters/Enemies/Enemy.hpp
     PhysicalEntities/Characters/Players/Shrek.hpp
@@ -51,6 +53,7 @@ set(
     # Utilities/Vector2D.hpp
     OtherGrandRandomOgre.hpp
     Entity.hpp
+    
 )
 target_sources(
     main 
