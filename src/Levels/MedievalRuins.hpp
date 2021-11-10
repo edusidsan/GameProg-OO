@@ -28,8 +28,8 @@ namespace OgrO // Namespace com o nome do jogo.
 
         public:
             // Construtora da classe MedievalRuins.
-            MedievalRuins(Managers::GraphicManager &gm, PhysicalEntities::Characters::Players::Shrek *_player1 = nullptr);
-            // MedievalRuins(PhysicalEntities::Characters::Players::Shrek *_player1 = nullptr);
+            // MedievalRuins(Managers::GraphicManager &gm, PhysicalEntities::Characters::Players::Shrek *_player1 = nullptr);
+            MedievalRuins(PhysicalEntities::Characters::Players::Shrek *_player1 = nullptr);
             // Destrutora da classe MedievalRuins.
             virtual ~MedievalRuins();
             // Método run do MedievalRuins.

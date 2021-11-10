@@ -11,10 +11,10 @@ namespace OgrO // Namespace com o nome do jogo.
     */
     OtherGrandRandomOgre::OtherGrandRandomOgre() : player1{PhysicalEntities::Characters::Players::Shrek(Utilities::myVector2F(64.0f, 64.0f))},
                                                    endLevel{false},
-                                                   firstLevel{graphicManager, &player1},
-                                                //    firstLevel{&player1},
-                                                //    menu(graphicManager)
-                                                   menu()
+                                                //    firstLevel{graphicManager, &player1},
+                                                   firstLevel{&player1},
+                                                   menu(&graphicManager)
+                                                //    menu()
 
     {
         // menu.setGraphicManager(graphicManager);

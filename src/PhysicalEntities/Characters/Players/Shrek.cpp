@@ -27,18 +27,18 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 }
                 // Método carrega a textura do Player na window.
-                void Shrek::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
-                // void Shrek::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
+                // void Shrek::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
+                void Shrek::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
                 {
-                    // Carrega textura no player.
-                    gm.loadAsset(texturePath);
-                    // Retorna dimensão da imagem.
-                    dimension = gm.getDimensionsOfAsset(texturePath);
-
                     // // Carrega textura no player.
-                    // pGraphicManager->loadAsset(texturePath);
+                    // gm.loadAsset(texturePath);
                     // // Retorna dimensão da imagem.
-                    // dimension = pGraphicManager->getDimensionsOfAsset(texturePath);
+                    // dimension = gm.getDimensionsOfAsset(texturePath);
+
+                    // Carrega textura no player.
+                    pGraphicManager->loadAsset(texturePath);
+                    // Retorna dimensão da imagem.
+                    dimension = pGraphicManager->getDimensionsOfAsset(texturePath);
                     
                     // Adiciona chave ouvinte de teclado.
                     keyEvent = em.addKeyboardListener([this](const sf::Event &event)

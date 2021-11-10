@@ -1,21 +1,21 @@
 #ifndef _ENTITY_HPP_
 #define _ENTITY_HPP_
 
-// #include "Managers/GraphicManager.hpp"
+#include "Managers/GraphicManager.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
 {
     class Entity
     {
     protected:
-        int id;
         // Atributo que aponta para o gerenciador gráfico criado para o jogo.
-        // Managers::GraphicManager *pGraphicManager;
+        Managers::GraphicManager *pGraphicManager;
+        int id;
 
     public:
         // Construtora da classe Entity. Atributos default configurados
         Entity();
-        // Entity(Managers::GraphicManager &gm);
+        Entity(Managers::GraphicManager *gm);
         // Destrutora da classe Entity.
         virtual ~Entity();
         // Método desenhar de Entity.

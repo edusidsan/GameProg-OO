@@ -19,7 +19,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // Atributo da camera criada para o jogo.
             sf::View camera;
             // Atributo textures utilizado para encontrar as texturas de cada ente através de uma string.
-            std::map<const std::string, sf::Texture *> textures;
+            std::map<std::string, sf::Texture *> textures;
             // std::map<const char *, sf::Texture *> textures;
             // Atributo texture que representa a textura a ser carregada no jogo.
             sf::Texture* texture;
@@ -43,7 +43,7 @@ namespace OgrO // Namespace com o nome do jogo.
             void draw(const std::string path, const Utilities::myVector2F position, const Utilities::myVector2U nFrames, const Utilities::myVector2U frame);
             // Método carrega a textura de acordo com o caminho passado como parâmetro.
             // Caso textura não exista, o método já se encarrega de criar, se possível.
-            bool loadAsset(const std::string path);
+            bool loadAsset(const std::string& path);
             // bool loadAsset(const char * path);
             // Método utilizado para centralizar a View.
             void centerCamera(const Utilities::myVector2F center);

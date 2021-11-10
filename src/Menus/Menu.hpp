@@ -14,7 +14,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // Construtora da classe Menu.
             // Menu(Managers::GraphicManager &gm);
             Menu();
-            // Menu(Managers::GraphicManager &gm);
+            Menu(Managers::GraphicManager *gm);
             // Destrutora da classe Menu.
             virtual ~Menu();
         };

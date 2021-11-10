@@ -170,9 +170,11 @@ namespace OgrO // Namespace com o nome do jogo.
         }
         // Método carrega a textura de acordo com o caminho passado como parâmetro.
         // Caso textura não exista, o método já se encarrega de criar, se possível.
-        bool GraphicManager::loadAsset(const std::string path)
+        bool GraphicManager::loadAsset(const std::string& path)
         // bool GraphicManager::loadAsset(const char *path)
         {
+            std::cout << "path" << path << std::endl;
+            std::cout << "textures.size(): " << textures.size() <<  std::endl;
             // textures.clear();
             // Caso encontre alguma textura que tenha a chave unitária de map igual o parâmetro passado por path, retorna true.
             if (textures.count(path) == 1)

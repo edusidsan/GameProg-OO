@@ -6,9 +6,9 @@ namespace OgrO // Namespace com o nome do jogo.
     namespace Levels // Namespace do Pacote Levels.
     {
         // Construtora da classe MedievalRuins.
-        // MedievalRuins::MedievalRuins(PhysicalEntities::Characters::Players::Shrek *_player1) : Level(),
-        MedievalRuins::MedievalRuins(Managers::GraphicManager &gm, PhysicalEntities::Characters::Players::Shrek *_player1) : Level(),
-                                                                                                                             graphicManager{gm},
+        MedievalRuins::MedievalRuins(PhysicalEntities::Characters::Players::Shrek *_player1) : Level(),
+        // MedievalRuins::MedievalRuins(Managers::GraphicManager &gm, PhysicalEntities::Characters::Players::Shrek *_player1) : Level(),
+                                                                                                                             
                                                                                                                              player1{_player1},
                                                                                                                              tilesManager{
                                                                                                                                  {
@@ -89,14 +89,14 @@ namespace OgrO // Namespace com o nome do jogo.
             players.insert(new PhysicalEntities::Characters::Enemies::Enemy(Utilities::myVector2F(120.0f, 50.0f), Utilities::myVector2F(0, 10)));
             players.insert(new PhysicalEntities::Characters::Enemies::Enemy(Utilities::myVector2F(120.0f, 200.0f), Utilities::myVector2F(0, -10)));
             // Carrega as imagens nas entidades físicas e inicializa os gerenciadores de eventos.
-            players.initializePhysicalEntities(graphicManager, eventsManager, collisionManager);
-            // players.initializePhysicalEntities(eventsManager, collisionManager);
+            // players.initializePhysicalEntities(graphicManager, eventsManager, collisionManager);
+            players.initializePhysicalEntities(eventsManager, collisionManager);
             // Inicializa gerenciador de tiles.
-            tilesManager.initialize(graphicManager, eventsManager);
-            // tilesManager.initialize(*pGraphicManager, eventsManager);
+            // tilesManager.initialize(graphicManager, eventsManager);
+            tilesManager.initialize(*pGraphicManager, eventsManager);
             // Atribui ao gerenciador de eventos a window que está sendo utilizada pelo gerenciador gráfico.
-            eventsManager.setWindow(graphicManager.getWindow());
-            // eventsManager.setWindow(pGraphicManager->getWindow());
+            // eventsManager.setWindow(graphicManager.getWindow());
+            eventsManager.setWindow(pGraphicManager->getWindow());
             // Atribui ao gerenciador de collisões o endereço do gerenciador de tiles.
             collisionManager.setTilesManager(&tilesManager);
         }
@@ -120,11 +120,11 @@ namespace OgrO // Namespace com o nome do jogo.
             // Método que gerencia as colisões nas fases.
             handleCollisions();
             // Gerenciador de tiles envia solicitação de desenho na tela para o gerenciador gráfico
-            tilesManager.draw(graphicManager);
-            // tilesManager.draw(*pGraphicManager);
+            // tilesManager.draw(graphicManager);
+            tilesManager.draw(*pGraphicManager);
             // Desenha as entidades físicas na window.
-            players.drawPhysicalEntities(graphicManager);
-            // players.drawPhysicalEntities(*pGraphicManager);
+            // players.drawPhysicalEntities(graphicManager);
+            players.drawPhysicalEntities(*pGraphicManager);
 
             // if (endLevel)
             // {
