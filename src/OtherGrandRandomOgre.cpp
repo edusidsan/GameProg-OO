@@ -9,12 +9,15 @@ namespace OgrO // Namespace com o nome do jogo.
     /* Lista de inicialização da construtora com:
         booleana closedWindowEvent setada para false
     */
-    OtherGrandRandomOgre::OtherGrandRandomOgre() : player1{PhysicalEntities::Characters::Players::Shrek(Utilities::myVector2F(64.0f, 64.0f))},
+    OtherGrandRandomOgre::OtherGrandRandomOgre() : graphicManager(Managers::GraphicManager::getInstance()),
+                                                   teste(graphicManager),
+                                                   menu(),
+                                                   player1{PhysicalEntities::Characters::Players::Shrek(Utilities::myVector2F(64.0f, 64.0f))},
                                                    endLevel{false},
-                                                //    firstLevel{graphicManager, &player1},
-                                                   firstLevel{&player1},
-                                                   menu(&graphicManager)
-                                                //    menu()
+                                                   //    firstLevel{graphicManager, &player1},
+                                                   firstLevel{&player1}
+
+    //    menu()
 
     {
         // menu.setGraphicManager(graphicManager);
@@ -29,12 +32,14 @@ namespace OgrO // Namespace com o nome do jogo.
         while (!endLevel)
         {
             // Limpa a window.
-            graphicManager.clear();
+            // graphicManager.clear();
+            graphicManager->clear();
 
             firstLevel.run();
 
             // Mostra a window para o usuário.
-            graphicManager.display();
+            // graphicManager.display();
+            graphicManager->display();
         }
         return 0;
     }

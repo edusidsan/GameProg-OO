@@ -3,6 +3,6 @@
 
 int main()
 {
-    OgrO::OtherGrandRandomOgre shrek;
-    return shrek.run();
+    OgrO::OtherGrandRandomOgre shrekGame;
+    return shrekGame.run();
 }

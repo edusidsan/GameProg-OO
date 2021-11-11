@@ -5,7 +5,7 @@
 #include "../Tiles/TilesManager.hpp"
 #include "../PhysicalEntities/Characters/Players/Shrek.hpp"
 #include "../PhysicalEntities/PhysicalEntity.hpp"
-#include "../Managers/GraphicManager.hpp"
+// #include "../Managers/GraphicManager.hpp"
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Levels // Namespace do Pacote Levels.
@@ -24,7 +24,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // Atributo de um relógio que será útil para verificação do tempo.
             sf::Clock clock;
             // // Atributo do gerenciador dgrafico criado para o jogo.
-            Managers::GraphicManager graphicManager;
+            // Managers::GraphicManager graphicManager;
 
         public:
             // Construtora da classe MedievalRuins.

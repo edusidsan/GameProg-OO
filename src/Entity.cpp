@@ -2,15 +2,12 @@
 
 namespace OgrO // Namespace com o nome do jogo.
 {
+    // Managers::GraphicManager *Entity::pGraphicManager = nullptr;
     // Construtora da classe Entity. Atributos default configurados
-    Entity::Entity() : id{0}
+    Entity::Entity() : id{0},
+                       pGraphicManager(Managers::GraphicManager::getInstance())
     {
-    }
-    Entity::Entity(Managers::GraphicManager *gm) : pGraphicManager{gm},
-                                                   id{0}
-
-    {
-        //     pGraphicManager = &gm;
+        // pGraphicManager = gm;
     }
     // Destrutora da classe Entity.
     Entity::~Entity()

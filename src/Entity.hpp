@@ -2,7 +2,6 @@
 #define _ENTITY_HPP_
 
 #include "Managers/GraphicManager.hpp"
-
 namespace OgrO // Namespace com o nome do jogo.
 {
     class Entity
@@ -15,7 +14,6 @@ namespace OgrO // Namespace com o nome do jogo.
     public:
         // Construtora da classe Entity. Atributos default configurados
         Entity();
-        Entity(Managers::GraphicManager *gm);
         // Destrutora da classe Entity.
         virtual ~Entity();
         // Método desenhar de Entity.

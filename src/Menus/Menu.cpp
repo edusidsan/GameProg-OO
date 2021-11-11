@@ -9,10 +9,6 @@ namespace OgrO // Namespace com o nome do jogo.
         Menu::Menu() : Entity()
         {
         }
-        Menu::Menu(Managers::GraphicManager *gm) : Entity(gm)
-        {
-            // setGraphicManager(gm);
-        }
         // Destrutora da classe Level.
         Menu::~Menu()
         {

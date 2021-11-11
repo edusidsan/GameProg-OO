@@ -1,7 +1,7 @@
 #ifndef _MENU_HPP_
 #define _MENU_HPP_
 
-// #include "../Managers/GraphicManager.hpp"
+#include "../Managers/GraphicManager.hpp"
 #include "../Entity.hpp"
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -14,7 +14,6 @@ namespace OgrO // Namespace com o nome do jogo.
             // Construtora da classe Menu.
             // Menu(Managers::GraphicManager &gm);
             Menu();
-            Menu(Managers::GraphicManager *gm);
             // Destrutora da classe Menu.
             virtual ~Menu();
         };

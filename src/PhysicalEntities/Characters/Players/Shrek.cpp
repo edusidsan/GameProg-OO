@@ -34,7 +34,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // gm.loadAsset(texturePath);
                     // // Retorna dimensão da imagem.
                     // dimension = gm.getDimensionsOfAsset(texturePath);
-
+                    std::cout << "pGraphicManager: " << pGraphicManager << std::endl;
                     // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);
                     // Retorna dimensão da imagem.

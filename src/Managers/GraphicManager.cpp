@@ -4,6 +4,18 @@ namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Managers // Namespace do Pacote Managers.
     {
+
+        GraphicManager *GraphicManager::instance = NULL;
+
+        GraphicManager *GraphicManager::getInstance()
+        {
+            if (instance == NULL)
+            {
+                instance = new GraphicManager();
+            }
+            return instance;
+        }
+
         // Construtora da classe GraphicManager.
         GraphicManager::GraphicManager() : window{new sf::RenderWindow(sf::VideoMode(800, 600), "OgrO")},
                                            camera{sf::Vector2f(400, 300), sf::Vector2f(400, 300)},
@@ -170,11 +182,11 @@ namespace OgrO // Namespace com o nome do jogo.
         }
         // Método carrega a textura de acordo com o caminho passado como parâmetro.
         // Caso textura não exista, o método já se encarrega de criar, se possível.
-        bool GraphicManager::loadAsset(const std::string& path)
+        bool GraphicManager::loadAsset(const std::string &path)
         // bool GraphicManager::loadAsset(const char *path)
         {
             std::cout << "path" << path << std::endl;
-            std::cout << "textures.size(): " << textures.size() <<  std::endl;
+            // std::cout << "textures.size(): " << textures.size() <<  std::endl;
             // textures.clear();
             // Caso encontre alguma textura que tenha a chave unitária de map igual o parâmetro passado por path, retorna true.
             if (textures.count(path) == 1)
@@ -198,23 +210,23 @@ namespace OgrO // Namespace com o nome do jogo.
 
             else
             {
-            // Cria dinamicamente uma textura nova e atribui endereço ao ponteiro textureAux.
-            sf::Texture *textureAux = new sf::Texture();
-            // Verifica se caminho de imagem passado por parâmetro é válido.
-            if (!textureAux->loadFromFile(path))
-            {
-                std::cout << "Nao foi possivel encontrar a imagem em: " << path << " !" << std::endl;
-                std::cout << "Programa finalizado!" << std::endl;
-                // Indica término anormal do programa, por não ter encontrado o caminho da imagem.
-                exit(1);
-            }
-            // Adiciona na estrutura de dados Map a chave com o caminho path e a textura com a nova texturaAux.
-            textures.emplace(path, textureAux);
+                // Cria dinamicamente uma textura nova e atribui endereço ao ponteiro textureAux.
+                sf::Texture *textureAux = new sf::Texture();
+                // Verifica se caminho de imagem passado por parâmetro é válido.
+                if (!textureAux->loadFromFile(path))
+                {
+                    std::cout << "Nao foi possivel encontrar a imagem em: " << path << " !" << std::endl;
+                    std::cout << "Programa finalizado!" << std::endl;
+                    // Indica término anormal do programa, por não ter encontrado o caminho da imagem.
+                    exit(1);
+                }
+                // Adiciona na estrutura de dados Map a chave com o caminho path e a textura com a nova texturaAux.
+                textures.emplace(path, textureAux);
 
-            // textures.insert(std::pair<const char *, sf::Texture *>(path, textureAux));
+                // textures.insert(std::pair<const char *, sf::Texture *>(path, textureAux));
 
-            // Retorna true, dando a entender que a textura foi carregada.
-            return true;
+                // Retorna true, dando a entender que a textura foi carregada.
+                return true;
             }
         }
         // Método utilizado para centralizar a View.

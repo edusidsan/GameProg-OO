@@ -22,15 +22,20 @@ namespace OgrO // Namespace com o nome do jogo.
             std::map<std::string, sf::Texture *> textures;
             // std::map<const char *, sf::Texture *> textures;
             // Atributo texture que representa a textura a ser carregada no jogo.
-            sf::Texture* texture;
+            sf::Texture *texture;
             //  Atributo representado por uma classe pertencente a biblioteca SFML, que é uma representação "desenhavel" de uma textura.
             sf::Sprite sprite;
-
-        public:
+            // Padrão Singleton
+            static GraphicManager *instance;
             // Construtora da classe GraphicManager.
             GraphicManager();
+
+        public:
             // Destrutora da classe GraphicManager.
             ~GraphicManager();
+
+            static GraphicManager *getInstance();
+
             // Método cria a tela gráfica para o usuário.
             void display();
             // Método Limpa a window com os parâmetros de cores.
@@ -43,7 +48,7 @@ namespace OgrO // Namespace com o nome do jogo.
             void draw(const std::string path, const Utilities::myVector2F position, const Utilities::myVector2U nFrames, const Utilities::myVector2U frame);
             // Método carrega a textura de acordo com o caminho passado como parâmetro.
             // Caso textura não exista, o método já se encarrega de criar, se possível.
-            bool loadAsset(const std::string& path);
+            bool loadAsset(const std::string &path);
             // bool loadAsset(const char * path);
             // Método utilizado para centralizar a View.
             void centerCamera(const Utilities::myVector2F center);
