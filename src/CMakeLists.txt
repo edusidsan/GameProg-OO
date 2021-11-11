@@ -30,7 +30,6 @@ set(
     Tiles/TilesManager.cpp
     OtherGrandRandomOgre.cpp
     Entity.cpp
-    Teste.cpp
 )
 set(
     HEADERS
@@ -53,9 +52,7 @@ set(
     json.hpp
     # Utilities/Vector2D.hpp
     OtherGrandRandomOgre.hpp
-    Entity.hpp
-    Teste.hpp
-    
+    Entity.hpp   
 )
 target_sources(
     main 

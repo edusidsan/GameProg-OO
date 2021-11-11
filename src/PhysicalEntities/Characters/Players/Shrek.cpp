@@ -34,12 +34,12 @@ namespace OgrO // Namespace com o nome do jogo.
                     // gm.loadAsset(texturePath);
                     // // Retorna dimensão da imagem.
                     // dimension = gm.getDimensionsOfAsset(texturePath);
-                    std::cout << "pGraphicManager: " << pGraphicManager << std::endl;
+
                     // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);
                     // Retorna dimensão da imagem.
                     dimension = pGraphicManager->getDimensionsOfAsset(texturePath);
-                    
+
                     // Adiciona chave ouvinte de teclado.
                     keyEvent = em.addKeyboardListener([this](const sf::Event &event)
                                                       { handleEvent(event); });
@@ -191,8 +191,20 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Obstaculo pedra que impede de andar reto.
                     else if (idOther == 1)
                     {
-                        position.coordX += 0;
-                        speed.coordX = 0;
+                        float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));
+                        // colisão em X
+                        if (distX > abs(adjusts.coordX))
+                        {
+                            // position.coordX += 0.0f;
+                        }
+                        speed.coordX = 0.0f;
+                        float distY = (position.coordY + (dimension.coordY / 2)) - abs(positionOther.coordY - (dimensionOther.coordY / 2));
+                        // colisão em Y
+                        if (distY > abs(adjusts.coordY))
+                        {
+                            adjusts.coordY = distY * (position.coordY + (dimension.coordY / 2) > positionOther.coordY - (dimensionOther.coordY / 2) ? -0.5 : 0.5);
+                        }
+                        speed.coordY = 0.f;
                     }
                 }
             }

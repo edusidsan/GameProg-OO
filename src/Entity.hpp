@@ -18,8 +18,6 @@ namespace OgrO // Namespace com o nome do jogo.
         virtual ~Entity();
         // Método desenhar de Entity.
         virtual void draw();
-
-        // void setGraphicManager(Managers::GraphicManager gm);
         // Método run virtual puro -> TORNA CLASSE ABSTRATA.
         // virtual void run() = 0;
     };
