@@ -25,8 +25,10 @@ namespace OgrO // Namespace com o nome do jogo.
             sf::Texture *texture;
             //  Atributo representado por uma classe pertencente a biblioteca SFML, que é uma representação "desenhavel" de uma textura.
             sf::Sprite sprite;
+            
             // Padrão Singleton
             static GraphicManager *instance;
+
             // Construtora da classe GraphicManager.
             GraphicManager();
 
