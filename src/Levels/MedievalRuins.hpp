@@ -5,12 +5,13 @@
 #include "../Tiles/TilesManager.hpp"
 #include "../PhysicalEntities/Characters/Players/Shrek.hpp"
 #include "../PhysicalEntities/PhysicalEntity.hpp"
+#include "../State.hpp"
 // #include "../Managers/GraphicManager.hpp"
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Levels // Namespace do Pacote Levels.
     {
-        class MedievalRuins : public Level
+        class MedievalRuins : public Level, public State
         {
         private:
             // Atributo que aponta para a classe do player Shrek.
@@ -23,17 +24,14 @@ namespace OgrO // Namespace com o nome do jogo.
             unsigned int idClosedWindow;
             // Atributo de um relógio que será útil para verificação do tempo.
             sf::Clock clock;
-            // // Atributo do gerenciador dgrafico criado para o jogo.
-            // Managers::GraphicManager graphicManager;
 
         public:
             // Construtora da classe MedievalRuins.
-            // MedievalRuins(Managers::GraphicManager &gm, PhysicalEntities::Characters::Players::Shrek *_player1 = nullptr);
             MedievalRuins(PhysicalEntities::Characters::Players::Shrek *_player1 = nullptr);
             // Destrutora da classe MedievalRuins.
             virtual ~MedievalRuins();
             // Método run do MedievalRuins.
-            void run();
+            int run();
 
         private:
             // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.

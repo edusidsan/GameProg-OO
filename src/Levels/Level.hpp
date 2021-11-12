@@ -26,7 +26,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // Destrutora da classe Level.
             virtual ~Level();
             // Método run virtual puro -> TORNA CLASSE ABSTRATA.
-            virtual void run() = 0;
+            virtual int run() = 0;
             // Método que gerencia as colisões nas fases.
             void handleCollisions();
             // Método que gerencia os eventos nas fases.

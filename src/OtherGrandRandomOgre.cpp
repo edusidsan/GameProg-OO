@@ -15,10 +15,7 @@ namespace OgrO // Namespace com o nome do jogo.
                                                    endLevel{false},
                                                    firstLevel{&player1}
 
-    //    menu()
-
     {
-        // menu.setGraphicManager(graphicManager);
     }
     // Destrutora da classe OtherGrandRandomOgre
     OtherGrandRandomOgre::~OtherGrandRandomOgre()
@@ -30,13 +27,11 @@ namespace OgrO // Namespace com o nome do jogo.
         while (!endLevel)
         {
             // Limpa a window.
-            // graphicManager.clear();
             pGraphicManager->clear();
 
-            firstLevel.run();
+            endLevel = firstLevel.run();
 
             // Mostra a window para o usuário.
-            // graphicManager.display();
             pGraphicManager->display();
         }
         return 0;

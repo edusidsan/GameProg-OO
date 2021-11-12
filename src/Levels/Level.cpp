@@ -13,6 +13,10 @@ namespace OgrO // Namespace com o nome do jogo.
             // Deleta dinamicamente os objetos das entidades físicas.
             players.destroyPhysicalEntities();
         }
+        // int Level::run()
+        // {
+ 
+        // }
         // Método que gerencia as colisões nas fases.
         void Level::handleCollisions()
         {

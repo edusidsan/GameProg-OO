@@ -15,6 +15,8 @@ set(
     SOURCES
     Levels/Level.cpp
     Levels/MedievalRuins.cpp
+    Managers/ScreenManager.cpp
+    Managers/StateManager.cpp
     Managers/CollisionManager.cpp
     Managers/EventsManager.cpp
     Managers/GraphicManager.cpp
@@ -28,6 +30,7 @@ set(
     Tiles/Tile.cpp
     Tiles/TileMap.cpp
     Tiles/TilesManager.cpp
+    State.cpp
     OtherGrandRandomOgre.cpp
     Entity.cpp
 )
@@ -36,6 +39,8 @@ set(
     # Lists/List.hpp
     Levels/Level.hpp
     Levels/MedievalRuins.hpp
+    Managers/ScreenManager.hpp
+    Managers/StateManager.hpp
     Managers/CollisionManager.hpp
     Managers/EventsManager.hpp
     Managers/GraphicManager.hpp
@@ -51,6 +56,7 @@ set(
     Tiles/TilesManager.hpp
     json.hpp
     # Utilities/Vector2D.hpp
+    State.hpp
     OtherGrandRandomOgre.hpp
     Entity.hpp   
 )

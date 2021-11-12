@@ -1,12 +1,7 @@
 #ifndef _OTHERGRANDRANDOMOGRE_HPP_
 #define _OTHERGRANDRANDOMOGRE_HPP_
 
-// #include "PhysicalEntities/PhysicalEntity.hpp"
-// #include "Lists/PhysicalEntityList.hpp"
 #include "Managers/GraphicManager.hpp"
-// #include "Managers/EventsManager.hpp"
-// #include "Managers/CollisionManager.hpp"
-// #include "Tiles/TilesManager.hpp"
 #include "Menus/Menu.hpp"
 #include "PhysicalEntities/Characters/Players/Shrek.hpp"
 #include "Levels/MedievalRuins.hpp"
