@@ -15,9 +15,11 @@ namespace OgrO // Namespace com o nome do jogo.
             {
             }
             // Método carrega a textura do personagem na window.
-            void Character::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
+            // void Character::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
+            void Character::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
             {
-                gm.loadAsset(texturePath);
+                // gm.loadAsset(texturePath);
+                pGraphicManager->loadAsset(texturePath);
             }
             // Método atualizar de Personagem. Tem como parâmetro uma variável float que representa o tempo.
             void Character::update(float t)
@@ -31,6 +33,9 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Desenha a forma do personagem atual na window.
                 gm.draw(texturePath, position);
             }
+            // void Character::run()
+            // {
+            // }
         }
     }
 }

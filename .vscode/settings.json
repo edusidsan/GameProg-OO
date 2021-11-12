@@ -57,7 +57,12 @@
         "list": "cpp",
         "fstream": "cpp",
         "iomanip": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "chrono": "cpp",
+        "codecvt": "cpp",
+        "forward_list": "cpp",
+        "ratio": "cpp",
+        "valarray": "cpp"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/src",
     "cSpell.words": [

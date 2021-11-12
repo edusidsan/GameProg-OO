@@ -16,6 +16,11 @@ namespace OgrO // Namespace com o nome do jogo.
                 private:
                     // Atributo que indica o código do evento ocorrido.
                     unsigned int keyEvent;
+                    float maxSpeedX;
+                    float maxSpeedY;
+                    int direction;
+                    bool jumping;
+                    Utilities::myVector2F adjusts;
 
                 public:
                     // Construtora da classe Enemy.
@@ -23,7 +28,8 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Destrutora da classe Enemy.
                     ~Shrek();
                     // Método carrega a textura do Player na window.
-                    void initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm);
+                    // void initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm);
+                    void initialize(Managers::EventsManager &em, Managers::CollisionManager &cm);
                     // Método atualizar do Player. Tem como parâmetro uma variável float que representa o tempo.
                     void update(float t);
                     // Método desenhar do Player.
@@ -31,7 +37,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Método de tratamento de evento ocorrido.
                     void handleEvent(const sf::Event &ev);
                     // Método verifica colisão entre dois objetos da classe Entidade Física.
-                    void collided(int Id, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther);
+                    void collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther);
                 };
             }
         }

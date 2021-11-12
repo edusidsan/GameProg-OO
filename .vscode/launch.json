@@ -1,0 +1,15 @@
+{
+    "configurations": [
+    {
+        "name": "(Windows) Iniciar",
+        "type": "cppvsdbg",
+        "request": "launch",
+        "program": " ${workspaceFolder}/build/OgrO.exe",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}/src",
+        "environment": [],
+        "console": "externalTerminal"
+    }
+    ]
+}

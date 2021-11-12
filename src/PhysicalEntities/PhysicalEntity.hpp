@@ -26,7 +26,8 @@ namespace OgrO // Namespace com o nome do jogo.
             // Destrutora da classe PhysicalEntity.
             virtual ~PhysicalEntity();
             // Método carrega a textura do PhysicalEntity na window.
-            virtual void initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm);
+            // virtual void initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm);
+            virtual void initialize(Managers::EventsManager &em, Managers::CollisionManager &cm);
             // Método atualizar de PhysicalEntity. Tem como parâmetro uma variável float que representa o tempo.
             virtual void update(float t);
             // Método desenhar de PhysicalEntity. Tem como parâmetro o endereço do gerenciador gráfico que irá desenhar o persoangem na window.
@@ -40,6 +41,8 @@ namespace OgrO // Namespace com o nome do jogo.
             virtual const int getID() const;
             // Método verifica colisão entre dois objetos da classe Entidade Física.
             virtual void collided(int Id, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther) = 0;
+            // Método run virtual puro -> TORNA CLASSE ABSTRATA.
+            // virtual void run() = 0;
         };
     }
 }

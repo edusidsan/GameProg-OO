@@ -4,7 +4,7 @@
 #include <list>
 #include <vector>
 #include <set>
-
+#include "../Tiles/TilesManager.hpp"
 namespace OgrO // Namespace com o nome do jogo.
 {
     /*---------------------------- Atribuição de classes para não ocorrer conflito de inclusão recursiva.*/
@@ -45,6 +45,8 @@ namespace OgrO // Namespace com o nome do jogo.
             PhysicalEntities::Characters::Players::Shrek *pPlayer = nullptr;
             // Atributo que retorna se duas entidades físicas colidem.
             bool colliding(PhysicalEntities::PhysicalEntity *e1, PhysicalEntities::PhysicalEntity *e2);
+            // Atributo que aponta para o gerenciador de tiles que será utilizado.
+            Tiles::TilesManager *pTileManager;
 
         public:
             // Construtora da classe CollisionManager.
@@ -57,15 +59,12 @@ namespace OgrO // Namespace com o nome do jogo.
             void addToLCollidablesPhysicalEntities(PhysicalEntities::Obstacles::Obstacle *pPE);
             // Método que adiciona um elemento de player::shrek na lista de possíveis objetos que colidem.
             void addToLCollidablesPhysicalEntities(PhysicalEntities::Characters::Players::Shrek *pPE);
-
-            // Método que adiciona um elemento de entidade física na lista de possíveis objetos que colidem.
-            // void addToLCollidablesPhysicalEntities(PhysicalEntities::PhysicalEntity *pPE);
-            // Método que remove um elemento de entidade física na lista de possíveis objetos que colidem.
-            // void removeFromLCollidablesPhysicalEntities(PhysicalEntities::PhysicalEntity *pPE);
             // Método que limpa a lista de possíveis objetos que colidem.
             void removeAll();
             // Método que verifica se houve colisão entre entidades físicas.
             void checkCollisions();
+            // Método que permite a classe CollisionManager conhecer o Gerenciador de tiles que será utilizado.
+            void setTilesManager(Tiles::TilesManager *pTm);
         };
     }
 }

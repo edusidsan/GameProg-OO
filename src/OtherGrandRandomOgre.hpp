@@ -1,30 +1,27 @@
 #ifndef _OTHERGRANDRANDOMOGRE_HPP_
 #define _OTHERGRANDRANDOMOGRE_HPP_
 
-#include "PhysicalEntities/PhysicalEntity.hpp"
-#include "Lists/PhysicalEntityList.hpp"
 #include "Managers/GraphicManager.hpp"
-#include "Managers/CollisionManager.hpp"
+#include "Menus/Menu.hpp"
+#include "PhysicalEntities/Characters/Players/Shrek.hpp"
+#include "Levels/MedievalRuins.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
 {
     class OtherGrandRandomOgre
     {
     private:
-        // Atributo que verifica se botão de fechar da janela do SFML foi clicado.
-        bool closeWindowEvent;
-        // Atributo do gerenciador gráfico criado para o jogo.
-        Managers::GraphicManager graphicManager;
-        // Atributo do gerenciador de eventos criado para o jogo.
-        Managers::EventsManager eventsManager;
-        // Atributo do gerenciador de colisões criado para o jogo.
-        Managers::CollisionManager collisionManager;
-        // Atributo que indica a chave única do evento de fechar a window do jogo.
-        unsigned int idClosedWindow;
-        // Atributo de um relógio que será útil para verificação do tempo.
-        sf::Clock clock;
-        // Atributo referente a lista de entidades físicas.
-        Lists::PhysicalEntityList players;
+        // Atributo ponteiro do gerenciador gráfico criado para o jogo na Classe GraphicManager.
+        // Utiliza o padrão de projeto Singleton.
+        Managers::GraphicManager *pGraphicManager;
+        //
+        Menus::Menu menu;
+        // Atributo que cria objeto da classe do player Shrek.
+        PhysicalEntities::Characters::Players::Shrek player1;
+        // Atributo que indica se a fase deve ser finalizada.
+        bool endLevel;
+        //
+        Levels::MedievalRuins firstLevel;
 
     public:
         // Construtora da classe OtherGrandRandomOgre.
@@ -34,7 +31,7 @@ namespace OgrO // Namespace com o nome do jogo.
         // Método executar de OtherGrandRandomOgre.
         int run();
         // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.
-        void closedWindow(const sf::Event& event);
+        void closedWindow(const sf::Event &event);
     };
 }
 #endif

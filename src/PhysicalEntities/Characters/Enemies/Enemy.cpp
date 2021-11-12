@@ -20,12 +20,19 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 }
                 // Método carrega a textura do enemy na window e inicializa gerenciadores do mesmo.
-                void Enemy::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
+                // void Enemy::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
+                void Enemy::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
                 {
-                    // Carrega textura no player.
-                    gm.loadAsset(texturePath);
+                    // // Carrega textura no player.
+                    // gm.loadAsset(texturePath);
+                    // // Retorna dimensão da imagem.
+                    // dimension = gm.getDimensionsOfAsset(texturePath);
+
+                     // Carrega textura no player.
+                    pGraphicManager->loadAsset(texturePath);
                     // Retorna dimensão da imagem.
-                    dimension = gm.getDimensionsOfAsset(texturePath);
+                    dimension = pGraphicManager->getDimensionsOfAsset(texturePath);
+
                     // Adiciona enemy na lista de entidades físicas colidiveis.
                     cm.addToLCollidablesPhysicalEntities((this));
                 }
@@ -35,7 +42,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Caso colida com Player1.
                     if (IDOther == 101)
                     {
-                        std::cout << "OBJETO ENEMY >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
+                        // std::cout << "OBJETO ENEMY >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
                     }
                     // Caso colida com Enemy.
                     else if (IDOther == 102)
@@ -44,7 +51,7 @@ namespace OgrO // Namespace com o nome do jogo.
                         Utilities::myVector2F distance = position - positionOther;
                         // Medida para não manter um enemy preso dentro do outro.
                         position += distance * (1 / 2);
-                        std::cout << "OBJETO ENEMY >>> COLISAO COM OBJETO ENEMY." << std::endl;
+                        // std::cout << "OBJETO ENEMY >>> COLISAO COM OBJETO ENEMY." << std::endl;
                         // Muda o sentido da velocidade em x.
                         speed.coordX *= -1;
                         // Muda o sentido da velocidade em y.
