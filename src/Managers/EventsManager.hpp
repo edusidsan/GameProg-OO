@@ -35,15 +35,15 @@ namespace OgrO // Namespace com o nome do jogo.
             // Método definde a window que será utilizada.
             void setWindow(sf::RenderWindow *w);
             // Método retorna a key dentro de map da função referente ao evento de mouse ocorrido.
-            unsigned int addMouseListener(std::function<void(const sf::Event)> callback);
+            unsigned int addMouseListener(std::function<void(const sf::Event &)> callback);
             // Método remove a key dentro de map da função referente ao evento de mouse ocorrido.
             void removeMouseListener(int key);
             // Método retorna a key dentro de map da função referente ao evento de teclado ocorrido.
-            unsigned int addKeyboardListener(std::function<void(const sf::Event)> callback);
+            unsigned int addKeyboardListener(std::function<void(const sf::Event &)> callback);
             // Método remove a key dentro de map da função referente ao evento de teclado ocorrido.
             void removeKeyboardListener(int key);
             // Método retorna a key dentro de map da função referente ao evento de outro tipo ocorrido.
-            unsigned int addOtherListener(std::function<void(const sf::Event)> callback);
+            unsigned int addOtherListener(std::function<void(const sf::Event &)> callback);
             // Método remove a key dentro de map da função referente ao evento de outro tipo ocorrido.
             void removeOtherListener(int key);
         };

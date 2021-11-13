@@ -2,10 +2,8 @@
 #define _OTHERGRANDRANDOMOGRE_HPP_
 
 #include "Managers/GraphicManager.hpp"
-#include "Menus/Menu.hpp"
+#include "Managers/ScreenManager.hpp"
 #include "PhysicalEntities/Characters/Players/Shrek.hpp"
-#include "Levels/MedievalRuins.hpp"
-
 namespace OgrO // Namespace com o nome do jogo.
 {
     class OtherGrandRandomOgre
@@ -15,13 +13,11 @@ namespace OgrO // Namespace com o nome do jogo.
         // Utiliza o padrão de projeto Singleton.
         Managers::GraphicManager *pGraphicManager;
         //
-        Menus::Menu menu;
+        Managers::ScreenManager screenManager;
         // Atributo que cria objeto da classe do player Shrek.
         PhysicalEntities::Characters::Players::Shrek player1;
         // Atributo que indica se a fase deve ser finalizada.
         bool endLevel;
-        //
-        Levels::MedievalRuins firstLevel;
 
     public:
         // Construtora da classe OtherGrandRandomOgre.
