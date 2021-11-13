@@ -1,4 +1,5 @@
 #include "EventsManager.hpp"
+#include <iostream>
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Managers // Namespace do Pacote Managers.
@@ -17,40 +18,50 @@ namespace OgrO // Namespace com o nome do jogo.
         // Método que trata os eventos.
         void EventsManager::handleEvent()
         {
+            window->setKeyRepeatEnabled(false);
             // Enquanto o método pollEvent de window receber algo.
             while (window->pollEvent(event))
             {
                 // Caso o código do event seja referente à um evento de mouse.
                 if ((event.type == sf::Event::MouseWheelScrolled) ||
-                    (event.type == sf::Event::MouseMoved) ||
+                    // (event.type == sf::Event::MouseMoved) ||
                     (event.type == sf::Event::MouseButtonReleased) ||
                     (event.type == sf::Event::MouseButtonPressed))
                 {
+
                     // Percorre iterador do callback de Mouse.
-                    for (auto i = mouseCallback.begin(); i != mouseCallback.end(); ++i)
+                    for (auto i = mouseCallback.begin(); i != mouseCallback.end();)
+
                     {
+                        auto current = i++;
                         // Chama a função dentro de map refente ao tipo de evento ocorrido.
-                        i->second(event);
+                        current->second(event);
                     }
                 }
                 // Caso o código do event seja referente à um evento de teclado.
                 else if ((event.type == sf::Event::KeyPressed) ||
-                         (event.type == sf::Event::KeyReleased))
+                         (event.type == sf::Event::KeyReleased) ||
+                         (event.type == sf::Event::TextEntered))
                 {
                     // Percorre iterador do callback de teclado.
-                    for (auto i = keyboardCallback.begin(); i != keyboardCallback.end(); ++i)
+
+                    // Percorre iterador do callback de teclado.
+                    for (auto i = keyboardCallback.begin(); i != keyboardCallback.end();)
                     {
+
+                        auto current = i++;
                         // Chama a função dentro de map refente ao tipo de evento ocorrido.
-                        i->second(event);
+                        current->second(event);
                     }
                 }
                 else
                 {
                     // Percorre iterador do callback de outros tipos.
-                    for (auto i = otherCallback.begin(); i != otherCallback.end(); ++i)
+                    for (auto i = otherCallback.begin(); i != otherCallback.end();)
                     {
+                        auto current = i++;
                         // Chama a função dentro de map refente ao tipo de evento ocorrido.
-                        i->second(event);
+                        current->second(event);
                     }
                 }
             }
@@ -63,7 +74,7 @@ namespace OgrO // Namespace com o nome do jogo.
             window->setKeyRepeatEnabled(false);
         }
         // Método retorna a próxima key disponível dentro de map da função referente ao evento de mouse ocorrido.
-        unsigned int EventsManager::addMouseListener(std::function<void(const sf::Event)> callback)
+        unsigned int EventsManager::addMouseListener(std::function<void(const sf::Event &)> callback)
         {
             // Adiciona na estrutura de dados Map uma chave única e a função atribuída à mesma.
             mouseCallback.emplace(nextKey, callback);
@@ -76,7 +87,7 @@ namespace OgrO // Namespace com o nome do jogo.
             mouseCallback.erase(key);
         }
         // Método retorna a próxima key disponível dentro de map da função referente ao evento de teclado ocorrido.
-        unsigned int EventsManager::addKeyboardListener(std::function<void(const sf::Event)> callback)
+        unsigned int EventsManager::addKeyboardListener(std::function<void(const sf::Event &)> callback)
         {
             // Adiciona na estrutura de dados Map uma chave única e a função atribuída à mesma.
             keyboardCallback.emplace(nextKey, callback);
@@ -89,7 +100,7 @@ namespace OgrO // Namespace com o nome do jogo.
             keyboardCallback.erase(key);
         }
         // Método retorna a próxima key disponível dentro de map da função referente ao evento de outro tipo ocorrido.
-        unsigned int EventsManager::addOtherListener(std::function<void(const sf::Event)> callback)
+        unsigned int EventsManager::addOtherListener(std::function<void(const sf::Event &)> callback)
         {
             // Adiciona na estrutura de dados Map uma chave única e a função atribuída à mesma.
             otherCallback.emplace(nextKey, callback);

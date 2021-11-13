@@ -21,19 +21,18 @@ namespace OgrO // Namespace com o nome do jogo.
         enum GameCode
         {
             continueGame,
-            endGame
+            endGame,
+            toFirstLevel
         };
 
         class ScreenManager : public StateManager
         {
 
         private:
-            // GraphicManager &GraphicManager;
             // Atributo que aponta para a classe do player Shrek.
             PhysicalEntities::Characters::Players::Shrek *player1;
 
         public:
-            // ScreenManager(GraphicManager &gg, Heroi *jogador1 = nullptr);
             ScreenManager(PhysicalEntities::Characters::Players::Shrek *_player1 = nullptr);
             ~ScreenManager();
 

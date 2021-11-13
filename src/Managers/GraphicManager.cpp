@@ -1,31 +1,36 @@
 #include "GraphicManager.hpp"
 #include <cstring>
+// #include <cmath>
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Managers // Namespace do Pacote Managers.
     {
 
-        GraphicManager *GraphicManager::instance = NULL;
+        GraphicManager *GraphicManager::instanceGraphicManager = NULL;
 
         GraphicManager *GraphicManager::getInstance()
         {
-            if (instance == NULL)
+            if (instanceGraphicManager == NULL)
             {
-                instance = new GraphicManager();
+                instanceGraphicManager = new GraphicManager();
             }
-            return instance;
+            return instanceGraphicManager;
         }
 
         // Construtora da classe GraphicManager.
         GraphicManager::GraphicManager() : window{new sf::RenderWindow(sf::VideoMode(800, 600), "OgrO")},
                                            camera{sf::Vector2f(400, 300), sf::Vector2f(400, 300)},
                                            textures{}
+
         //    camera{sf::Vector2f(800, 600), sf::Vector2f(800, 600)}
 
         {
             textures.clear();
             // Atribuindo view Camera para a window.
             window->setView(camera);
+            // Carrega a fonte que será utilizada.
+            font.loadFromFile("../assets/sansation.ttf");
+           
         }
         // Destrutora da classe GraphicManager.
         GraphicManager::~GraphicManager()
@@ -237,7 +242,42 @@ namespace OgrO // Namespace com o nome do jogo.
             sf::Vector2u dimension = (textures.at(path))->getSize();
             // Retorna dimensões.
             return Utilities::myVector2F(dimension.x, dimension.y);
-            return Utilities::myVector2F(0.0f, 0.0f);
+            // return Utilities::myVector2F(0.0f, 0.0f);
+        }
+
+        // Método utilizado para desenhar um retangulo sólido na View.
+        void GraphicManager::drawSolidRect(const Utilities::myVector2F center, const Utilities::myVector2F dimension, const Utilities::Color color) const
+        {
+            sf::RectangleShape rectShape = sf::RectangleShape({dimension.coordX, dimension.coordY});
+            rectShape.setFillColor({color.r, color.g, color.b, color.a});
+            rectShape.setOrigin(dimension.coordX / 2, dimension.coordY / 2);
+            rectShape.setPosition(center.coordX, center.coordY);
+            window->draw(rectShape);
+        }
+        // Método utilizado para desenhar texto na View.
+        void GraphicManager::drawText(const std::string text, const Utilities::myVector2F position, unsigned int size, const bool centralized) const
+        {
+            sf::Text txt = sf::Text(text, font, size);
+            txt.setFillColor(sf::Color::White);
+            if (centralized)
+            {
+                sf::FloatRect _size = txt.getGlobalBounds();
+                txt.setOrigin(_size.width / 2, _size.height / 2);
+            }
+            txt.setPosition(position.coordX, position.coordY);
+            window->draw(txt);
+        }
+        // Método utilizado para retornar a posição do mouse na View.
+        Utilities::myVector2F GraphicManager::getMousePosition() const
+        {
+            sf::Vector2i windowMousePosition = sf::Mouse::getPosition(*window);
+            sf::Vector2u windowSize = window->getSize();
+            sf::Vector2f cameraSize = camera.getSize();
+            sf::Vector2f cameraPosition = camera.getCenter() - cameraSize / 2.0f;
+
+            return {
+                (windowMousePosition.x / (float)windowSize.x) * cameraSize.x + cameraPosition.x,
+                (windowMousePosition.y / (float)windowSize.y) * cameraSize.y + cameraPosition.y};
         }
     }
 }

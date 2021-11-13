@@ -6,6 +6,7 @@
 #include <map>
 #include <string>
 #include "../Utilities/Vector2D.hpp"
+#include "../Utilities/Color.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -25,9 +26,11 @@ namespace OgrO // Namespace com o nome do jogo.
             sf::Texture *texture;
             //  Atributo representado por uma classe pertencente a biblioteca SFML, que é uma representação "desenhavel" de uma textura.
             sf::Sprite sprite;
-            
+            // Atributo representado por uma classe pertencente a biblioteca SFML, tem função de definir a fonte que será usada nas representações textuais dentro do jogo.
+            sf::Font font;
+
             // Padrão Singleton
-            static GraphicManager *instance;
+            static GraphicManager *instanceGraphicManager;
 
             // Construtora da classe GraphicManager.
             GraphicManager();
@@ -51,13 +54,18 @@ namespace OgrO // Namespace com o nome do jogo.
             // Método carrega a textura de acordo com o caminho passado como parâmetro.
             // Caso textura não exista, o método já se encarrega de criar, se possível.
             bool loadAsset(const std::string &path);
-            // bool loadAsset(const char * path);
             // Método utilizado para centralizar a View.
             void centerCamera(const Utilities::myVector2F center);
             // Método utilizado para retornar window do tipo *RenderWindow e assim, ser possível utilizar seus métodos.
             sf::RenderWindow *getWindow() const;
             // Método retorna as dimensões da imagem.
             const Utilities::myVector2F getDimensionsOfAsset(const std::string &id) const;
+            // Método utilizado para desenhar um retangulo sólido na View.
+            void drawSolidRect(const Utilities::myVector2F center, const Utilities::myVector2F dimension, const Utilities::Color color) const;
+            // Método utilizado para desenhar texto na View.
+            void drawText(const std::string text, const Utilities::myVector2F position, unsigned int size, const bool centralized = true) const;
+            // Método utilizado para retornar a posição do mouse na View.
+            Utilities::myVector2F getMousePosition() const;
         };
     }
 }
