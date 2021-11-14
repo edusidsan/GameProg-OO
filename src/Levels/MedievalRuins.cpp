@@ -124,8 +124,8 @@ namespace OgrO // Namespace com o nome do jogo.
             if (endLevel)
             {
                 std::cout << "FECHAR JANELA." << std::endl;
-                return Managers::endGame;
-                // Managers::endGame;
+                return Managers::END_GAME;
+                // Managers::END_GAME;
             }
             else
             {
