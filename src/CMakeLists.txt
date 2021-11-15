@@ -15,21 +15,31 @@ set(
     SOURCES
     Levels/Level.cpp
     Levels/MedievalRuins.cpp
+    Managers/ButtonsManager.cpp
     Managers/ScreenManager.cpp
     Managers/StateManager.cpp
     Managers/CollisionManager.cpp
     Managers/EventsManager.cpp
     Managers/GraphicManager.cpp
+    Menus/Button.cpp
+    Menus/MainMenu.cpp
     Menus/Menu.cpp
+    Menus/PromisseText.cpp
+    Menus/TextInputBox.cpp
     Lists/PhysicalEntityList.cpp
     PhysicalEntities/Characters/Enemies/Enemy.cpp
+    PhysicalEntities/Characters/Enemies/Witch.cpp
+    PhysicalEntities/Characters/Enemies/Wolf.cpp
+    PhysicalEntities/Characters/Players/Player.cpp
     PhysicalEntities/Characters/Players/Shrek.cpp
+    PhysicalEntities/Characters/Players/Donkey.cpp
     PhysicalEntities/Characters/Character.cpp
     PhysicalEntities/Obstacles/Obstacle.cpp
     PhysicalEntities/PhysicalEntity.cpp
     Tiles/Tile.cpp
     Tiles/TileMap.cpp
     Tiles/TilesManager.cpp
+    Utilities/Color.cpp
     State.cpp
     OtherGrandRandomOgre.cpp
     Entity.cpp
@@ -39,21 +49,31 @@ set(
     # Lists/List.hpp
     Levels/Level.hpp
     Levels/MedievalRuins.hpp
+    Managers/ButtonsManager.hpp
     Managers/ScreenManager.hpp
     Managers/StateManager.hpp
     Managers/CollisionManager.hpp
     Managers/EventsManager.hpp
     Managers/GraphicManager.hpp
+    Menus/Button.hpp
+    Menus/MainMenu.hpp
     Menus/Menu.hpp
+    Menus/PromisseText.hpp
+    Menus/TextInputBox.hpp
     Lists/PhysicalEntityList.hpp
     PhysicalEntities/Characters/Enemies/Enemy.hpp
+    PhysicalEntities/Characters/Enemies/Witch.hpp
+    PhysicalEntities/Characters/Enemies/Wolf.hpp
+    PhysicalEntities/Characters/Players/Player.hpp
     PhysicalEntities/Characters/Players/Shrek.hpp
+    PhysicalEntities/Characters/Players/Donkey.hpp
     PhysicalEntities/Characters/Character.hpp
     PhysicalEntities/Obstacles/Obstacle.hpp
     PhysicalEntities/PhysicalEntity.hpp
     Tiles/Tile.hpp
     Tiles/TileMap.hpp
     Tiles/TilesManager.hpp
+    Utilities/Color.hpp
     json.hpp
     # Utilities/Vector2D.hpp
     State.hpp

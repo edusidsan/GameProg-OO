@@ -1,5 +1,5 @@
-#ifndef _SHREK_HPP_
-#define _SHREK_HPP_
+#ifndef _DONKEY_HPP_
+#define _DONKEY_HPP_
 
 #include "Player.hpp"
 #include <iostream>
@@ -11,7 +11,7 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             namespace Players // Namespace do Pacote Enemies.
             {
-                class Shrek : public Player
+                class Donkey : public Player
                 {
                 private:
                     // Atributo que indica o código do evento ocorrido.
@@ -24,9 +24,9 @@ namespace OgrO // Namespace com o nome do jogo.
 
                 public:
                     // Construtora da classe Enemy.
-                    Shrek(Utilities::myVector2F pos = {0.0f, 0.0f}, const char *tPath = nullptr);
+                    Donkey(Utilities::myVector2F pos = {0.0f, 0.0f}, const char *tPath = nullptr);
                     // Destrutora da classe Enemy.
-                    ~Shrek();
+                    ~Donkey();
                     // Método carrega a textura do Player na window.
                     // void initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm);
                     void initialize(Managers::EventsManager &em, Managers::CollisionManager &cm);

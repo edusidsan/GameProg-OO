@@ -1,4 +1,4 @@
-#include "Shrek.hpp"
+#include "Donkey.hpp"
 #include <cmath>
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -9,8 +9,8 @@ namespace OgrO // Namespace com o nome do jogo.
             namespace Players // Namespace do Pacote Enemies.
             {
 
-                // Construtora da classe Shrek.
-                Shrek::Shrek(Utilities::myVector2F pos, const char *tPath) : Player(pos, "../assets/Shrek.png"),
+                // Construtora da classe Donkey.
+                Donkey::Donkey(Utilities::myVector2F pos, const char *tPath) : Player(pos, "../assets/Donkey.png"),
                                                           maxSpeedX{80},
                                                           maxSpeedY{220},
                                                           jumping(false),
@@ -20,15 +20,15 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
 
                     // Atribui um ID ao player.
-                    id = 101;
+                    id = 100;
                 }
-                // Destrutora da classe Shrek.
-                Shrek::~Shrek()
+                // Destrutora da classe Donkey.
+                Donkey::~Donkey()
                 {
                 }
                 // Método carrega a textura do Player na window.
-                // void Shrek::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
-                void Shrek::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
+                // void Donkey::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
+                void Donkey::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
                 {
                     // // Carrega textura no player.
                     // gm.loadAsset(texturePath);
@@ -49,7 +49,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     cm.addToLCollidablesPhysicalEntities((this));
                 }
                 // Método atualizar do Player. Tem como parâmetro uma variável float que representa o tempo.
-                void Shrek::update(float t)
+                void Donkey::update(float t)
                 {
                     if (abs(speed.coordY) <= 5)
                         jumping = false;
@@ -70,7 +70,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     adjusts = Utilities::myVector2F(0, 0);
                 }
                 // Método desenhar do Player.
-                void Shrek::draw(Managers::GraphicManager &gm)
+                void Donkey::draw(Managers::GraphicManager &gm)
                 {
                     // Desenha a forma do player atual na window.
                     // gm.draw(texturePath, position, {1, 6}, {0, 5});
@@ -79,27 +79,32 @@ namespace OgrO // Namespace com o nome do jogo.
                     gm.centerCamera(position);
                 }
                 // Método de tratamento de evento ocorrido.
-                void Shrek::handleEvent(const sf::Event &ev)
+                void Donkey::handleEvent(const sf::Event &ev)
                 {
                     if (ev.type == sf::Event::KeyPressed)
                     {
                         switch (ev.key.code)
                         {
-                        case sf::Keyboard::Key::Right:
+                        case sf::Keyboard::Key::D:
+                            std::cout<<"ANDANDO COM BURRO PRESSED"<<std::endl;
                             speed.coordX += maxSpeedX;
                             this->direction = 0;
                             break;
-                        case sf::Keyboard::Key::Left:
+                        case sf::Keyboard::Key::A:
                             speed.coordX -= maxSpeedX;
                             this->direction = 1;
                             break;
-                        case sf::Keyboard::Key::Up:
+                        case sf::Keyboard::Key::W:
                             if (!jumping)
                             {
                                 jumping = true;
                                 speed.coordY -= 0.5 * maxSpeedY;
                             }
                             break;
+                        case sf::Keyboard::Key::Down:
+                            // speed.coordY += 75;
+                            break;
+
                         default:
                             break;
                         }
@@ -108,26 +113,31 @@ namespace OgrO // Namespace com o nome do jogo.
                     {
                         switch (ev.key.code)
                         {
-                        case sf::Keyboard::Key::Right:
+                        case sf::Keyboard::Key::D:
+                            std::cout<<"ANDANDO COM BURRO RELEASED"<<std::endl;
                             // speed.coordX -= 75;
                             // speed.coordX -= maxSpeedX;
                             speed.coordX = 0;
                             break;
-                        case sf::Keyboard::Key::Left:
+                        case sf::Keyboard::Key::A:
                             // speed.coordX += 75;
                             // speed.coordX += maxSpeedX;
                             speed.coordX = 0;
                             break;
-                        case sf::Keyboard::Key::Up:
+                        case sf::Keyboard::Key::W:
                             // speed.coordY = 0.5f;
                             break;
+                        case sf::Keyboard::Key::Down:
+                            // speed.coordY -= 75;
+                            break;
+
                         default:
                             break;
                         }
                     }
                 }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
-                void Shrek::collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
+                void Donkey::collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
                 {
                     if ((idOther == 22) || (idOther == 23) || (idOther == 24))
                     {

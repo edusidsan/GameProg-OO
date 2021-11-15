@@ -1,6 +1,6 @@
 #include "OtherGrandRandomOgre.hpp"
-#include "PhysicalEntities/Characters/Enemies/Enemy.hpp"
-#include "PhysicalEntities/Characters/Players/Shrek.hpp"
+//#include "PhysicalEntities/Characters/Enemies/Enemy.hpp"
+//#include "PhysicalEntities/Characters/Players/Shrek.hpp"
 #include "Tiles/Tile.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
@@ -10,11 +10,10 @@ namespace OgrO // Namespace com o nome do jogo.
         booleana closedWindowEvent setada para false
     */
     OtherGrandRandomOgre::OtherGrandRandomOgre() : pGraphicManager(Managers::GraphicManager::getInstance()),
-                                                   menu(),
                                                    player1{PhysicalEntities::Characters::Players::Shrek(Utilities::myVector2F(64.0f, 64.0f))},
-                                                   endLevel{false},
-                                                   firstLevel{&player1}
-
+                                                   player2{PhysicalEntities::Characters::Players::Donkey(Utilities::myVector2F(80.0f, 64.0f))},
+                                                   screenManager{&player1, &player2},
+                                                   endLevel{false}
     {
     }
     // Destrutora da classe OtherGrandRandomOgre
@@ -29,7 +28,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // Limpa a window.
             pGraphicManager->clear();
 
-            endLevel = firstLevel.run();
+            endLevel = screenManager.run();
 
             // Mostra a window para o usuário.
             pGraphicManager->display();

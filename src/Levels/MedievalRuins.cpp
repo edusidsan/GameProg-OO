@@ -1,5 +1,6 @@
 #include "MedievalRuins.hpp"
-#include "../PhysicalEntities/Characters/Enemies/Enemy.hpp"
+#include "../PhysicalEntities/Characters/Enemies/Witch.hpp"
+#include "../PhysicalEntities/Characters/Enemies/Wolf.hpp"
 #include "../Managers/ScreenManager.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
@@ -7,9 +8,10 @@ namespace OgrO // Namespace com o nome do jogo.
     namespace Levels // Namespace do Pacote Levels.
     {
         // Construtora da classe MedievalRuins.
-        MedievalRuins::MedievalRuins(PhysicalEntities::Characters::Players::Shrek *_player1) : Level(),
+        MedievalRuins::MedievalRuins(PhysicalEntities::Characters::Players::Shrek *_player1, PhysicalEntities::Characters::Players::Donkey *_player2) : Level(),
                                                                                                State(),
                                                                                                player1{_player1},
+                                                                                               player2{_player2},
                                                                                                tilesManager{
                                                                                                    {
                                                                                                        //  new Tiles::Tile(0, "../assets/level1/Bonus.png", {32.0f, 32.0f}),
@@ -83,11 +85,16 @@ namespace OgrO // Namespace com o nome do jogo.
             {
                 players.insert(player1);
             }
+               if (player2)
+            {
+                players.insert(player2);
+            }
             // Criação de instâncias de novas entidades físicas.
-            players.insert(new PhysicalEntities::Characters::Enemies::Enemy(Utilities::myVector2F(40.0f, 50.0f), Utilities::myVector2F(0, 10)));
-            players.insert(new PhysicalEntities::Characters::Enemies::Enemy(Utilities::myVector2F(40.0f, 200.0f), Utilities::myVector2F(0, -10)));
-            players.insert(new PhysicalEntities::Characters::Enemies::Enemy(Utilities::myVector2F(120.0f, 50.0f), Utilities::myVector2F(0, 10)));
-            players.insert(new PhysicalEntities::Characters::Enemies::Enemy(Utilities::myVector2F(120.0f, 200.0f), Utilities::myVector2F(0, -10)));
+            players.insert(new PhysicalEntities::Characters::Enemies::Witch(Utilities::myVector2F(40.0f, 50.0f), Utilities::myVector2F(0, 10)));
+            players.insert(new PhysicalEntities::Characters::Enemies::Witch(Utilities::myVector2F(40.0f, 200.0f), Utilities::myVector2F(0, -10)));
+            players.insert(new PhysicalEntities::Characters::Enemies::Witch(Utilities::myVector2F(120.0f, 50.0f), Utilities::myVector2F(0, 10)));
+            players.insert(new PhysicalEntities::Characters::Enemies::Witch(Utilities::myVector2F(120.0f, 200.0f), Utilities::myVector2F(0, -10)));
+            players.insert(new PhysicalEntities::Characters::Enemies::Wolf(Utilities::myVector2F(150.0f, 150.0f), Utilities::myVector2F(0, -10)));
             // Carrega as imagens nas entidades físicas e inicializa os gerenciadores de eventos.
             players.initializePhysicalEntities(eventsManager, collisionManager);
             // Inicializa gerenciador de tiles.
@@ -102,6 +109,8 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             // Remove o jogador da lista para ele não ser desalocado da memória.
             players.removeFirst(player1);
+            players.removeFirst(player2);
+
         }
         // Método run do MedievalRuins.
         int MedievalRuins::run()

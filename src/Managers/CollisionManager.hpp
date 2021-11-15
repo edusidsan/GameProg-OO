@@ -19,7 +19,7 @@ namespace OgrO // Namespace com o nome do jogo.
             }
             namespace Players
             {
-                class Shrek;
+                class Player;
             }
         }
         namespace Obstacles
@@ -39,10 +39,12 @@ namespace OgrO // Namespace com o nome do jogo.
             std::list<PhysicalEntities::PhysicalEntity *> LCollidablesPhysicalEntities;
             // Vetor representando uma lista de inimigos.
             std::vector<PhysicalEntities::Characters::Enemies::Enemy *> LEs;
+             // Vetor representando uma lista de players.
+            std::vector<PhysicalEntities::Characters::Players::Player *> LPs;
             // Lista representando um conjunto de obstáculos.
             std::list<PhysicalEntities::Obstacles::Obstacle *> LOs;
             // Atributo que aponta para o player.
-            PhysicalEntities::Characters::Players::Shrek *pPlayer = nullptr;
+            //PhysicalEntities::Characters::Players::Shrek *pPlayer = nullptr;
             // Atributo que retorna se duas entidades físicas colidem.
             bool colliding(PhysicalEntities::PhysicalEntity *e1, PhysicalEntities::PhysicalEntity *e2);
             // Atributo que aponta para o gerenciador de tiles que será utilizado.
@@ -58,7 +60,8 @@ namespace OgrO // Namespace com o nome do jogo.
             // Método que adiciona um elemento de Obstacle na lista de possíveis objetos que colidem.
             void addToLCollidablesPhysicalEntities(PhysicalEntities::Obstacles::Obstacle *pPE);
             // Método que adiciona um elemento de player::shrek na lista de possíveis objetos que colidem.
-            void addToLCollidablesPhysicalEntities(PhysicalEntities::Characters::Players::Shrek *pPE);
+            void addToLCollidablesPhysicalEntities(PhysicalEntities::Characters::Players::Player *pPE);
+            //void addToLCollidablesPhysicalEntities(PhysicalEntities::Characters::Players::Shrek *pPE);
             // Método que limpa a lista de possíveis objetos que colidem.
             void removeAll();
             // Método que verifica se houve colisão entre entidades físicas.
