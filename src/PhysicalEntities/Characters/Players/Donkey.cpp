@@ -19,23 +19,23 @@ namespace OgrO // Namespace com o nome do jogo.
 
                 {
 
-                    // Atribui um ID ao player.
+                    // Atribui um ID ao Donkey.
                     id = 100;
                 }
                 // Destrutora da classe Donkey.
                 Donkey::~Donkey()
                 {
                 }
-                // Método carrega a textura do Player na window.
+                // Método carrega a textura do Donkey na window.
                 // void Donkey::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
                 void Donkey::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
                 {
-                    // // Carrega textura no player.
+                    // // Carrega textura no Donkey.
                     // gm.loadAsset(texturePath);
                     // // Retorna dimensão da imagem.
                     // dimension = gm.getDimensionsOfAsset(texturePath);
 
-                    // Carrega textura no player.
+                    // Carrega textura no Donkey.
                     pGraphicManager->loadAsset(texturePath);
                     // Retorna dimensão da imagem.
                     dimension = pGraphicManager->getDimensionsOfAsset(texturePath);
@@ -44,11 +44,11 @@ namespace OgrO // Namespace com o nome do jogo.
                     keyEvent = em.addKeyboardListener([this](const sf::Event &event)
                                                       { handleEvent(event); });
 
-                    // Adiciona player na lista de entidades físicas colidiveis.
+                    // Adiciona Donkey na lista de entidades físicas colidiveis.
                     // cm.addToLCollidablesPhysicalEntities(static_cast<PhysicalEntities::PhysicalEntity *>(this));
                     cm.addToLCollidablesPhysicalEntities((this));
                 }
-                // Método atualizar do Player. Tem como parâmetro uma variável float que representa o tempo.
+                // Método atualizar do Donkey. Tem como parâmetro uma variável float que representa o tempo.
                 void Donkey::update(float t)
                 {
                     if (abs(speed.coordY) <= 5)
@@ -69,14 +69,14 @@ namespace OgrO // Namespace com o nome do jogo.
                     position += adjusts;
                     adjusts = Utilities::myVector2F(0, 0);
                 }
-                // Método desenhar do Player.
+                // Método desenhar do Donkey.
                 void Donkey::draw(Managers::GraphicManager &gm)
                 {
-                    // Desenha a forma do player atual na window.
+                    // Desenha a forma do Donkey atual na window.
                     // gm.draw(texturePath, position, {1, 6}, {0, 5});
                     gm.draw(texturePath, position, this->direction);
-                    // Atribui a posição do player na posição da view.
-                    gm.centerCamera(position);
+                    // Atribui a posição do Donkey na posição da view.
+                   
                 }
                 // Método de tratamento de evento ocorrido.
                 void Donkey::handleEvent(const sf::Event &ev)
@@ -86,7 +86,7 @@ namespace OgrO // Namespace com o nome do jogo.
                         switch (ev.key.code)
                         {
                         case sf::Keyboard::Key::D:
-                            std::cout<<"ANDANDO COM BURRO PRESSED"<<std::endl;
+                            //std::cout<<"ANDANDO COM BURRO PRESSED"<<std::endl;
                             speed.coordX += maxSpeedX;
                             this->direction = 0;
                             break;
@@ -114,7 +114,7 @@ namespace OgrO // Namespace com o nome do jogo.
                         switch (ev.key.code)
                         {
                         case sf::Keyboard::Key::D:
-                            std::cout<<"ANDANDO COM BURRO RELEASED"<<std::endl;
+                            //std::cout<<"ANDANDO COM BURRO RELEASED"<<std::endl;
                             // speed.coordX -= 75;
                             // speed.coordX -= maxSpeedX;
                             speed.coordX = 0;

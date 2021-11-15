@@ -19,23 +19,23 @@ namespace OgrO // Namespace com o nome do jogo.
 
                 {
 
-                    // Atribui um ID ao player.
+                    // Atribui um ID ao Sherek.
                     id = 101;
                 }
                 // Destrutora da classe Shrek.
                 Shrek::~Shrek()
                 {
                 }
-                // Método carrega a textura do Player na window.
+                // Método carrega a textura do Sherek na window.
                 // void Shrek::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
                 void Shrek::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
                 {
-                    // // Carrega textura no player.
+                    // // Carrega textura no Sherek.
                     // gm.loadAsset(texturePath);
                     // // Retorna dimensão da imagem.
                     // dimension = gm.getDimensionsOfAsset(texturePath);
 
-                    // Carrega textura no player.
+                    // Carrega textura no Sherek.
                     pGraphicManager->loadAsset(texturePath);
                     // Retorna dimensão da imagem.
                     dimension = pGraphicManager->getDimensionsOfAsset(texturePath);
@@ -44,11 +44,11 @@ namespace OgrO // Namespace com o nome do jogo.
                     keyEvent = em.addKeyboardListener([this](const sf::Event &event)
                                                       { handleEvent(event); });
 
-                    // Adiciona player na lista de entidades físicas colidiveis.
+                    // Adiciona Sherek na lista de entidades físicas colidiveis.
                     // cm.addToLCollidablesPhysicalEntities(static_cast<PhysicalEntities::PhysicalEntity *>(this));
                     cm.addToLCollidablesPhysicalEntities((this));
                 }
-                // Método atualizar do Player. Tem como parâmetro uma variável float que representa o tempo.
+                // Método atualizar do Sherek. Tem como parâmetro uma variável float que representa o tempo.
                 void Shrek::update(float t)
                 {
                     if (abs(speed.coordY) <= 5)
@@ -69,13 +69,13 @@ namespace OgrO // Namespace com o nome do jogo.
                     position += adjusts;
                     adjusts = Utilities::myVector2F(0, 0);
                 }
-                // Método desenhar do Player.
+                // Método desenhar do Sherek.
                 void Shrek::draw(Managers::GraphicManager &gm)
                 {
-                    // Desenha a forma do player atual na window.
+                    // Desenha a forma do Sherek atual na window.
                     // gm.draw(texturePath, position, {1, 6}, {0, 5});
                     gm.draw(texturePath, position, this->direction);
-                    // Atribui a posição do player na posição da view.
+                    // Atribui a posição do Sherek na posição da view.
                     gm.centerCamera(position);
                 }
                 // Método de tratamento de evento ocorrido.
