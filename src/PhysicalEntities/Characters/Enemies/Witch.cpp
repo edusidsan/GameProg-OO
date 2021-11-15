@@ -1,5 +1,5 @@
 
-#include "Enemy.hpp"
+#include "Witch.hpp"
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace PhysicalEntities // Namespace do Pacote Entities.
@@ -9,19 +9,20 @@ namespace OgrO // Namespace com o nome do jogo.
             namespace Enemies // Namespace do Pacote Enemies.
             {
 
-                // Construtora da classe Enemy.
-                Enemy::Enemy(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath) : Character(pos, s, tPath)
+                // Construtora da classe Witch.
+                Witch::Witch(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath) : Enemy(pos, s, "../assets/Witch.png")
+                //"../assets/Witch.png"
                 {
-                    // Atribui um ID ao Enemy.
+                    // Atribui um ID ao Witch.
                     id = 102;
                 }
-                // Destrutora da classe Enemy.
-                Enemy::~Enemy()
+                // Destrutora da classe Witch.
+                Witch::~Witch()
                 {
                 }
-                // Método carrega a textura do enemy na window e inicializa gerenciadores do mesmo.
-                // void Enemy::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
-                void Enemy::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
+                // Método carrega a textura do Witch na window e inicializa gerenciadores do mesmo.
+                // void Witch::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
+                void Witch::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
                 {
                     // // Carrega textura no player.
                     // gm.loadAsset(texturePath);
@@ -33,25 +34,25 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Retorna dimensão da imagem.
                     dimension = pGraphicManager->getDimensionsOfAsset(texturePath);
 
-                    // Adiciona enemy na lista de entidades físicas colidiveis.
+                    // Adiciona Witch na lista de entidades físicas colidiveis.
                     cm.addToLCollidablesPhysicalEntities((this));
                 }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
-                void Enemy::collided(int IDOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
+                void Witch::collided(int IDOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
                 {
                     // Caso colida com Player1.
                     if (IDOther == 101)
                     {
-                        // std::cout << "OBJETO ENEMY >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
+                        // std::cout << "OBJETO Witch >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
                     }
-                    // Caso colida com Enemy.
+                    // Caso colida com Witch.
                     else if (IDOther == 102)
                     {
-                        // Cálculo da distância entre os enemy no momento da colisão.
+                        // Cálculo da distância entre os Witch no momento da colisão.
                         Utilities::myVector2F distance = position - positionOther;
-                        // Medida para não manter um enemy preso dentro do outro.
+                        // Medida para não manter um Witch preso dentro do outro.
                         position += distance * (1 / 2);
-                        // std::cout << "OBJETO ENEMY >>> COLISAO COM OBJETO ENEMY." << std::endl;
+                        // std::cout << "OBJETO Witch >>> COLISAO COM OBJETO Witch." << std::endl;
                         // Muda o sentido da velocidade em x.
                         speed.coordX *= -1;
                         // Muda o sentido da velocidade em y.

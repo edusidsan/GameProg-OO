@@ -62,9 +62,13 @@
         "codecvt": "cpp",
         "forward_list": "cpp",
         "ratio": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "numbers": "cpp"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/src",
+    "cSpell.words": [
+        "CMAKE"
+    ],
     "C_Cpp.errorSquiggles": "Enabled",
 
 }

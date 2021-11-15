@@ -31,7 +31,11 @@ set(
     Menus/TextInputBox.cpp
     Lists/PhysicalEntityList.cpp
     PhysicalEntities/Characters/Enemies/Enemy.cpp
+    PhysicalEntities/Characters/Enemies/Witch.cpp
+    PhysicalEntities/Characters/Enemies/Wolf.cpp
+    PhysicalEntities/Characters/Players/Player.cpp
     PhysicalEntities/Characters/Players/Shrek.cpp
+    PhysicalEntities/Characters/Players/Donkey.cpp
     PhysicalEntities/Characters/Character.cpp
     PhysicalEntities/Obstacles/Obstacle.cpp
     PhysicalEntities/PhysicalEntity.cpp
@@ -64,7 +68,11 @@ set(
     Menus/TextInputBox.hpp
     Lists/PhysicalEntityList.hpp
     PhysicalEntities/Characters/Enemies/Enemy.hpp
+    PhysicalEntities/Characters/Enemies/Witch.hpp
+    PhysicalEntities/Characters/Enemies/Wolf.hpp
+    PhysicalEntities/Characters/Players/Player.hpp
     PhysicalEntities/Characters/Players/Shrek.hpp
+    PhysicalEntities/Characters/Players/Donkey.hpp
     PhysicalEntities/Characters/Character.hpp
     PhysicalEntities/Obstacles/Obstacle.hpp
     PhysicalEntities/PhysicalEntity.hpp

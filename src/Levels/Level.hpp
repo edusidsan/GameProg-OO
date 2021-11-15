@@ -6,6 +6,7 @@
 #include "../Managers/EventsManager.hpp"
 #include "../Lists/PhysicalEntityList.hpp"
 
+#define PATH_BACKGROUND_MEDIEVALRUINS "../assets/level1/Background_01.png"
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Levels // Namespace do Pacote Levels.

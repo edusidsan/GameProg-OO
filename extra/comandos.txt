@@ -116,10 +116,3 @@ CMAKE
     cd build
     cmake --build .
     .\gameOO.exe
-
-
-
-Aprovado, testado
-
-teste aaaaaa
-

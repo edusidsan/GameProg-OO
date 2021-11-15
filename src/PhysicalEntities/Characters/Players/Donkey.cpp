@@ -1,5 +1,6 @@
-#include "Shrek.hpp"
+#include "Donkey.hpp"
 #include <cmath>
+
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace PhysicalEntities // Namespace do Pacote Entities.
@@ -8,33 +9,32 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             namespace Players // Namespace do Pacote Enemies.
             {
-
-                // Construtora da classe Shrek.
-                Shrek::Shrek(Utilities::myVector2F pos, const char *tPath) : Player(pos, "../assets/Shrek.png")
-                {
+                // Construtora da classe Donkey.
+                Donkey::Donkey(Utilities::myVector2F pos, const char *tPath) : Player(pos, "../assets/Donkey.png")
+               {
                     // Atribui um ID ao player.
-                    id = 100;
+                    id = 101;
                 }
-                // Destrutora da classe Shrek.
-                Shrek::~Shrek()
+                // Destrutora da classe Donkey.
+                Donkey::~Donkey()
                 {
                 }
                 // Método de tratamento de evento ocorrido.
-                void Shrek::handleEvent(const sf::Event &ev)
+                void Donkey::handleEvent(const sf::Event &ev)
                 {
                     if (ev.type == sf::Event::KeyPressed)
                     {
                         switch (ev.key.code)
                         {
-                        case sf::Keyboard::Key::Right:
+                        case sf::Keyboard::Key::D:
                             speed.coordX += maxSpeedX;
                             this->direction = 0;
                             break;
-                        case sf::Keyboard::Key::Left:
+                        case sf::Keyboard::Key::A:
                             speed.coordX -= maxSpeedX;
                             this->direction = 1;
                             break;
-                        case sf::Keyboard::Key::Up:
+                        case sf::Keyboard::Key::W:
                             if (!jumping)
                             {
                                 jumping = true;
@@ -49,13 +49,13 @@ namespace OgrO // Namespace com o nome do jogo.
                     {
                         switch (ev.key.code)
                         {
-                        case sf::Keyboard::Key::Right:
+                        case sf::Keyboard::Key::D:
                             speed.coordX = 0;
                             break;
-                        case sf::Keyboard::Key::Left:
+                        case sf::Keyboard::Key::A:
                             speed.coordX = 0;
                             break;
-                        case sf::Keyboard::Key::Up:
+                        case sf::Keyboard::Key::W:
                             break;
                         default:
                             break;
@@ -63,7 +63,6 @@ namespace OgrO // Namespace com o nome do jogo.
                     }
                 }
             }
-
         }
     }
 }
