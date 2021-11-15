@@ -21,9 +21,12 @@ set(
     Managers/CollisionManager.cpp
     Managers/EventsManager.cpp
     Managers/GraphicManager.cpp
+    # Mementos/Memento.cpp
+    # Mementos/LevelMemento.cpp
     Menus/Button.cpp
     Menus/MainMenu.cpp
     Menus/Menu.cpp
+    Menus/PauseMenu.cpp
     Menus/PromisseText.cpp
     Menus/TextInputBox.cpp
     Lists/PhysicalEntityList.cpp
@@ -55,9 +58,12 @@ set(
     Managers/CollisionManager.hpp
     Managers/EventsManager.hpp
     Managers/GraphicManager.hpp
+    # Mementos/Memento.hpp
+    # Mementos/LevelMemento.hpp
     Menus/Button.hpp
     Menus/MainMenu.hpp
     Menus/Menu.hpp
+    Menus/PauseMenu.hpp
     Menus/PromisseText.hpp
     Menus/TextInputBox.hpp
     Lists/PhysicalEntityList.hpp

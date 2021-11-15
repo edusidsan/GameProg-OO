@@ -22,8 +22,13 @@ namespace OgrO // Namespace com o nome do jogo.
         enum GameCode
         {
             continueGame,
-            endGame,
-            toFirstLevel
+            MAIN_MENU,
+            PAUSE_MENU,
+            END_GAME,
+            SAVE_GAME,
+            MEDIEVAL_RUINS_LEVEL,
+            EXIT,
+            LEADERBOARD
         };
 
         class ScreenManager : public StateManager
@@ -41,7 +46,6 @@ namespace OgrO // Namespace com o nome do jogo.
             ~ScreenManager();
 
         protected:
-
             bool handleCode(int GameCode);
         };
     }

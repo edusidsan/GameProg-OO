@@ -19,9 +19,9 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             switch (GameCode)
             {
-            case endGame:
+            case END_GAME:
                 return true;
-            case toFirstLevel:
+            case MEDIEVAL_RUINS_LEVEL:
                 push(new Levels::MedievalRuins(player1, player2));
                 return false;
                 break;

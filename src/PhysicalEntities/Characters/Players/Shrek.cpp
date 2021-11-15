@@ -10,22 +10,22 @@ namespace OgrO // Namespace com o nome do jogo.
             {
 
                 // Construtora da classe Shrek.
-                Shrek::Shrek(Utilities::myVector2F pos, const char *tPath) : Player(pos, "../assets/Shrek.png"),
-                                                          maxSpeedX{80},
-                                                          maxSpeedY{220},
-                                                          jumping(false),
-                                                          adjusts{Utilities::myVector2F(0, 0)},
-                                                          direction{0}
-
+                Shrek::Shrek(Utilities::myVector2F pos, const char *tPath) : Player(pos, "../assets/Shrek.png")
                 {
+<<<<<<< HEAD
 
                     // Atribui um ID ao Sherek.
                     id = 101;
+=======
+                    // Atribui um ID ao player.
+                    id = 100;
+>>>>>>> eduDevelop
                 }
                 // Destrutora da classe Shrek.
                 Shrek::~Shrek()
                 {
                 }
+<<<<<<< HEAD
                 // Método carrega a textura do Sherek na window.
                 // void Shrek::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
                 void Shrek::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
@@ -78,6 +78,8 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Atribui a posição do Sherek na posição da view.
                     gm.centerCamera(position);
                 }
+=======
+>>>>>>> eduDevelop
                 // Método de tratamento de evento ocorrido.
                 void Shrek::handleEvent(const sf::Event &ev)
                 {
@@ -109,94 +111,16 @@ namespace OgrO // Namespace com o nome do jogo.
                         switch (ev.key.code)
                         {
                         case sf::Keyboard::Key::Right:
-                            // speed.coordX -= 75;
-                            // speed.coordX -= maxSpeedX;
                             speed.coordX = 0;
                             break;
                         case sf::Keyboard::Key::Left:
-                            // speed.coordX += 75;
-                            // speed.coordX += maxSpeedX;
                             speed.coordX = 0;
                             break;
                         case sf::Keyboard::Key::Up:
-                            // speed.coordY = 0.5f;
                             break;
                         default:
                             break;
                         }
-                    }
-                }
-                // Método verifica colisão entre dois objetos da classe Entidade Física.
-                void Shrek::collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
-                {
-                    if ((idOther == 22) || (idOther == 23) || (idOther == 24))
-                    {
-                        float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));
-                        float distY = (position.coordY + (dimension.coordY / 2)) - abs(positionOther.coordY - (dimensionOther.coordY / 2));
-                        if (distX * distY > .001 * dimension.coordX * dimension.coordY)
-                        { // passa a ignorar colisões ignoráveis (bem as problemáticas)
-                            if (distX < distY)
-                            {
-                                // colisão em X
-                                if (distX > abs(adjusts.coordX))
-                                {
-                                    adjusts.coordX = distX * (position.coordX + (dimension.coordX) / 2 > positionOther.coordX + dimensionOther.coordX / 2 ? -0.5 : 0.5);
-                                }
-                            }
-                            else
-                            {
-                                // colisão em Y
-                                if (distY > abs(adjusts.coordY))
-                                {
-                                    adjusts.coordY = distY * (position.coordY + (dimension.coordY / 2) > positionOther.coordY - (dimensionOther.coordY / 2) ? -0.5 : 0.5);
-                                }
-                            }
-                        }
-                        speed.coordY = 0.f;
-                    }
-                    // Espinho
-                    else if (idOther == 51)
-                    {
-                        float distY = (position.coordY + (dimension.coordY / 2)) - abs(positionOther.coordY - (dimensionOther.coordY / 2));
-                        // colisão em Y
-                        if (distY > abs(adjusts.coordY))
-                        {
-                            adjusts.coordY = distY * (position.coordY + (dimension.coordY / 2) > positionOther.coordY - (dimensionOther.coordY / 2) ? -0.5 : 0.5);
-                        }
-                        speed.coordY = 0.f;
-                    }
-                    // Obstaculo que faz pular.
-                    else if (idOther == 49)
-                    {
-                        float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));
-                        // colisão em X
-                        if (distX > abs(adjusts.coordX))
-                        {
-                            position.coordY -= 0.5f;
-                            speed.coordY -= maxSpeedY;
-                        }
-                    }
-                    // Obstaculo troca de fase.
-                    else if (idOther == 35)
-                    {
-                    }
-                    // Obstaculo pedra que impede de andar reto.
-                    else if (idOther == 1)
-                    {
-                        float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));
-                        // colisão em X
-                        if (distX > abs(adjusts.coordX))
-                        {
-                            // position.coordX += 0.0f;
-                        }
-                        speed.coordX = 0.0f;
-                        float distY = (position.coordY + (dimension.coordY / 2)) - abs(positionOther.coordY - (dimensionOther.coordY / 2));
-                        // colisão em Y
-                        if (distY > abs(adjusts.coordY))
-                        {
-                            adjusts.coordY = distY * (position.coordY + (dimension.coordY / 2) > positionOther.coordY - (dimensionOther.coordY / 2) ? -0.5 : 0.5);
-                        }
-                        speed.coordY = 0.f;
                     }
                 }
             }

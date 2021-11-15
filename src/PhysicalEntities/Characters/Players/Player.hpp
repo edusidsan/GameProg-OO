@@ -1,6 +1,6 @@
 #ifndef _PLAYER_HPP_
 #define _PLAYER_HPP_
-
+#define MAXSPEEDX 80
 #include "../Character.hpp"
 #include <iostream>
 namespace OgrO // Namespace com o nome do jogo.
@@ -13,14 +13,13 @@ namespace OgrO // Namespace com o nome do jogo.
             {
                 class Player : public Character
                 {
-                private:
-                    // Atributo que indica o código do evento ocorrido.
-                    // unsigned int keyEvent;
-                    // float maxSpeedX;
-                    // float maxSpeedY;
-                    // int direction;
-                    // bool jumping;
-                    // Utilities::myVector2F adjusts;
+                protected:
+                    unsigned int keyEvent;
+                    float maxSpeedX;
+                    float maxSpeedY;
+                    int direction;
+                    bool jumping;
+                    Utilities::myVector2F adjusts;
 
                 public:
                     // Construtora da classe Player.
@@ -28,7 +27,6 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Destrutora da classe Player.
                     virtual ~Player();
                     // Método carrega a textura do Player na window.
-                    // void initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm);
                     virtual void initialize(Managers::EventsManager &em, Managers::CollisionManager &cm);
                     // Método atualizar do Player. Tem como parâmetro uma variável float que representa o tempo.
                     virtual void update(float t);
