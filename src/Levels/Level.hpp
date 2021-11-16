@@ -2,8 +2,8 @@
 #define _LEVEL_HPP_
 
 #include "../Entity.hpp"
-#include "../Managers/CollisionManager.hpp"
-#include "../Managers/EventsManager.hpp"
+//#include "../Managers/CollisionManager.hpp"
+//#include "../Managers/EventsManager.hpp"
 #include "../Lists/PhysicalEntityList.hpp"
 
 #define PATH_BACKGROUND_MEDIEVALRUINS "../assets/level1/Background_01.png"
