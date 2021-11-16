@@ -1,7 +1,7 @@
 #ifndef _OTHERGRANDRANDOMOGRE_HPP_
 #define _OTHERGRANDRANDOMOGRE_HPP_
 
-#include "Managers/GraphicManager.hpp"
+//#include "Managers/GraphicManager.hpp"
 #include "Managers/ScreenManager.hpp"
 #include "PhysicalEntities/Characters/Players/Shrek.hpp"
 #include "PhysicalEntities/Characters/Players/Donkey.hpp"

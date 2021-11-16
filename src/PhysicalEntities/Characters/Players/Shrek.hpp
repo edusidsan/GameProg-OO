@@ -18,16 +18,6 @@ namespace OgrO // Namespace com o nome do jogo.
                     Shrek(Utilities::myVector2F pos = {0.0f, 0.0f}, const char *tPath = nullptr);
                     // Destrutora da classe Sherek.
                     ~Shrek();
-<<<<<<< HEAD
-                    // Método carrega a textura do Sherek na window.
-                    // void initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm);
-                    void initialize(Managers::EventsManager &em, Managers::CollisionManager &cm);
-                    // Método atualizar do Sherek. Tem como parâmetro uma variável float que representa o tempo.
-                    void update(float t);
-                    // Método desenhar do Sherek.
-                    void draw(Managers::GraphicManager &gm);
-=======
->>>>>>> eduDevelop
                     // Método de tratamento de evento ocorrido.
                     void handleEvent(const sf::Event &ev);
 

@@ -3,7 +3,6 @@
 
 #include "Enemy.hpp"
 
-
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace PhysicalEntities // Namespace do Pacote Entities.

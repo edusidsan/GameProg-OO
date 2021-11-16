@@ -4,7 +4,7 @@
 #include "../Entity.hpp"
 #include "../Utilities/Vector2D.hpp"
 #include "../Managers/CollisionManager.hpp"
-#include "../Managers/GraphicManager.hpp"
+//#include "../Managers/GraphicManager.hpp"
 #include "../Managers/EventsManager.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
