@@ -2,9 +2,10 @@
 #define _ENTITY_HPP_
 
 #include "Managers/GraphicManager.hpp"
+#include "Mementos/Memento.hpp"
 namespace OgrO // Namespace com o nome do jogo.
 {
-    class Entity
+    class Entity : public Mementos::Memento
     {
     protected:
         // Atributo que aponta para o gerenciador gráfico criado para o jogo.

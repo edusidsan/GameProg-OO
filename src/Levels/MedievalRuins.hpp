@@ -2,6 +2,7 @@
 #define _MEDIEVALRUINS_HPP_
 
 #include "Level.hpp"
+#include "Background.hpp"
 #include "../Tiles/TilesManager.hpp"
 #include "../PhysicalEntities/Characters/Players/Shrek.hpp"
 #include "../PhysicalEntities/Characters/Players/Donkey.hpp"
@@ -19,6 +20,8 @@ namespace OgrO // Namespace com o nome do jogo.
             PhysicalEntities::Characters::Players::Shrek *player1;
             // Atributo que aponta para a classe do player Donkey.
             PhysicalEntities::Characters::Players::Donkey *player2;
+
+            Background backgroundImage;
             // Atributo que indica se a fase deve ser finalizada.
             bool endLevel;
             // Atributo do gerenciador de tiles criado para o jogo.
@@ -30,7 +33,7 @@ namespace OgrO // Namespace com o nome do jogo.
 
         public:
             // Construtora da classe MedievalRuins.
-            MedievalRuins(PhysicalEntities::Characters::Players::Shrek *_player1 = nullptr, PhysicalEntities::Characters::Players::Donkey *_player2 = nullptr);
+            MedievalRuins(PhysicalEntities::Characters::Players::Shrek *_player1 = nullptr, PhysicalEntities::Characters::Players::Donkey *_player2 = nullptr, Background _backgroundImage = "") ;
             // Destrutora da classe MedievalRuins.
             virtual ~MedievalRuins();
             // Método run do MedievalRuins.

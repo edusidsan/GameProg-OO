@@ -1,7 +1,7 @@
 #include "ScreenManager.hpp"
 #include "../Levels/MedievalRuins.hpp"
 #include "../Menus/MainMenu.hpp"
-
+#define PATH_BACKGROUND_MEDIEVALRUINS "../assets/level1/Background_01.png"
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Managers // Namespace do Pacote Managers.
@@ -22,7 +22,7 @@ namespace OgrO // Namespace com o nome do jogo.
             case END_GAME:
                 return true;
             case MEDIEVAL_RUINS_LEVEL:
-                push(new Levels::MedievalRuins(player1, player2));
+                push(new Levels::MedievalRuins(player1, player2, "../assets/level1/Background.png"));
                 return false;
                 break;
             default:

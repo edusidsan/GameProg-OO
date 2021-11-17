@@ -43,6 +43,8 @@ namespace OgrO // Namespace com o nome do jogo.
             virtual void collided(int Id, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther) = 0;
             // Método run virtual puro -> TORNA CLASSE ABSTRATA.
             // virtual void run() = 0;
+            // Método
+            nlohmann::json toJSON() const override;
         };
     }
 }

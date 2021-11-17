@@ -20,6 +20,7 @@ namespace OgrO // Namespace com o nome do jogo.
         // Construtora da classe GraphicManager.
         GraphicManager::GraphicManager() : window{new sf::RenderWindow(sf::VideoMode(800, 600), "OgrO")},
                                            camera{sf::Vector2f(400, 300), sf::Vector2f(400, 300)},
+                                        //    camera{sf::Vector2f(400, 300), sf::Vector2f(800, 600)},
                                            textures{}
 
         //    camera{sf::Vector2f(800, 600), sf::Vector2f(800, 600)}
