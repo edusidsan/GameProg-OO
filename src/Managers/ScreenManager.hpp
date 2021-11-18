@@ -32,6 +32,7 @@ namespace OgrO // Namespace com o nome do jogo.
             EXIT,
             LEADERBOARD
         };
+        static GameCode gamecode;
 
         class ScreenManager : public StateManager
         {
@@ -42,9 +43,8 @@ namespace OgrO // Namespace com o nome do jogo.
             // Atributo que aponta para a classe do player Donkey.
             PhysicalEntities::Characters::Players::Donkey *player2;
 
-
         public:
-            ScreenManager(PhysicalEntities::Characters::Players::Shrek *_player1 = nullptr,PhysicalEntities::Characters::Players::Donkey *_player2 = nullptr);
+            ScreenManager(PhysicalEntities::Characters::Players::Shrek *_player1 = nullptr, PhysicalEntities::Characters::Players::Donkey *_player2 = nullptr);
             ~ScreenManager();
 
         protected:

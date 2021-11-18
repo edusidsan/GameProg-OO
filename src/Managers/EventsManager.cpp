@@ -7,6 +7,17 @@ namespace OgrO // Namespace com o nome do jogo.
         // Inicialização do static nextKey.
         unsigned int EventsManager::nextKey{0};
 
+        EventsManager *EventsManager::instanceEventsManager = NULL;
+
+        EventsManager *EventsManager::getInstance()
+        {
+            if (instanceEventsManager == NULL)
+            {
+                instanceEventsManager = new EventsManager();
+            }
+            return instanceEventsManager;
+        }
+
         // Construtora da classe EventsManager.
         EventsManager::EventsManager()
         {
@@ -18,7 +29,6 @@ namespace OgrO // Namespace com o nome do jogo.
         // Método que trata os eventos.
         void EventsManager::handleEvent()
         {
-            window->setKeyRepeatEnabled(false);
             // Enquanto o método pollEvent de window receber algo.
             while (window->pollEvent(event))
             {

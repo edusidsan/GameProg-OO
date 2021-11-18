@@ -74,5 +74,11 @@ namespace OgrO // Namespace com o nome do jogo.
                 {"dimension x", dimension.coordX},
                 {"dimension y", dimension.coordY}};
         }
+
+        int PhysicalEntity::run()
+        {
+            std::cout << "Implementar PhysicalEntity::run()" << std::endl;
+            return 0;
+        }
     }
 }

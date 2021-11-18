@@ -2,6 +2,7 @@
 #define _ENTITY_HPP_
 
 #include "Managers/GraphicManager.hpp"
+#include "Managers/EventsManager.hpp"
 #include "Mementos/Memento.hpp"
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -19,8 +20,13 @@ namespace OgrO // Namespace com o nome do jogo.
         virtual ~Entity();
         // Método desenhar de Entity.
         virtual void draw();
+
+        virtual void init();
+        // virtual void init(Managers::EventsManager& e);
         // Método run virtual puro -> TORNA CLASSE ABSTRATA.
-        // virtual void run() = 0;
+        virtual int run() = 0;
+
+ 
 
         // nlohmann::json toJSON();
     };

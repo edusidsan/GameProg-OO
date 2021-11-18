@@ -21,7 +21,7 @@ namespace OgrO // Namespace com o nome do jogo.
 
         public:
             // Construtora da classe ButtonsManager.
-            ButtonsManager(GraphicManager &_gm, EventsManager &_em, std::vector<Menus::Button *> _buttons = {});
+            ButtonsManager(GraphicManager &_gm, EventsManager &_em,  std::vector<Menus::Button *> _buttons = {});
             // Destrutora da classe ButtonsManager.
             ~ButtonsManager();
             void draw() const;
