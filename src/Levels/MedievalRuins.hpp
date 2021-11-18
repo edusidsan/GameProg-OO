@@ -2,13 +2,7 @@
 #define _MEDIEVALRUINS_HPP_
 
 #include "Level.hpp"
-// #include "Background.hpp"
-// #include "../Tiles/TilesManager.hpp"
-// #include "../PhysicalEntities/Characters/Players/Shrek.hpp"
-// #include "../PhysicalEntities/Characters/Players/Donkey.hpp"
-// #include "../PhysicalEntities/PhysicalEntity.hpp"
-// #include "../State.hpp"
-// #include "../Managers/GraphicManager.hpp"
+
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Levels // Namespace do Pacote Levels.

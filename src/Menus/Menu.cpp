@@ -13,8 +13,8 @@ namespace OgrO // Namespace com o nome do jogo.
 
         Menu::Menu() : Entity(),
                        State(),
-
-                       bm{*pGraphicManager, em},
+                       pEventsManager{Managers::EventsManager::getInstance()},
+                       bm{*pGraphicManager, *pEventsManager},
                        gameCode{Managers::continueGame},
                        idKeyboardEvent{0},
                        idMouseEvent{0},
@@ -32,18 +32,15 @@ namespace OgrO // Namespace com o nome do jogo.
 
         void Menu::init()
         {
-            std::cout << "Implementar Menu::init()" << std::endl;
-
-            em.setWindow(pGraphicManager->getWindow());
-
-            em.addOtherListener([this](const sf::Event &event)
-                                { closedWindowButton(event); });
+            pEventsManager->setWindow(pGraphicManager->getWindow());
+            pEventsManager->addOtherListener([this](const sf::Event &e)
+                                             { closedWindowButton(e); });
         }
 
         int Menu::run()
         {
             gameCode = Managers::continueGame;
-            em.handleEvent();
+            pEventsManager->handleEvent();
             bm.draw();
             return gameCode;
         }
@@ -57,7 +54,6 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             if (event.type == sf::Event::Closed)
             {
-                std::cout << "Entity closed" << std::endl;
                 setGameCode(Managers::END_GAME);
             }
         }
@@ -66,17 +62,17 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             if (idKeyboardEvent != 0)
             {
-                em.removeKeyboardListener(idKeyboardEvent);
+                pEventsManager->removeKeyboardListener(idKeyboardEvent);
                 idKeyboardEvent = 0;
             }
             if (idMouseEvent != 0)
             {
-                em.removeMouseListener(idMouseEvent);
+                pEventsManager->removeMouseListener(idMouseEvent);
                 idMouseEvent = 0;
             }
             if (idOtherEvent != 0)
             {
-                em.removeOtherListener(idOtherEvent);
+                pEventsManager->removeOtherListener(idOtherEvent);
                 idOtherEvent = 0;
             }
         }

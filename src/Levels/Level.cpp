@@ -7,26 +7,30 @@ namespace OgrO // Namespace com o nome do jogo.
         // Construtora da classe Level.
         Level::Level(Tiles::TilesManager *_tilesManager, PhysicalEntities::Characters::Players::Shrek *_player1, PhysicalEntities::Characters::Players::Donkey *_player2, Background _backgroundImage) : Entity(),
                                                                                                                                                                                                          State(),
-                                                                                                                                                                                                         tilesManager{_tilesManager},
+                                                                                                                                                                                                         collisionManager{},
+                                                                                                                                                                                                         pEventsManager{Managers::EventsManager::getInstance()},
+                                                                                                                                                                                                         players{},
                                                                                                                                                                                                          player1{_player1},
                                                                                                                                                                                                          player2{_player2},
                                                                                                                                                                                                          backgroundImage{_backgroundImage},
+                                                                                                                                                                                                         tilesManager{_tilesManager},
                                                                                                                                                                                                          // lambda-expression.
                                                                                                                                                                                                          idClosedWindow{
-                                                                                                                                                                                                             eventsManager.addOtherListener([this](const sf::Event &event)
-                                                                                                                                                                                                                                            { closedWindowButton(event); })},
+                                                                                                                                                                                                             pEventsManager->addOtherListener([this](const sf::Event &event)
+                                                                                                                                                                                                                                              { closedWindowButton(event); })},
                                                                                                                                                                                                          idGoToMenu{
-                                                                                                                                                                                                             eventsManager.addKeyboardListener([this](const sf::Event &event)
-                                                                                                                                                                                                                                            { goToMenuButton(event); })},
+                                                                                                                                                                                                             pEventsManager->addKeyboardListener([this](const sf::Event &event)
+                                                                                                                                                                                                                                                 { goToMenuButton(event); })},
+                                                                                                                                                                                                         clock{},
                                                                                                                                                                                                          gameCode{Managers::continueGame}
 
         {
             backgroundImage.initialize();
 
             // Inicializa gerenciador de tiles.
-            tilesManager->initialize(*pGraphicManager, eventsManager);
+            tilesManager->initialize(*pGraphicManager, *pEventsManager);
             // Atribui ao gerenciador de eventos a window que está sendo utilizada pelo gerenciador gráfico.
-            eventsManager.setWindow(pGraphicManager->getWindow());
+            pEventsManager->setWindow(pGraphicManager->getWindow());
             // Atribui ao gerenciador de collisões o endereço do gerenciador de tiles.
             collisionManager.setTilesManager(tilesManager);
         }
@@ -74,7 +78,7 @@ namespace OgrO // Namespace com o nome do jogo.
         void Level::handleEvents()
         {
             // Verifica se ocorreu algum evento.
-            eventsManager.handleEvent();
+            pEventsManager->handleEvent();
         }
 
         // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.

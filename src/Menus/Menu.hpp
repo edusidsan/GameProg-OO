@@ -19,7 +19,7 @@ namespace OgrO // Namespace com o nome do jogo.
             unsigned int idMouseEvent;
             unsigned int idOtherEvent;
             // Managers::EventsManager *pEM;
-            Managers::EventsManager em;
+            Managers::EventsManager *pEventsManager;
             Managers::ButtonsManager bm;
 
         public:
