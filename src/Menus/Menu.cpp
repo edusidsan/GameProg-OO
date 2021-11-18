@@ -16,6 +16,7 @@ namespace OgrO // Namespace com o nome do jogo.
                        gameCode{Managers::continueGame}
 
         {
+            pGraphicManager->centerCamera(pGraphicManager->getScreenSize()*0.5);
             em.setWindow(pGraphicManager->getWindow());
         }
         // Destrutora da classe Level.

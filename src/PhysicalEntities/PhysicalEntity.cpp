@@ -56,7 +56,7 @@ namespace OgrO // Namespace com o nome do jogo.
         {
         }
 
-        nlohmann::json PhysicalEntity::toJSON() const
+        nlohmann::json PhysicalEntity::toJSON()
         {
             return {
                 // {"id", id},
@@ -66,17 +66,13 @@ namespace OgrO // Namespace com o nome do jogo.
                 // {"dimension", dimension.toJSON()}};
 
                 {"id", id},
-
-                {"position "},
-                {"x", position.coordX},
-                {"y", position.coordY},
-                {"speed "},
-                {"x", speed.coordX},
-                {"y", speed.coordY},
+                {"position x", position.coordX},
+                {"position y", position.coordY},
+                {"speed x", speed.coordX},
+                {"speed y", speed.coordY},
                 {"texturePath", texturePath},
-                {"dimension "},
-                {"x", dimension.coordX},
-                {"y", dimension.coordY}};
+                {"dimension x", dimension.coordX},
+                {"dimension y", dimension.coordY}};
         }
     }
 }

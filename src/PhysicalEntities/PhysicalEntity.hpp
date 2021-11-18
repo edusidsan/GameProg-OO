@@ -44,7 +44,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // Método run virtual puro -> TORNA CLASSE ABSTRATA.
             // virtual void run() = 0;
             // Método
-            nlohmann::json toJSON() const override;
+            nlohmann::json toJSON() override;
         };
     }
 }

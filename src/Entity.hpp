@@ -21,6 +21,8 @@ namespace OgrO // Namespace com o nome do jogo.
         virtual void draw();
         // Método run virtual puro -> TORNA CLASSE ABSTRATA.
         // virtual void run() = 0;
+
+        // nlohmann::json toJSON();
     };
 
 }

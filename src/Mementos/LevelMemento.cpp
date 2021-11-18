@@ -12,7 +12,7 @@ namespace OgrO
         LevelMemento::~LevelMemento()
         {
         }
-        bool LevelMemento::save(const std::string &path) const
+        bool LevelMemento::save(const std::string &path)
         {
             std::ofstream file(path);
             if (file.fail())
@@ -23,6 +23,5 @@ namespace OgrO
             file.close();
             return true;
         }
-
     }
 }

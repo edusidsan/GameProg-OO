@@ -56,6 +56,8 @@ namespace OgrO // Namespace com o nome do jogo.
             bool loadAsset(const std::string &path);
             // Método utilizado para centralizar a View.
             void centerCamera(const Utilities::myVector2F center);
+
+            Utilities::myVector2F getScreenSize() const;
             // Método utilizado para retornar window do tipo *RenderWindow e assim, ser possível utilizar seus métodos.
             sf::RenderWindow *getWindow() const;
             // Método retorna as dimensões da imagem.

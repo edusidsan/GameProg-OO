@@ -2,88 +2,89 @@
 #include "../PhysicalEntities/Characters/Enemies/Witch.hpp"
 #include "../PhysicalEntities/Characters/Enemies/Wolf.hpp"
 #include "../Managers/ScreenManager.hpp"
-
+#include <fstream>
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Levels // Namespace do Pacote Levels.
     {
         // Construtora da classe MedievalRuins.
-        MedievalRuins::MedievalRuins(PhysicalEntities::Characters::Players::Shrek *_player1, PhysicalEntities::Characters::Players::Donkey *_player2, Background _backgroundImage) : Level(),
-                                                                                                                                                                                     State(),
-                                                                                                                                                                                     player1{_player1},
-                                                                                                                                                                                     player2{_player2},
-                                                                                                                                                                                     backgroundImage{_backgroundImage},
-                                                                                                                                                                                     tilesManager{
-                                                                                                                                                                                         {
-                                                                                                                                                                                             //  new Tiles::Tile(0, "../assets/level1/Bonus.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(1, "../assets/level1/Brick_01.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(2, "../assets/level1/Brick_02.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(3, "../assets/level1/Bridge_01.png", {16.0f, 16.0f}),
-                                                                                                                                                                                             new Tiles::Tile(4, "../assets/level1/Bridge_02.png", {16.0f, 16.0f}),
-                                                                                                                                                                                             new Tiles::Tile(5, "../assets/level1/Decor_Brick.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(6, "../assets/level1/Decor_Plant.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(7, "../assets/level1/Decor_Ruins_01.png", {120.0f, 120.0f}),
-                                                                                                                                                                                             new Tiles::Tile(8, "../assets/level1/Decor_Ruins_02.png", {120.0f, 120.0f}),
-                                                                                                                                                                                             new Tiles::Tile(9, "../assets/level1/Decor_Statue.png", {64.0f, 64.0f}),
-                                                                                                                                                                                             new Tiles::Tile(10, "../assets/level1/Fence.png", {32.0f, 32.0f}),
+        MedievalRuins::MedievalRuins(PhysicalEntities::Characters::Players::Shrek *_player1, PhysicalEntities::Characters::Players::Donkey *_player2, Background _backgroundImage) : Level(new Tiles::TilesManager{
+                                                                                                                                                                                               {
+                                                                                                                                                                                                   //  new Tiles::Tile(0, "../assets/level1/Bonus.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(1, "../assets/level1/Brick_01.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(2, "../assets/level1/Brick_02.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(3, "../assets/level1/Bridge_01.png", {16.0f, 16.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(4, "../assets/level1/Bridge_02.png", {16.0f, 16.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(5, "../assets/level1/Decor_Brick.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(6, "../assets/level1/Decor_Plant.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(7, "../assets/level1/Decor_Ruins_01.png", {120.0f, 120.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(8, "../assets/level1/Decor_Ruins_02.png", {120.0f, 120.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(9, "../assets/level1/Decor_Statue.png", {64.0f, 64.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(10, "../assets/level1/Fence.png", {32.0f, 32.0f}),
 
-                                                                                                                                                                                             new Tiles::Tile(11, "../assets/level1/Grass_01.png", {32.0f, 16.0f}),
-                                                                                                                                                                                             new Tiles::Tile(12, "../assets/level1/Grass_02.png", {32.0f, 16.0f}),
-                                                                                                                                                                                             new Tiles::Tile(13, "../assets/level1/Ground_01.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(14, "../assets/level1/Ground_02.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(15, "../assets/level1/Ground_03.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(16, "../assets/level1/Ground_04.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(17, "../assets/level1/Ground_05.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(18, "../assets/level1/Ground_06.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(19, "../assets/level1/Ground_07.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(20, "../assets/level1/Ground_08.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(11, "../assets/level1/Grass_01.png", {32.0f, 16.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(12, "../assets/level1/Grass_02.png", {32.0f, 16.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(13, "../assets/level1/Ground_01.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(14, "../assets/level1/Ground_02.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(15, "../assets/level1/Ground_03.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(16, "../assets/level1/Ground_04.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(17, "../assets/level1/Ground_05.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(18, "../assets/level1/Ground_06.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(19, "../assets/level1/Ground_07.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(20, "../assets/level1/Ground_08.png", {32.0f, 32.0f}),
 
-                                                                                                                                                                                             new Tiles::Tile(21, "../assets/level1/Ground_09.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(22, "../assets/level1/Ground_10.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(23, "../assets/level1/Ground_11.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(24, "../assets/level1/Ground_12.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(25, "../assets/level1/Ground_13.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(26, "../assets/level1/Ground-Additional_01.png", {80.0f, 80.0f}),
-                                                                                                                                                                                             new Tiles::Tile(27, "../assets/level1/Ground-Additional_02.png", {80.0f, 80.0f}),
-                                                                                                                                                                                             new Tiles::Tile(28, "../assets/level1/Ground-Additional_03.png", {80.0f, 80.0f}),
-                                                                                                                                                                                             new Tiles::Tile(29, "../assets/level1/Ground-Additional_04.png", {80.0f, 80.0f}),
-                                                                                                                                                                                             new Tiles::Tile(30, "../assets/level1/Ground-Additional_05.png", {32.0f, 80.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(21, "../assets/level1/Ground_09.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(22, "../assets/level1/Ground_10.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(23, "../assets/level1/Ground_11.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(24, "../assets/level1/Ground_12.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(25, "../assets/level1/Ground_13.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(26, "../assets/level1/Ground-Additional_01.png", {80.0f, 80.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(27, "../assets/level1/Ground-Additional_02.png", {80.0f, 80.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(28, "../assets/level1/Ground-Additional_03.png", {80.0f, 80.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(29, "../assets/level1/Ground-Additional_04.png", {80.0f, 80.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(30, "../assets/level1/Ground-Additional_05.png", {32.0f, 80.0f}),
 
-                                                                                                                                                                                             new Tiles::Tile(31, "../assets/level1/Ground-Additional_06.png", {32.0f, 80.0f}),
-                                                                                                                                                                                             new Tiles::Tile(32, "../assets/level1/Ground-Additional_07.png", {80.0f, 80.0f}),
-                                                                                                                                                                                             new Tiles::Tile(33, "../assets/level1/hotPixel.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(34, "../assets/level1/Ladder.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(35, "../assets/level1/Lion_Bas_Relief.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(36, "../assets/level1/Little_Wreckage.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(37, "../assets/level1/Rock_01.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(38, "../assets/level1/Rock_02.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(39, "../assets/level1/Rock_03.png", {32.0f, 16.0f}),
-                                                                                                                                                                                             new Tiles::Tile(40, "../assets/level1/Rock_04.png", {32.0f, 16.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(31, "../assets/level1/Ground-Additional_06.png", {32.0f, 80.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(32, "../assets/level1/Ground-Additional_07.png", {80.0f, 80.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(33, "../assets/level1/hotPixel.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(34, "../assets/level1/Ladder.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(35, "../assets/level1/Lion_Bas_Relief.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(36, "../assets/level1/Little_Wreckage.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(37, "../assets/level1/Rock_01.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(38, "../assets/level1/Rock_02.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(39, "../assets/level1/Rock_03.png", {32.0f, 16.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(40, "../assets/level1/Rock_04.png", {32.0f, 16.0f}),
 
-                                                                                                                                                                                             new Tiles::Tile(41, "../assets/level1/Rock_05.png", {16.0f, 16.0f}),
-                                                                                                                                                                                             new Tiles::Tile(42, "../assets/level1/Rock_06.png", {16.0f, 16.0f}),
-                                                                                                                                                                                             new Tiles::Tile(43, "../assets/level1/Rock_07.png", {16.0f, 16.0f}),
-                                                                                                                                                                                             new Tiles::Tile(44, "../assets/level1/Rock_08.png", {16.0f, 16.0f}),
-                                                                                                                                                                                             new Tiles::Tile(45, "../assets/level1/Sign_01.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(46, "../assets/level1/Sign_02.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(47, "../assets/level1/Sign_03.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(48, "../assets/level1/Sign_04.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(49, "../assets/level1/Sign_05.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(50, "../assets/level1/Sign_06.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(41, "../assets/level1/Rock_05.png", {16.0f, 16.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(42, "../assets/level1/Rock_06.png", {16.0f, 16.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(43, "../assets/level1/Rock_07.png", {16.0f, 16.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(44, "../assets/level1/Rock_08.png", {16.0f, 16.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(45, "../assets/level1/Sign_01.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(46, "../assets/level1/Sign_02.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(47, "../assets/level1/Sign_03.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(48, "../assets/level1/Sign_04.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(49, "../assets/level1/Sign_05.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(50, "../assets/level1/Sign_06.png", {32.0f, 32.0f}),
 
-                                                                                                                                                                                             new Tiles::Tile(51, "../assets/level1/Spikes.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(52, "../assets/level1/Wooden_Barrel.png", {32.0f, 32.0f}),
-                                                                                                                                                                                             new Tiles::Tile(53, "../assets/level1/Wooden_Box.png", {32.0f, 32.0f}),
-                                                                                                                                                                                         },
-                                                                                                                                                                                         {32.0f, 32.0f},
-                                                                 
-                                                                                                                                                                                         "../map/level1.json"},
-                                                                                                                                                                                     endLevel{false},
-                                                                                                                                                                                     // lambda-expression.
-                                                                                                                                                                                     idClosedWindow{eventsManager.addOtherListener([this](const sf::Event &event)
-                                                                                                                                                                                                                                   { closedWindow(event); })}
+                                                                                                                                                                                                   new Tiles::Tile(51, "../assets/level1/Spikes.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(52, "../assets/level1/Wooden_Barrel.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(53, "../assets/level1/Wooden_Box.png", {32.0f, 32.0f}),
+                                                                                                                                                                                               },
+                                                                                                                                                                                               {32.0f, 32.0f},
+                                                                                                                                                                                               "../map/level1.json"},
+                                                                                                                                                                                           _player1, _player2, _backgroundImage)
+
         {
-            backgroundImage.initialize();
+        }
+        // Destrutora da classe MedievalRuins.
+        MedievalRuins::~MedievalRuins()
+        {
+        }
+
+        void MedievalRuins::initialize()
+        {
+            // backgroundImage.initialize();
+            // backgroundImage.draw();
 
             if (player1)
             {
@@ -101,60 +102,55 @@ namespace OgrO // Namespace com o nome do jogo.
             players.insert(new PhysicalEntities::Characters::Enemies::Wolf(Utilities::myVector2F(150.0f, 150.0f), Utilities::myVector2F(0, -10)));
             // Carrega as imagens nas entidades físicas e inicializa os gerenciadores de eventos.
             players.initializePhysicalEntities(eventsManager, collisionManager);
-            // Inicializa gerenciador de tiles.
-            tilesManager.initialize(*pGraphicManager, eventsManager);
-            // Atribui ao gerenciador de eventos a window que está sendo utilizada pelo gerenciador gráfico.
-            eventsManager.setWindow(pGraphicManager->getWindow());
-            // Atribui ao gerenciador de collisões o endereço do gerenciador de tiles.
-            collisionManager.setTilesManager(&tilesManager);
         }
-        // Destrutora da classe MedievalRuins.
-        MedievalRuins::~MedievalRuins()
+        nlohmann::json MedievalRuins::toJSON()
         {
-            // Remove o jogador da lista para ele não ser desalocado da memória.
-            players.removeFirst(player1);
-            players.removeFirst(player2);
-        }
-        // Método run do MedievalRuins.
-        int MedievalRuins::run()
-        {
-            backgroundImage.draw();
-            // Atribui a t o tempo em que a aplicação está rodando.
-            sf::Time t = clock.getElapsedTime();
-            // Reseta a contagem do clock.
-            clock.restart();
-            // Método que gerencia os eventos nas fases.
-            handleEvents();
-            // Atualiza a lista das entidades físicas, passando como parametro o tempo da aplicação em segundos.
-            players.updatePhysicalEntities(t.asSeconds());
-            // Método que gerencia as colisões nas fases.
-            handleCollisions();
-            // Gerenciador de tiles envia solicitação de desenho na tela para o gerenciador gráfico
-            tilesManager.draw(*pGraphicManager);
-            // Desenha as entidades físicas na window.
-            players.drawPhysicalEntities(*pGraphicManager);
+            nlohmann::json json;
 
-            if (endLevel)
-            {
-                std::cout << "FECHAR JANELA." << std::endl;
-                return Managers::END_GAME;
-                // Managers::END_GAME;
-            }
-            else
-            {
-                return Managers::continueGame;
-                // Managers::continueGame;
-            }
+            json["players"] = players.toJSON();
+
+            return json;
         }
 
-        // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.
-        void MedievalRuins::closedWindow(const sf::Event &event)
+        void MedievalRuins::load(const std::string &path)
         {
-            if (event.type == sf::Event::Closed)
-            {
 
-                endLevel = true;
+            std::ifstream file(path);
+            if (file.fail())
+            {
+                throw "arquivo nao encontrado!";
             }
+            nlohmann::json j;
+            file >> j;
+
+            for (nlohmann::json player : j["players"])
+            {
+                switch (static_cast<int>(player["id"]))
+                {
+                case 101:
+                    if (player1)
+                    {
+                        player1->initializeJSON(player);
+                        players.insert(player1);
+                    }
+                    if (player2)
+                    {
+                        player2->initializeJSON(player);
+                        players.insert(player2);
+                    }
+                    break;
+                case 102:
+                {
+                    players.insert(new PhysicalEntities::Characters::Enemies::Enemy(player));
+                    break;
+                }
+                default:
+                    break;
+                }
+            }
+
+            players.initializePhysicalEntities(eventsManager, collisionManager);
+            std::cout << "Loading LEVEL" << std::endl;
         }
     }
 }

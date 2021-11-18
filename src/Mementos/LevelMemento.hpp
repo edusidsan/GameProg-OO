@@ -12,7 +12,7 @@ namespace OgrO
         public:
             LevelMemento();
             ~LevelMemento();
-            bool save(const std::string &path) const;
+            bool save(const std::string &path);
             virtual void load(const std::string &path) = 0;
         };
 

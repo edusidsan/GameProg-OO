@@ -2,7 +2,7 @@
 #define _PLAYER_HPP_
 #define MAXSPEEDX 80
 #include "../Character.hpp"
-#include <iostream>
+#include "../../../json.hpp"
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace PhysicalEntities // Namespace do Pacote Entities.
@@ -36,6 +36,8 @@ namespace OgrO // Namespace com o nome do jogo.
                     virtual void handleEvent(const sf::Event &ev);
                     // Método verifica colisão entre dois objetos da classe Entidade Física.
                     virtual void collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther);
+
+                    void initializeJSON(nlohmann::json source);
                 };
             }
         }

@@ -44,6 +44,7 @@ set(
     Tiles/TileMap.cpp
     Tiles/TilesManager.cpp
     Utilities/Color.cpp
+    Utilities/Clock.cpp
     State.cpp
     OtherGrandRandomOgre.cpp
     Entity.cpp
@@ -81,6 +82,7 @@ set(
     Tiles/Tile.hpp
     Tiles/TileMap.hpp
     Tiles/TilesManager.hpp
+    Utilities/Clock.hpp
     Utilities/Color.hpp
     json.hpp
     # Utilities/Vector2D.hpp

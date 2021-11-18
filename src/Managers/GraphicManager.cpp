@@ -20,7 +20,7 @@ namespace OgrO // Namespace com o nome do jogo.
         // Construtora da classe GraphicManager.
         GraphicManager::GraphicManager() : window{new sf::RenderWindow(sf::VideoMode(800, 600), "OgrO")},
                                            camera{sf::Vector2f(400, 300), sf::Vector2f(400, 300)},
-                                        //    camera{sf::Vector2f(400, 300), sf::Vector2f(800, 600)},
+                                           //    camera{sf::Vector2f(400, 300), sf::Vector2f(800, 600)},
                                            textures{}
 
         //    camera{sf::Vector2f(800, 600), sf::Vector2f(800, 600)}
@@ -31,7 +31,6 @@ namespace OgrO // Namespace com o nome do jogo.
             window->setView(camera);
             // Carrega a fonte que será utilizada.
             font.loadFromFile("../assets/sansation.ttf");
-           
         }
         // Destrutora da classe GraphicManager.
         GraphicManager::~GraphicManager()
@@ -223,6 +222,12 @@ namespace OgrO // Namespace com o nome do jogo.
             // Atribui essa camera ao view da window.
             window->setView(camera);
         }
+
+        Utilities::myVector2F GraphicManager::getScreenSize() const
+        {
+            return {camera.getSize().x, camera.getSize().y};
+        }
+
         // Método utilizado para retornar window do tipo *RenderWindow e assim, ser possível utilizar seus métodos.
         sf::RenderWindow *GraphicManager::getWindow() const
         {

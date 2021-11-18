@@ -10,11 +10,13 @@ namespace OgrO // Namespace com o nome do jogo.
         // Construtora da classe MainMenu.
         MainMenu::MainMenu() : Menu(),
                                printed{false},
-                               textInputBox{em, 15, {400.0f, 300.0f}, {200, 50}}
+                               textInputBox{em, 15, {200.0f, 50.0f}, {100, 40}}
         {
-            bm.addButton(new Button({400.0f, 200.0f}, {200, 50}, "First Level", [this]
-                                    { setGameCode(Managers::GameCode::MEDIEVAL_RUINS_LEVEL); }));
-            bm.addButton(new Button({400.0f, 400.0f}, {200, 50}, "Back MainMenu", [this]
+            bm.addButton(new Button({200.0f, 100.0f}, {100, 40}, "First Level", [this]
+                                    { setGameCode(Managers::GameCode::START_MEDIEVAL_RUINS_LEVEL); }));
+            bm.addButton(new Button({200.0f, 150.0f}, {100, 40}, "Load First Level", [this]
+                                    { setGameCode(Managers::GameCode::LOAD_MEDIEVAL_RUINS_LEVEL); }));
+            bm.addButton(new Button({200.0f, 300.0f}, {100, 40}, "Exit", [this]
                                     { setGameCode(Managers::GameCode::END_GAME); }));
             bm.addButton(&textInputBox);
         }

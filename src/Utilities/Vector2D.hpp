@@ -54,7 +54,7 @@ namespace OgrO     // Namespace com o nome do jogo.
             // Retorna a projeção ortogonal desse vetor na direção do parâmetro v do tipo Vector2D.
             Vector2D projection(Vector2D v) const;
 
-            // nlohmann::json toJSON() const override;
+            // nlohmann::json toJSON() override;
         };
         // Define um novo nome para o Vector2D de float.
         typedef Vector2D<float> myVector2F;
@@ -185,7 +185,7 @@ namespace OgrO     // Namespace com o nome do jogo.
         }
 
         // template <typename T>
-        // nlohmann::json Vector2D<T>::toJSON() const
+        // nlohmann::json Vector2D<T>::toJSON()
         // {
         //     return {{"x", coordX}, {"y", coordY}};
         // }

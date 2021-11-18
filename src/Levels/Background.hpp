@@ -2,7 +2,7 @@
 #define _BACKGROUND_HPP_
 
 #include "../PhysicalEntities/PhysicalEntity.hpp"
-#include "Level.hpp"
+// #include "Level.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -28,7 +28,7 @@ namespace OgrO // Namespace com o nome do jogo.
             void draw();
             // Método retorna a posição da entidade física.
 
-            nlohmann::json toJSON() const;
+            nlohmann::json toJSON();
 
             // const Utilities::myVector2F getPosition() const;
             // Método retorna a dimensão da entidade fisica.

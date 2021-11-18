@@ -15,6 +15,10 @@ namespace OgrO // Namespace com o nome do jogo.
     void Entity::draw()
     {
     }
+
+
+
+
     // void Entity::run()
     // {
     // }

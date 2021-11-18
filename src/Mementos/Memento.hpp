@@ -17,7 +17,8 @@ namespace OgrO // Namespace com o nome do jogo.
             Memento();
             virtual ~Memento();
             // virtual void saveToFile(std::ostream &file) = 0;
-            virtual nlohmann::json toJSON() const = 0;
+            // virtual nlohmann::json toJSON() = 0;
+            virtual nlohmann::json toJSON();
         };
     }
 }

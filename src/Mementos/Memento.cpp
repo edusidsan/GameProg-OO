@@ -10,6 +10,10 @@ namespace OgrO // Namespace com o nome do jogo.
         Memento::~Memento()
         {
         }
+        nlohmann::json Memento::toJSON()
+        {
+            return "";
+        }
 
     }
 }

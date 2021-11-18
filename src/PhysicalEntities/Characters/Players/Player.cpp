@@ -160,6 +160,12 @@ namespace OgrO // Namespace com o nome do jogo.
                         speed.coordY = 0.f;
                     }
                 }
+
+                void Player::initializeJSON(nlohmann::json source)
+                {
+                    position.coordX = {source["position x"]};
+                    position.coordY = {source["position y"]};
+                }
             }
         }
     }
