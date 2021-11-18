@@ -15,6 +15,11 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Atribui um ID ao Enemy.
                     id = 102;
                 }
+
+                Enemy::Enemy(nlohmann::json source) : Enemy(Utilities::myVector2F{source["position x"], source["position y"]}, Utilities::myVector2F{source["speed x"], source["speed y"]})
+                {
+
+                }
                 // Destrutora da classe Enemy.
                 Enemy::~Enemy()
                 {
@@ -28,7 +33,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // // Retorna dimensão da imagem.
                     // dimension = gm.getDimensionsOfAsset(texturePath);
 
-                     // Carrega textura no player.
+                    // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);
                     // Retorna dimensão da imagem.
                     dimension = pGraphicManager->getDimensionsOfAsset(texturePath);

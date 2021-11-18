@@ -16,6 +16,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 public:
                     // Construtora da classe Enemy.
                     Enemy(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath = nullptr);
+                    Enemy(nlohmann::json source);
                     // Destrutora da classe Enemy.
                     ~Enemy();
                     // Método carrega a textura do enemy na window e inicializa gerenciadores do mesmo.

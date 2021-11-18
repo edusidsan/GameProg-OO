@@ -23,10 +23,12 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             continueGame,
             MAIN_MENU,
+            EXIT_PAUSE_MENU,
             PAUSE_MENU,
             END_GAME,
             SAVE_GAME,
-            MEDIEVAL_RUINS_LEVEL,
+            START_MEDIEVAL_RUINS_LEVEL,
+            LOAD_MEDIEVAL_RUINS_LEVEL,
             EXIT,
             LEADERBOARD
         };

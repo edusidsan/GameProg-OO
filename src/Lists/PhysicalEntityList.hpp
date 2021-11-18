@@ -3,12 +3,12 @@
 
 #include "List.hpp"
 #include "../PhysicalEntities/PhysicalEntity.hpp"
-
+#include "../Mementos/Memento.hpp"
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Lists // Namespace do Pacote Lists.
     {
-        class PhysicalEntityList
+        class PhysicalEntityList : public Mementos::Memento
         {
         private:
             // Atributo de List template com parâmetro de ponteiro de Entidades Físicas (que são representáveis).
@@ -36,6 +36,9 @@ namespace OgrO // Namespace com o nome do jogo.
             void drawPhysicalEntities(Managers::GraphicManager &gm);
             // Método desaloca cada objeto dentro da lista de entidades físicas.
             void destroyPhysicalEntities();
+
+            nlohmann::json toJSON();
+
         };
     }
 }

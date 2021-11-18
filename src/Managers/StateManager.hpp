@@ -20,6 +20,7 @@ namespace OgrO // Namespace com o nome do jogo.
         protected:
             void push(State *p);
             void pop();
+            State* top();
             void cleanStack();
             virtual bool handleCode(int GameCode) = 0;
         };

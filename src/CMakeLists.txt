@@ -13,6 +13,7 @@ add_library(main)
 # Create a sources variable with a link to all cpp files to compile
 set(
     SOURCES
+    Levels/Background.cpp
     Levels/Level.cpp
     Levels/MedievalRuins.cpp
     Managers/ButtonsManager.cpp
@@ -21,8 +22,8 @@ set(
     Managers/CollisionManager.cpp
     Managers/EventsManager.cpp
     Managers/GraphicManager.cpp
-    # Mementos/Memento.cpp
-    # Mementos/LevelMemento.cpp
+    Mementos/Memento.cpp
+    Mementos/LevelMemento.cpp
     Menus/Button.cpp
     Menus/MainMenu.cpp
     Menus/Menu.cpp
@@ -43,6 +44,7 @@ set(
     Tiles/TileMap.cpp
     Tiles/TilesManager.cpp
     Utilities/Color.cpp
+    Utilities/Clock.cpp
     State.cpp
     OtherGrandRandomOgre.cpp
     Entity.cpp
@@ -50,6 +52,7 @@ set(
 set(
     HEADERS
     # Lists/List.hpp
+    Levels/Background.hpp
     Levels/Level.hpp
     Levels/MedievalRuins.hpp
     Managers/ButtonsManager.hpp
@@ -58,8 +61,8 @@ set(
     Managers/CollisionManager.hpp
     Managers/EventsManager.hpp
     Managers/GraphicManager.hpp
-    # Mementos/Memento.hpp
-    # Mementos/LevelMemento.hpp
+    Mementos/Memento.hpp
+    Mementos/LevelMemento.hpp
     Menus/Button.hpp
     Menus/MainMenu.hpp
     Menus/Menu.hpp
@@ -79,6 +82,7 @@ set(
     Tiles/Tile.hpp
     Tiles/TileMap.hpp
     Tiles/TilesManager.hpp
+    Utilities/Clock.hpp
     Utilities/Color.hpp
     json.hpp
     # Utilities/Vector2D.hpp

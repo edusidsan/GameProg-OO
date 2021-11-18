@@ -4,13 +4,11 @@ namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Menus // Namespace do Pacote Menus.
     {
-
         PauseMenu::PauseMenu():Menu()
         {
-            bm.addButton(new Button({200.0f, 50.0f}, {100, 50}, "Continue", [this] {setGameCode(Managers::continueGame);} ));
-            bm.addButton(new Button({200.0f, 100.0f}, {100, 50}, "Save Game", [this] {setGameCode(Managers::SAVE_GAME);} ));
-            bm.addButton(new Button({200.0f, 150.0f}, {100, 50}, "Main Menu", [this] {setGameCode(Managers::MAIN_MENU);} ));
+            bm.addButton(new Button({200.0f, 20.0f}, {100, 50}, "Continue", [this] {setGameCode(Managers::GameCode::EXIT_PAUSE_MENU);} ));
+            bm.addButton(new Button({200.0f, 100.0f}, {100, 50}, "Save Game", [this] {setGameCode(Managers::GameCode::SAVE_GAME);} ));
+            bm.addButton(new Button({200.0f, 180.0f}, {100, 50}, "Main Menu", [this] {setGameCode(Managers::GameCode::MAIN_MENU);} ));
         }
-
     }
 }

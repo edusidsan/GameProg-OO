@@ -1,4 +1,5 @@
 #include "PhysicalEntity.hpp"
+#include "../json.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -17,7 +18,7 @@ namespace OgrO // Namespace com o nome do jogo.
         }
         // Método carrega a textura do PhysicalEntity na window.
         // void PhysicalEntity::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
-        void PhysicalEntity::initialize( Managers::EventsManager &em, Managers::CollisionManager &cm)
+        void PhysicalEntity::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
         {
             // gm.loadAsset(texturePath);
             pGraphicManager->loadAsset(texturePath);
@@ -53,6 +54,25 @@ namespace OgrO // Namespace com o nome do jogo.
         // Método verifica colisão entre dois objetos da classe Entidade Física.
         void PhysicalEntity::collided(int Id, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
         {
+        }
+
+        nlohmann::json PhysicalEntity::toJSON()
+        {
+            return {
+                // {"id", id},
+                // {"position", position.toJSON()},
+                // {"speed", speed.toJSON()},
+                // {"texturePath", texturePath},
+                // {"dimension", dimension.toJSON()}};
+
+                {"id", id},
+                {"position x", position.coordX},
+                {"position y", position.coordY},
+                {"speed x", speed.coordX},
+                {"speed y", speed.coordY},
+                {"texturePath", texturePath},
+                {"dimension x", dimension.coordX},
+                {"dimension y", dimension.coordY}};
         }
     }
 }
