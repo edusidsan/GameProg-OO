@@ -80,7 +80,8 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
                 void Player::collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
                 {
-                    if ((idOther == 22) || (idOther == 23) || (idOther == 24))
+                    // Chão
+                    if (idOther == 14)
                     {
                         float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));
                         float distY = (position.coordY + (dimension.coordY / 2)) - abs(positionOther.coordY - (dimensionOther.coordY / 2));
@@ -117,8 +118,19 @@ namespace OgrO // Namespace com o nome do jogo.
                         }
                         speed.coordY = 0.f;
                     }
+                    // Parede
+                    else if (idOther == 1)
+                    {
+                        float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));
+                        // colisão em X
+                        if (distX > abs(adjusts.coordX))
+                        {
+                            // adjusts.coordX = distX * (position.coordX + (dimension.coordX / 2) > positionOther.coordX - (dimensionOther.coordX / 2) ? -0.5 : 0.5);
+                        }
+                        speed.coordX = 0.f;
+                    }
                     // Obstaculo que faz pular.
-                    else if (idOther == 49)
+                    else if (idOther == 54)
                     {
                         float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));
                         // colisão em X
@@ -132,7 +144,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     else if (idOther == 35)
                     {
                     }
-                    // Obstaculo pedra que impede de andar reto.
+                    // Obstaculo que reduz velocidade.
                     else if (idOther == 6)
                     {
                         float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));

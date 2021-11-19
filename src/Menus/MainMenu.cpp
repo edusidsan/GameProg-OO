@@ -65,7 +65,9 @@ namespace OgrO // Namespace com o nome do jogo.
             //     printed = true;
             //     std::cout << "O texto digitado foi --> " << textInputBox.getText() << std::endl;
             // }
-            // return menuReturn;
+            return menuReturn;
+            // return (Managers::GameCode::continueGame);
+            // return 0;
         }
     }
 }
