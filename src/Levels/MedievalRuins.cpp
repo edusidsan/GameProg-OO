@@ -69,9 +69,10 @@ namespace OgrO // Namespace com o nome do jogo.
                                                                                                                                                                                                    new Tiles::Tile(51, "../assets/level1/Spikes.png", {32.0f, 32.0f}),
                                                                                                                                                                                                    new Tiles::Tile(52, "../assets/level1/Wooden_Barrel.png", {32.0f, 32.0f}),
                                                                                                                                                                                                    new Tiles::Tile(53, "../assets/level1/Wooden_Box.png", {32.0f, 32.0f}),
+                                                                                                                                                                                                   new Tiles::Tile(54, "../assets/level1/Spring.png", {32.0f, 32.0f}),
                                                                                                                                                                                                },
                                                                                                                                                                                                {32.0f, 32.0f},
-                                                                                                                                                                                               "../map/level1.json"},
+                                                                                                                                                                                               "../map/MedievalRuins.json"},
                                                                                                                                                                                            _player1, _player2, _backgroundImage)
 
         {

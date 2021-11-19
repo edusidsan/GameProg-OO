@@ -58,6 +58,7 @@ namespace OgrO // Namespace com o nome do jogo.
         // Método que carrega o TileMap.
         void TileMap::loadTileMap()
         {
+            
             std::ifstream _file(path);
             if (!_file.is_open())
             {
@@ -67,6 +68,7 @@ namespace OgrO // Namespace com o nome do jogo.
             nlohmann::json json;
 
             _file >> json;
+            std::cout << "json = json[layers][0];!" << std::endl;
             // Retorna os objetos alocados na primeira posição do array json.
             json = json["layers"][0];
             // Atribui as dimensões do arquivo no atributo tileMapDimension.
@@ -74,6 +76,7 @@ namespace OgrO // Namespace com o nome do jogo.
             std::cout << tileMapDimension << std::endl;
             // Atribui apenas os tiles do arquivo para o próprio json.
             json = json["data"];
+            
             // Alocando a quantidade de colunas do map.
             map = new unsigned short *[tileMapDimension.coordY];
             // Alocando a quantidade de linhas do map.

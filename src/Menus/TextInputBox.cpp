@@ -7,7 +7,7 @@ namespace OgrO // Namespace com o nome do jogo.
 
         // Construtora da classe TextInputBox.
         TextInputBox::TextInputBox(Managers::EventsManager &_em, unsigned short _maxLength, Utilities::myVector2F _position,
-                                   Utilities::myVector2F _size, unsigned int _textSize, Utilities::Color _color) : Button{_position, _size, "", [this]()
+                                   Utilities::myVector2F _size, unsigned int _textSize, Utilities::Color _color) : Button{0, _position, _size, "", [this]()
                                                                                                                           { inputStart(); },
                                                                                                                           _textSize, _color},
                                                                                                                    promisseText{_em, _maxLength}
