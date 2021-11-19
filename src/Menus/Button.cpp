@@ -5,12 +5,13 @@ namespace OgrO // Namespace com o nome do jogo.
     namespace Menus // Namespace do Pacote Menus.
     {
         // Construtora da classe Button.
-        Button::Button(Utilities::myVector2F _position, Utilities::myVector2F _size, std::string _text, std::function<void(void)> _buttonPressed, unsigned int _textSize, Utilities::Color _color) : position{_position},
-                                                                                                                                                                                                     size{_size},
-                                                                                                                                                                                                     text{_text},
-                                                                                                                                                                                                     buttonPressed{_buttonPressed},
-                                                                                                                                                                                                     textSize{_textSize},
-                                                                                                                                                                                                     color{_color}
+        Button::Button(short int _buttonId, Utilities::myVector2F _position, Utilities::myVector2F _size, std::string _text, std::function<void(void)> _buttonPressed, unsigned int _textSize, Utilities::Color _color) : buttonId{_buttonId},
+                                                                                                                                                                                                                          position{_position},
+                                                                                                                                                                                                                          size{_size},
+                                                                                                                                                                                                                          text{_text},
+                                                                                                                                                                                                                          buttonPressed{_buttonPressed},
+                                                                                                                                                                                                                          textSize{_textSize},
+                                                                                                                                                                                                                          color{_color}
         {
         }
 
@@ -34,6 +35,10 @@ namespace OgrO // Namespace com o nome do jogo.
         void Button::pushButton() const
         {
             buttonPressed();
+        }
+        const short int Button::getButtonId() const
+        {
+            return buttonId;
         }
     }
 }

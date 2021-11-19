@@ -26,7 +26,7 @@ namespace OgrO // Namespace com o nome do jogo.
 
             int run() override;
 
-            const bool useTwoPlayers() const;
+            const bool twoPlayersSelected() const;
         };
     }
 }
