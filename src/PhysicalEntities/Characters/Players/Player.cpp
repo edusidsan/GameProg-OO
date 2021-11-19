@@ -60,6 +60,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     position += speed * t;
                     position += adjusts;
                     adjusts = Utilities::myVector2F(0, 0);
+                    // std::cout<<"tempo: "<<clock.getTime()<<std::endl;
                 }
                 // Método desenhar do Player.
                 void Player::draw(Managers::GraphicManager &gm)

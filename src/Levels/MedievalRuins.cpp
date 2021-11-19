@@ -100,7 +100,7 @@ namespace OgrO // Namespace com o nome do jogo.
             players.insert(new PhysicalEntities::Characters::Enemies::Witch(Utilities::myVector2F(40.0f, 200.0f), Utilities::myVector2F(0, -10)));
             players.insert(new PhysicalEntities::Characters::Enemies::Witch(Utilities::myVector2F(120.0f, 50.0f), Utilities::myVector2F(0, 10)));
             players.insert(new PhysicalEntities::Characters::Enemies::Witch(Utilities::myVector2F(120.0f, 200.0f), Utilities::myVector2F(0, -10)));
-            players.insert(new PhysicalEntities::Characters::Enemies::Wolf(Utilities::myVector2F(150.0f, 150.0f), Utilities::myVector2F(0, -10)));
+            players.insert(new PhysicalEntities::Characters::Enemies::Wolf(Utilities::myVector2F(150.0f, 150.0f), Utilities::myVector2F(20, 0)));
             // Carrega as imagens nas entidades físicas e inicializa os gerenciadores de eventos.
             players.initializePhysicalEntities(*pEventsManager, collisionManager);
         }
