@@ -28,6 +28,9 @@ namespace OgrO // Namespace com o nome do jogo.
             void draw();
             // Método retorna a posição da entidade física.
 
+
+            virtual int run();
+
             nlohmann::json toJSON();
 
             // const Utilities::myVector2F getPosition() const;

@@ -42,7 +42,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // Método verifica colisão entre dois objetos da classe Entidade Física.
             virtual void collided(int Id, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther) = 0;
             // Método run virtual puro -> TORNA CLASSE ABSTRATA.
-            // virtual void run() = 0;
+            virtual int run();
             // Método
             nlohmann::json toJSON() override;
         };

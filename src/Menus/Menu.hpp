@@ -4,34 +4,38 @@
 #include "../Managers/ButtonsManager.hpp"
 //#include "../Managers/EventsManager.hpp"
 #include "../Entity.hpp"
-// #include "../Managers/GraphicManager.hpp"
 #include "../State.hpp"
 
-// #include "../Managers/GraphicManager.hpp"
-// #include "GerenciadorGrafico.hpp"
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Menus // Namespace do Pacote Menus.
     {
         class Menu : public Entity, public State
+        // class Menu : public Entity
         {
-        private:
-            int gameCode;
-
         protected:
-            Managers::EventsManager em;
+            int gameCode;
+            unsigned int idKeyboardEvent;
+            unsigned int idMouseEvent;
+            unsigned int idOtherEvent;
+            // Managers::EventsManager *pEM;
+            Managers::EventsManager *pEventsManager;
             Managers::ButtonsManager bm;
-            // Managers::GraphicManager *pGraphicManager;
-            // GerenciadorGrafico &gg;
 
         public:
             // Construtora da classe Menu.
             Menu();
             // Destrutora da classe Menu.
             virtual ~Menu();
-            virtual int run();
+            virtual void init() override;
+
+            virtual int run() override;
+
+            void removeListeners();
+            // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.
 
         protected:
+            void closedWindowButton(const sf::Event &event);
             void setGameCode(int _gameCode);
         };
     }

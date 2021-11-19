@@ -25,11 +25,18 @@ namespace OgrO // Namespace com o nome do jogo.
             // Atributo event utilziado à partir da biblioteca SFML.
             sf::Event event;
 
-        public:
+            // Padrão Singleton
+            static EventsManager *instanceEventsManager;
+
             // Construtora da classe EventsManager.
             EventsManager();
+
+        public:
             // Destrutora da classe EventsManager.
             ~EventsManager();
+
+            static EventsManager *getInstance();
+
             // Método que trata os eventos.
             void handleEvent();
             // Método definde a window que será utilizada.

@@ -35,7 +35,6 @@ namespace OgrO // Namespace com o nome do jogo.
             {
                 // Inicializa o elemento.
                 // p->initialize(gm, em, cm);
-                std::cout << "initializePhysicalEntities" << std::endl;
                 p->initialize(em, cm);
                 // Recebe o endereço do próximo elemento da lista.
                 p = list.goNext();

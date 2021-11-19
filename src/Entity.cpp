@@ -1,4 +1,5 @@
 #include "Entity.hpp"
+#include "Managers/ScreenManager.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -16,8 +17,10 @@ namespace OgrO // Namespace com o nome do jogo.
     {
     }
 
-
-
+    // Método desenhar de Entity.
+    void Entity::init()
+    {
+    }
 
     // void Entity::run()
     // {

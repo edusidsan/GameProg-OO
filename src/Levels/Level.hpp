@@ -25,7 +25,8 @@ namespace OgrO // Namespace com o nome do jogo.
             // Atributo do gerenciador de colisões criado para o jogo.
             Managers::CollisionManager collisionManager;
             // Atributo do gerenciador de eventos criado para o jogo.
-            Managers::EventsManager eventsManager;
+            // Managers::EventsManager eventsManager;
+            Managers::EventsManager *pEventsManager;
             // Atributo referente a lista de entidades físicas.
             Lists::PhysicalEntityList players;
 

@@ -101,7 +101,7 @@ namespace OgrO // Namespace com o nome do jogo.
             players.insert(new PhysicalEntities::Characters::Enemies::Witch(Utilities::myVector2F(120.0f, 200.0f), Utilities::myVector2F(0, -10)));
             players.insert(new PhysicalEntities::Characters::Enemies::Wolf(Utilities::myVector2F(150.0f, 150.0f), Utilities::myVector2F(0, -10)));
             // Carrega as imagens nas entidades físicas e inicializa os gerenciadores de eventos.
-            players.initializePhysicalEntities(eventsManager, collisionManager);
+            players.initializePhysicalEntities(*pEventsManager, collisionManager);
         }
         nlohmann::json MedievalRuins::toJSON()
         {
@@ -149,8 +149,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 }
             }
 
-            players.initializePhysicalEntities(eventsManager, collisionManager);
-            std::cout << "Loading LEVEL" << std::endl;
+            players.initializePhysicalEntities(*pEventsManager, collisionManager);
         }
     }
 }
