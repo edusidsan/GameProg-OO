@@ -58,13 +58,13 @@ namespace OgrO // Namespace com o nome do jogo.
                         // Muda o sentido da velocidade em y.
                         speed.coordY *= -1;
                     }
-                     if(i > 1000){
-                    //std::cout<<"CCCCCCCCCC"<<std::endl;
+                     if ( clock.getCurrent()/1000- timeReference > 5)
+                    {
+                        
                         // Muda o sentido da velocidade em x.
                         speed.coordY *= -1;
-                        i = 0;
+                        timeReference = clock.getCurrent()/1000;
                     }
-                    i++;
                 }
             }
         }

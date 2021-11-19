@@ -21,6 +21,7 @@ namespace OgrO
             double getTime();
             void restart();
             void pause();
+            double getCurrent();
         };
     }
 }

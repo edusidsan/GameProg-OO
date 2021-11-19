@@ -10,7 +10,8 @@ namespace OgrO // Namespace com o nome do jogo.
             {
 
                 // Construtora da classe Enemy.
-                Enemy::Enemy(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath) : Character(pos, s, tPath)
+                Enemy::Enemy(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath) : Character(pos, s, tPath),
+                                                                                                      timeReference{0}
                 {
                     // Atribui um ID ao Enemy.
                     id = 102;
@@ -18,7 +19,6 @@ namespace OgrO // Namespace com o nome do jogo.
 
                 Enemy::Enemy(nlohmann::json source) : Enemy(Utilities::myVector2F{source["position x"], source["position y"]}, Utilities::myVector2F{source["speed x"], source["speed y"]})
                 {
-
                 }
                 // Destrutora da classe Enemy.
                 Enemy::~Enemy()

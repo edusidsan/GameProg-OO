@@ -151,23 +151,12 @@ namespace OgrO // Namespace com o nome do jogo.
                         }
                         speed.coordY = 0.f;
                     }
-                     if (i > 1000)
-                    {
-                        //std::cout << "BBBBBBBBB" << std::endl;
-                        // Muda o sentido da velocidade em x.
-                        speed.coordX *= -1;
-                        i = 0;
-                    }
-                    i++;
+                    
                 
                     
                 }
                 void Wolf::update(float t){
-
-                    if (abs(speed.coordY) <= 5)
-                        jumping = false;
-                    else
-                        jumping = true;
+                    
                     speed.coordY += 100 * t;
                     if (abs(speed.coordX) > maxSpeedX)
                     {
@@ -181,11 +170,22 @@ namespace OgrO // Namespace com o nome do jogo.
                     position += speed * t;
                     position += adjusts;
                     adjusts = Utilities::myVector2F(0, 0);
-                    // std::cout<<"tempo: "<<clock.getTime()<<std::endl;
+                    // std::cout<<"tempo: "<<clock.getCurrent()/1000<<std::endl;
+                    //  std::cout<<"timeReference: "<<timeReference<<std::endl;
+                    //  std::cout<<"time: "<<t*1000<<std::endl;
+            
+                     if ( clock.getCurrent()/1000- timeReference > 5)
+                    {
+                        
+                        // Muda o sentido da velocidade em x.
+                        speed.coordX *= -1;
+                        timeReference = clock.getCurrent()/1000;
+                    }
+                    
                 
                 }
                     
-
+                // std::cout<<"tempo: "<<clock.getTime()<<std::endl;
             }
         }
     }

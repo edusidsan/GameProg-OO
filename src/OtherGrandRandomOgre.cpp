@@ -11,8 +11,8 @@ namespace OgrO // Namespace com o nome do jogo.
     */
     OtherGrandRandomOgre::OtherGrandRandomOgre() : pGraphicManager(Managers::GraphicManager::getInstance()),
                                                    pEventsManager(Managers::EventsManager::getInstance()),
-                                                   player2{PhysicalEntities::Characters::Players::Donkey(Utilities::myVector2F(80.0f, 64.0f))},
-                                                   player1{PhysicalEntities::Characters::Players::Shrek(Utilities::myVector2F(64.0f, 64.0f))},
+                                                   player2{PhysicalEntities::Characters::Players::Donkey(Utilities::myVector2F(80.0f, 230.56f))},
+                                                   player1{PhysicalEntities::Characters::Players::Shrek(Utilities::myVector2F(64.0f, 230.56f))},
                                                    screenManager{&player1, &player2},
                                                    //    screenManager{nullptr, &player2},
                                                    endLevel{false}

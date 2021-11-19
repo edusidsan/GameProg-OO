@@ -38,6 +38,10 @@ namespace OgrO
         {
             stopped = true;
         }
+        double MyClock::getCurrent(){
+            current = clock();
+            return (double) current;
+        }
 
     }
 }
