@@ -3,14 +3,9 @@
 
 #include "Background.hpp"
 #include "../Entity.hpp"
-<<<<<<< HEAD
-//#include "../Managers/CollisionManager.hpp"
-//#include "../Managers/EventsManager.hpp"
-=======
 #include "../Managers/CollisionManager.hpp"
 #include "../Managers/EventsManager.hpp"
 #include "../Mementos/LevelMemento.hpp"
->>>>>>> eduDevelop
 #include "../Lists/PhysicalEntityList.hpp"
 #include "../Tiles/TilesManager.hpp"
 #include "../PhysicalEntities/Characters/Players/Shrek.hpp"
