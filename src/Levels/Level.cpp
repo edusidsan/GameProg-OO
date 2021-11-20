@@ -26,7 +26,6 @@ namespace OgrO // Namespace com o nome do jogo.
 
         {
             backgroundImage.initialize();
-
             // Inicializa gerenciador de tiles.
             tilesManager->initialize(*pGraphicManager, *pEventsManager);
             // Atribui ao gerenciador de eventos a window que está sendo utilizada pelo gerenciador gráfico.
@@ -79,6 +78,17 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             // Verifica se ocorreu algum evento.
             pEventsManager->handleEvent();
+        }
+
+        void Level::setPlayers(PhysicalEntities::Characters::Players::Shrek *_player1)
+        {
+            player1 = _player1;
+            player2 = nullptr;
+        }
+        void Level::setPlayers(PhysicalEntities::Characters::Players::Shrek *_player1, PhysicalEntities::Characters::Players::Donkey *_player2)
+        {
+            player1 = _player1;
+            player2 = _player2;
         }
 
         // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.

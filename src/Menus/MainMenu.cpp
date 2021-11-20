@@ -8,9 +8,11 @@ namespace OgrO // Namespace com o nome do jogo.
     namespace Menus // Namespace do Pacote Menus.
     {
 
+        bool MainMenu::twoPlayers = true;
+
         // Construtora da classe MainMenu.
-        MainMenu::MainMenu() : Menu(),
-                               twoPlayers{true}
+        MainMenu::MainMenu() : Menu()
+
         //    printed{false}
         //    textInputBox{em, 15, {200.0f, 50.0f}, {100, 40}}
         {
@@ -80,6 +82,7 @@ namespace OgrO // Namespace com o nome do jogo.
                                 if (b->getButtonId() == 6)
                                 {
                                     twoPlayers = !twoPlayers;
+                                    std::cout << "two players selector --> " << twoPlayers << std::endl;
                                 }
                             }
                         }
@@ -105,7 +108,7 @@ namespace OgrO // Namespace com o nome do jogo.
             removeListeners();
             return gameCode;
         }
-        const bool MainMenu::twoPlayersSelected() const
+        const bool MainMenu::twoPlayersSelected()
         {
             return twoPlayers;
         }

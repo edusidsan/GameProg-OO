@@ -26,7 +26,17 @@ namespace OgrO // Namespace com o nome do jogo.
 
             case START_MEDIEVAL_RUINS_LEVEL:
             {
-                Levels::MedievalRuins *lvl = new Levels::MedievalRuins(player1, player2, "../assets/level1/Background.png");
+                Levels::MedievalRuins *lvl = nullptr;
+                std::cout << "bool twoplayersselected --> " << Menus::MainMenu::twoPlayers << std::endl;
+                if (Menus::MainMenu::twoPlayers)
+                {
+                    lvl = new Levels::MedievalRuins(player1, player2, "../assets/level1/Background.png");
+                }
+                else
+                {
+                    lvl = new Levels::MedievalRuins(player1, nullptr, "../assets/level1/Background.png");
+                    std::cout << "Apenas player 1" << std::endl;
+                }
                 lvl->initialize();
                 push(lvl);
                 return false;

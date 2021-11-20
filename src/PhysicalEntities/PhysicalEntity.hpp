@@ -35,6 +35,8 @@ namespace OgrO // Namespace com o nome do jogo.
             virtual void draw(Managers::GraphicManager &gm);
             // Método retorna a posição da entidade física.
             const Utilities::myVector2F getPosition() const;
+            // Método seta a posição da entidade física.
+            virtual void setPosition(Utilities::myVector2F pos);
             // Método retorna a dimensão da entidade fisica.
             const Utilities::myVector2F getDimension() const;
             // Método retorna ID atribuído ao ente.

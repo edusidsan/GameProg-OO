@@ -181,9 +181,6 @@ namespace OgrO // Namespace com o nome do jogo.
                     position += speed * t;
                     position += adjusts;
                     adjusts = Utilities::myVector2F(0, 0);
-                    // std::cout<<"tempo: "<<clock.getCurrent()/1000<<std::endl;
-                    //  std::cout<<"timeReference: "<<timeReference<<std::endl;
-                    //  std::cout<<"time: "<<t*1000<<std::endl;
 
                     if (clock.getCurrent() / 1000 - timeReference > 5)
                     {
@@ -193,8 +190,6 @@ namespace OgrO // Namespace com o nome do jogo.
                         timeReference = clock.getCurrent() / 1000;
                     }
                 }
-
-                // std::cout<<"tempo: "<<clock.getTime()<<std::endl;
             }
         }
     }

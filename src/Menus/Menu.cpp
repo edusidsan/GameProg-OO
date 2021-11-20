@@ -40,10 +40,8 @@ namespace OgrO // Namespace com o nome do jogo.
 
         int Menu::run()
         {
-            // gameCode = Managers::continueGame;
-            // pEventsManager->handleEvent();
-            // bm.draw();
-            // return gameCode;
+            gameCode = Managers::continueGame;
+            return gameCode;
         }
         void Menu::setGameCode(int _gameCode)
         {

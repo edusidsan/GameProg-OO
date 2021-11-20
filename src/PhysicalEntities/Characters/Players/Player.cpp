@@ -8,10 +8,8 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             namespace Players // Namespace do Pacote Enemies.
             {
-
                 // Construtora da classe Player.
                 Player::Player(Utilities::myVector2F pos, const char *tPath) : Character(pos, Utilities::myVector2F(), tPath)
-                                                                              
                 {
 
                     // Atribui um ID ao player.

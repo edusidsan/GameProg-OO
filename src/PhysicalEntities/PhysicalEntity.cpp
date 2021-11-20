@@ -41,6 +41,10 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             return position;
         }
+        void PhysicalEntity::setPosition(Utilities::myVector2F pos)
+        {
+            position = pos;
+        }
         // Método retorna a dimensão da entidade fisica.
         const Utilities::myVector2F PhysicalEntity::getDimension() const
         {

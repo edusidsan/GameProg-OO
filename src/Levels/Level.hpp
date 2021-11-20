@@ -19,7 +19,7 @@ namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Levels // Namespace do Pacote Levels.
     {
-        class Level : public Entity , public State, public Mementos::LevelMemento
+        class Level : public Entity, public State, public Mementos::LevelMemento
         {
         protected:
             // Atributo do gerenciador de colisões criado para o jogo.
@@ -59,6 +59,8 @@ namespace OgrO // Namespace com o nome do jogo.
             void handleCollisions();
             // Método que gerencia os eventos nas fases.
             void handleEvents();
+            void setPlayers(PhysicalEntities::Characters::Players::Shrek *_player1);
+            void setPlayers(PhysicalEntities::Characters::Players::Shrek *_player1, PhysicalEntities::Characters::Players::Donkey *_player2);
 
         private:
             // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.

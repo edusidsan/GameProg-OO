@@ -84,8 +84,6 @@ namespace OgrO // Namespace com o nome do jogo.
 
         void MedievalRuins::initialize()
         {
-            // backgroundImage.initialize();
-            // backgroundImage.draw();
 
             if (player1)
             {
@@ -103,6 +101,11 @@ namespace OgrO // Namespace com o nome do jogo.
             players.insert(new PhysicalEntities::Characters::Enemies::Wolf(Utilities::myVector2F(150.0f, 240.0f), Utilities::myVector2F(20, 0)));
             // Carrega as imagens nas entidades físicas e inicializa os gerenciadores de eventos.
             players.initializePhysicalEntities(*pEventsManager, collisionManager);
+
+            if (player1)
+                player1->setPosition(Utilities::myVector2F(64.0f, 235.0f));
+            if (player2)
+                player2->setPosition(Utilities::myVector2F(64.0f, 235.0f));
         }
         nlohmann::json MedievalRuins::toJSON()
         {

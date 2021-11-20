@@ -14,9 +14,8 @@ namespace OgrO // Namespace com o nome do jogo.
             // TextInputBox textInputBox;
             // bool printed;
 
-            bool twoPlayers;
-
         public:
+            static bool twoPlayers;
             // Construtora da classe MainMenu.
             MainMenu();
             // Destrutora da classe MainMenu.
@@ -26,9 +25,8 @@ namespace OgrO // Namespace com o nome do jogo.
 
             int run() override;
 
-            const bool twoPlayersSelected() const;
+            static const bool twoPlayersSelected();
         };
     }
 }
 #endif
-
