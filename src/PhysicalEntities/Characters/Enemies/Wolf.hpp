@@ -15,6 +15,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 public:
                     // Construtora da classe Wolf.
                     Wolf(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath = nullptr);
+                    Wolf(nlohmann::json source);
                     // Destrutora da classe Wolf.
                     ~Wolf();
                     // Método carrega a textura do Wolf na window e inicializa gerenciadores do mesmo.

@@ -20,6 +20,7 @@ namespace OgrO // Namespace com o nome do jogo.
         // void PhysicalEntity::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
         void PhysicalEntity::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
         {
+            std::cout << "texturePath Player ID: " << texturePath << std::endl;
             // gm.loadAsset(texturePath);
             pGraphicManager->loadAsset(texturePath);
         }

@@ -13,12 +13,11 @@ namespace OgrO // Namespace com o nome do jogo.
                 Enemy::Enemy(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath) : Character(pos, s, tPath)
                 {
                     // Atribui um ID ao Enemy.
-                    id = 102;
+                    // id = 102;
                 }
 
-                Enemy::Enemy(nlohmann::json source) : Enemy(Utilities::myVector2F{source["position x"], source["position y"]}, Utilities::myVector2F{source["speed x"], source["speed y"]})
+                Enemy::Enemy(nlohmann::json source) : Enemy(Utilities::myVector2F{static_cast<float>(source["position x"]), static_cast<float>(source["position y"])}, Utilities::myVector2F{static_cast<float>(source["speed x"]), static_cast<float>(source["speed y"])})
                 {
-
                 }
                 // Destrutora da classe Enemy.
                 Enemy::~Enemy()
@@ -45,12 +44,12 @@ namespace OgrO // Namespace com o nome do jogo.
                 void Enemy::collided(int IDOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
                 {
                     // Caso colida com Player1.
-                    if (IDOther == 101)
+                    if ((IDOther == 100) || (IDOther == 101))
                     {
                         // std::cout << "OBJETO ENEMY >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
                     }
                     // Caso colida com Enemy.
-                    else if (IDOther == 102)
+                    else if ((IDOther == 102) || (IDOther == 103))
                     {
                         // Cálculo da distância entre os enemy no momento da colisão.
                         Utilities::myVector2F distance = position - positionOther;

@@ -16,6 +16,11 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Atribui um ID ao Witch.
                     id = 102;
                 }
+                Witch::Witch(nlohmann::json source) : Enemy(Utilities::myVector2F{static_cast<float>(source["position x"]), static_cast<float>(source["position y"])}, Utilities::myVector2F{static_cast<float>(source["speed x"]), static_cast<float>(source["speed y"])}, "../assets/Witch.png")
+                {
+                    // Atribui um ID ao Witch.
+                    id = 102;
+                }
                 // Destrutora da classe Witch.
                 Witch::~Witch()
                 {
@@ -29,7 +34,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // // Retorna dimensão da imagem.
                     // dimension = gm.getDimensionsOfAsset(texturePath);
 
-                     // Carrega textura no player.
+                    // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);
                     // Retorna dimensão da imagem.
                     dimension = pGraphicManager->getDimensionsOfAsset(texturePath);
@@ -41,18 +46,18 @@ namespace OgrO // Namespace com o nome do jogo.
                 void Witch::collided(int IDOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
                 {
                     // Caso colida com Player1.
-                    if (IDOther == 101)
+                    if ((IDOther == 100) || (IDOther == 101))
                     {
-                        // std::cout << "OBJETO Witch >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
+                        // std::cout << "OBJETO ENEMY >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
                     }
-                    // Caso colida com Witch.
-                    else if (IDOther == 102)
+                    // Caso colida com Enemy.
+                    else if ((IDOther == 102) || (IDOther == 103))
                     {
-                        // Cálculo da distância entre os Witch no momento da colisão.
+                        // Cálculo da distância entre os enemy no momento da colisão.
                         Utilities::myVector2F distance = position - positionOther;
-                        // Medida para não manter um Witch preso dentro do outro.
+                        // Medida para não manter um enemy preso dentro do outro.
                         position += distance * (1 / 2);
-                        // std::cout << "OBJETO Witch >>> COLISAO COM OBJETO Witch." << std::endl;
+                        // std::cout << "OBJETO ENEMY >>> COLISAO COM OBJETO ENEMY." << std::endl;
                         // Muda o sentido da velocidade em x.
                         speed.coordX *= -1;
                         // Muda o sentido da velocidade em y.

@@ -2,6 +2,7 @@
 #define _SCREENMANAGER_HPP_
 
 #include "StateManager.hpp"
+#include "../Levels/MedievalRuins.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -42,6 +43,7 @@ namespace OgrO // Namespace com o nome do jogo.
             PhysicalEntities::Characters::Players::Shrek *player1;
             // Atributo que aponta para a classe do player Donkey.
             PhysicalEntities::Characters::Players::Donkey *player2;
+
 
         public:
             ScreenManager(PhysicalEntities::Characters::Players::Shrek *_player1 = nullptr, PhysicalEntities::Characters::Players::Donkey *_player2 = nullptr);

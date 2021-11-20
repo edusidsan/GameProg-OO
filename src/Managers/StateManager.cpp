@@ -24,7 +24,7 @@ namespace OgrO // Namespace com o nome do jogo.
             delete stateStack.top();
             stateStack.pop();
         }
-        State* StateManager::top()
+        State *StateManager::top()
         {
             return stateStack.top();
         }

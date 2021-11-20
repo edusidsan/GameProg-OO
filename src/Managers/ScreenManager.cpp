@@ -1,5 +1,5 @@
 #include "ScreenManager.hpp"
-#include "../Levels/MedievalRuins.hpp"
+
 #include "../Menus/MainMenu.hpp"
 #include "../Menus/PauseMenu.hpp"
 #define PATH_BACKGROUND_MEDIEVALRUINS "../assets/level1/Background_01.png"
@@ -10,6 +10,7 @@ namespace OgrO // Namespace com o nome do jogo.
         // GerenciadorTelas(GraphicManager &gg, Heroi *jogador1 = nullptr);
         ScreenManager::ScreenManager(PhysicalEntities::Characters::Players::Shrek *_player1, PhysicalEntities::Characters::Players::Donkey *_player2) : player1{_player1},
                                                                                                                                                         player2{_player2}
+
         {
             push(new Menus::MainMenu());
         }
@@ -68,7 +69,8 @@ namespace OgrO // Namespace com o nome do jogo.
 
             case PAUSE_MENU:
             {
-                push(new Menus::PauseMenu());
+                // push(new Menus::PauseMenu);
+                push(new Menus::PauseMenu);
                 return false;
             }
             case EXIT_PAUSE_MENU:
@@ -76,6 +78,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 return false;
 
             case MAIN_MENU:
+
                 cleanStack();
                 push(new Menus::MainMenu());
 

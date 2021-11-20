@@ -17,6 +17,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 public:
                     // Construtora da classe Witch.
                     Witch(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath = nullptr);
+                    Witch(nlohmann::json source);
                     // Destrutora da classe Witch.
                     ~Witch();
                     // Método carrega a textura do Witch na window e inicializa gerenciadores do mesmo.

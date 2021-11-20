@@ -175,8 +175,9 @@ namespace OgrO // Namespace com o nome do jogo.
 
                 void Player::initializeJSON(nlohmann::json source)
                 {
-                    position.coordX = {source["position x"]};
-                    position.coordY = {source["position y"]};
+                    position.coordX = static_cast<float>(source["position x"]);
+                    position.coordY = static_cast<float>(source["position y"]);
+                    // position.coordY = {static_cast<float>(source["position y"])};
                 }
             }
         }

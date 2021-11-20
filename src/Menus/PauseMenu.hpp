@@ -11,6 +11,11 @@ namespace OgrO // Namespace com o nome do jogo.
         {
         public:
             PauseMenu();
+            ~PauseMenu();
+
+            void init() override;
+
+            int run() override;
         };
     }
 }

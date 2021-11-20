@@ -115,7 +115,6 @@ namespace OgrO // Namespace com o nome do jogo.
 
         void MedievalRuins::load(const std::string &path)
         {
-
             std::ifstream file(path);
             if (file.fail())
             {
@@ -126,14 +125,17 @@ namespace OgrO // Namespace com o nome do jogo.
 
             for (nlohmann::json player : j["players"])
             {
+
                 switch (static_cast<int>(player["id"]))
                 {
-                case 101:
+                case 100:
                     if (player1)
                     {
                         player1->initializeJSON(player);
                         players.insert(player1);
                     }
+                    break;
+                case 101:
                     if (player2)
                     {
                         player2->initializeJSON(player);
@@ -142,14 +144,20 @@ namespace OgrO // Namespace com o nome do jogo.
                     break;
                 case 102:
                 {
-                    players.insert(new PhysicalEntities::Characters::Enemies::Enemy(player));
+
+                    players.insert(new PhysicalEntities::Characters::Enemies::Witch(player));
+                    break;
+                }
+                case 103:
+                {
+
+                    players.insert(new PhysicalEntities::Characters::Enemies::Wolf(player));
                     break;
                 }
                 default:
                     break;
                 }
             }
-
             players.initializePhysicalEntities(*pEventsManager, collisionManager);
         }
     }

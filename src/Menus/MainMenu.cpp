@@ -59,7 +59,9 @@ namespace OgrO // Namespace com o nome do jogo.
 
         int MainMenu::run()
         {
-            int menuReturn = Menu::run();
+            // int menuReturn = Menu::run();
+            // gameCode = Managers::continueGame;
+
             Utilities::myVector2F screenSize = pGraphicManager->getScreenSize();
             pGraphicManager->centerCamera(screenSize * 0.5);
             gameCode = Managers::continueGame;
@@ -72,8 +74,8 @@ namespace OgrO // Namespace com o nome do jogo.
                         Utilities::myVector2F pos = pGraphicManager->getMousePosition();
                         for (auto &b : bm.buttons)
                         {
-                            if (b->getPosition().coordX <= pos.coordX && b->getPosition().coordX <= pos.coordX + 170 &&
-                                b->getPosition().coordY <= pos.coordY && b->getPosition().coordY <= pos.coordY + 30)
+                            if (b->getPosition().coordX >= pos.coordX - (170 / 2) && b->getPosition().coordX <= pos.coordX + (170 / 2) &&
+                                b->getPosition().coordY >= pos.coordY - (30 / 2) && b->getPosition().coordY <= pos.coordY + (30 / 2))
                             {
                                 if (b->getButtonId() == 6)
                                 {
@@ -84,8 +86,15 @@ namespace OgrO // Namespace com o nome do jogo.
                     }
                 });
 
-            Utilities::myVector2F viewsize = pGraphicManager->getScreenSize();
-            pGraphicManager->drawText(((twoPlayers) ? "2" : "1"), Utilities::myVector2F((viewsize.coordX * 0.85) / 2, viewsize.coordY / 8 * 6), 15);
+            while (gameCode == Managers::continueGame)
+            {
+                pGraphicManager->clear();
+                pEventsManager->handleEvent();
+                Utilities::myVector2F viewsize = pGraphicManager->getScreenSize();
+                bm.draw();
+                pGraphicManager->drawText(((twoPlayers) ? "2" : "1"), Utilities::myVector2F((viewsize.coordX * 0.85) / 2, viewsize.coordY / 8 * (5.95)), 15);
+                pGraphicManager->display();
+            }
 
             // if (!printed && textInputBox.getReadyText())
             // {
@@ -94,7 +103,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // }
 
             removeListeners();
-            return menuReturn;
+            return gameCode;
         }
         const bool MainMenu::twoPlayersSelected() const
         {
