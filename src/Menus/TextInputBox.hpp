@@ -3,9 +3,9 @@
 
 #include "Button.hpp"
 #include "PromisseText.hpp"
-#include "../Managers/EventsManager.hpp"
-#include "../Utilities/Vector2D.hpp"
-#include "../Utilities/Color.hpp"
+//#include "../Managers/EventsManager.hpp"
+//#include "../Utilities/Vector2D.hpp"
+//#include "../Utilities/Color.hpp"
 
 #include <string>
 

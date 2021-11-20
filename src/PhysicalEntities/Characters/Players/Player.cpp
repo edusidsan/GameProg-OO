@@ -10,11 +10,8 @@ namespace OgrO // Namespace com o nome do jogo.
             {
 
                 // Construtora da classe Player.
-                Player::Player(Utilities::myVector2F pos, const char *tPath) : Character(pos, Utilities::myVector2F(), tPath),
-                                                                               maxSpeedX{MAXSPEEDX},
-                                                                               maxSpeedY{220},
-                                                                               jumping(false),
-                                                                               adjusts{Utilities::myVector2F(0, 0)}
+                Player::Player(Utilities::myVector2F pos, const char *tPath) : Character(pos, Utilities::myVector2F(), tPath)
+                                                                              
                 {
 
                     // Atribui um ID ao player.
@@ -60,6 +57,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     position += speed * t;
                     position += adjusts;
                     adjusts = Utilities::myVector2F(0, 0);
+                    // std::cout<<"tempo: "<<clock.getTime()<<std::endl;
                 }
                 // Método desenhar do Player.
                 void Player::draw(Managers::GraphicManager &gm)

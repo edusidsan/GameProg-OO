@@ -1,6 +1,6 @@
 #ifndef _PLAYER_HPP_
 #define _PLAYER_HPP_
-#define MAXSPEEDX 80
+//#define MAXSPEEDX 80
 #include "../Character.hpp"
 #include "../../../json.hpp"
 namespace OgrO // Namespace com o nome do jogo.
@@ -14,13 +14,13 @@ namespace OgrO // Namespace com o nome do jogo.
                 class Player : public Character
                 {
                 protected:
-                    unsigned int keyEvent;
-                    float maxSpeedX;
-                    float maxSpeedY;
-                    int direction;
-                    bool jumping;
-                    Utilities::myVector2F adjusts;
-
+                    // unsigned int keyEvent;
+                    // float maxSpeedX;
+                    // float maxSpeedY;
+                    // int direction;
+                    // bool jumping;
+                    // Utilities::myVector2F adjusts;
+                    // Utilities::MyClock clock;
                 public:
                     // Construtora da classe Player.
                     Player(Utilities::myVector2F pos = {0.0f, 0.0f}, const char *tPath = nullptr);

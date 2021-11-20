@@ -63,6 +63,13 @@ namespace OgrO // Namespace com o nome do jogo.
                         // Muda o sentido da velocidade em y.
                         speed.coordY *= -1;
                     }
+                     if ( clock.getCurrent()/1000- timeReference > 5)
+                    {
+                        
+                        // Muda o sentido da velocidade em x.
+                        speed.coordY *= -1;
+                        timeReference = clock.getCurrent()/1000;
+                    }
                 }
             }
         }

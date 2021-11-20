@@ -2,7 +2,7 @@
 #define _MENU_HPP_
 
 #include "../Managers/ButtonsManager.hpp"
-#include "../Managers/EventsManager.hpp"
+//#include "../Managers/EventsManager.hpp"
 #include "../Entity.hpp"
 #include "../State.hpp"
 
