@@ -1,6 +1,7 @@
 #ifndef _LEVEL_HPP_
 #define _LEVEL_HPP_
 
+#include <set>
 #include "Background.hpp"
 #include "../Entity.hpp"
 #include "../Managers/CollisionManager.hpp"
@@ -13,10 +14,15 @@
 #include "../PhysicalEntities/PhysicalEntity.hpp"
 #include "../State.hpp"
 #include "../Utilities/Clock.hpp"
+// #include "../Utilities/RandomGenerator.hpp"
 
 // #define PATH_BACKGROUND_MEDIEVALRUINS "../assets/level1/Background_01.png"
 namespace OgrO // Namespace com o nome do jogo.
 {
+    // namespace Utilities
+    // {
+    //     class RandomGenerator;
+    // }
     namespace Levels // Namespace do Pacote Levels.
     {
         class Level : public Entity , public State, public Mementos::LevelMemento
@@ -39,6 +45,8 @@ namespace OgrO // Namespace com o nome do jogo.
 
             // Atributo do gerenciador de tiles criado para o jogo.
             Tiles::TilesManager *tilesManager;
+
+            // Utilities::RandomGenerator *Random;
             // Atributo que indica a chave única do evento de fechar a window do jogo.
             unsigned int idClosedWindow;
             // Atributo que indica a chave única do evento de ESC.
@@ -59,6 +67,8 @@ namespace OgrO // Namespace com o nome do jogo.
             void handleCollisions();
             // Método que gerencia os eventos nas fases.
             void handleEvents();
+
+            virtual void generateEnemies();
 
         private:
             // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.

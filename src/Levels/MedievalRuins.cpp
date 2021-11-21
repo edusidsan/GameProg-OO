@@ -2,6 +2,8 @@
 #include "../PhysicalEntities/Characters/Enemies/Witch.hpp"
 #include "../PhysicalEntities/Characters/Enemies/Wolf.hpp"
 #include "../Managers/ScreenManager.hpp"
+#include "../Tiles/TilesManager.hpp"
+//#include "../Utilities/RandomGenerator.hpp"
 #include <fstream>
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -71,6 +73,7 @@ namespace OgrO // Namespace com o nome do jogo.
                                                                                                                                                                                                    new Tiles::Tile(53, "../assets/level1/Wooden_Box.png", {32.0f, 32.0f}),
                                                                                                                                                                                                    new Tiles::Tile(54, "../assets/level1/Spring.png", {32.0f, 32.0f}),
                                                                                                                                                                                                },
+                                                                                                                                                                                               32.0f,
                                                                                                                                                                                                {32.0f, 32.0f},
                                                                                                                                                                                                "../map/MedievalRuins.json"},
                                                                                                                                                                                            _player1, _player2, _backgroundImage)

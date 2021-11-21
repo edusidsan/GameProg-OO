@@ -8,10 +8,12 @@ namespace OgrO // Namespace com o nome do jogo.
     namespace Tiles // Namespace do Pacote Tiles.
     {
 
-        TilesManager::TilesManager(std::vector<Tile *> _tiles, Utilities::myVector2F _tilesDimension, const char *_filePath) : tiles{_tiles},
+        TilesManager::TilesManager(std::vector<Tile *> _tiles, float TileSide, Utilities::myVector2F _tilesDimension, const char *_filePath) : tiles{_tiles},
+                                                                                                                               tileSide{TileSide},
                                                                                                                                tilesDimension{_tilesDimension},
                                                                                                                                filePath{_filePath},
                                                                                                                                tileMap{_filePath}
+                                                                                                                               //tileMap{*(new TileMap(filepath, this))}
         {
         }
         TilesManager::~TilesManager()
@@ -92,6 +94,24 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             // std::cout << tilesDimension.operator*(0.5f) + Utilities::myVector2F(tilesDimension.coordX * pos.coordX, tilesDimension.coordY * pos.coordY) << std::endl;
             return tilesDimension.operator*(0.5f) + Utilities::myVector2F(tilesDimension.coordX * pos.coordX, tilesDimension.coordY * pos.coordY);
+        }
+        const TileMap* TilesManager::getTileMap() const {
+            return &tileMap;
+        }
+        const std::vector<Utilities::myVector2F>& TilesManager::getEnemySpawns() const {
+            return enemySpawns;
+    }
+        void TilesManager::randomTilesPlace(){
+            tileMap.loadTileMap(filePath);
+
+            for (unsigned i = 0; i < tileMap.getTileMapDimension().coordY; ++i) {
+                for (unsigned j = 0; j < tileMap.getTileMapDimension().coordX; ++j) {
+                    if (tileMap[i][j] == 51 || (i > 0 && tileMap[i][j] == 14 && tileMap[i-1][j] == 6)) {
+                        // enemy spawn point
+                        enemySpawns.push_back(Utilities::myVector2F(j, i - 1) * tileSide);
+          }  
+                }
+            }
         }
     }
 }

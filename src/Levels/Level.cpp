@@ -1,5 +1,9 @@
 #include "Level.hpp"
 #include "../Managers/ScreenManager.hpp"
+#include "../Utilities/RandomGenerator.hpp"
+#include <iostream>
+#include <fstream>
+
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Levels // Namespace do Pacote Levels.
@@ -104,6 +108,14 @@ namespace OgrO // Namespace com o nome do jogo.
         void Level::setGameCode(int _gameCode)
         {
             gameCode = _gameCode;
+        }
+        void Level::generateEnemies(){
+            std::vector<Utilities::myVector2F> spawns = tilesManager->getEnemySpawns();
+            //int nEnemies = Utilities::RandomGenerator::getInstance()->getRandomIntInRange(5, 10);
+            // for(int i = 0; i < nEnemies; i++){
+            //    // int idx = Utilities::RandomGenerator::getInstance()->getRandomIntInRange(0, spawns.size());
+
+            // }
         }
     }
 }

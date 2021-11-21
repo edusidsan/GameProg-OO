@@ -25,7 +25,7 @@ namespace OgrO     // Namespace com o nome do jogo.
             ~Vector2D();
             // Sobrecarga do operador (+) entre objetos da classe Vector2D.
             Vector2D operator+(Vector2D v) const;
-            // Sobrecarga do operador (-) entre objetos da classe Vector2D.
+            // Sobrecarga do operador (-) entre objetos da classe Vector2D. 2F
             Vector2D operator-(Vector2D v) const;
             // Sobrecarga do operador (*) entre objetos da classe Vector2D e um inteiro.
             Vector2D operator*(int i) const;
@@ -187,7 +187,7 @@ namespace OgrO     // Namespace com o nome do jogo.
         // template <typename T>
         // nlohmann::json Vector2D<T>::toJSON()
         // {
-        //     return {{"x", coordX}, {"y", coordY}};
+        //     return {{"x", coordX}, {"y", coordY}}; 2F
         // }
 
         // Sobrecarga do operador do fluxo de saída (<<).
