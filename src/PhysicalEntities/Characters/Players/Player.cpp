@@ -10,8 +10,8 @@ namespace OgrO // Namespace com o nome do jogo.
             {
 
                 // Construtora da classe Player.
-                Player::Player(Utilities::myVector2F pos, const char *tPath) : Character(pos, Utilities::myVector2F(), tPath)
-                                                                              
+                Player::Player(Utilities::myVector2F pos, const char *tPath) : Character(pos, Utilities::myVector2F(), tPath), Life{0}
+
                 {
 
                     // Atribui um ID ao player.
@@ -78,7 +78,23 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
                 void Player::collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
                 {
-                    // Chão
+                   
+                    if(idOther == 51 || idOther == 102 || idOther == 103){ //espinho, witch, wolf ainda falta os projetectiles
+                        
+                        if ( clock.getCurrent()/1000- timeReference > 1)
+                        {                        
+                            // Caso o contato seja maior que 2s causa dano
+                            ++Life;
+                            std::cout<<"Dano!, Life:"<<Life<<std::endl;
+                            timeReference = clock.getCurrent()/1000;
+                        }                        
+                        if(Life > 5){
+                            position.coordX = 100.0f;
+                            position.coordY = 100.0f; 
+                            Life = 0;
+                        }                        
+                    }
+                     // Chão
                     if (idOther == 14)
                     {
                         float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));
@@ -175,6 +191,9 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                     position.coordX = {source["position x"]};
                     position.coordY = {source["position y"]};
+                }
+                const unsigned int Player::getLife() const {
+                    return Life;
                 }
             }
         }

@@ -15,7 +15,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 //"../assets/Wolf.png"
                 {
                     // Atribui um ID ao Wolf.
-                    id = 102;
+                    id = 103;
                 }
                 // Destrutora da classe Wolf.
                 Wolf::~Wolf()

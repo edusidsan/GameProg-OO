@@ -13,9 +13,9 @@ namespace OgrO // Namespace com o nome do jogo.
             {
                 class Enemy : public Character
                 {
-                protected:
-                Utilities::MyClock clock;
-                double timeReference;
+                // protected:
+                // Utilities::MyClock clock;
+                // double timeReference;
                 public:
                     // Construtora da classe Enemy.
                     Enemy(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath = nullptr);

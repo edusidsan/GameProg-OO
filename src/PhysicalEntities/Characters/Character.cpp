@@ -11,7 +11,8 @@ namespace OgrO // Namespace com o nome do jogo.
                                                                                                           maxSpeedX{MAXSPEEDX},
                                                                                                           maxSpeedY{220},
                                                                                                           jumping(false),
-                                                                                                          adjusts{Utilities::myVector2F(0, 0)}
+                                                                                                          adjusts{Utilities::myVector2F(0, 0)},
+                                                                                                          timeReference{0}
             {
             }
             // Destrutora da classe Personagem.
