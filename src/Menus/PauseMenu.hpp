@@ -13,7 +13,7 @@ namespace OgrO // Namespace com o nome do jogo.
             PauseMenu();
             ~PauseMenu();
 
-            void init() override;
+            void initialize() override;
 
             int run() override;
         };

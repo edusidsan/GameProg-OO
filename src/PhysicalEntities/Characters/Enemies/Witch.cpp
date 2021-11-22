@@ -1,5 +1,7 @@
 
 #include "Witch.hpp"
+#include "../../../Levels/Level.hpp"
+#include "../../Projectiles/Apple.hpp"
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace PhysicalEntities // Namespace do Pacote Entities.
@@ -41,19 +43,32 @@ namespace OgrO // Namespace com o nome do jogo.
 
                     // Adiciona Witch na lista de entidades físicas colidiveis.
                     cm.addToLCollidablesPhysicalEntities((this));
+
+                    currentLevel = this->getLevel();
                 }
 
                 void Witch::update(float t)
                 {
-                    // currentLevel = player1->getLevel();
-                    Utilities::myVector2F playerPosition = currentLevel->getMainPlayerPosition();
-                    std::cout << "playerPosition " << playerPosition << std::endl;
-
                     if (clock.getCurrent() / 1000 - timeReference > 5)
                     {
                         // Muda o sentido da velocidade em x.
                         speed.coordY *= -1;
                         timeReference = clock.getCurrent() / 1000;
+                    }
+                    std::cout << "debug: " << std::endl;
+
+
+                    Utilities::myVector2F playerPosition = currentLevel->getMainPlayerPosition();
+                    // Utilities::myVector2F playerPosition;
+                    Utilities::myVector2F playerDirection = (playerPosition - position);
+
+                    std::cout << "playerDirection: " << playerDirection << std::endl;
+                    std::cout << "playerDirection.vModule: " << playerDirection.vModule() << std::endl;
+
+                    if (playerDirection.vModule() < 300)
+                    {
+
+                        // currentLevel->addPhysicalEntity(new Projectiles::Apple(position + getDimension() * 0.5, playerDirection.unitVector() * 1));
                     }
                 }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.

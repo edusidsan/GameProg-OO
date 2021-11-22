@@ -6,16 +6,16 @@ namespace OgrO // Namespace com o nome do jogo.
     {
         PauseMenu::PauseMenu() : Menu()
         {
-            init();
+            initialize();
         }
 
         PauseMenu::~PauseMenu()
         {
         }
 
-        void PauseMenu::init()
+        void PauseMenu::initialize()
         {
-            Menu::init();
+            Menu::initialize();
             Utilities::myVector2F screenSize = pGraphicManager->getScreenSize();
             pGraphicManager->centerCamera(pGraphicManager->getScreenSize() * 0.5);
             bm.addButton(new Button(

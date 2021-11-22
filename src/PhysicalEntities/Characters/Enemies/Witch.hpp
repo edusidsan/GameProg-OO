@@ -22,11 +22,10 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Método carrega a textura do Witch na window e inicializa gerenciadores do mesmo.
                     // void initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm);
                     void initialize(Managers::EventsManager &em, Managers::CollisionManager &cm);
-                    
-                    void update(float t);
-                     // Método verifica colisão entre dois objetos da classe Entidade Física.
-                    void collided(int IDOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther);
 
+                    void update(float t);
+                    // Método verifica colisão entre dois objetos da classe Entidade Física.
+                    void collided(int IDOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther);
                 };
             }
         }

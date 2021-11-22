@@ -30,7 +30,7 @@ namespace OgrO // Namespace com o nome do jogo.
             removeListeners();
         }
 
-        void Menu::init()
+        void Menu::initialize()
         {
             pGraphicManager->clear();
             pEventsManager->setWindow(pGraphicManager->getWindow());

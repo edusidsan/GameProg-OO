@@ -31,12 +31,18 @@ namespace OgrO // Namespace com o nome do jogo.
                 if (Menus::MainMenu::twoPlayers)
                 {
                     lvl = new Levels::MedievalRuins(player1, player2, "../assets/level1/Background.png");
+                    player1->setLevel(lvl);
+                    player2->setLevel(lvl);
+                    lvl->setPlayers(player1,player2);
                 }
                 else
                 {
                     lvl = new Levels::MedievalRuins(player1, nullptr, "../assets/level1/Background.png");
+                    player1->setLevel(lvl);
+                    player2->setLevel(nullptr);
+                    lvl->setPlayers(player1);
+                    
                 }
-                player1->setLevel(lvl);
                 lvl->initialize();
                 push(lvl);
                 return false;

@@ -13,7 +13,6 @@ add_library(main)
 # Create a sources variable with a link to all cpp files to compile
 set(
     SOURCES
-    Levels/Background.cpp
     Levels/Level.cpp
     Levels/MedievalRuins.cpp
     Managers/ButtonsManager.cpp
@@ -54,7 +53,6 @@ set(
 set(
     HEADERS
     # Lists/List.hpp
-    Levels/Background.hpp
     Levels/Level.hpp
     Levels/MedievalRuins.hpp
     Managers/ButtonsManager.hpp

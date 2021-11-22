@@ -1,7 +1,7 @@
 #ifndef _LEVEL_HPP_
 #define _LEVEL_HPP_
 
-#include "Background.hpp"
+// #include "Background.hpp"
 #include "../Entity.hpp"
 #include "../Managers/CollisionManager.hpp"
 #include "../Managers/EventsManager.hpp"
@@ -35,7 +35,8 @@ namespace OgrO // Namespace com o nome do jogo.
             // Atributo que aponta para a classe do player Donkey.
             PhysicalEntities::Characters::Players::Donkey *player2;
 
-            Background backgroundImage;
+            // Background backgroundImage;
+            const std::string backgroundPath;
 
             // Atributo do gerenciador de tiles criado para o jogo.
             Tiles::TilesManager *tilesManager;
@@ -49,12 +50,13 @@ namespace OgrO // Namespace com o nome do jogo.
         public:
             // Construtora da classe Level.
             Level();
-            Level(Tiles::TilesManager *_tilesManager, PhysicalEntities::Characters::Players::Shrek *_player1 = nullptr, PhysicalEntities::Characters::Players::Donkey *_player2 = nullptr, Background _backgroundImage = "");
+            Level(Tiles::TilesManager *_tilesManager, PhysicalEntities::Characters::Players::Shrek *_player1 = nullptr, PhysicalEntities::Characters::Players::Donkey *_player2 = nullptr, const std::string _backgroundPath = "");
             // Destrutora da classe Level.
             virtual ~Level();
             // Método run virtual puro -> TORNA CLASSE ABSTRATA.
             int run();
             virtual void initialize() = 0;
+            virtual void addPhysicalEntity(PhysicalEntities::PhysicalEntity* _physicalEntity);
             // Método que gerencia as colisões nas fases.
             void handleCollisions();
             // Método que gerencia os eventos nas fases.

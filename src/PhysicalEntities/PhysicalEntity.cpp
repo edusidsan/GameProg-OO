@@ -1,5 +1,5 @@
 #include "PhysicalEntity.hpp"
-#include "../Levels/Level.hpp"
+// #include "../Levels/Level.hpp"
 #include "../json.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
@@ -97,9 +97,6 @@ namespace OgrO // Namespace com o nome do jogo.
             return 0;
         }
 
-        Levels::Level *PhysicalEntity::getLevel() const
-        {
-            return currentLevel;
-        }
+
     }
 }

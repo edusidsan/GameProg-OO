@@ -27,7 +27,7 @@ namespace OgrO // Namespace com o nome do jogo.
             Menu();
             // Destrutora da classe Menu.
             virtual ~Menu();
-            virtual void init() override;
+            virtual void initialize() override;
 
             virtual int run() override;
 

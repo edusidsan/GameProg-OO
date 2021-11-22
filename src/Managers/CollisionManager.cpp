@@ -2,6 +2,7 @@
 #include "../Utilities/Vector2D.hpp"
 #include "../PhysicalEntities/Characters/Enemies/Enemy.hpp"
 #include "../PhysicalEntities/Characters/Players/Player.hpp"
+#include "../PhysicalEntities/Projectiles/Projectile.hpp"
 //#include "../PhysicalEntities/Characters/Players/Shrek.hpp"
 #include "../PhysicalEntities/Obstacles/Obstacle.hpp"
 #include "../PhysicalEntities/PhysicalEntity.hpp"
@@ -51,6 +52,13 @@ namespace OgrO // Namespace com o nome do jogo.
             // Caso as distâncias entre os centros em qualquer um dos eixos for menor que a metade da soma das dimensões naquele eixo, está ocorrendo colisão.
             return (abs(distance.coordX) < ((dimension1.coordX + dimension2.coordX) / 2) &&
                     abs(distance.coordY) < ((dimension1.coordY + dimension2.coordY) / 2));
+        }
+        // Método que adiciona um elemento de Enemy na lista de possíveis objetos que colidem.
+        void CollisionManager::addToLCollidablesPhysicalEntities(PhysicalEntities::Projectiles::Projectile *pP)
+        {
+            // Adiciona um elemento de Enemy no vector de Enemy.
+            // LEs.push_back(pP);
+            LCollidablesPhysicalEntities.push_back((static_cast<PhysicalEntities::PhysicalEntity *>(pP)));
         }
 
         // Método que adiciona um elemento de Enemy na lista de possíveis objetos que colidem.
@@ -191,13 +199,11 @@ namespace OgrO // Namespace com o nome do jogo.
                         }
                         // Incremento no segundo contador do vector Enemy.
                         itLEs2++;
-                        
                     }
                     // Incremento no primeiro contador do vector Enemy.
                     itLEs1++;
                     // std::cout << "Iterador Players:" << *itLPs1 << std::endl;
                     itLPs1 = LPs.begin();
-                    
                 }
 
                 // Nessa condição, está sendo analisado um elemento da classe Obstacle. (firstElement vai ser da classe Obstacle.)
@@ -299,7 +305,7 @@ namespace OgrO // Namespace com o nome do jogo.
                         //std::cout << "Iterador Players:" << *itLPs1 << std::endl;
                         //std::cout << "J:" << j << std::endl;
 
-                       // itLPs1++;
+                        // itLPs1++;
                     }
                 }
             }

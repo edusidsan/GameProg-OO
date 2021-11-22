@@ -17,7 +17,6 @@ namespace OgrO // Namespace com o nome do jogo.
 
     namespace PhysicalEntities // Namespace do Pacote Entities.
     {
-
         class PhysicalEntity : public Entity
         {
         protected:
@@ -57,9 +56,8 @@ namespace OgrO // Namespace com o nome do jogo.
             // Método run virtual puro -> TORNA CLASSE ABSTRATA.
             virtual int run();
             // Método
-            nlohmann::json toJSON() override;
-
-            Levels::Level *getLevel() const;
+            nlohmann::json toJSON();
+            
         };
     }
 }

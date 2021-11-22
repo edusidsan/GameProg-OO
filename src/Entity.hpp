@@ -4,10 +4,13 @@
 #include "Managers/GraphicManager.hpp"
 #include "Managers/EventsManager.hpp"
 #include "Mementos/Memento.hpp"
-#include "Levels/Level.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
 {
+    namespace Levels
+    {
+        class Level;
+    }
     class Entity : public Mementos::Memento
     {
     protected:
@@ -24,12 +27,14 @@ namespace OgrO // Namespace com o nome do jogo.
         // Método desenhar de Entity.
         virtual void draw();
 
-        virtual void init();
+        void initLevel(Levels::Level *level);
+        virtual void initialize();
         // virtual void init(Managers::EventsManager& e);
         // Método run virtual puro -> TORNA CLASSE ABSTRATA.
         virtual int run() = 0;
 
         void setLevel(Levels::Level *_currentLevel);
+        Levels::Level *getLevel() const;
 
         // nlohmann::json toJSON();
     };

@@ -16,7 +16,7 @@ namespace OgrO // Namespace com o nome do jogo.
         //    printed{false}
         //    textInputBox{em, 15, {200.0f, 50.0f}, {100, 40}}
         {
-            Menu::init();
+            Menu::initialize();
             Utilities::myVector2F screenSize = pGraphicManager->getScreenSize();
 
             bm.addButton(new Button(
@@ -54,7 +54,7 @@ namespace OgrO // Namespace com o nome do jogo.
         {
         }
 
-        void MainMenu::init()
+        void MainMenu::initialize()
         {
             std::cout << "Implementar MainMenu::init()" << std::endl;
         }
