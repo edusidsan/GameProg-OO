@@ -23,6 +23,8 @@ namespace OgrO // Namespace com o nome do jogo.
                     void initialize(Managers::EventsManager &em, Managers::CollisionManager &cm);
                      // Método verifica colisão entre dois objetos da classe Entidade Física.
                     void collided(int IDOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther);
+                    void update(float t);
+
                 };
             }
         }

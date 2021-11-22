@@ -45,19 +45,34 @@ namespace OgrO // Namespace com o nome do jogo.
                     {
                         // std::cout << "OBJETO Witch >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
                     }
-                    // Caso colida com Witch.
-                    else if (IDOther == 102)
+                    // Caso colida com Player2.
+                    if (IDOther == 100)
                     {
-                        // Cálculo da distância entre os Witch no momento da colisão.
-                        Utilities::myVector2F distance = position - positionOther;
-                        // Medida para não manter um Witch preso dentro do outro.
-                        position += distance * (1 / 2);
-                        // std::cout << "OBJETO Witch >>> COLISAO COM OBJETO Witch." << std::endl;
-                        // Muda o sentido da velocidade em x.
-                        speed.coordX *= -1;
-                        // Muda o sentido da velocidade em y.
-                        speed.coordY *= -1;
+                        // std::cout << "OBJETO Witch >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
                     }
+                    
+
+                  
+                }
+                void Witch::update(float t){
+                    
+                    // speed.coordY += 100 * t;
+                    if (abs(speed.coordX) > maxSpeedX)
+                    {
+                        speed.coordX = maxSpeedX * (speed.coordX > 0 ? 1 : -1);
+                    }
+                    if (abs(speed.coordY) > maxSpeedY)
+                    {
+                        speed.coordY = maxSpeedY * (speed.coordY > 0 ? 1 : -1);
+                    }
+                    // Relação de posição da forma no espaço-tempo. Equação de Movimento Uniforme da Cinemática.
+                    position += speed * t;
+                    position += adjusts;
+                    adjusts = Utilities::myVector2F(0, 0);
+                    // std::cout<<"tempo: "<<clock.getCurrent()/1000<<std::endl;
+                    //  std::cout<<"timeReference: "<<timeReference<<std::endl;
+                    //  std::cout<<"time: "<<t*1000<<std::endl;
+            
                      if ( clock.getCurrent()/1000- timeReference > 5)
                     {
                         
@@ -65,6 +80,8 @@ namespace OgrO // Namespace com o nome do jogo.
                         speed.coordY *= -1;
                         timeReference = clock.getCurrent()/1000;
                     }
+                    
+                
                 }
             }
         }

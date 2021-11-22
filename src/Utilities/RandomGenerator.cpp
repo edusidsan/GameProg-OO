@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 
-namespace Ogro{
+namespace OgrO{
     namespace Utilities{
 
       RandomGenerator* RandomGenerator::instance{nullptr};  

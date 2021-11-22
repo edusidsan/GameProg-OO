@@ -68,7 +68,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // Método que gerencia os eventos nas fases.
             void handleEvents();
 
-            virtual void generateEnemies();
+            // virtual void generateEnemies();
 
         private:
             // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.

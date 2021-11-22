@@ -98,18 +98,30 @@ namespace OgrO // Namespace com o nome do jogo.
         const TileMap* TilesManager::getTileMap() const {
             return &tileMap;
         }
-        const std::vector<Utilities::myVector2F>& TilesManager::getEnemySpawns() const {
-            return enemySpawns;
-    }
+        const std::vector<Utilities::myVector2F>& TilesManager::getEnemySpawnsWolfs() const {
+            return enemySpawnsWolfs;
+        }
+        const std::vector<Utilities::myVector2F>& TilesManager::getEnemySpawnsWitchs() const {
+            return enemySpawnsWitchs;
+        }   
         void TilesManager::randomTilesPlace(){
-            tileMap.loadTileMap(filePath);
-
+            //tileMap.loadTileMap(filePath);
+            
             for (unsigned i = 0; i < tileMap.getTileMapDimension().coordY; ++i) {
                 for (unsigned j = 0; j < tileMap.getTileMapDimension().coordX; ++j) {
-                    if (tileMap[i][j] == 51 || (i > 0 && tileMap[i][j] == 14 && tileMap[i-1][j] == 6)) {
+                    // if (tileMap[i][j] == 51 || (i > 0 && tileMap[i][j] == 6  && tileMap[i-1][j] == 14)) { //mudança
+                    if (tileMap[i][j] == 51 ) { //Espinho
                         // enemy spawn point
-                        enemySpawns.push_back(Utilities::myVector2F(j, i - 1) * tileSide);
-          }  
+                        enemySpawnsWitchs.push_back(Utilities::myVector2F(j, i - 1) * tileSide); //mudança
+                    }
+                    if( tileMap[i][j] == 6){ //Gosma
+                        enemySpawnsWitchs.push_back(Utilities::myVector2F(j, i - 1) * tileSide); //mudança                    
+                        enemySpawnsWolfs.push_back(Utilities::myVector2F(j, i - 1) * tileSide); //mudança
+                    }
+                      if( tileMap[i][j] == 14){ //chão
+                        enemySpawnsWitchs.push_back(Utilities::myVector2F(j, i - 1) * tileSide); //mudança
+                        enemySpawnsWolfs.push_back(Utilities::myVector2F(j, i - 1) * tileSide); //mudança
+                    }
                 }
             }
         }

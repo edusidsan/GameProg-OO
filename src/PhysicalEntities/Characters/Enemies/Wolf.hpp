@@ -13,6 +13,8 @@ namespace OgrO // Namespace com o nome do jogo.
             {
                 class Wolf : public Enemy
                 {
+                private:
+                    bool collidingFlag;
                 public:
                     // Construtora da classe Wolf.
                     Wolf(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath = nullptr);

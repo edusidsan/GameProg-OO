@@ -78,7 +78,7 @@ set(
     PhysicalEntities/Characters/Players/Shrek.hpp
     PhysicalEntities/Characters/Players/Donkey.hpp
     PhysicalEntities/Characters/Character.hpp
-    PhysicalEntities/Obstacles/Obstacle.hpp
+    PhysicalEntities/Obstacles/Obstacle.hpp  
     PhysicalEntities/PhysicalEntity.hpp
     Tiles/Tile.hpp
     Tiles/TileMap.hpp

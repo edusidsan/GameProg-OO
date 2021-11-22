@@ -1,7 +1,7 @@
-#ifndef RANDOMGENERATOR_HPP
-#define RANDOMGENERATOR_HPP
+#ifndef _RANDOMGENERATOR_HPP_
+#define _RANDOMGENERATOR_HPP_
 
-namespace Ogro {
+namespace OgrO {
     namespace Utilities{
 
         class RandomGenerator 
