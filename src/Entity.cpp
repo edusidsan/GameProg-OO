@@ -22,6 +22,11 @@ namespace OgrO // Namespace com o nome do jogo.
     {
     }
 
+    void Entity::setLevel(Levels::Level *_currentLevel)
+    {
+        currentLevel = _currentLevel;
+    }
+
     // void Entity::run()
     // {
     // }

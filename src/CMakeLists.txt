@@ -39,6 +39,8 @@ set(
     PhysicalEntities/Characters/Players/Donkey.cpp
     PhysicalEntities/Characters/Character.cpp
     PhysicalEntities/Obstacles/Obstacle.cpp
+    PhysicalEntities/Projectiles/Apple.cpp
+    PhysicalEntities/Projectiles/Projectile.cpp
     PhysicalEntities/PhysicalEntity.cpp
     Tiles/Tile.cpp
     Tiles/TileMap.cpp
@@ -78,6 +80,8 @@ set(
     PhysicalEntities/Characters/Players/Donkey.hpp
     PhysicalEntities/Characters/Character.hpp
     PhysicalEntities/Obstacles/Obstacle.hpp
+    PhysicalEntities/Projectiles/Apple.hpp
+    PhysicalEntities/Projectiles/Projectile.hpp
     PhysicalEntities/PhysicalEntity.hpp
     Tiles/Tile.hpp
     Tiles/TileMap.hpp

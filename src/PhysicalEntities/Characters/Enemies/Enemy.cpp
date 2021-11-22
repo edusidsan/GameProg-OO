@@ -41,6 +41,9 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Adiciona enemy na lista de entidades físicas colidiveis.
                     cm.addToLCollidablesPhysicalEntities((this));
                 }
+                void Enemy::update(float t){
+
+                }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
                 void Enemy::collided(int IDOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
                 {

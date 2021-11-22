@@ -42,6 +42,20 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Adiciona Witch na lista de entidades físicas colidiveis.
                     cm.addToLCollidablesPhysicalEntities((this));
                 }
+
+                void Witch::update(float t)
+                {
+                    // currentLevel = player1->getLevel();
+                    Utilities::myVector2F playerPosition = currentLevel->getMainPlayerPosition();
+                    std::cout << "playerPosition " << playerPosition << std::endl;
+
+                    if (clock.getCurrent() / 1000 - timeReference > 5)
+                    {
+                        // Muda o sentido da velocidade em x.
+                        speed.coordY *= -1;
+                        timeReference = clock.getCurrent() / 1000;
+                    }
+                }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
                 void Witch::collided(int IDOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
                 {
@@ -62,13 +76,6 @@ namespace OgrO // Namespace com o nome do jogo.
                         speed.coordX *= -1;
                         // Muda o sentido da velocidade em y.
                         speed.coordY *= -1;
-                    }
-                     if ( clock.getCurrent()/1000- timeReference > 5)
-                    {
-                        
-                        // Muda o sentido da velocidade em x.
-                        speed.coordY *= -1;
-                        timeReference = clock.getCurrent()/1000;
                     }
                 }
             }

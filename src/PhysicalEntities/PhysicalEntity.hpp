@@ -10,8 +10,14 @@
 
 namespace OgrO // Namespace com o nome do jogo.
 {
+    namespace Levels // Namespace do Pacote Levels.
+    {
+        class Level;
+    }
+
     namespace PhysicalEntities // Namespace do Pacote Entities.
     {
+
         class PhysicalEntity : public Entity
         {
         protected:
@@ -37,6 +43,10 @@ namespace OgrO // Namespace com o nome do jogo.
             const Utilities::myVector2F getPosition() const;
             // Método seta a posição da entidade física.
             virtual void setPosition(Utilities::myVector2F pos);
+            // Método retorna a velocidade da entidade física.
+            const Utilities::myVector2F getSpeed() const;
+            // Método seta a velocidade da entidade física.
+            virtual void setSpeed(Utilities::myVector2F _speed);
             // Método retorna a dimensão da entidade fisica.
             const Utilities::myVector2F getDimension() const;
             // Método retorna ID atribuído ao ente.
@@ -48,6 +58,8 @@ namespace OgrO // Namespace com o nome do jogo.
             virtual int run();
             // Método
             nlohmann::json toJSON() override;
+
+            Levels::Level *getLevel() const;
         };
     }
 }

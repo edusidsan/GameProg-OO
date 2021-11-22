@@ -100,6 +100,12 @@ namespace OgrO // Namespace com o nome do jogo.
             }
         }
 
+        const Utilities::myVector2F Level::getMainPlayerPosition() const
+        {
+            return player1->getPosition();
+        }
+        
+
         void Level::goToMenuButton(const sf::Event &event)
         {
             if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Key::Escape)

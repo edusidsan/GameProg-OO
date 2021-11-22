@@ -1,7 +1,8 @@
 #ifndef _BACKGROUND_HPP_
 #define _BACKGROUND_HPP_
 
-#include "../PhysicalEntities/PhysicalEntity.hpp"
+// #include "../PhysicalEntities/PhysicalEntity.hpp"
+#include "../Entity.hpp"
 // #include "Level.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
@@ -29,7 +30,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // Método retorna a posição da entidade física.
 
 
-            virtual int run();
+            int run();
 
             nlohmann::json toJSON();
 

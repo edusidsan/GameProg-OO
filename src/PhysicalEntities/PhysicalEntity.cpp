@@ -1,4 +1,5 @@
 #include "PhysicalEntity.hpp"
+#include "../Levels/Level.hpp"
 #include "../json.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
@@ -45,6 +46,16 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             position = pos;
         }
+        // Método retorna a velocidade da entidade física.
+        const Utilities::myVector2F PhysicalEntity::getSpeed() const
+        {
+            return speed;
+        }
+        // Método seta a velocidade da entidade física.
+        void PhysicalEntity::setSpeed(Utilities::myVector2F _speed)
+        {
+            speed = _speed;
+        }
         // Método retorna a dimensão da entidade fisica.
         const Utilities::myVector2F PhysicalEntity::getDimension() const
         {
@@ -84,6 +95,11 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             std::cout << "Implementar PhysicalEntity::run()" << std::endl;
             return 0;
+        }
+
+        Levels::Level *PhysicalEntity::getLevel() const
+        {
+            return currentLevel;
         }
     }
 }

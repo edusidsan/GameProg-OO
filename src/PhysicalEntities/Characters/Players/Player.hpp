@@ -23,7 +23,6 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Utilities::MyClock clock;
                 public:
                     // Construtora da classe Player.
-                    Player();
                     Player(Utilities::myVector2F pos = {0.0f, 0.0f}, const char *tPath = nullptr);
                     // Destrutora da classe Player.
                     virtual ~Player();

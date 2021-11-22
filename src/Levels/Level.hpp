@@ -61,6 +61,8 @@ namespace OgrO // Namespace com o nome do jogo.
             void handleEvents();
             void setPlayers(PhysicalEntities::Characters::Players::Shrek *_player1);
             void setPlayers(PhysicalEntities::Characters::Players::Shrek *_player1, PhysicalEntities::Characters::Players::Donkey *_player2);
+            const Utilities::myVector2F getMainPlayerPosition() const;
+            
 
         private:
             // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.

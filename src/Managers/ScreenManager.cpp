@@ -2,6 +2,7 @@
 
 #include "../Menus/MainMenu.hpp"
 #include "../Menus/PauseMenu.hpp"
+#include "../Entity.hpp"
 #define PATH_BACKGROUND_MEDIEVALRUINS "../assets/level1/Background_01.png"
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -35,6 +36,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                     lvl = new Levels::MedievalRuins(player1, nullptr, "../assets/level1/Background.png");
                 }
+                player1->setLevel(lvl);
                 lvl->initialize();
                 push(lvl);
                 return false;
