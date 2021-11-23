@@ -26,6 +26,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     void update(float t);
                     // Método verifica colisão entre dois objetos da classe Entidade Física.
                     void collided(int IDOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther);
+
                 };
             }
         }

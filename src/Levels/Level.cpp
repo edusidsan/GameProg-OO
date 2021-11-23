@@ -1,5 +1,9 @@
 #include "Level.hpp"
 #include "../Managers/ScreenManager.hpp"
+#include "../Utilities/RandomGenerator.hpp"
+#include <iostream>
+#include <fstream>
+
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Levels // Namespace do Pacote Levels.
@@ -136,5 +140,7 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             gameCode = _gameCode;
         }
+        
+        
     }
 }

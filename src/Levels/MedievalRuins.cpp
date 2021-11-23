@@ -2,6 +2,8 @@
 #include "../PhysicalEntities/Characters/Enemies/Witch.hpp"
 #include "../PhysicalEntities/Characters/Enemies/Wolf.hpp"
 #include "../Managers/ScreenManager.hpp"
+#include "../Tiles/TilesManager.hpp"
+//#include "../Utilities/RandomGenerator.hpp"
 #include <fstream>
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -71,6 +73,7 @@ namespace OgrO // Namespace com o nome do jogo.
                                                                                                                                                                                                    new Tiles::Tile(53, "../assets/level1/Wooden_Box.png", {32.0f, 32.0f}),
                                                                                                                                                                                                    new Tiles::Tile(54, "../assets/level1/Spring.png", {32.0f, 32.0f}),
                                                                                                                                                                                                },
+                                                                                                                                                                                               32.0f,
                                                                                                                                                                                                {32.0f, 32.0f},
                                                                                                                                                                                                "../map/MedievalRuins.json"},
                                                                                                                                                                                            _player1, _player2, "../assets/level1/Background.png")
@@ -93,12 +96,24 @@ namespace OgrO // Namespace com o nome do jogo.
             {
                 players.insert(player2);
             }
-            // Criação de instâncias de novas entidades físicas.
-            players.insert(new PhysicalEntities::Characters::Enemies::Witch(Utilities::myVector2F(40.0f, 50.0f), Utilities::myVector2F(0, 10)));
-            // players.insert(new PhysicalEntities::Characters::Enemies::Witch(Utilities::myVector2F(40.0f, 200.0f), Utilities::myVector2F(0, -10)));
-            // players.insert(new PhysicalEntities::Characters::Enemies::Witch(Utilities::myVector2F(120.0f, 50.0f), Utilities::myVector2F(0, 10)));
-            // players.insert(new PhysicalEntities::Characters::Enemies::Witch(Utilities::myVector2F(120.0f, 200.0f), Utilities::myVector2F(0, -10)));
-            // players.insert(new PhysicalEntities::Characters::Enemies::Wolf(Utilities::myVector2F(150.0f, 240.0f), Utilities::myVector2F(20, 0)));
+            //players.insert(new PhysicalEntities::Characters::Enemies::Witch(Utilities::myVector2F(100.0f, 100.0f), Utilities::myVector2F(0, 10)));
+
+            tilesManager->randomTilesPlace();
+            std::vector<Utilities::myVector2F> spawnsWolfs = tilesManager->getEnemySpawnsWolfs();
+            std::vector<Utilities::myVector2F> spawnsWitchs = tilesManager->getEnemySpawnsWitchs();
+            //std::cout<<"Tamanho:"<<spawns.size()<<std::endl;
+            int nEnemies = Utilities::RandomGenerator::getInstance()->getRandomIntInRange(5, 10);
+            for(int i = 0; i < 40; i++){
+                int idx = Utilities::RandomGenerator::getInstance()->getRandomIntInRange(0, spawnsWitchs.size());
+                 Utilities::myVector2F pos = spawnsWitchs[idx] + Utilities::myVector2F(32.0f, -76.0f)  ;
+                players.insert(new PhysicalEntities::Characters::Enemies::Witch(pos, Utilities::myVector2F(0, 10)));
+
+                idx = Utilities::RandomGenerator::getInstance()->getRandomIntInRange(0, spawnsWolfs.size());
+                pos = spawnsWolfs[idx] + Utilities::myVector2F(32.0f, 32.0f) ;
+                players.insert(new PhysicalEntities::Characters::Enemies::Wolf(pos, Utilities::myVector2F(20, 0)));
+
+
+            }            
             // Carrega as imagens nas entidades físicas e inicializa os gerenciadores de eventos.
             players.initializePhysicalEntities(*pEventsManager, collisionManager);
 

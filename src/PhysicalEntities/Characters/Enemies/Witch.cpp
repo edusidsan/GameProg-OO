@@ -49,11 +49,24 @@ namespace OgrO // Namespace com o nome do jogo.
 
                 void Witch::update(float t)
                 {
-                    if (clock.getCurrent() / 1000 - timeReference > 5)
+                    if (abs(speed.coordY) > maxSpeedY)
                     {
+                        speed.coordY = maxSpeedY * (speed.coordY > 0 ? 1 : -1);
+                    }
+                    // Relação de posição da forma no espaço-tempo. Equação de Movimento Uniforme da Cinemática.
+                    position += speed * t;
+                    position += adjusts;
+                    adjusts = Utilities::myVector2F(0, 0);
+                    // std::cout<<"tempo: "<<clock.getCurrent()/1000<<std::endl;
+                    //  std::cout<<"timeReference: "<<timeReference<<std::endl;
+                    //  std::cout<<"time: "<<t*1000<<std::endl;
+            
+                     if ( clock.getCurrent()/1000- timeReference > 5)
+                    {
+                        
                         // Muda o sentido da velocidade em x.
                         speed.coordY *= -1;
-                        timeReference = clock.getCurrent() / 1000;
+                        timeReference = clock.getCurrent()/1000;
                     }
 
                     if (projectileInterval > 0)
@@ -96,6 +109,14 @@ namespace OgrO // Namespace com o nome do jogo.
                         // Muda o sentido da velocidade em y.
                         speed.coordY *= -1;
                     }
+                    // Caso colida com Player2.
+                    if (IDOther == 100)
+                    {
+                        // std::cout << "OBJETO Witch >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
+                    }
+                    
+
+                  
                 }
             }
         }

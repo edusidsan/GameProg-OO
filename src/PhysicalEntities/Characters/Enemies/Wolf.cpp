@@ -76,6 +76,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     //Chão
                     if (IDOther == 14)
                     {
+                        collidingFlag = true;
                         float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));
                         float distY = (position.coordY + (dimension.coordY / 2)) - abs(positionOther.coordY - (dimensionOther.coordY / 2));
                         if (distX * distY > .001 * dimension.coordX * dimension.coordY)
@@ -103,14 +104,21 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Espinho
                     else if (IDOther == 51)
                     {
+                        
                         float distY = (position.coordY + (dimension.coordY / 2)) - abs(positionOther.coordY - (dimensionOther.coordY / 2));
                         // colisão em Y
                         if (distY > abs(adjusts.coordY))
                         {
                             adjusts.coordY = distY * (position.coordY + (dimension.coordY / 2) > positionOther.coordY - (dimensionOther.coordY / 2) ? -0.5 : 0.5);
                         }
+                        if(collidingFlag){
+                            speed.coordX *= -1;
+                            collidingFlag = false;
+                        }
+                        // timeReference = clock.getCurrent()/1000;
                         speed.coordY = 0.f;
                     }
+
                     // Parede
                     else if (IDOther == 1)
                     {

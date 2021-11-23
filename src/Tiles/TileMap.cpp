@@ -37,7 +37,7 @@ namespace OgrO // Namespace com o nome do jogo.
                                                  path{filePath}
         {
             // Método que carrega o TileMap.
-            loadTileMap();
+            loadTileMap(filePath);
         }
         // Destrutora da classe TileMap.
         TileMap::~TileMap()
@@ -56,7 +56,7 @@ namespace OgrO // Namespace com o nome do jogo.
         }
 
         // Método que carrega o TileMap.
-        void TileMap::loadTileMap()
+        void TileMap::loadTileMap(const char *path)
         {
             
             std::ifstream _file(path);
@@ -65,6 +65,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 std::cout << "Atencao! Arquivo no caminho \"" << path << "\" não pode ser aberto!" << std::endl;
                 exit(1);
             }
+            
             nlohmann::json json;
 
             _file >> json;
