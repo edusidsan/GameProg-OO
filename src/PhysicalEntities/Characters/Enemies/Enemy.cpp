@@ -11,7 +11,8 @@ namespace OgrO // Namespace com o nome do jogo.
 
                 // Construtora da classe Enemy.
                 Enemy::Enemy(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath) : Character(pos, s, tPath),
-                                                                                                      timeReference{0}
+                                                                                                      timeReference{0},
+                                                                                                      projectileInterval{0}
                 {
                     // Atribui um ID ao Enemy.
                     // id = 102;

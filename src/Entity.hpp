@@ -16,7 +16,7 @@ namespace OgrO // Namespace com o nome do jogo.
     protected:
         // Atributo que aponta para o gerenciador gráfico criado para o jogo.
         Managers::GraphicManager *pGraphicManager;
-        Levels::Level *currentLevel;
+        static Levels::Level *currentLevel;
         int id;
 
     public:

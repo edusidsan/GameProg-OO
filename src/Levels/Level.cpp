@@ -74,7 +74,7 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             _physicalEntity->initialize(*pEventsManager, collisionManager);
             players.insert(_physicalEntity);
-            // collisionManager.addToLCollidablesPhysicalEntities(_physicalEntity);
+            collisionManager.addToLCollidablesPhysicalEntities((_physicalEntity));
         }
 
         // Método que gerencia as colisões nas fases.

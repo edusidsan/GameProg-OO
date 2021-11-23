@@ -16,6 +16,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 protected:
                     Utilities::MyClock clock;
                     double timeReference;
+                    int projectileInterval;
 
                 public:
                     // Construtora da classe Enemy.

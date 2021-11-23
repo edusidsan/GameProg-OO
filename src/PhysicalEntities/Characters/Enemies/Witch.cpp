@@ -55,20 +55,24 @@ namespace OgrO // Namespace com o nome do jogo.
                         speed.coordY *= -1;
                         timeReference = clock.getCurrent() / 1000;
                     }
-                    std::cout << "debug: " << std::endl;
 
-
-                    Utilities::myVector2F playerPosition = currentLevel->getMainPlayerPosition();
-                    // Utilities::myVector2F playerPosition;
-                    Utilities::myVector2F playerDirection = (playerPosition - position);
-
-                    std::cout << "playerDirection: " << playerDirection << std::endl;
-                    std::cout << "playerDirection.vModule: " << playerDirection.vModule() << std::endl;
-
-                    if (playerDirection.vModule() < 300)
+                    if (projectileInterval > 0)
                     {
+                        projectileInterval--;
+                    }
+                    else
+                    {
+                        projectileInterval = 100;
 
-                        // currentLevel->addPhysicalEntity(new Projectiles::Apple(position + getDimension() * 0.5, playerDirection.unitVector() * 1));
+                        Utilities::myVector2F playerPosition = currentLevel->getMainPlayerPosition();
+                        // Utilities::myVector2F playerPosition;
+                        Utilities::myVector2F playerDirection = (playerPosition - position);
+
+                        if (playerDirection.vModule() < 300)
+                        {
+
+                            currentLevel->addPhysicalEntity(new Projectiles::Apple(position + getDimension() * 0.5, playerDirection.unitVector() * 50));
+                        }
                     }
                 }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.

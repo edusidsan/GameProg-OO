@@ -140,6 +140,11 @@ namespace OgrO // Namespace com o nome do jogo.
                     else if (idOther == 35)
                     {
                     }
+                    // Projétil de maçã
+                    else if (idOther == 200)
+                    {
+
+                    }
                     // Obstaculo que reduz velocidade.
                     else if (idOther == 6)
                     {

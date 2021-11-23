@@ -54,10 +54,10 @@ namespace OgrO // Namespace com o nome do jogo.
                     abs(distance.coordY) < ((dimension1.coordY + dimension2.coordY) / 2));
         }
         // Método que adiciona um elemento de Enemy na lista de possíveis objetos que colidem.
-        void CollisionManager::addToLCollidablesPhysicalEntities(PhysicalEntities::Projectiles::Projectile *pP)
+        void CollisionManager::addToLCollidablesPhysicalEntities(PhysicalEntities::PhysicalEntity *pP)
         {
             // Adiciona um elemento de Enemy no vector de Enemy.
-            // LEs.push_back(pP);
+            LEs.push_back(static_cast<PhysicalEntities::Characters::Enemies::Enemy *>(pP));
             LCollidablesPhysicalEntities.push_back((static_cast<PhysicalEntities::PhysicalEntity *>(pP)));
         }
 

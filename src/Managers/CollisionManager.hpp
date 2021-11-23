@@ -59,7 +59,7 @@ namespace OgrO // Namespace com o nome do jogo.
             CollisionManager();
             // Destrutora da classe CollisionManager.
             ~CollisionManager();
-            void addToLCollidablesPhysicalEntities(PhysicalEntities::Projectiles::Projectile *pP);
+            void addToLCollidablesPhysicalEntities(PhysicalEntities::PhysicalEntity *pP);
             // Método que adiciona um elemento de Enemy na lista de possíveis objetos que colidem.
             void addToLCollidablesPhysicalEntities(PhysicalEntities::Characters::Enemies::Enemy *pPE);
             // Método que adiciona um elemento de Obstacle na lista de possíveis objetos que colidem.
