@@ -96,14 +96,11 @@ namespace OgrO // Namespace com o nome do jogo.
             {
                 players.insert(player2);
             }
-            //players.insert(new PhysicalEntities::Characters::Enemies::Witch(Utilities::myVector2F(100.0f, 100.0f), Utilities::myVector2F(0, 10)));
-
             tilesManager->randomTilesPlace();
             std::vector<Utilities::myVector2F> spawnsWolfs = tilesManager->getEnemySpawnsWolfs();
             std::vector<Utilities::myVector2F> spawnsWitchs = tilesManager->getEnemySpawnsWitchs();
-            //std::cout<<"Tamanho:"<<spawns.size()<<std::endl;
             int nEnemies = Utilities::RandomGenerator::getInstance()->getRandomIntInRange(5, 10);
-            for(int i = 0; i < 40; i++){
+            for(int i = 0; i < nEnemies; i++){
                 int idx = Utilities::RandomGenerator::getInstance()->getRandomIntInRange(0, spawnsWitchs.size());
                  Utilities::myVector2F pos = spawnsWitchs[idx] + Utilities::myVector2F(32.0f, -76.0f)  ;
                 players.insert(new PhysicalEntities::Characters::Enemies::Witch(pos, Utilities::myVector2F(0, 10)));
@@ -111,8 +108,6 @@ namespace OgrO // Namespace com o nome do jogo.
                 idx = Utilities::RandomGenerator::getInstance()->getRandomIntInRange(0, spawnsWolfs.size());
                 pos = spawnsWolfs[idx] + Utilities::myVector2F(32.0f, 32.0f) ;
                 players.insert(new PhysicalEntities::Characters::Enemies::Wolf(pos, Utilities::myVector2F(20, 0)));
-
-
             }            
             // Carrega as imagens nas entidades físicas e inicializa os gerenciadores de eventos.
             players.initializePhysicalEntities(*pEventsManager, collisionManager);

@@ -60,10 +60,14 @@ namespace OgrO // Namespace com o nome do jogo.
                         default:
                             break;
                         }
-                    }
+                    }                    
                 }
+                // void Shrek::handleLife(){
+                //     if(Player::getLife() > 0){
+                        
+                //     }
+                // }
             }
-
         }
     }
 }

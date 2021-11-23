@@ -25,7 +25,8 @@ namespace OgrO // Namespace com o nome do jogo.
             {
                 if (idOther == 100 || idOther == 101)
                 {
-                    std::cout << "Acertei um dos players" << std::endl;
+                    // std::cout << "Acertei um dos players" << std::endl;
+                    // delete this;
                 }
             }
         }

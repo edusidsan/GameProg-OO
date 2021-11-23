@@ -20,6 +20,8 @@ namespace OgrO // Namespace com o nome do jogo.
                     ~Shrek();
                     // Método de tratamento de evento ocorrido.
                     void handleEvent(const sf::Event &ev);
+                    //Gerenciador de vida
+                    // void handleLife();
 
                 };
             }

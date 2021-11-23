@@ -123,6 +123,11 @@ namespace OgrO // Namespace com o nome do jogo.
             return player1->getPosition();
         }
 
+        void Level::resetLevel()
+        {
+            setGameCode(Managers::START_MEDIEVAL_RUINS_LEVEL);
+        }
+
         void Level::goToMenuButton(const sf::Event &event)
         {
             if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Key::Escape)
@@ -138,7 +143,6 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             gameCode = _gameCode;
         }
-        
-        
+
     }
 }

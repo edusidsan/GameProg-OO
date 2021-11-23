@@ -1,5 +1,6 @@
 #include "Player.hpp"
 #include <cmath>
+#include "../../../Levels/Level.hpp"
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace PhysicalEntities // Namespace do Pacote Entities.
@@ -23,6 +24,8 @@ namespace OgrO // Namespace com o nome do jogo.
                 // void Player::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
                 void Player::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
                 {
+
+                    Life = 10;
                     // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);
                     // Retorna dimensão da imagem.
@@ -76,6 +79,43 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
                 void Player::collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
                 {
+                    if (idOther == 200)
+                    { //Maça
+
+                        if (clock.getCurrent() / 1000 - timeReference > 3)
+                        {
+                            // Caso o contato seja maior que 2s causa dano
+                            --Life;
+                            std::cout << "Dano!, Life:" << Life << std::endl;
+                            timeReference = clock.getCurrent() / 1000;
+                        }
+                        if (Life == 0)
+                        {
+                            // position.coordX = 100.0f;
+                            // position.coordY = 100.0f;
+                            currentLevel->resetLevel();
+                            Life = 10;
+                        }
+                    }
+
+                    if (idOther == 51 || idOther == 102 || idOther == 103)
+                    { //espinho, witch, wolf ainda falta os projetectiles
+
+                        if (clock.getCurrent() / 1000 - timeReference > 1)
+                        {
+                            // Caso o contato seja maior que 2s causa dano
+                            --Life;
+                            std::cout << "Dano!, Life:" << Life << std::endl;
+                            timeReference = clock.getCurrent() / 1000;
+                        }
+                        if (Life == 0)
+                        {
+                            // position.coordX = 100.0f;
+                            // position.coordY = 100.0f;
+                            currentLevel->resetLevel();
+                            Life = 10;
+                        }
+                    }
                     // Chão
                     if (idOther == 14)
                     {
@@ -143,7 +183,6 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Projétil de maçã
                     else if (idOther == 200)
                     {
-
                     }
                     // Obstaculo que reduz velocidade.
                     else if (idOther == 6)
@@ -179,6 +218,10 @@ namespace OgrO // Namespace com o nome do jogo.
                     position.coordX = static_cast<float>(source["position x"]);
                     position.coordY = static_cast<float>(source["position y"]);
                     // position.coordY = {static_cast<float>(source["position y"])};
+                }
+                const unsigned int Player::getLife() const
+                {
+                    return Life;
                 }
             }
         }

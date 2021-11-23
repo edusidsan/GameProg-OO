@@ -63,7 +63,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // Método run virtual puro -> TORNA CLASSE ABSTRATA.
             int run();
             virtual void initialize() = 0;
-            virtual void addPhysicalEntity(PhysicalEntities::PhysicalEntity* _physicalEntity);
+            virtual void addPhysicalEntity(PhysicalEntities::PhysicalEntity *_physicalEntity);
             // Método que gerencia as colisões nas fases.
             void handleCollisions();
             // Método que gerencia os eventos nas fases.
@@ -71,7 +71,7 @@ namespace OgrO // Namespace com o nome do jogo.
             void setPlayers(PhysicalEntities::Characters::Players::Shrek *_player1);
             void setPlayers(PhysicalEntities::Characters::Players::Shrek *_player1, PhysicalEntities::Characters::Players::Donkey *_player2);
             const Utilities::myVector2F getMainPlayerPosition() const;
-            
+            void resetLevel();
 
             // virtual void generateEnemies();
 

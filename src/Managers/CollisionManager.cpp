@@ -190,12 +190,17 @@ namespace OgrO // Namespace com o nome do jogo.
                             itLPs1++;
                         }
                         // Testa se houve colisão entre os elementos analisados.
+                        // PROBLEMA
                         if (colliding(firstElement, secondElement))
                         {
+
                             // Primeiro elemento impacta atributos da entidade física do outro elemento.
                             firstElement->collided(secondElement->getID(), secondElement->getPosition(), secondElement->getDimension());
                             // Outro elemento impacta atributos da entidade física do primeiro elemento.
-                            secondElement->collided(firstElement->getID(), firstElement->getPosition(), firstElement->getDimension());
+                            if (firstElement)
+                            {
+                                secondElement->collided(firstElement->getID(), firstElement->getPosition(), firstElement->getDimension());
+                            }
                         }
                         // Incremento no segundo contador do vector Enemy.
                         itLEs2++;
