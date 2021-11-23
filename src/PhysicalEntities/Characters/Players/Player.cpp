@@ -10,7 +10,7 @@ namespace OgrO // Namespace com o nome do jogo.
             {
 
                 // Construtora da classe Player.
-                Player::Player(Utilities::myVector2F pos, const char *tPath) : Character(pos, Utilities::myVector2F(), tPath), Life{0}
+                Player::Player(Utilities::myVector2F pos, const char *tPath) : Character(pos, Utilities::myVector2F(), tPath)
 
                 {
 
@@ -25,6 +25,8 @@ namespace OgrO // Namespace com o nome do jogo.
                 // void Player::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
                 void Player::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
                 {
+
+                    Life = 1000;
                     // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);
                     // Retorna dimensão da imagem.
@@ -84,14 +86,14 @@ namespace OgrO // Namespace com o nome do jogo.
                         if ( clock.getCurrent()/1000- timeReference > 1)
                         {                        
                             // Caso o contato seja maior que 2s causa dano
-                            ++Life;
+                            --Life;
                             std::cout<<"Dano!, Life:"<<Life<<std::endl;
                             timeReference = clock.getCurrent()/1000;
                         }                        
-                        if(Life > 5){
+                        if(Life == 0){
                             position.coordX = 100.0f;
                             position.coordY = 100.0f; 
-                            Life = 0;
+                            Life = 1000;
                         }                        
                     }
                      // Chão

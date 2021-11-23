@@ -21,7 +21,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // bool jumping;
                     // Utilities::myVector2F adjusts;
                     // Utilities::MyClock clock;
-                    unsigned int Life;                                
+                    // unsigned int Life;                                
                 public:
                     // Construtora da classe Player.
                     Player(Utilities::myVector2F pos = {0.0f, 0.0f}, const char *tPath = nullptr);
