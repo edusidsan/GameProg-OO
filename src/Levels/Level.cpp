@@ -98,13 +98,11 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             player1 = _player1;
             player2 = nullptr;
-            std::cout << "Player configurado" << std::endl;
         }
         void Level::setPlayers(PhysicalEntities::Characters::Players::Shrek *_player1, PhysicalEntities::Characters::Players::Donkey *_player2)
         {
             player1 = _player1;
             player2 = _player2;
-            std::cout << "Players configurados" << std::endl;
         }
 
         // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.
@@ -120,7 +118,7 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             if (player1 == nullptr)
             {
-                std::cout << "segfaulting agora" << std::endl;
+                std::cout << "Ponteiro para player1 ainda não atribuído." << std::endl;
             }
             return player1->getPosition();
         }

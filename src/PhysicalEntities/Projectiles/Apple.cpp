@@ -27,9 +27,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                     std::cout << "Acertei um dos players" << std::endl;
                 }
-                // Projectile::collided(idOther, positionOther, dimensionOther);
             }
-
         }
     }
 }

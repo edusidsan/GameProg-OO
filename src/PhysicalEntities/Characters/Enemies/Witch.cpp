@@ -115,7 +115,6 @@ namespace OgrO // Namespace com o nome do jogo.
                         // std::cout << "OBJETO Witch >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
                     }
                     
-
                   
                 }
             }
