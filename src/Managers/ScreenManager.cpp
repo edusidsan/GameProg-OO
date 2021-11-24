@@ -2,6 +2,7 @@
 
 #include "../Menus/MainMenu.hpp"
 #include "../Menus/PauseMenu.hpp"
+#include "../Menus/Ranking.hpp"
 #include "../Entity.hpp"
 #define PATH_BACKGROUND_MEDIEVALRUINS "../assets/level1/Background_01.png"
 namespace OgrO // Namespace com o nome do jogo.
@@ -85,6 +86,13 @@ namespace OgrO // Namespace com o nome do jogo.
                 push(new Menus::PauseMenu);
                 return false;
             }
+
+             case RANKING:
+            {
+                // push(new Menus::PauseMenu);
+                push(new Menus::Ranking);
+                return false;
+            }
             case EXIT_PAUSE_MENU:
                 pop();
                 return false;
@@ -103,6 +111,3 @@ namespace OgrO // Namespace com o nome do jogo.
     }
 }
 
-// MAIN_MENU,
-//     EXIT,
-//     LEADERBOARD

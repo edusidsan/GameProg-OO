@@ -69,12 +69,10 @@ namespace OgrO // Namespace com o nome do jogo.
             nlohmann::json json;
 
             _file >> json;
-            std::cout << "json = json[layers][0];!" << std::endl;
             // Retorna os objetos alocados na primeira posição do array json.
             json = json["layers"][0];
             // Atribui as dimensões do arquivo no atributo tileMapDimension.
             tileMapDimension = {json["width"], json["height"]};
-            std::cout << tileMapDimension << std::endl;
             // Atribui apenas os tiles do arquivo para o próprio json.
             json = json["data"];
             

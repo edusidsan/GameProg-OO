@@ -3,6 +3,7 @@
 
 #include "StateManager.hpp"
 #include "../Levels/MedievalRuins.hpp"
+#include "../Menus/Ranking.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -31,7 +32,7 @@ namespace OgrO // Namespace com o nome do jogo.
             START_MEDIEVAL_RUINS_LEVEL,
             LOAD_MEDIEVAL_RUINS_LEVEL,
             EXIT,
-            LEADERBOARD
+            RANKING
         };
         static GameCode gamecode;
 
@@ -43,7 +44,6 @@ namespace OgrO // Namespace com o nome do jogo.
             PhysicalEntities::Characters::Players::Shrek *player1;
             // Atributo que aponta para a classe do player Donkey.
             PhysicalEntities::Characters::Players::Donkey *player2;
-
 
         public:
             ScreenManager(PhysicalEntities::Characters::Players::Shrek *_player1 = nullptr, PhysicalEntities::Characters::Players::Donkey *_player2 = nullptr);

@@ -1,1 +1,174 @@
-{"players":[{"dimension x":30.0,"dimension y":45.0,"id":100,"position x":393.5999755859375,"position y":120.9249267578125,"speed x":0.0,"speed y":-4.5,"texturePath":"../assets/Shrek.png"},{"dimension x":30.0,"dimension y":48.0,"id":102,"position x":40.0,"position y":-12.960003852844238,"speed x":0.0,"speed y":-10.0,"texturePath":"../assets/Witch.png"},{"dimension x":30.0,"dimension y":48.0,"id":102,"position x":40.0,"position y":241.260009765625,"speed x":-0.0,"speed y":10.0,"texturePath":"../assets/Witch.png"},{"dimension x":30.0,"dimension y":48.0,"id":102,"position x":120.0,"position y":-12.960003852844238,"speed x":0.0,"speed y":-10.0,"texturePath":"../assets/Witch.png"},{"dimension x":30.0,"dimension y":48.0,"id":102,"position x":120.0,"position y":163.54000854492188,"speed x":-0.0,"speed y":10.0,"texturePath":"../assets/Witch.png"},{"dimension x":34.0,"dimension y":32.0,"id":103,"position x":75.04000854492188,"position y":240.15963745117188,"speed x":20.0,"speed y":0.0,"texturePath":"../assets/Wolf.png"}]}
+{
+    "players": [
+        {
+            "dimension x": 30.0,
+            "dimension y": 45.0,
+            "id": 100,
+            "position x": 328.8000793457031,
+            "position y": 215.56512451171875,
+            "speed x": 0.0,
+            "speed y": 89.89993286132813,
+            "texturePath": "../assets/Shrek.png"
+        },
+        {
+            "dimension x": 32.0,
+            "dimension y": 41.0,
+            "id": 101,
+            "position x": 275.99993896484375,
+            "position y": 179.5928192138672,
+            "speed x": 0.0,
+            "speed y": -27.200040817260742,
+            "texturePath": "../assets/Donkey.png"
+        },
+        {
+            "dimension x": 30.0,
+            "dimension y": 48.0,
+            "id": 102,
+            "position x": 128.0,
+            "position y": 115.01988220214844,
+            "speed x": 0.0,
+            "speed y": -10.0,
+            "texturePath": "../assets/Witch.png"
+        },
+        {
+            "dimension x": 34.0,
+            "dimension y": 32.0,
+            "id": 103,
+            "position x": 1485.7303466796875,
+            "position y": 240.08831787109375,
+            "speed x": -20.0,
+            "speed y": 0.0,
+            "texturePath": "../assets/Wolf.png"
+        },
+        {
+            "dimension x": 30.0,
+            "dimension y": 48.0,
+            "id": 102,
+            "position x": 1472.0,
+            "position y": 627.021484375,
+            "speed x": 0.0,
+            "speed y": -10.0,
+            "texturePath": "../assets/Witch.png"
+        },
+        {
+            "dimension x": 34.0,
+            "dimension y": 32.0,
+            "id": 103,
+            "position x": 1869.7303466796875,
+            "position y": 752.0882568359375,
+            "speed x": -20.0,
+            "speed y": 0.0,
+            "texturePath": "../assets/Wolf.png"
+        },
+        {
+            "dimension x": 30.0,
+            "dimension y": 48.0,
+            "id": 102,
+            "position x": 896.0,
+            "position y": 627.021484375,
+            "speed x": 0.0,
+            "speed y": -10.0,
+            "texturePath": "../assets/Witch.png"
+        },
+        {
+            "dimension x": 34.0,
+            "dimension y": 32.0,
+            "id": 103,
+            "position x": 973.7284545898438,
+            "position y": 752.0882568359375,
+            "speed x": -20.0,
+            "speed y": 0.0,
+            "texturePath": "../assets/Wolf.png"
+        },
+        {
+            "dimension x": 30.0,
+            "dimension y": 48.0,
+            "id": 102,
+            "position x": 864.0,
+            "position y": 115.01988220214844,
+            "speed x": 0.0,
+            "speed y": -10.0,
+            "texturePath": "../assets/Witch.png"
+        },
+        {
+            "dimension x": 34.0,
+            "dimension y": 32.0,
+            "id": 103,
+            "position x": 1325.7303466796875,
+            "position y": 752.0882568359375,
+            "speed x": -20.0,
+            "speed y": 0.0,
+            "texturePath": "../assets/Wolf.png"
+        },
+        {
+            "dimension x": 30.0,
+            "dimension y": 48.0,
+            "id": 102,
+            "position x": 1280.0,
+            "position y": 627.021484375,
+            "speed x": 0.0,
+            "speed y": -10.0,
+            "texturePath": "../assets/Witch.png"
+        },
+        {
+            "dimension x": 34.0,
+            "dimension y": 32.0,
+            "id": 103,
+            "position x": 525.7274780273438,
+            "position y": 752.0882568359375,
+            "speed x": -20.0,
+            "speed y": 0.0,
+            "texturePath": "../assets/Wolf.png"
+        },
+        {
+            "dimension x": 30.0,
+            "dimension y": 48.0,
+            "id": 102,
+            "position x": 2016.0,
+            "position y": 627.021484375,
+            "speed x": 0.0,
+            "speed y": -10.0,
+            "texturePath": "../assets/Witch.png"
+        },
+        {
+            "dimension x": 34.0,
+            "dimension y": 32.0,
+            "id": 103,
+            "position x": 1837.7303466796875,
+            "position y": 752.0882568359375,
+            "speed x": -20.0,
+            "speed y": 0.0,
+            "texturePath": "../assets/Wolf.png"
+        },
+        {
+            "dimension x": 16.0,
+            "dimension y": 19.0,
+            "id": 200,
+            "position x": 13.672037124633789,
+            "position y": 352.7151184082031,
+            "speed x": -29.419496536254883,
+            "speed y": 40.42886734008789,
+            "texturePath": "../assets/Apple.png"
+        },
+        {
+            "dimension x": 16.0,
+            "dimension y": 19.0,
+            "id": 200,
+            "position x": 217.98280334472656,
+            "position y": 231.47930908203125,
+            "speed x": 36.101646423339844,
+            "speed y": 34.592933654785156,
+            "texturePath": "../assets/Apple.png"
+        },
+        {
+            "dimension x": 16.0,
+            "dimension y": 19.0,
+            "id": 200,
+            "position x": 150.15328979492188,
+            "position y": 143.5396728515625,
+            "speed x": 45.85430145263672,
+            "speed y": 19.93446922302246,
+            "texturePath": "../assets/Apple.png"
+        }
+    ]
+}

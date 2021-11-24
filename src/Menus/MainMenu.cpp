@@ -36,8 +36,8 @@ namespace OgrO // Namespace com o nome do jogo.
                 { setGameCode(Managers::GameCode::END_GAME); },
                 15U, Utilities::Color{127, 0, 0}));
             bm.addButton(new Button(
-                5, Utilities::myVector2F(screenSize.coordX / 4, screenSize.coordY / 8 * 5), {170, 30}, "Leaderboard", [this]
-                { setGameCode(Managers::GameCode::LEADERBOARD); },
+                5, Utilities::myVector2F(screenSize.coordX / 4, screenSize.coordY / 8 * 5), {170, 30}, "Ranking", [this]
+                { setGameCode(Managers::GameCode::RANKING); },
                 15U, Utilities::Color{127, 0, 0}));
             bm.addButton(new Button(
                 6, Utilities::myVector2F(screenSize.coordX / 4, screenSize.coordY / 8 * 6), {170, 30}, "Number of players:", [this]

@@ -9,6 +9,18 @@ namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Managers // Namespace do Pacote Managers.
     {
+
+        enum class EventType
+        {
+            Other = -1,
+            KeyPressed = 0,
+            KeyReleased,
+            TextEntered,
+            MouseWheelScrolledUp,
+            MouseWheelScrolledDown,
+            MouseButtonPressed,
+            MouseButtonReleased,
+        };
         class EventsManager
         {
         private:
@@ -36,6 +48,10 @@ namespace OgrO // Namespace com o nome do jogo.
             ~EventsManager();
 
             static EventsManager *getInstance();
+
+            void setEvent(sf::Event ev);
+
+            const EventType getType() const;
 
             // Método que trata os eventos.
             void handleEvent();
