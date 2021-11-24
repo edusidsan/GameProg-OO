@@ -106,14 +106,14 @@ namespace OgrO // Namespace com o nome do jogo.
                                                             {
                                                                 if (e.type == sf::Event::MouseWheelScrolled)
                                                                 {
-                                                                    std::cout << e.mouseWheelScroll.delta << std::endl;
                                                                     if (e.mouseWheelScroll.delta > 0)
+
                                                                     {
-                                                                        scrollOffset -= scrollOffset ;
+                                                                        --scrollOffset;
                                                                     }
                                                                     else
                                                                     {
-                                                                        scrollOffset += scrollOffset;
+                                                                        ++scrollOffset;
                                                                     }
                                                                 }
                                                                 if (scrollOffset < 0)
