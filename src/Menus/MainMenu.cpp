@@ -28,12 +28,12 @@ namespace OgrO // Namespace com o nome do jogo.
                 { setGameCode(Managers::GameCode::LOAD_MEDIEVAL_RUINS_LEVEL); },
                 15U, Utilities::Color{127, 0, 0}));
             bm.addButton(new Button(
-                3, Utilities::myVector2F(screenSize.coordX / 4, screenSize.coordY / 8 * 3), {170, 30}, "Level 2 - ", [this]
-                { setGameCode(Managers::GameCode::END_GAME); },
+                3, Utilities::myVector2F(screenSize.coordX / 4, screenSize.coordY / 8 * 3), {170, 30}, "Level 2 - Castle", [this]
+                { setGameCode(Managers::GameCode::START_CASTLE_LEVEL); },
                 15U, Utilities::Color{127, 0, 0}));
             bm.addButton(new Button(
-                4, Utilities::myVector2F(screenSize.coordX / 4, screenSize.coordY / 8 * 4), {170, 30}, "Load - ", [this]
-                { setGameCode(Managers::GameCode::END_GAME); },
+                4, Utilities::myVector2F(screenSize.coordX / 4, screenSize.coordY / 8 * 4), {170, 30}, "Load - Castle", [this]
+                { setGameCode(Managers::GameCode::LOAD_CASTLE_LEVEL); },
                 15U, Utilities::Color{127, 0, 0}));
             bm.addButton(new Button(
                 5, Utilities::myVector2F(screenSize.coordX / 4, screenSize.coordY / 8 * 5), {170, 30}, "Ranking", [this]

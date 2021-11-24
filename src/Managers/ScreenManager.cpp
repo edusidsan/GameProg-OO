@@ -45,6 +45,57 @@ namespace OgrO // Namespace com o nome do jogo.
                 return false;
             }
 
+            case LOAD_MEDIEVAL_RUINS_LEVEL:
+            {
+                Levels::MedievalRuins *lvl = new Levels::MedievalRuins(player1, player2, "../assets/level1/Background.png");
+                try
+                {
+                    lvl->load("../savedGame/savedGame.json");
+                    push(lvl);
+                }
+                catch (char const *s)
+                {
+                    // std::cout << s << std::endl;
+                    delete lvl;
+                }
+                return false;
+            }
+
+            case START_CASTLE_LEVEL:
+            {
+                Levels::Castle *lvl = nullptr;
+                if (Menus::MainMenu::twoPlayers)
+                {
+                    lvl = new Levels::Castle(player1, player2, "../assets/level1/Background.png");
+                    lvl->setPlayers(player1, player2);
+                }
+                else
+                {
+                    lvl = new Levels::Castle(player1, nullptr, "../assets/level1/Background.png");
+                    lvl->setPlayers(player1);
+                }
+                player1->setLevel(lvl);
+                lvl->initialize();
+                push(lvl);
+                return false;
+            }
+
+            case LOAD_CASTLE_LEVEL:
+            {
+                Levels::Castle *lvl = new Levels::Castle(player1, player2, "../assets/level1/Background.png");
+                try
+                {
+                    lvl->load("../savedGame/savedGame.json");
+                    push(lvl);
+                }
+                catch (char const *s)
+                {
+                    // std::cout << s << std::endl;
+                    delete lvl;
+                }
+                return false;
+            }
+
             case SAVE_GAME:
             {
                 // POP PILHA DE ESTADOS.
@@ -64,22 +115,6 @@ namespace OgrO // Namespace com o nome do jogo.
                 return false;
             }
 
-            case LOAD_MEDIEVAL_RUINS_LEVEL:
-            {
-                Levels::MedievalRuins *lvl = new Levels::MedievalRuins(player1, player2, "../assets/level1/Background.png");
-                try
-                {
-                    lvl->load("../savedGame/savedGame.json");
-                    push(lvl);
-                }
-                catch (char const *s)
-                {
-                    // std::cout << s << std::endl;
-                    delete lvl;
-                }
-                return false;
-            }
-
             case PAUSE_MENU:
             {
                 // push(new Menus::PauseMenu);
@@ -87,7 +122,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 return false;
             }
 
-             case RANKING:
+            case RANKING:
             {
                 // push(new Menus::PauseMenu);
                 push(new Menus::Ranking);
@@ -110,4 +145,3 @@ namespace OgrO // Namespace com o nome do jogo.
         }
     }
 }
-

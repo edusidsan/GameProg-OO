@@ -14,6 +14,7 @@ add_library(main)
 set(
     SOURCES
     Levels/Level.cpp
+    Levels/Castle.cpp
     Levels/MedievalRuins.cpp
     Managers/ButtonsManager.cpp
     Managers/ScreenManager.cpp
@@ -56,6 +57,7 @@ set(
     HEADERS
     # Lists/List.hpp
     Levels/Level.hpp
+    Levels/Castle.hpp
     Levels/MedievalRuins.hpp
     Managers/ButtonsManager.hpp
     Managers/ScreenManager.hpp

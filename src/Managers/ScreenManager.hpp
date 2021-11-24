@@ -3,6 +3,7 @@
 
 #include "StateManager.hpp"
 #include "../Levels/MedievalRuins.hpp"
+#include "../Levels/Castle.hpp"
 #include "../Menus/Ranking.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
@@ -31,6 +32,8 @@ namespace OgrO // Namespace com o nome do jogo.
             SAVE_GAME,
             START_MEDIEVAL_RUINS_LEVEL,
             LOAD_MEDIEVAL_RUINS_LEVEL,
+            START_CASTLE_LEVEL,
+            LOAD_CASTLE_LEVEL,
             EXIT,
             RANKING
         };

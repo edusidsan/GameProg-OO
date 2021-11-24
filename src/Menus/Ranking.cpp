@@ -91,9 +91,9 @@ namespace OgrO // Namespace com o nome do jogo.
             {
                 pGraphicManager->clear(0, 0, 0);
                 pEventsManager->handleEvent();
-                handleEvent();
                 bm.draw();
                 this->draw();
+                this->handleEvent();
                 pGraphicManager->display();
             }
             removeListeners();
@@ -107,7 +107,6 @@ namespace OgrO // Namespace com o nome do jogo.
                                                                 if (e.type == sf::Event::MouseWheelScrolled)
                                                                 {
                                                                     if (e.mouseWheelScroll.delta > 0)
-
                                                                     {
                                                                         --scrollOffset;
                                                                     }
