@@ -125,7 +125,27 @@ namespace OgrO // Namespace com o nome do jogo.
 
         void Level::resetLevel()
         {
-            setGameCode(Managers::START_MEDIEVAL_RUINS_LEVEL);
+            if (this->getId() == 1000)
+            {
+                setGameCode(Managers::START_MEDIEVAL_RUINS_LEVEL);
+            }
+            else if (this->getId() == 2000)
+            {
+                setGameCode(Managers::START_CASTLE_LEVEL);
+            }
+        }
+
+        void Level::goNextLevel()
+        {
+            if (this->getId() == 1000)
+            {
+                setGameCode(Managers::START_CASTLE_LEVEL);
+            }
+            else if (this->getId() == 2000)
+            {
+                setGameCode(Managers::RANKING);
+            }
+
         }
 
         void Level::goToMenuButton(const sf::Event &event)

@@ -75,7 +75,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     }
                     else
                     {
-                        projectileInterval = 100;
+                        projectileInterval = 800;
 
                         Utilities::myVector2F playerPosition = currentLevel->getMainPlayerPosition();
                         // Utilities::myVector2F playerPosition;

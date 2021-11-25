@@ -35,12 +35,15 @@ set(
     PhysicalEntities/Characters/Enemies/Enemy.cpp
     PhysicalEntities/Characters/Enemies/Witch.cpp
     PhysicalEntities/Characters/Enemies/Wolf.cpp
+    PhysicalEntities/Characters/Enemies/Dragon.cpp
+
     PhysicalEntities/Characters/Players/Player.cpp
     PhysicalEntities/Characters/Players/Shrek.cpp
     PhysicalEntities/Characters/Players/Donkey.cpp
     PhysicalEntities/Characters/Character.cpp
     PhysicalEntities/Obstacles/Obstacle.cpp
     PhysicalEntities/Projectiles/Apple.cpp
+    PhysicalEntities/Projectiles/Fire.cpp
     PhysicalEntities/Projectiles/Projectile.cpp
     PhysicalEntities/PhysicalEntity.cpp
     Tiles/Tile.cpp
@@ -75,6 +78,7 @@ set(
     Menus/Ranking.hpp
     Menus/TextInputBox.hpp
     Lists/PhysicalEntityList.hpp
+    PhysicalEntities/Characters/Enemies/Dragon.hpp
     PhysicalEntities/Characters/Enemies/Enemy.hpp
     PhysicalEntities/Characters/Enemies/Witch.hpp
     PhysicalEntities/Characters/Enemies/Wolf.hpp
@@ -84,6 +88,7 @@ set(
     PhysicalEntities/Characters/Character.hpp
     PhysicalEntities/Obstacles/Obstacle.hpp
     PhysicalEntities/Projectiles/Apple.hpp
+    PhysicalEntities/Projectiles/Fire.hpp
     PhysicalEntities/Projectiles/Projectile.hpp
     PhysicalEntities/PhysicalEntity.hpp
     Tiles/Tile.hpp

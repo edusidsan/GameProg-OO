@@ -79,6 +79,7 @@ namespace OgrO // Namespace com o nome do jogo.
                                                                                                                                                                                                  _player1, _player2, "../assets/level1/Background.png")
 
         {
+            id = 1000;
         }
         // Destrutora da classe MedievalRuins.
         MedievalRuins::~MedievalRuins()

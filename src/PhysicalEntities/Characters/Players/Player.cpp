@@ -21,11 +21,11 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 }
                 // Método carrega a textura do Player na window.
-                // void Player::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
+
                 void Player::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
                 {
 
-                    Life = 10;
+                    // Life = MAX_LIFE;
                     // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);
                     // Retorna dimensão da imagem.
@@ -94,7 +94,7 @@ namespace OgrO // Namespace com o nome do jogo.
                             // position.coordX = 100.0f;
                             // position.coordY = 100.0f;
                             currentLevel->resetLevel();
-                            Life = 10;
+                            Life = MAX_LIFE;
                         }
                     }
 
@@ -113,7 +113,7 @@ namespace OgrO // Namespace com o nome do jogo.
                             // position.coordX = 100.0f;
                             // position.coordY = 100.0f;
                             currentLevel->resetLevel();
-                            Life = 10;
+                            Life = MAX_LIFE;
                         }
                     }
                     // Chão
@@ -179,6 +179,11 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Obstaculo troca de fase.
                     else if (idOther == 35)
                     {
+                        if (id == 100)
+                        {
+                            // MUDA DE FASE.
+                            currentLevel->goNextLevel();
+                        }
                     }
                     // Projétil de maçã
                     else if (idOther == 200)
@@ -222,6 +227,10 @@ namespace OgrO // Namespace com o nome do jogo.
                 const unsigned int Player::getLife() const
                 {
                     return Life;
+                }
+                void Player::setLife(int _life)
+                {
+                    Life = _life;
                 }
             }
         }

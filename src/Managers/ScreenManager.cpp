@@ -4,6 +4,8 @@
 #include "../Menus/PauseMenu.hpp"
 #include "../Menus/Ranking.hpp"
 #include "../Entity.hpp"
+#include "../PhysicalEntities/Characters/Character.hpp"
+
 #define PATH_BACKGROUND_MEDIEVALRUINS "../assets/level1/Background_01.png"
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -135,6 +137,10 @@ namespace OgrO // Namespace com o nome do jogo.
             case MAIN_MENU:
 
                 cleanStack();
+                if (player1)
+                    player1->setLife(MAX_LIFE);
+                if (player2)
+                    player2->setLife(MAX_LIFE);
                 push(new Menus::MainMenu());
 
             case continueGame:

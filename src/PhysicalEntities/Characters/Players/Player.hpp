@@ -3,6 +3,7 @@
 //#define MAXSPEEDX 80
 #include "../Character.hpp"
 #include "../../../json.hpp"
+
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace PhysicalEntities // Namespace do Pacote Entities.
@@ -21,7 +22,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // bool jumping;
                     // Utilities::myVector2F adjusts;
                     // Utilities::MyClock clock;
-                    // unsigned int Life;                                
+                    // unsigned int Life;
                 public:
                     // Construtora da classe Player.
                     Player(Utilities::myVector2F pos = {0.0f, 0.0f}, const char *tPath = nullptr);
@@ -40,7 +41,8 @@ namespace OgrO // Namespace com o nome do jogo.
 
                     void initializeJSON(nlohmann::json source);
                     //Retorna quantidade de vida
-                     const unsigned int getLife() const;
+                    const unsigned int getLife() const;
+                    void setLife(int _life);
                 };
             }
         }

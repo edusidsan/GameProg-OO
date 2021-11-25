@@ -72,6 +72,7 @@ namespace OgrO // Namespace com o nome do jogo.
             void setPlayers(PhysicalEntities::Characters::Players::Shrek *_player1, PhysicalEntities::Characters::Players::Donkey *_player2);
             const Utilities::myVector2F getMainPlayerPosition() const;
             void resetLevel();
+            void goNextLevel();
 
             // virtual void generateEnemies();
 

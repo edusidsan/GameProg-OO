@@ -7,6 +7,7 @@
 #include "Managers/ScreenManager.hpp"
 #include "PhysicalEntities/Characters/Players/Shrek.hpp"
 #include "PhysicalEntities/Characters/Players/Donkey.hpp"
+#define MAX_LIFE 10
 namespace OgrO // Namespace com o nome do jogo.
 {
     class OtherGrandRandomOgre

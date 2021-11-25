@@ -13,7 +13,7 @@ namespace OgrO // Namespace com o nome do jogo.
                                                                                                           jumping(false),
                                                                                                           adjusts{Utilities::myVector2F(0, 0)},
                                                                                                           timeReference{0},
-                                                                                                          Life{0}
+                                                                                                          Life{MAX_LIFE}
             {
             }
             // Destrutora da classe Personagem.

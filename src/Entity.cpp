@@ -40,6 +40,10 @@ namespace OgrO // Namespace com o nome do jogo.
     {
         return currentLevel;
     }
+    const int Entity::getId() const
+    {
+        return id;
+    }
 
     // void Entity::run()
     // {
