@@ -58,14 +58,14 @@ namespace OgrO // Namespace com o nome do jogo.
         // Método que carrega o TileMap.
         void TileMap::loadTileMap(const char *path)
         {
-            
+
             std::ifstream _file(path);
             if (!_file.is_open())
             {
                 std::cout << "Atencao! Arquivo no caminho \"" << path << "\" não pode ser aberto!" << std::endl;
                 exit(1);
             }
-            
+
             nlohmann::json json;
 
             _file >> json;
@@ -75,7 +75,7 @@ namespace OgrO // Namespace com o nome do jogo.
             tileMapDimension = {json["width"], json["height"]};
             // Atribui apenas os tiles do arquivo para o próprio json.
             json = json["data"];
-            
+
             // Alocando a quantidade de colunas do map.
             map = new unsigned short *[tileMapDimension.coordY];
             // Alocando a quantidade de linhas do map.
@@ -97,7 +97,35 @@ namespace OgrO // Namespace com o nome do jogo.
                     {
                         break;
                     }
-                    aux = json[counter];
+                    aux = (json[static_cast<unsigned int>(counter)]);
+
+                    // ASCI ? --> 63?
+                    if (aux == '?')
+                    {
+                        std::cout << aux << std::endl;
+
+                        // 16 || 8 -> ? 16 8
+                        // 0 ? 0 56
+
+                        // SALVA A POSIÇÃO ?
+                        // GERA O RANDOM DE 1 OU 2 POSIÇÃO
+                        // SALVA O VALOR DO TILE ESCOLHIDO NA POSIÇÃO ?
+                        // DESLOCA UMA POISÇÃO EM X E DEIXA NULO E VOLTA PRA POSIÇÃO DE ?
+                        // DESLOCA UMA POISÇÃO EM X E DEIXA NULO E VOLTA PRA POSIÇÃO DE ?
+
+                        // *
+                        // ?        9       6
+                        // p(0)     p(1)    p(2)
+
+                        // *
+                        // 6        9       6
+                        // p(0)     p(1)    p(2)
+
+                        // *
+                        // 6        9       6
+                        // p(0)     p(1)    p(2)
+                    }
+
                     if (aux != 0)
                     {
                         aux--;

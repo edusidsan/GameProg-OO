@@ -84,7 +84,7 @@ namespace OgrO // Namespace com o nome do jogo.
                         {
                             // Caso o contato seja maior que 2s causa dano
                             --Life;
-                            std::cout << "Dano!, Life:" << Life << std::endl;
+                            // std::cout << "Dano!, Life:" << Life << std::endl;
                             timeReference = clock.getCurrent() / 1000;
                         }
                         if (Life == 0)
@@ -103,7 +103,7 @@ namespace OgrO // Namespace com o nome do jogo.
                         {
                             // Caso o contato seja maior que 2s causa dano
                             --Life;
-                            std::cout << "Dano!, Life:" << Life << std::endl;
+                            // std::cout << "Dano!, Life:" << Life << std::endl;
                             timeReference = clock.getCurrent() / 1000;
                         }
                         if (Life == 0)
