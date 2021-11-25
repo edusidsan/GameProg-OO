@@ -89,15 +89,15 @@ namespace OgrO // Namespace com o nome do jogo.
                     }
                 }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
-                void Witch::collided(int IDOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
+                void Witch::collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
                 {
                     // Caso colida com Player1.
-                    if ((IDOther == 100) || (IDOther == 101))
+                    if ((idOther == 100) || (idOther == 101))
                     {
                         // std::cout << "OBJETO ENEMY >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
                     }
                     // Caso colida com Enemy.
-                    else if ((IDOther == 102) || (IDOther == 103))
+                    else if ((idOther == 102) || (idOther == 103))
                     {
                         // Cálculo da distância entre os enemy no momento da colisão.
                         Utilities::myVector2F distance = position - positionOther;
@@ -110,7 +110,7 @@ namespace OgrO // Namespace com o nome do jogo.
                         speed.coordY *= -1;
                     }
                     // Caso colida com Player2.
-                    if (IDOther == 100)
+                    if (idOther == 100)
                     {
                         // std::cout << "OBJETO Witch >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
                     }

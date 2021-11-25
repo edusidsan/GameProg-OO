@@ -115,7 +115,7 @@ namespace OgrO // Namespace com o nome do jogo.
                         }
                     }
                     // Chão
-                    if (idOther == 14)
+                    if ((idOther == 14) || (idOther ==55))
                     {
                         float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));
                         float distY = (position.coordY + (dimension.coordY / 2)) - abs(positionOther.coordY - (dimensionOther.coordY / 2));

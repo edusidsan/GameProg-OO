@@ -44,15 +44,15 @@ namespace OgrO // Namespace com o nome do jogo.
                     Life = MAX_LIFE / 100;
                 }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
-                void Dragon::collided(int IDOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
+                void Dragon::collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
                 {
                     // Caso colida com Player1.
-                    if ((IDOther == 100) || (IDOther == 101))
+                    if ((idOther == 100) || (idOther == 101))
                     {
                         // std::cout << "OBJETO ENEMY >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
                     }
                     // Caso colida com Enemy.
-                    if ((IDOther == 102) || (IDOther == 103))
+                    if ((idOther == 102) || (idOther == 103))
                     {
                         // Cálculo da distância entre os enemy no momento da colisão.
                         // Utilities::myVector2F distance = position - positionOther;
@@ -61,12 +61,12 @@ namespace OgrO // Namespace com o nome do jogo.
                         // std::cout << "OBJETO ENEMY >>> COLISAO COM OBJETO ENEMY." << std::endl;
                         // // std::cout<<"AAAAAAAAA"<<std::endl;
                         // // Caso colida com Player1.
-                        // if (IDOther == 101)
+                        // if (idOther == 101)
                         // {
                         //     // std::cout << "OBJETO Dragon >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
                         // }
                         // // Caso colida com Dragon.
-                        // else if (IDOther == 102)
+                        // else if (idOther == 102)
                         // {
                         //     // Cálculo da distância entre os Dragon no momento da colisão.
                         //     Utilities::myVector2F distance = position - positionOther;
@@ -79,7 +79,7 @@ namespace OgrO // Namespace com o nome do jogo.
                         //     speed.coordY *= -1;
                     }
                     //Chão
-                    if (IDOther == 14)
+                    if (idOther == 14)
                     {
 
                         // float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));
@@ -107,7 +107,7 @@ namespace OgrO // Namespace com o nome do jogo.
                         // maxSpeedX = MAXSPEEDX;
                     }
                     // Espinho
-                    else if (IDOther == 51)
+                    else if (idOther == 51)
                     {
 
                         // float distY = (position.coordY + (dimension.coordY / 2)) - abs(positionOther.coordY - (dimensionOther.coordY / 2));
@@ -121,7 +121,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     }
 
                     // Parede
-                    else if (IDOther == 1)
+                    else if (idOther == 1)
                     {
                         // float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));
                         // // colisão em X
@@ -132,7 +132,7 @@ namespace OgrO // Namespace com o nome do jogo.
                         // speed.coordX = 0.f;
                     }
                     // Obstaculo que faz pular.
-                    else if (IDOther == 54)
+                    else if (idOther == 54)
                     {
                         // float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));
                         // // colisão em X
@@ -143,11 +143,11 @@ namespace OgrO // Namespace com o nome do jogo.
                         // }
                     }
                     // Obstaculo troca de fase.
-                    else if (IDOther == 35)
+                    else if (idOther == 35)
                     {
                     }
                     // Obstaculo que reduz velocidade.
-                    else if (IDOther == 6)
+                    else if (idOther == 6)
                     {
                         // float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));
                         // float distY = (position.coordY + (dimension.coordY / 2)) - abs(positionOther.coordY - (dimensionOther.coordY / 2));
