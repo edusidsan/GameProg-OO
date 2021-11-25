@@ -25,7 +25,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 void Player::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
                 {
 
-                    Life = 10;
+                    Life = 100;
                     // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);
                     // Retorna dimensão da imagem.
@@ -163,6 +163,17 @@ namespace OgrO // Namespace com o nome do jogo.
                         {
                             // adjusts.coordX = distX * (position.coordX + (dimension.coordX / 2) > positionOther.coordX - (dimensionOther.coordX / 2) ? -0.5 : 0.5);
                         }
+                        speed.coordX = 0.f;
+                    }
+                    else if (idOther == 18)
+                    {
+                        float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));
+                        // colisão em X
+                        if (distX > abs(adjusts.coordX))
+                        {
+                            // adjusts.coordX = distX * (position.coordX + (dimension.coordX / 2) > positionOther.coordX - (dimensionOther.coordX / 2) ? -0.5 : 0.5);
+                        }
+                        speed.coordY += 20.f;
                         speed.coordX = 0.f;
                     }
                     // Obstaculo que faz pular.
