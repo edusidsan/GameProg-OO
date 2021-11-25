@@ -97,7 +97,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     {
                         break;
                     }
-                    aux = (json[static_cast<unsigned int>(counter)]);
+                    aux = json[counter];
 
                     // ASCI ? --> 63?
                     if (aux == '?')
