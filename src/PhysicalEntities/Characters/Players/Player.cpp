@@ -77,7 +77,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
                 void Player::collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
                 {
-                    if (idOther == 200)
+                    if (idOther == 200 || idOther == 201 )
                     { //Maça
 
                         if (clock.getCurrent() / 1000 - timeReference > 3)

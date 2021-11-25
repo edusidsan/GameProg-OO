@@ -2,6 +2,8 @@
 #include "Dragon.hpp"
 #include "../../../Levels/Level.hpp"
 #include "../../Projectiles/Fire.hpp"
+#include "../../../Utilities/RandomGenerator.hpp"
+
 
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -49,7 +51,20 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Caso colida com Player1.
                     if ((idOther == 100) || (idOther == 101))
                     {
-                        // std::cout << "OBJETO ENEMY >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
+                        if (clock.getCurrent() / 1000 - timeReference > 3)
+                        {
+                            // Caso o contato seja maior que 2s causa dano
+                            --Life;
+                            std::cout << "Dano!, Dragao:" << Life << std::endl;
+                            timeReference = clock.getCurrent() / 1000;
+                        }
+                        if (Life == 0)
+                        {
+                            // position.coordX = 100.0f;
+                            // position.coordY = 100.0f;
+                            //currentLevel->resetLevel();
+                            //Life = MAX_LIFE;
+                        }
                     }
                     // Caso colida com Enemy.
                     if ((idOther == 102) || (idOther == 103))
@@ -196,7 +211,8 @@ namespace OgrO // Namespace com o nome do jogo.
                     }
                     else
                     {
-                        projectileInterval = 450;
+
+                        projectileInterval = Utilities::RandomGenerator::getInstance()->getRandomIntInRange(450, 800);
 
                         Utilities::myVector2F playerPosition = currentLevel->getMainPlayerPosition();
                         // Utilities::myVector2F playerPosition;
