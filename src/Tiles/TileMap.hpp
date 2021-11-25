@@ -2,6 +2,8 @@
 #define _TILESMAP_HPP_
 
 #include "../Utilities/Vector2D.hpp"
+#include "../Utilities/RandomGenerator.hpp"
+
 
 namespace OgrO // Namespace com o nome do jogo.
 {
