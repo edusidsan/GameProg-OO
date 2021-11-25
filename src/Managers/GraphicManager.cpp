@@ -147,7 +147,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 window->draw(sprite);
             }
         }
-       
+
         // Método carrega a textura de acordo com o caminho passado como parâmetro.
         // Caso textura não exista, o método já se encarrega de criar, se possível.
         bool GraphicManager::loadAsset(const std::string &path)
@@ -184,6 +184,20 @@ namespace OgrO // Namespace com o nome do jogo.
             camera.setCenter(sf::Vector2f(center.coordX, center.coordY));
             // Atribui essa camera ao view da window.
             window->setView(camera);
+        }
+
+        void GraphicManager::zoomIn()
+        {
+            // camera{sf::Vector2f(400, 300), sf::Vector2f(400, 300)},
+            camera.setCenter(sf::Vector2f(400, 300));
+            camera.setSize(sf::Vector2f(400, 300));
+        }
+
+        void GraphicManager::zoomOut()
+        {
+            // camera{sf::Vector2f(400, 300), sf::Vector2f(400, 300)},
+            camera.setCenter(sf::Vector2f(400, 300));
+            camera.setSize(sf::Vector2f(650, 450));
         }
 
         Utilities::myVector2F GraphicManager::getScreenSize() const
