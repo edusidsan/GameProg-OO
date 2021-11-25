@@ -7,7 +7,13 @@ namespace OgrO // Namespace com o nome do jogo.
         namespace Characters // Namespace do Pacote Characters.
         {
             // Construtora da classe Personagem.
-            Character::Character(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath) : PhysicalEntity(pos, s, tPath)
+            Character::Character(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath, unsigned int life) : PhysicalEntity(pos, s, tPath, life),
+                                                                                                                             maxSpeedX{MAXSPEEDX},
+                                                                                                                             maxSpeedY{220},
+                                                                                                                             jumping(false),
+                                                                                                                             adjusts{Utilities::myVector2F(0, 0)},
+                                                                                                                             timeReference{0}
+
             {
             }
             // Destrutora da classe Personagem.

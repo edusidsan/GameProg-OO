@@ -85,5 +85,21 @@ namespace OgrO // Namespace com o nome do jogo.
             // Método desaloca e aterra objetos e atributos usados na classe.
             list.clear();
         }
+
+        nlohmann::json PhysicalEntityList::toJSON()
+        {
+            nlohmann::json result = nlohmann::json::array();
+            int position = 0;
+            // Ponteiro auxiliar que recebe o primeiro elemento da lista.
+            PhysicalEntities::PhysicalEntity *p = list.backStart();
+            // Enquanto p ainda encontrar elementos na lista.
+            while (p)
+            {
+                result[position++] = p->toJSON();
+                // Recebe o endereço do próximo elemento da lista.
+                p = list.goNext();
+            }
+            return result;
+        }
     }
 }

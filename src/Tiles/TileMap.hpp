@@ -18,8 +18,8 @@ namespace OgrO // Namespace com o nome do jogo.
             // Atributo do caminho onde se encontra o arquivo TileMap.
             const char *path;
             // Método privado:
-            // Método que carrega o TileMap.
-            void loadTileMap();
+            // Método 
+            //Utilities::myVector2U tileMapSize;
 
         public:
             //---------------------------------------------------------------- Classe aninhada.
@@ -50,6 +50,8 @@ namespace OgrO // Namespace com o nome do jogo.
             void setTile(Utilities::myVector2U position, unsigned short newID);
             // Método permite acessar elementos da TileMapLine a partir de [].
             const TileMapLine operator[](unsigned int i) const;
+            // Método que carrega o TileMap.
+            void loadTileMap(const char *path);
         };
     }
 }

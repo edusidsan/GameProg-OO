@@ -20,6 +20,7 @@ namespace OgrO // Namespace com o nome do jogo.
         // Construtora da classe GraphicManager.
         GraphicManager::GraphicManager() : window{new sf::RenderWindow(sf::VideoMode(800, 600), "OgrO")},
                                            camera{sf::Vector2f(400, 300), sf::Vector2f(400, 300)},
+                                           //    camera{sf::Vector2f(400, 300), sf::Vector2f(800, 600)},
                                            textures{}
 
         //    camera{sf::Vector2f(800, 600), sf::Vector2f(800, 600)}
@@ -30,7 +31,6 @@ namespace OgrO // Namespace com o nome do jogo.
             window->setView(camera);
             // Carrega a fonte que será utilizada.
             font.loadFromFile("../assets/sansation.ttf");
-           
         }
         // Destrutora da classe GraphicManager.
         GraphicManager::~GraphicManager()
@@ -77,13 +77,13 @@ namespace OgrO // Namespace com o nome do jogo.
                 // sprite.setTextureRect(sf::IntRect(9,16,36,43));
                 // sprite.setTextureRect(sf::IntRect(0, 0, 40, 56));
 
-                sf::RectangleShape rect;
-                rect.setSize(sf::Vector2f(texture->getSize().x, texture->getSize().y));
-                rect.setOutlineColor(sf::Color::Red);
-                rect.setOrigin(texture->getSize().x * 0.5, texture->getSize().y * 0.5);
-                rect.setOutlineThickness(0.5);
-                rect.setPosition(position.coordX, position.coordY);
-                window->draw(rect);
+                // sf::RectangleShape rect;
+                // rect.setSize(sf::Vector2f(texture->getSize().x, texture->getSize().y));
+                // rect.setOutlineColor(sf:d:Color::Red);
+                // rect.setOrigin(texture->getSize().x * 0.5, texture->getSize().y * 0.5);
+                // rect.setOutlineThickness(0.5);
+                // rect.setPosition(position.coordX, position.coordY);
+                // window->draw(rect);
 
                 sprite.setScale(1.0f, 1.0f);
 
@@ -116,14 +116,14 @@ namespace OgrO // Namespace com o nome do jogo.
                 // sprite.setTextureRect(sf::IntRect(9,16,36,43));
                 // sprite.setTextureRect(sf::IntRect(0, 0, 40, 56));
 
-                sf::RectangleShape rect;
-                rect.setSize(sf::Vector2f(texture->getSize().x, texture->getSize().y));
-                rect.setOutlineColor(sf::Color::Red);
-                rect.setOrigin(texture->getSize().x * 0.5, texture->getSize().y * 0.5);
-                rect.setOutlineThickness(0.5);
-                rect.setPosition(position.coordX, position.coordY);
+                // sf::RectangleShape rect;
+                // rect.setSize(sf::Vector2f(texture->getSize().x, texture->getSize().y));
+                // rect.setOutlineColor(sf::Color::Red);
+                // rect.setOrigin(texture->getSize().x * 0.5, texture->getSize().y * 0.5);
+                // rect.setOutlineThickness(0.5);
+                // rect.setPosition(position.coordX, position.coordY);
 
-                window->draw(rect);
+                // window->draw(rect);
 
                 sprite.setTexture(*texture, true);
                 // Centraliza a origem antes de desenhar.
@@ -147,44 +147,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 window->draw(sprite);
             }
         }
-        // Método desenhar sobrecarregado para desenhar animação.
-        void GraphicManager::draw(const std::string path, const Utilities::myVector2F position, const Utilities::myVector2U nFrames, const Utilities::myVector2U frame)
-        {
-            // Caso encontre alguma textura que tenha a chave unitária de map igual o parâmetro passado por path, desenha imagem na window.
-            if (textures.count(path) == 0)
-            {
-                std::cout << "Nao foi possivel encontrar a imagem em: " << path << " !" << std::endl;
-                std::cout << "Programa finalizado!" << std::endl;
-                // Indica término anormal do programa, por não ter encontrado o caminho da imagem.
-                exit(1);
-            }
-            else
-            {
-                // Atribui ao ponteiro de texture o endereço da textura que tem a chave path.
-                texture = textures[path];
-                sprite.setTexture(*texture);
 
-                sf::Vector2i size = {(int)texture->getSize().x / (int)nFrames.coordY, (int)texture->getSize().y / (int)nFrames.coordX};
-                sf::Vector2i framePosition = {(int)size.x * (int)frame.coordY, (int)size.y * (int)frame.coordX};
-
-                sf::RectangleShape rect;
-                rect.setSize(sf::Vector2f(size));
-                rect.setOutlineColor(sf::Color::Red);
-                rect.setOrigin(size.x * 0.5f, size.y * 0.5f);
-                rect.setOutlineThickness(2);
-                rect.setPosition(position.coordX, position.coordY);
-
-                window->draw(rect);
-
-                sprite.setTextureRect({framePosition, size});
-                // Centraliza a origem antes de desenhar.
-                sprite.setOrigin({size.x * 0.5f, size.y * 0.5f});
-                // Atribui ao sprite a posição na qual será desenhada na window.
-                sprite.setPosition(position.coordX, position.coordY);
-                // Desenha sprite na window.
-                window->draw(sprite);
-            }
-        }
         // Método carrega a textura de acordo com o caminho passado como parâmetro.
         // Caso textura não exista, o método já se encarrega de criar, se possível.
         bool GraphicManager::loadAsset(const std::string &path)
@@ -222,6 +185,26 @@ namespace OgrO // Namespace com o nome do jogo.
             // Atribui essa camera ao view da window.
             window->setView(camera);
         }
+
+        void GraphicManager::zoomIn()
+        {
+            // camera{sf::Vector2f(400, 300), sf::Vector2f(400, 300)},
+            camera.setCenter(sf::Vector2f(400, 300));
+            camera.setSize(sf::Vector2f(400, 300));
+        }
+
+        void GraphicManager::zoomOut()
+        {
+            // camera{sf::Vector2f(400, 300), sf::Vector2f(400, 300)},
+            camera.setCenter(sf::Vector2f(400, 300));
+            camera.setSize(sf::Vector2f(650, 450));
+        }
+
+        Utilities::myVector2F GraphicManager::getScreenSize() const
+        {
+            return {camera.getSize().x, camera.getSize().y};
+        }
+
         // Método utilizado para retornar window do tipo *RenderWindow e assim, ser possível utilizar seus métodos.
         sf::RenderWindow *GraphicManager::getWindow() const
         {

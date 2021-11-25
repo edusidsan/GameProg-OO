@@ -1,6 +1,8 @@
 #ifndef _VECTOR2D_HPP_
 #define _VECTOR2D_HPP_
 
+// #include "../Mementos/Memento.hpp"
+
 #include <cmath>
 #include <ostream> // Biblioteca que gerencia saídas fluxos de saída.
 namespace OgrO     // Namespace com o nome do jogo.
@@ -10,17 +12,20 @@ namespace OgrO     // Namespace com o nome do jogo.
         // Classe Vector2D será um template para ser usada em qualquer ponto do projeto.
         template <typename T>
         class Vector2D
+        // class Vector2D : public Mementos::Memento
         {
         public:
             // Atributos de coordenada x e y usados no template.
             T coordX, coordY;
             // Construtora da classe Template Vector2D. Valor default de posição é 0.0.
             Vector2D(T x = 0.0, T y = 0.0);
+            // Construtora classe template com parâmetro de json.
+            // Vector2D(nlohmann::json j);
             // Destrutora da classe Template Vector2D.
             ~Vector2D();
             // Sobrecarga do operador (+) entre objetos da classe Vector2D.
             Vector2D operator+(Vector2D v) const;
-            // Sobrecarga do operador (-) entre objetos da classe Vector2D.
+            // Sobrecarga do operador (-) entre objetos da classe Vector2D. 2F
             Vector2D operator-(Vector2D v) const;
             // Sobrecarga do operador (*) entre objetos da classe Vector2D e um inteiro.
             Vector2D operator*(int i) const;
@@ -48,6 +53,8 @@ namespace OgrO     // Namespace com o nome do jogo.
             Vector2D unitVector();
             // Retorna a projeção ortogonal desse vetor na direção do parâmetro v do tipo Vector2D.
             Vector2D projection(Vector2D v) const;
+
+            // nlohmann::json toJSON() override;
         };
         // Define um novo nome para o Vector2D de float.
         typedef Vector2D<float> myVector2F;
@@ -176,6 +183,12 @@ namespace OgrO     // Namespace com o nome do jogo.
             // ProjeçãoOrtogonal = prodExt(v,prodInt(u,v)/(||v||²))
             return v * (this->operator*(v) / pow(v.vModule(), 2));
         }
+
+        // template <typename T>
+        // nlohmann::json Vector2D<T>::toJSON()
+        // {
+        //     return {{"x", coordX}, {"y", coordY}}; 2F
+        // }
 
         // Sobrecarga do operador do fluxo de saída (<<).
         template <typename T>

@@ -2,7 +2,7 @@
 #define _MAINMENU_HPP_
 
 #include "Menu.hpp"
-#include "TextInputBox.hpp"
+// #include "TextInputBox.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -11,15 +11,21 @@ namespace OgrO // Namespace com o nome do jogo.
         class MainMenu : public Menu
         {
         private:
-            TextInputBox textInputBox;
-            bool printed;
+            // TextInputBox textInputBox;
+            // bool printed;
 
         public:
+            static bool twoPlayers;
             // Construtora da classe MainMenu.
             MainMenu();
             // Destrutora da classe MainMenu.
             ~MainMenu();
+
+            void initialize() override;
+
             int run() override;
+
+            static const bool twoPlayersSelected();
         };
     }
 }

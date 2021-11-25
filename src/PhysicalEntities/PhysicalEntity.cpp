@@ -1,14 +1,18 @@
 #include "PhysicalEntity.hpp"
+// #include "../Levels/Level.hpp"
+#include "../json.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace PhysicalEntities // Namespace do Pacote Entities.
     {
         // Construtora da classe PhysicalEntity. Atributos default configurados
-        PhysicalEntity::PhysicalEntity(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath) : Entity(),
-                                                                                                                position{pos},
-                                                                                                                speed{s},
-                                                                                                                texturePath{tPath}
+        PhysicalEntity::PhysicalEntity(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath, unsigned int life) : Entity(),
+                                                                                                                                   position{pos},
+                                                                                                                                   speed{s},
+                                                                                                                                   texturePath{tPath},
+                                                                                                                                //    Life{MAX_LIFE}
+                                                                                                                                   Life{life}
         {
         }
         // Destrutora da classe PhysicalEntity.
@@ -17,8 +21,9 @@ namespace OgrO // Namespace com o nome do jogo.
         }
         // Método carrega a textura do PhysicalEntity na window.
         // void PhysicalEntity::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
-        void PhysicalEntity::initialize( Managers::EventsManager &em, Managers::CollisionManager &cm)
+        void PhysicalEntity::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
         {
+            std::cout << "texturePath Player ID: " << texturePath << std::endl;
             // gm.loadAsset(texturePath);
             pGraphicManager->loadAsset(texturePath);
         }
@@ -39,6 +44,20 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             return position;
         }
+        void PhysicalEntity::setPosition(Utilities::myVector2F pos)
+        {
+            position = pos;
+        }
+        // Método retorna a velocidade da entidade física.
+        const Utilities::myVector2F PhysicalEntity::getSpeed() const
+        {
+            return speed;
+        }
+        // Método seta a velocidade da entidade física.
+        void PhysicalEntity::setSpeed(Utilities::myVector2F _speed)
+        {
+            speed = _speed;
+        }
         // Método retorna a dimensão da entidade fisica.
         const Utilities::myVector2F PhysicalEntity::getDimension() const
         {
@@ -54,5 +73,32 @@ namespace OgrO // Namespace com o nome do jogo.
         void PhysicalEntity::collided(int Id, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
         {
         }
+
+        nlohmann::json PhysicalEntity::toJSON()
+        {
+            return {
+                // {"id", id},
+                // {"position", position.toJSON()},
+                // {"speed", speed.toJSON()},
+                // {"texturePath", texturePath},
+                // {"dimension", dimension.toJSON()}};
+
+                {"id", id},
+                {"life", Life},
+                {"position x", position.coordX},
+                {"position y", position.coordY},
+                {"speed x", speed.coordX},
+                {"speed y", speed.coordY},
+                {"texturePath", texturePath},
+                {"dimension x", dimension.coordX},
+                {"dimension y", dimension.coordY}};
+        }
+
+        int PhysicalEntity::run()
+        {
+            std::cout << "Implementar PhysicalEntity::run()" << std::endl;
+            return 0;
+        }
+
     }
 }

@@ -10,10 +10,16 @@ namespace OgrO // Namespace com o nome do jogo.
             {
 
                 // Construtora da classe Enemy.
-                Enemy::Enemy(Utilities::myVector2F pos, Utilities::myVector2F s) : Character(pos, s, "../assets/Witch.png")
+                Enemy::Enemy(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath, unsigned int life) : Character(pos, s, tPath, life),
+                                                                                                                         timeReference{0},
+                                                                                                                         projectileInterval{0}
                 {
                     // Atribui um ID ao Enemy.
-                    id = 102;
+                    // id = 102;
+                }
+
+                Enemy::Enemy(nlohmann::json source) : Enemy(Utilities::myVector2F{static_cast<float>(source["position x"]), static_cast<float>(source["position y"])}, Utilities::myVector2F{static_cast<float>(source["speed x"]), static_cast<float>(source["speed y"])}, "", static_cast<unsigned int>(source["Life"]))
+                {
                 }
                 // Destrutora da classe Enemy.
                 Enemy::~Enemy()
@@ -28,7 +34,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // // Retorna dimensão da imagem.
                     // dimension = gm.getDimensionsOfAsset(texturePath);
 
-                     // Carrega textura no player.
+                    // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);
                     // Retorna dimensão da imagem.
                     dimension = pGraphicManager->getDimensionsOfAsset(texturePath);
@@ -36,16 +42,19 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Adiciona enemy na lista de entidades físicas colidiveis.
                     cm.addToLCollidablesPhysicalEntities((this));
                 }
+                void Enemy::update(float t)
+                {
+                }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
-                void Enemy::collided(int IDOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
+                void Enemy::collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
                 {
                     // Caso colida com Player1.
-                    if (IDOther == 101)
+                    if ((idOther == 100) || (idOther == 101))
                     {
                         // std::cout << "OBJETO ENEMY >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
                     }
                     // Caso colida com Enemy.
-                    else if (IDOther == 102)
+                    else if ((idOther == 102) || (idOther == 103))
                     {
                         // Cálculo da distância entre os enemy no momento da colisão.
                         Utilities::myVector2F distance = position - positionOther;

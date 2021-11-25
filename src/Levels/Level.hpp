@@ -1,36 +1,89 @@
 #ifndef _LEVEL_HPP_
 #define _LEVEL_HPP_
 
+#include <set>
 #include "../Entity.hpp"
 #include "../Managers/CollisionManager.hpp"
 #include "../Managers/EventsManager.hpp"
+#include "../Mementos/LevelMemento.hpp"
 #include "../Lists/PhysicalEntityList.hpp"
+#include "../Tiles/TilesManager.hpp"
+#include "../PhysicalEntities/Characters/Players/Shrek.hpp"
+#include "../PhysicalEntities/Characters/Players/Donkey.hpp"
+#include "../PhysicalEntities/PhysicalEntity.hpp"
+#include "../State.hpp"
+#include "../Utilities/Clock.hpp"
+// #include "../Utilities/RandomGenerator.hpp"
 
+// #define PATH_BACKGROUND_MEDIEVALRUINS "../assets/level1/Background_01.png"
 namespace OgrO // Namespace com o nome do jogo.
 {
+    // namespace Utilities
+    // {
+    //     class RandomGenerator;
+    // }
     namespace Levels // Namespace do Pacote Levels.
     {
-        class Level : public Entity
+        class Level : public Entity, public State, public Mementos::LevelMemento
         {
         protected:
             // Atributo do gerenciador de colisões criado para o jogo.
             Managers::CollisionManager collisionManager;
             // Atributo do gerenciador de eventos criado para o jogo.
-            Managers::EventsManager eventsManager;
+            // Managers::EventsManager eventsManager;
+            Managers::EventsManager *pEventsManager;
             // Atributo referente a lista de entidades físicas.
             Lists::PhysicalEntityList players;
+
+            // Atributo que aponta para a classe do player Shrek.
+            PhysicalEntities::Characters::Players::Shrek *player1;
+            // Atributo que aponta para a classe do player Donkey.
+            PhysicalEntities::Characters::Players::Donkey *player2;
+
+            // Background backgroundImage;
+            const std::string backgroundPath;
+
+            // Atributo do gerenciador de tiles criado para o jogo.
+            Tiles::TilesManager *tilesManager;
+
+            // Utilities::RandomGenerator *Random;
+            // Atributo que indica a chave única do evento de fechar a window do jogo.
+            unsigned int idClosedWindow;
+            // Atributo que indica a chave única do evento de ESC.
+            unsigned int idGoToMenu;
+            // Atributo de um relógio que será útil para verificação do tempo.
+            Utilities::MyClock clock;
 
         public:
             // Construtora da classe Level.
             Level();
+            Level(Tiles::TilesManager *_tilesManager, PhysicalEntities::Characters::Players::Shrek *_player1 = nullptr, PhysicalEntities::Characters::Players::Donkey *_player2 = nullptr, const std::string _backgroundPath = "");
             // Destrutora da classe Level.
             virtual ~Level();
             // Método run virtual puro -> TORNA CLASSE ABSTRATA.
-            virtual int run() = 0;
+            int run();
+            virtual void initialize() = 0;
+            virtual void addPhysicalEntity(PhysicalEntities::PhysicalEntity *_physicalEntity);
             // Método que gerencia as colisões nas fases.
             void handleCollisions();
             // Método que gerencia os eventos nas fases.
             void handleEvents();
+            void setPlayers(PhysicalEntities::Characters::Players::Shrek *_player1);
+            void setPlayers(PhysicalEntities::Characters::Players::Shrek *_player1, PhysicalEntities::Characters::Players::Donkey *_player2);
+            const Utilities::myVector2F getMainPlayerPosition() const;
+            void resetLevel();
+            void goNextLevel();
+
+            // virtual void generateEnemies();
+
+        private:
+            // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.
+            void closedWindowButton(const sf::Event &event);
+            void goToMenuButton(const sf::Event &event);
+
+        protected:
+            void setGameCode(int _gameCode);
+            int gameCode;
         };
     }
 }

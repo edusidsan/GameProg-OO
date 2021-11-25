@@ -49,13 +49,14 @@ namespace OgrO // Namespace com o nome do jogo.
             void draw(const std::string path, const Utilities::myVector2F position);
             // Método desenhar. Tem como parâmetro um ponteiro que aponta para a window desenhada.
             void draw(const std::string path, const Utilities::myVector2F position, int direction);
-            // Método desenhar sobrecarregado para desenhar animação.
-            void draw(const std::string path, const Utilities::myVector2F position, const Utilities::myVector2U nFrames, const Utilities::myVector2U frame);
             // Método carrega a textura de acordo com o caminho passado como parâmetro.
             // Caso textura não exista, o método já se encarrega de criar, se possível.
             bool loadAsset(const std::string &path);
             // Método utilizado para centralizar a View.
             void centerCamera(const Utilities::myVector2F center);
+            void zoomIn();
+            void zoomOut();
+            Utilities::myVector2F getScreenSize() const;
             // Método utilizado para retornar window do tipo *RenderWindow e assim, ser possível utilizar seus métodos.
             sf::RenderWindow *getWindow() const;
             // Método retorna as dimensões da imagem.

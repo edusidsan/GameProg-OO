@@ -27,16 +27,18 @@ namespace OgrO // Namespace com o nome do jogo.
             Utilities::Color color;
             unsigned int textSize;
             std::string text;
+            short int buttonId;
 
         public:
             // Construtora da classe Button.
-            Button(Utilities::myVector2F _position = {0.0f, 0.0f}, Utilities::myVector2F _size = {0.0f, 0.0f}, std::string _text = "", std::function<void(void)> _buttonPressed = std::function<void(void)>(), unsigned int _textSize = 15U, Utilities::Color _color = {128, 128, 128});
+            Button(short int _buttonId, Utilities::myVector2F _position = {0.0f, 0.0f}, Utilities::myVector2F _size = {0.0f, 0.0f}, std::string _text = "", std::function<void(void)> _buttonPressed = std::function<void(void)>(), unsigned int _textSize = 15U, Utilities::Color _color = {128, 128, 128});
             // Destrutora da classe Button.
             virtual ~Button();
             virtual void draw(Managers::GraphicManager *pGraphicManager) const;
             Utilities::myVector2F getPosition() const;
             Utilities::myVector2F getSize() const;
             void pushButton() const;
+            const short int getButtonId() const;
         };
     }
 }
