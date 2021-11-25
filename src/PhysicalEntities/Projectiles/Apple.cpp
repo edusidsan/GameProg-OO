@@ -11,6 +11,9 @@ namespace OgrO // Namespace com o nome do jogo.
             {
                 id = 200;
             }
+            Apple::Apple(nlohmann::json source) : Projectile(Utilities::myVector2F{static_cast<float>(source["position x"]), static_cast<float>(source["position y"])}, Utilities::myVector2F{static_cast<float>(source["speed x"]), static_cast<float>(source["speed y"])}, "../assets/Apple.png")
+            {
+            }
             // Destrutora da classe Apple.
             Apple::~Apple()
             {

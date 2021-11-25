@@ -1,0 +1,191 @@
+{
+    "players": [
+        {
+            "dimension x": 30.0,
+            "dimension y": 45.0,
+            "id": 100,
+            "life": 1000,
+            "position x": 64.0,
+            "position y": 233.52626037597656,
+            "speed x": 0.0,
+            "speed y": 0.0,
+            "texturePath": "../assets/Shrek.png"
+        },
+        {
+            "dimension x": 32.0,
+            "dimension y": 41.0,
+            "id": 101,
+            "life": 1000,
+            "position x": 64.0,
+            "position y": 235.52621459960938,
+            "speed x": 0.0,
+            "speed y": 0.0,
+            "texturePath": "../assets/Donkey.png"
+        },
+        {
+            "dimension x": 30.0,
+            "dimension y": 48.0,
+            "id": 102,
+            "life": 1000,
+            "position x": 1504.0,
+            "position y": 645.1013793945313,
+            "speed x": 0.0,
+            "speed y": -10.0,
+            "texturePath": "../assets/Witch.png"
+        },
+        {
+            "dimension x": 34.0,
+            "dimension y": 32.0,
+            "id": 103,
+            "life": 1000,
+            "position x": 1714.8828125,
+            "position y": 240.02621459960938,
+            "speed x": -20.0,
+            "speed y": 0.0,
+            "texturePath": "../assets/Wolf.png"
+        },
+        {
+            "dimension x": 30.0,
+            "dimension y": 48.0,
+            "id": 102,
+            "life": 1000,
+            "position x": 1376.0,
+            "position y": 1157.0977783203125,
+            "speed x": 0.0,
+            "speed y": -10.0,
+            "texturePath": "../assets/Witch.png"
+        },
+        {
+            "dimension x": 34.0,
+            "dimension y": 32.0,
+            "id": 103,
+            "life": 1000,
+            "position x": 754.881591796875,
+            "position y": 509.41424560546875,
+            "speed x": -20.0,
+            "speed y": -81.10006713867188,
+            "texturePath": "../assets/Wolf.png"
+        },
+        {
+            "dimension x": 30.0,
+            "dimension y": 48.0,
+            "id": 102,
+            "life": 1000,
+            "position x": 928.0,
+            "position y": 1157.0977783203125,
+            "speed x": 0.0,
+            "speed y": -10.0,
+            "texturePath": "../assets/Witch.png"
+        },
+        {
+            "dimension x": 34.0,
+            "dimension y": 32.0,
+            "id": 103,
+            "life": 1000,
+            "position x": 914.881591796875,
+            "position y": 752.0262451171875,
+            "speed x": -20.0,
+            "speed y": 0.0,
+            "texturePath": "../assets/Wolf.png"
+        },
+        {
+            "dimension x": 30.0,
+            "dimension y": 48.0,
+            "id": 102,
+            "life": 1000,
+            "position x": 448.0,
+            "position y": 293.1007995605469,
+            "speed x": 0.0,
+            "speed y": -10.0,
+            "texturePath": "../assets/Witch.png"
+        },
+        {
+            "dimension x": 34.0,
+            "dimension y": 32.0,
+            "id": 103,
+            "life": 1000,
+            "position x": 1234.8828125,
+            "position y": 752.0262451171875,
+            "speed x": -20.0,
+            "speed y": 0.0,
+            "texturePath": "../assets/Wolf.png"
+        },
+        {
+            "dimension x": 30.0,
+            "dimension y": 48.0,
+            "id": 102,
+            "life": 1000,
+            "position x": 800.0,
+            "position y": 1157.0977783203125,
+            "speed x": 0.0,
+            "speed y": -10.0,
+            "texturePath": "../assets/Witch.png"
+        },
+        {
+            "dimension x": 34.0,
+            "dimension y": 32.0,
+            "id": 103,
+            "life": 1000,
+            "position x": 690.881591796875,
+            "position y": 489.8441162109375,
+            "speed x": -20.0,
+            "speed y": -52.500057220458984,
+            "texturePath": "../assets/Wolf.png"
+        },
+        {
+            "dimension x": 30.0,
+            "dimension y": 48.0,
+            "id": 102,
+            "life": 1000,
+            "position x": 960.0,
+            "position y": 645.1013793945313,
+            "speed x": 0.0,
+            "speed y": -10.0,
+            "texturePath": "../assets/Witch.png"
+        },
+        {
+            "dimension x": 34.0,
+            "dimension y": 32.0,
+            "id": 103,
+            "life": 1000,
+            "position x": 210.8798370361328,
+            "position y": 240.02621459960938,
+            "speed x": -20.0,
+            "speed y": 0.0,
+            "texturePath": "../assets/Wolf.png"
+        },
+        {
+            "dimension x": 30.0,
+            "dimension y": 48.0,
+            "id": 102,
+            "life": 1000,
+            "position x": 1536.0,
+            "position y": 645.1013793945313,
+            "speed x": 0.0,
+            "speed y": -10.0,
+            "texturePath": "../assets/Witch.png"
+        },
+        {
+            "dimension x": 34.0,
+            "dimension y": 32.0,
+            "id": 103,
+            "life": 1000,
+            "position x": 1426.8828125,
+            "position y": 1264.026123046875,
+            "speed x": -20.0,
+            "speed y": 0.0,
+            "texturePath": "../assets/Wolf.png"
+        },
+        {
+            "dimension x": 135.0,
+            "dimension y": 119.0,
+            "id": 104,
+            "life": 10,
+            "position x": 2463.0,
+            "position y": 1212.0,
+            "speed x": 0.0,
+            "speed y": 0.0,
+            "texturePath": "../assets/Dragon.png"
+        }
+    ]
+}

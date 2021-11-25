@@ -8,6 +8,7 @@
 #include "../Managers/EventsManager.hpp"
 #include "../Utilities/Clock.hpp"
 
+#define MAX_LIFE 1000
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Levels // Namespace do Pacote Levels.
@@ -25,10 +26,11 @@ namespace OgrO // Namespace com o nome do jogo.
             Utilities::myVector2F position, // Atributo de posição do PhysicalEntity
                 speed,                      // Atributo de velocidade do PhysicalEntity
                 dimension;                  // Atributo de dimensão do PhysicalEntity
+            unsigned int Life;
 
         public:
             // Construtora da classe PhysicalEntity. Atributos default configurados
-            PhysicalEntity(Utilities::myVector2F pos = {0.0f, 0.0f}, Utilities::myVector2F s = {0.0f, 0.0f}, const char *tPath = nullptr);
+            PhysicalEntity(Utilities::myVector2F pos = {0.0f, 0.0f}, Utilities::myVector2F s = {0.0f, 0.0f}, const char *tPath = nullptr, unsigned int life = MAX_LIFE);
             // Destrutora da classe PhysicalEntity.
             virtual ~PhysicalEntity();
             // Método carrega a textura do PhysicalEntity na window.
@@ -57,7 +59,6 @@ namespace OgrO // Namespace com o nome do jogo.
             virtual int run();
             // Método
             nlohmann::json toJSON();
-            
         };
     }
 }

@@ -7,10 +7,12 @@ namespace OgrO // Namespace com o nome do jogo.
     namespace PhysicalEntities // Namespace do Pacote Entities.
     {
         // Construtora da classe PhysicalEntity. Atributos default configurados
-        PhysicalEntity::PhysicalEntity(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath) : Entity(),
-                                                                                                                position{pos},
-                                                                                                                speed{s},
-                                                                                                                texturePath{tPath}
+        PhysicalEntity::PhysicalEntity(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath, unsigned int life) : Entity(),
+                                                                                                                                   position{pos},
+                                                                                                                                   speed{s},
+                                                                                                                                   texturePath{tPath},
+                                                                                                                                //    Life{MAX_LIFE}
+                                                                                                                                   Life{life}
         {
         }
         // Destrutora da classe PhysicalEntity.
@@ -82,6 +84,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 // {"dimension", dimension.toJSON()}};
 
                 {"id", id},
+                {"life", Life},
                 {"position x", position.coordX},
                 {"position y", position.coordY},
                 {"speed x", speed.coordX},
@@ -96,7 +99,6 @@ namespace OgrO // Namespace com o nome do jogo.
             std::cout << "Implementar PhysicalEntity::run()" << std::endl;
             return 0;
         }
-
 
     }
 }

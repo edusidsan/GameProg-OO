@@ -14,6 +14,7 @@ namespace OgrO // Namespace com o nome do jogo.
             public:
                 // Construtora da classe Fire.
                 Fire(Utilities::myVector2F pos = {0.0f, 0.0f}, Utilities::myVector2F s = {0.0f, 0.0f}, const char *tPath = nullptr);
+                Fire(nlohmann::json source);
                 // Destrutora da classe Fire.
                 ~Fire();
                 // Método atualizar do Fire. Tem como parâmetro uma variável float que representa o tempo.

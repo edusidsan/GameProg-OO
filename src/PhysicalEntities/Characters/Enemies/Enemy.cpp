@@ -10,15 +10,15 @@ namespace OgrO // Namespace com o nome do jogo.
             {
 
                 // Construtora da classe Enemy.
-                Enemy::Enemy(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath) : Character(pos, s, tPath),
-                                                                                                      timeReference{0},
-                                                                                                      projectileInterval{0}
+                Enemy::Enemy(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath, unsigned int life) : Character(pos, s, tPath, life),
+                                                                                                                         timeReference{0},
+                                                                                                                         projectileInterval{0}
                 {
                     // Atribui um ID ao Enemy.
                     // id = 102;
                 }
 
-                Enemy::Enemy(nlohmann::json source) : Enemy(Utilities::myVector2F{static_cast<float>(source["position x"]), static_cast<float>(source["position y"])}, Utilities::myVector2F{static_cast<float>(source["speed x"]), static_cast<float>(source["speed y"])})
+                Enemy::Enemy(nlohmann::json source) : Enemy(Utilities::myVector2F{static_cast<float>(source["position x"]), static_cast<float>(source["position y"])}, Utilities::myVector2F{static_cast<float>(source["speed x"]), static_cast<float>(source["speed y"])}, "", static_cast<unsigned int>(source["Life"]))
                 {
                 }
                 // Destrutora da classe Enemy.
@@ -42,8 +42,8 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Adiciona enemy na lista de entidades físicas colidiveis.
                     cm.addToLCollidablesPhysicalEntities((this));
                 }
-                void Enemy::update(float t){
-
+                void Enemy::update(float t)
+                {
                 }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
                 void Enemy::collided(int IDOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)

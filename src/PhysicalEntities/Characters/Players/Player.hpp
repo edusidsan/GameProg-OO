@@ -1,6 +1,5 @@
 #ifndef _PLAYER_HPP_
 #define _PLAYER_HPP_
-//#define MAXSPEEDX 80
 #include "../Character.hpp"
 #include "../../../json.hpp"
 

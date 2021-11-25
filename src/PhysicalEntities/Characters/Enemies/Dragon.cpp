@@ -40,6 +40,8 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Adiciona Dragon na lista de entidades físicas colidiveis.
                     cm.addToLCollidablesPhysicalEntities((this));
                     currentLevel = this->getLevel();
+                    // this->setLife(MAX_LIFE/100);
+                    Life = MAX_LIFE / 100;
                 }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
                 void Dragon::collided(int IDOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
@@ -194,15 +196,14 @@ namespace OgrO // Namespace com o nome do jogo.
                     }
                     else
                     {
-                        projectileInterval = 300;
+                        projectileInterval = 450;
 
                         Utilities::myVector2F playerPosition = currentLevel->getMainPlayerPosition();
                         // Utilities::myVector2F playerPosition;
                         Utilities::myVector2F playerDirection = (playerPosition - position);
 
-                        if (playerDirection.vModule() < 300)
+                        if (playerDirection.vModule() < 500)
                         {
-
                             currentLevel->addPhysicalEntity(new Projectiles::Fire({position.coordX - 50, position.coordY + 30}, playerDirection.unitVector() * 50));
                         }
                     }

@@ -35,8 +35,8 @@ namespace OgrO // Namespace com o nome do jogo.
 
         void setLevel(Levels::Level *_currentLevel);
         Levels::Level *getLevel() const;
-
         const int getId() const;
+
 
         // nlohmann::json toJSON();
     };

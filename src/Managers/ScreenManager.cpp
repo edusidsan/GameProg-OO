@@ -50,9 +50,10 @@ namespace OgrO // Namespace com o nome do jogo.
             case LOAD_MEDIEVAL_RUINS_LEVEL:
             {
                 Levels::MedievalRuins *lvl = new Levels::MedievalRuins(player1, player2, "../assets/level1/Background.png");
+                player1->setLevel(lvl);
                 try
                 {
-                    lvl->load("../savedGame/savedGame.json");
+                    lvl->load("../savedGame/savedMedievalRuinsLevel.json");
                     push(lvl);
                 }
                 catch (char const *s)
@@ -85,9 +86,10 @@ namespace OgrO // Namespace com o nome do jogo.
             case LOAD_CASTLE_LEVEL:
             {
                 Levels::Castle *lvl = new Levels::Castle(player1, player2, "../assets/level1/Background.png");
+                player1->setLevel(lvl);
                 try
                 {
-                    lvl->load("../savedGame/savedGame.json");
+                    lvl->load("../savedGame/savedCastleLevel.json");
                     push(lvl);
                 }
                 catch (char const *s)
@@ -109,9 +111,20 @@ namespace OgrO // Namespace com o nome do jogo.
                 }
                 else
                 {
-                    if (!lvl->save("../savedGame/savedGame.json"))
+                    //Fisrt level
+                    if (lvl->getId() == 1000)
                     {
-                        std::cout << "Fase nao foi salva" << std::endl;
+                        if (!lvl->save("../savedGame/savedMedievalRuinsLevel.json"))
+                        {
+                            std::cout << "Fase nao foi salva" << std::endl;
+                        }
+                    }
+                    else
+                    {
+                        if (!lvl->save("../savedGame/savedCastleLevel.json"))
+                        {
+                            std::cout << "Fase nao foi salva" << std::endl;
+                        }
                     }
                 }
                 return false;

@@ -14,6 +14,7 @@ namespace OgrO // Namespace com o nome do jogo.
             public:
                 // Construtora da classe Apple.
                 Apple(Utilities::myVector2F pos = {0.0f, 0.0f}, Utilities::myVector2F s = {0.0f, 0.0f}, const char *tPath = nullptr);
+                Apple(nlohmann::json source);
                 // Destrutora da classe Apple.
                 ~Apple();
                 // Método atualizar do Apple. Tem como parâmetro uma variável float que representa o tempo.

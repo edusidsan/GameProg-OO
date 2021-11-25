@@ -2,6 +2,8 @@
 #include "../PhysicalEntities/Characters/Enemies/Witch.hpp"
 #include "../PhysicalEntities/Characters/Enemies/Wolf.hpp"
 #include "../PhysicalEntities/Characters/Enemies/Dragon.hpp"
+#include "../PhysicalEntities/Projectiles/Apple.hpp"
+#include "../PhysicalEntities/Projectiles/Fire.hpp"
 #include "../Managers/ScreenManager.hpp"
 #include "../Tiles/TilesManager.hpp"
 //#include "../Utilities/RandomGenerator.hpp"
@@ -170,6 +172,24 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
 
                     players.insert(new PhysicalEntities::Characters::Enemies::Wolf(player));
+                    break;
+                }
+                case 104:
+                {
+
+                    players.insert(new PhysicalEntities::Characters::Enemies::Dragon(player));
+                    break;
+                }
+                case 200:
+                {
+
+                    players.insert(new PhysicalEntities::Projectiles::Apple(player));
+                    break;
+                }
+                case 201:
+                {
+
+                    players.insert(new PhysicalEntities::Projectiles::Fire(player));
                     break;
                 }
                 default:
