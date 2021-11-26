@@ -10,7 +10,7 @@ namespace OgrO // Namespace com o nome do jogo.
             namespace Players // Namespace do Pacote Enemies.
             {
                 // Construtora da classe Player.
-                Player::Player(Utilities::myVector2F pos, const char *tPath) : Character(pos, Utilities::myVector2F(), tPath)
+                Player::Player(Utilities::gameVector2F pos, const char *tPath) : Character(pos, Utilities::gameVector2F(), tPath)
                 {
 
                     // Atribui um ID ao player.
@@ -55,7 +55,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Relação de posição da forma no espaço-tempo. Equação de Movimento Uniforme da Cinemática.
                     position += speed * t;
                     position += adjusts;
-                    adjusts = Utilities::myVector2F(0, 0);
+                    adjusts = Utilities::gameVector2F(0, 0);
                     // std::cout<<"tempo: "<<clock.getTime()<<std::endl;
                 }
                 // Método desenhar do Player.
@@ -75,7 +75,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
-                void Player::collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
+                void Player::collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther)
                 {
                     if (idOther == 200 || idOther == 201 )
                     { //Maça

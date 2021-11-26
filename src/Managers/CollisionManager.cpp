@@ -35,15 +35,15 @@ namespace OgrO // Namespace com o nome do jogo.
         bool CollisionManager::colliding(PhysicalEntities::PhysicalEntity *e1, PhysicalEntities::PhysicalEntity *e2)
         {
             // Position1 recebe posição do primeiro elemento passado por parâmetro.
-            Utilities::myVector2F position1 = e1->getPosition();
+            Utilities::gameVector2F position1 = e1->getPosition();
             // Position2 recebe posição do segundo elemento passado por parâmetro.
-            Utilities::myVector2F position2 = e2->getPosition();
+            Utilities::gameVector2F position2 = e2->getPosition();
             // Dimension1 recebe dimensões do primeiro elemento passado por parâmetro.
-            Utilities::myVector2F dimension1 = e1->getDimension();
+            Utilities::gameVector2F dimension1 = e1->getDimension();
             // Dimension2 recebe dimensões do segundo elemento passado por parâmetro.
-            Utilities::myVector2F dimension2 = e2->getDimension();
+            Utilities::gameVector2F dimension2 = e2->getDimension();
 
-            Utilities::myVector2F distance = position1 - position2;
+            Utilities::gameVector2F distance = position1 - position2;
 
             if (e1 == e2)
             {

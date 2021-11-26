@@ -4,16 +4,16 @@ namespace OgrO
 {
     namespace Utilities
     {
-        MyClock::MyClock() : last{clock()},
+        GameClock::GameClock() : last{clock()},
                              current{0},
                              dt{0},
                              stopped{false}
         {
         }
-        MyClock::~MyClock()
+        GameClock::~GameClock()
         {
         }
-        double MyClock::getTime()
+        double GameClock::getTime()
         {
             if (stopped)
             {
@@ -29,16 +29,16 @@ namespace OgrO
 
             return dt;
         }
-        void MyClock::restart()
+        void GameClock::restart()
         {
             stopped = false;
             last = clock();
         }
-        void MyClock::pause()
+        void GameClock::pause()
         {
             stopped = true;
         }
-        double MyClock::getCurrent(){
+        double GameClock::getCurrent(){
             current = clock();
             return (double) current;
         }

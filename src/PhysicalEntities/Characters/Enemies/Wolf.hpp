@@ -17,7 +17,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     bool collidingFlag;
                 public:
                     // Construtora da classe Wolf.
-                    Wolf(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath = nullptr);
+                    Wolf(Utilities::gameVector2F pos, Utilities::gameVector2F s, const char *tPath = nullptr);
                     Wolf(nlohmann::json source);
                     // Destrutora da classe Wolf.
                     ~Wolf();
@@ -25,7 +25,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // void initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm);
                     void initialize(Managers::EventsManager &em, Managers::CollisionManager &cm);
                      // Método verifica colisão entre dois objetos da classe Entidade Física.
-                    void collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther);
+                    void collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther);
                     //tentativa de usar tempo
                     void update(float t);
                     

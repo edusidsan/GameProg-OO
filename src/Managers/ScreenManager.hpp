@@ -35,7 +35,8 @@ namespace OgrO // Namespace com o nome do jogo.
             START_CASTLE_LEVEL,
             LOAD_CASTLE_LEVEL,
             EXIT,
-            RANKING
+            RANKING,
+            RANKING_INSERT
         };
         static GameCode gamecode;
 

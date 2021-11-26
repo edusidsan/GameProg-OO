@@ -15,7 +15,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 public:
                     // Construtora da classe Sherek.
-                    Shrek(Utilities::myVector2F pos = {0.0f, 0.0f}, const char *tPath = nullptr);
+                    Shrek(Utilities::gameVector2F pos = {0.0f, 0.0f}, const char *tPath = nullptr);
                     // Destrutora da classe Sherek.
                     ~Shrek();
                     // Método de tratamento de evento ocorrido.

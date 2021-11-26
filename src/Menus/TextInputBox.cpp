@@ -1,43 +1,95 @@
 #include "TextInputBox.hpp"
-#include "../Managers/GraphicManager.hpp"
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Menus // Namespace do Pacote Menus.
     {
 
-        // Construtora da classe TextInputBox.
-        TextInputBox::TextInputBox(Managers::EventsManager &_em, unsigned short _maxLength, Utilities::myVector2F _position,
-                                   Utilities::myVector2F _size, unsigned int _textSize, Utilities::Color _color) : Button{0, _position, _size, "", [this]()
-                                                                                                                          { inputStart(); },
-                                                                                                                          _textSize, _color},
-                                                                                                                   promisseText{_em, _maxLength}
+        TextInputBox::TextInputBox(unsigned short _maxLength, Utilities::gameVector2F _position, unsigned int _font) : pGraphicManager(Managers::GraphicManager::getInstance()),
+                                                                                                                     pEventsManager(Managers::EventsManager::getInstance()),
+                                                                                                                     idKeyboardEvent{0},
+                                                                                                                     centerPosition{_position},
+                                                                                                                     fontSize{_font},
+                                                                                                                     maxLenght{_maxLength},
+                                                                                                                     done{false},
+                                                                                                                     str{""}
         {
         }
         // Destrutora da classe TextInputBox.
         TextInputBox::~TextInputBox()
         {
         }
-
-        const std::string &TextInputBox::getText() const
+        void TextInputBox::initialize()
         {
-            if (!getReadyText())
+            // pGraphicManager = Managers::GraphicManager::getInstance();
+            // pEventsManager = Managers::EventsManager::getInstance();
+        }
+        void TextInputBox::setCenter(const Utilities::gameVector2F _pos)
+        {
+            centerPosition = _pos;
+        }
+        void TextInputBox::setFontSize(const unsigned int _s)
+        {
+            fontSize = _s;
+        }
+        void TextInputBox::draw() const
+        {
+            pGraphicManager->drawText("Insert your name", {centerPosition.coordX, centerPosition.coordY - 50}, fontSize);
+            pGraphicManager->drawSolidRect(centerPosition, Utilities::gameVector2F{170, 30}, Utilities::Color{255, 255, 255, 60});
+            pGraphicManager->drawText(str, centerPosition, fontSize);
+        }
+        void TextInputBox::removeListeners()
+        {
+            if (idKeyboardEvent != 0)
             {
-                throw "Erro! String pedida sem ter sido terminada antes. Cheque getReadyText() antes de chamar esse método";
+                pEventsManager->removeKeyboardListener(idKeyboardEvent);
+                idKeyboardEvent = 0;
             }
-            return promisseText.getText();
         }
-        bool TextInputBox::getReadyText() const
+        void TextInputBox::startStringCapture()
         {
-            return promisseText.getReadyText();
+            idKeyboardEvent = pEventsManager->addKeyboardListener([this](sf::Event e)
+                                                                  {
+                                                                      if (e.type == sf::Event::EventType::TextEntered)
+                                                                      {
+                                                                          if (str.size() <= 20)
+                                                                          {
+                                                                              char c = (e.text.unicode < 128) ? static_cast<char>(e.text.unicode) : '\0';
+
+                                                                              if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z'))
+                                                                              {
+                                                                                  str += c;
+                                                                              }
+                                                                          }
+                                                                          std::cout << "Enter text:" << str << std::endl;
+                                                                      }
+                                                                      else if (e.type == sf::Event::KeyReleased)
+                                                                      {
+                                                                          if (e.key.code == sf::Keyboard::BackSpace)
+                                                                          {
+                                                                              if (str.size() > 0)
+                                                                              {
+                                                                                  str.pop_back();
+                                                                              }
+                                                                          }
+                                                                          else if (e.key.code == sf::Keyboard::Enter)
+                                                                          {
+                                                                              done = true;
+                                                                              removeListeners();
+                                                                          }
+                                                                      }
+                                                                  });
         }
-        void TextInputBox::draw(Managers::GraphicManager *pGraphicManager) const
+        bool TextInputBox::captureDone() const
         {
-            pGraphicManager->drawSolidRect(position, size, color);
-            pGraphicManager->drawText(promisseText.getText(), position, textSize, false);
+            return done;
         }
-        void TextInputBox::inputStart()
+        std::string TextInputBox::getCapture()
         {
-            promisseText.inputStart();
+
+            done = false;
+            std::string cpy{str};
+            // str = "";
+            return cpy;
         }
 
     }

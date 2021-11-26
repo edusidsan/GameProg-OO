@@ -16,18 +16,18 @@ namespace OgrO // Namespace com o nome do jogo.
         void PauseMenu::initialize()
         {
             Menu::initialize();
-            Utilities::myVector2F screenSize = pGraphicManager->getScreenSize();
+            Utilities::gameVector2F screenSize = pGraphicManager->getScreenSize();
             pGraphicManager->centerCamera(pGraphicManager->getScreenSize() * 0.5);
             bm.addButton(new Button(
-                1, Utilities::myVector2F(screenSize.coordX / 2, screenSize.coordY / 4 * 1), {170, 30}, "Continue", [this]
+                1, Utilities::gameVector2F(screenSize.coordX / 2, screenSize.coordY / 4 * 1), {170, 30}, "Continue", [this]
                 { setGameCode(Managers::GameCode::EXIT_PAUSE_MENU); },
                 15U, Utilities::Color{127, 0, 0}));
             bm.addButton(new Button(
-                2, Utilities::myVector2F(screenSize.coordX / 2, screenSize.coordY / 4 * 2), {170, 30}, "Save Game", [this]
+                2, Utilities::gameVector2F(screenSize.coordX / 2, screenSize.coordY / 4 * 2), {170, 30}, "Save Game", [this]
                 { setGameCode(Managers::GameCode::SAVE_GAME); },
                 15U, Utilities::Color{127, 0, 0}));
             bm.addButton(new Button(
-                3, Utilities::myVector2F(screenSize.coordX / 2, screenSize.coordY / 4 * 3), {170, 30}, "Main Menu", [this]
+                3, Utilities::gameVector2F(screenSize.coordX / 2, screenSize.coordY / 4 * 3), {170, 30}, "Main Menu", [this]
                 { setGameCode(Managers::GameCode::MAIN_MENU); },
                 15U, Utilities::Color{127, 0, 0}));
         }
@@ -35,7 +35,7 @@ namespace OgrO // Namespace com o nome do jogo.
         int PauseMenu::run()
         {
 
-            Utilities::myVector2F screenSize = pGraphicManager->getScreenSize();
+            Utilities::gameVector2F screenSize = pGraphicManager->getScreenSize();
             pGraphicManager->centerCamera(screenSize * 0.5);
             gameCode = Managers::PAUSE_MENU;
 

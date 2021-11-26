@@ -12,13 +12,13 @@ namespace OgrO // Namespace com o nome do jogo.
             {
 
                 // Construtora da classe Witch.
-                Witch::Witch(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath) : Enemy(pos, s, "../assets/Witch.png")
+                Witch::Witch(Utilities::gameVector2F pos, Utilities::gameVector2F s, const char *tPath) : Enemy(pos, s, "../assets/Witch.png")
                 //"../assets/Witch.png"
                 {
                     // Atribui um ID ao Witch.
                     id = 102;
                 }
-                Witch::Witch(nlohmann::json source) : Enemy(Utilities::myVector2F{static_cast<float>(source["position x"]), static_cast<float>(source["position y"])}, Utilities::myVector2F{static_cast<float>(source["speed x"]), static_cast<float>(source["speed y"])}, "../assets/Witch.png")
+                Witch::Witch(nlohmann::json source) : Enemy(Utilities::gameVector2F{static_cast<float>(source["position x"]), static_cast<float>(source["position y"])}, Utilities::gameVector2F{static_cast<float>(source["speed x"]), static_cast<float>(source["speed y"])}, "../assets/Witch.png")
                 {
                     // Atribui um ID ao Witch.
                     id = 102;
@@ -56,7 +56,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Relação de posição da forma no espaço-tempo. Equação de Movimento Uniforme da Cinemática.
                     position += speed * t;
                     position += adjusts;
-                    adjusts = Utilities::myVector2F(0, 0);
+                    adjusts = Utilities::gameVector2F(0, 0);
                     // std::cout<<"tempo: "<<clock.getCurrent()/1000<<std::endl;
                     //  std::cout<<"timeReference: "<<timeReference<<std::endl;
                     //  std::cout<<"time: "<<t*1000<<std::endl;
@@ -77,9 +77,9 @@ namespace OgrO // Namespace com o nome do jogo.
                     {
                         projectileInterval = 800;
 
-                        Utilities::myVector2F playerPosition = currentLevel->getMainPlayerPosition();
-                        // Utilities::myVector2F playerPosition;
-                        Utilities::myVector2F playerDirection = (playerPosition - position);
+                        Utilities::gameVector2F playerPosition = currentLevel->getMainPlayerPosition();
+                        // Utilities::gameVector2F playerPosition;
+                        Utilities::gameVector2F playerDirection = (playerPosition - position);
 
                         if (playerDirection.vModule() < 300)
                         {
@@ -89,7 +89,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     }
                 }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
-                void Witch::collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
+                void Witch::collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther)
                 {
                     // Caso colida com Player1.
                     if ((idOther == 100) || (idOther == 101))
@@ -100,7 +100,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     else if ((idOther == 102) || (idOther == 103))
                     {
                         // Cálculo da distância entre os enemy no momento da colisão.
-                        Utilities::myVector2F distance = position - positionOther;
+                        Utilities::gameVector2F distance = position - positionOther;
                         // Medida para não manter um enemy preso dentro do outro.
                         position += distance * (1 / 2);
                         // std::cout << "OBJETO ENEMY >>> COLISAO COM OBJETO ENEMY." << std::endl;

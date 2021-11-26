@@ -5,7 +5,7 @@ namespace OgrO // Namespace com o nome do jogo.
     namespace Menus // Namespace do Pacote Menus.
     {
         // Construtora da classe Button.
-        Button::Button(short int _buttonId, Utilities::myVector2F _position, Utilities::myVector2F _size, std::string _text, std::function<void(void)> _buttonPressed, unsigned int _textSize, Utilities::Color _color) : buttonId{_buttonId},
+        Button::Button(short int _buttonId, Utilities::gameVector2F _position, Utilities::gameVector2F _size, std::string _text, std::function<void(void)> _buttonPressed, unsigned int _textSize, Utilities::Color _color) : buttonId{_buttonId},
                                                                                                                                                                                                                           position{_position},
                                                                                                                                                                                                                           size{_size},
                                                                                                                                                                                                                           text{_text},
@@ -24,11 +24,11 @@ namespace OgrO // Namespace com o nome do jogo.
             pGraphicManager->drawSolidRect(position, size, color);
             pGraphicManager->drawText(text, position, textSize);
         }
-        Utilities::myVector2F Button::getPosition() const
+        Utilities::gameVector2F Button::getPosition() const
         {
             return position;
         }
-        Utilities::myVector2F Button::getSize() const
+        Utilities::gameVector2F Button::getSize() const
         {
             return size;
         }

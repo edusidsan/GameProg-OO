@@ -29,12 +29,12 @@ namespace OgrO // Namespace com o nome do jogo.
             if (e.type == sf::Event::MouseButtonReleased)
             { //se ocorrer um clique, verificar se foi em cima de algum botão
 
-                Utilities::myVector2F mousePosition = gm.getMousePosition();
+                Utilities::gameVector2F mousePosition = gm.getMousePosition();
                 for (Menus::Button *b : buttons)
                 {
-                    Utilities::myVector2F buttonCenterPosition = b->getPosition();
-                    Utilities::myVector2F buttonSize = b->getSize();
-                    Utilities::myVector2F mouseCenterDistance = mousePosition - buttonCenterPosition;
+                    Utilities::gameVector2F buttonCenterPosition = b->getPosition();
+                    Utilities::gameVector2F buttonSize = b->getSize();
+                    Utilities::gameVector2F mouseCenterDistance = mousePosition - buttonCenterPosition;
                     if (fabs(mouseCenterDistance.coordX) < buttonSize.coordX / 2 && fabs(mouseCenterDistance.coordY) < buttonSize.coordY / 2)
                     {
                         b->pushButton();

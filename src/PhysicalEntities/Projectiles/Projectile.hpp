@@ -13,7 +13,7 @@ namespace OgrO // Namespace com o nome do jogo.
             {
             public:
                 // Construtora da classe Projectile.
-                Projectile(Utilities::myVector2F pos = {0.0f, 0.0f}, Utilities::myVector2F s = {0.0f, 0.0f}, const char *tPath = nullptr);
+                Projectile(Utilities::gameVector2F pos = {0.0f, 0.0f}, Utilities::gameVector2F s = {0.0f, 0.0f}, const char *tPath = nullptr);
                 // Destrutora da classe Projectile.
                 ~Projectile();
                 // Método carrega a textura do Projectile na window.
@@ -21,7 +21,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Método atualizar do Projectile. Tem como parâmetro uma variável float que representa o tempo.
                 virtual void update(float t) override;
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
-                virtual void collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther) override;
+                virtual void collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther) override;
             };
         }
     }

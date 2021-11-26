@@ -28,15 +28,14 @@ set(
     Menus/MainMenu.cpp
     Menus/Menu.cpp
     Menus/PauseMenu.cpp
-    Menus/PromisseText.cpp
     Menus/Ranking.cpp
+    Menus/RankingInsert.cpp
     Menus/TextInputBox.cpp
     Lists/PhysicalEntityList.cpp
     PhysicalEntities/Characters/Enemies/Enemy.cpp
     PhysicalEntities/Characters/Enemies/Witch.cpp
     PhysicalEntities/Characters/Enemies/Wolf.cpp
     PhysicalEntities/Characters/Enemies/Dragon.cpp
-
     PhysicalEntities/Characters/Players/Player.cpp
     PhysicalEntities/Characters/Players/Shrek.cpp
     PhysicalEntities/Characters/Players/Donkey.cpp
@@ -74,8 +73,8 @@ set(
     Menus/MainMenu.hpp
     Menus/Menu.hpp
     Menus/PauseMenu.hpp
-    Menus/PromisseText.hpp
     Menus/Ranking.hpp
+    Menus/RankingInsert.hpp
     Menus/TextInputBox.hpp
     Lists/PhysicalEntityList.hpp
     PhysicalEntities/Characters/Enemies/Dragon.hpp

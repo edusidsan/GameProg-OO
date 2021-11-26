@@ -7,7 +7,7 @@ namespace OgrO // Namespace com o nome do jogo.
         namespace Projectiles // Namespace do Pacote Projectiles.
         {
             // Construtora da classe Projectile.
-            Projectile::Projectile(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath) : PhysicalEntity(pos, s, tPath)
+            Projectile::Projectile(Utilities::gameVector2F pos, Utilities::gameVector2F s, const char *tPath) : PhysicalEntity(pos, s, tPath)
             {
             }
             // Destrutora da classe Projectile.
@@ -28,7 +28,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 position += speed * t;
             }
             // Método verifica colisão entre dois objetos da classe Entidade Física.
-            void Projectile::collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
+            void Projectile::collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther)
             {
             }
         }

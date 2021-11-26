@@ -11,13 +11,13 @@ namespace OgrO // Namespace com o nome do jogo.
             {
 
                 // Construtora da classe Wolf.
-                Wolf::Wolf(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath) : Enemy(pos, s, "../assets/Wolf.png")
+                Wolf::Wolf(Utilities::gameVector2F pos, Utilities::gameVector2F s, const char *tPath) : Enemy(pos, s, "../assets/Wolf.png")
                 //"../assets/Wolf.png"
                 {
                     // Atribui um ID ao Wolf.
                     id = 103;
                 }
-                Wolf::Wolf(nlohmann::json source) : Enemy(Utilities::myVector2F{static_cast<float>(source["position x"]), static_cast<float>(source["position y"])}, Utilities::myVector2F{static_cast<float>(source["speed x"]), static_cast<float>(source["speed y"])}, "../assets/Wolf.png")
+                Wolf::Wolf(nlohmann::json source) : Enemy(Utilities::gameVector2F{static_cast<float>(source["position x"]), static_cast<float>(source["position y"])}, Utilities::gameVector2F{static_cast<float>(source["speed x"]), static_cast<float>(source["speed y"])}, "../assets/Wolf.png")
                 {
                     // Atribui um ID ao Wolf.
                     id = 103;
@@ -39,7 +39,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     cm.addToLCollidablesPhysicalEntities((this));
                 }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
-                void Wolf::collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
+                void Wolf::collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther)
                 {
                     // Caso colida com Player1.
                     if ((idOther == 100) || (idOther == 101))
@@ -50,7 +50,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     if ((idOther == 102) || (idOther == 103))
                     {
                         // Cálculo da distância entre os enemy no momento da colisão.
-                        Utilities::myVector2F distance = position - positionOther;
+                        Utilities::gameVector2F distance = position - positionOther;
                         // Medida para não manter um enemy preso dentro do outro.
                         position += distance * (1 / 2);
                         // std::cout << "OBJETO ENEMY >>> COLISAO COM OBJETO ENEMY." << std::endl;
@@ -64,7 +64,7 @@ namespace OgrO // Namespace com o nome do jogo.
                         // else if (idOther == 102)
                         // {
                         //     // Cálculo da distância entre os Wolf no momento da colisão.
-                        //     Utilities::myVector2F distance = position - positionOther;
+                        //     Utilities::gameVector2F distance = position - positionOther;
                         //     // Medida para não manter um Wolf preso dentro do outro.
                         //     position += distance * (1 / 2);
                         //     // std::cout << "OBJETO Wolf >>> COLISAO COM OBJETO Wolf." << std::endl;
@@ -188,7 +188,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Relação de posição da forma no espaço-tempo. Equação de Movimento Uniforme da Cinemática.
                     position += speed * t;
                     position += adjusts;
-                    adjusts = Utilities::myVector2F(0, 0);
+                    adjusts = Utilities::gameVector2F(0, 0);
 
                     if (clock.getCurrent() / 1000 - timeReference > 5)
                     {
