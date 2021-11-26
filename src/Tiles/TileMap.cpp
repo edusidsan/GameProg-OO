@@ -58,14 +58,14 @@ namespace OgrO // Namespace com o nome do jogo.
         // Método que carrega o TileMap.
         void TileMap::loadTileMap(const char *path)
         {
-            
+
             std::ifstream _file(path);
             if (!_file.is_open())
             {
                 std::cout << "Atencao! Arquivo no caminho \"" << path << "\" não pode ser aberto!" << std::endl;
                 exit(1);
             }
-            
+
             nlohmann::json json;
 
             _file >> json;
@@ -75,7 +75,7 @@ namespace OgrO // Namespace com o nome do jogo.
             tileMapDimension = {json["width"], json["height"]};
             // Atribui apenas os tiles do arquivo para o próprio json.
             json = json["data"];
-            
+
             // Alocando a quantidade de colunas do map.
             map = new unsigned short *[tileMapDimension.coordY];
             // Alocando a quantidade de linhas do map.
@@ -98,6 +98,64 @@ namespace OgrO // Namespace com o nome do jogo.
                         break;
                     }
                     aux = json[counter];
+
+                    // ASCI ? --> 63?
+                    //Como esta funcionando os blocos aleatorios? é colocado um valor, não definidos antes, no arquivo json do mapa
+                    //ao renderizar o mapa(AQUI) o if identifica esse valor e atraves do randNumeber, que pega um valor aleatorio entre 1 e 2,
+                    // define qual bloco será.
+                    //Os valores escolhidos até agora são 62 e 63, sendo o 62 para espinho e chão, enquanto o 63 é para gosma e chão
+                    if (aux == '?')
+                    {
+                        std::cout << "ENCONTREI UMA INTERROGACAO" << std::endl;
+
+                        // 16 || 8 -> ? 16 8
+                        // 0 ? 0 56
+                        //MUdar isso
+                        int randNumber = Utilities::RandomGenerator::getInstance()->getRandomIntInRange(1, 3);
+                        std::cout << "Valor randNumber:" <<randNumber<< std::endl;
+
+                        if(randNumber == 1){                           
+                            aux = 7;
+                            
+                        }else{                            
+                            aux = 15;
+                        }
+                        // SALVA A POSIÇÃO ?
+                        // GERA O RANDOM DE 1 OU 2 POSIÇÃO
+                        // SALVA O VALOR DO TILE ESCOLHIDO NA POSIÇÃO ?
+                        // DESLOCA UMA POISÇÃO EM X E DEIXA NULO E VOLTA PRA POSIÇÃO DE ?
+                        // DESLOCA UMA POISÇÃO EM X E DEIXA NULO E VOLTA PRA POSIÇÃO DE ?
+
+                        // *
+                        // ?        9       6
+                        // p(0)     p(1)    p(2)
+
+                        // *
+                        // 6        9       6
+                        // p(0)     p(1)    p(2)
+
+                        // *
+                        // 6        9       6
+                        // p(0)     p(1)    p(2)
+                    }
+                    if (aux == 62)
+                    {
+                        std::cout << "ENCONTREI UMA INTERROGACAO DIFERENTE" << std::endl;
+
+                        // 16 || 8 -> ? 16 8
+                        // 0 ? 0 56
+                        //MUdar isso
+                        int randNumber = Utilities::RandomGenerator::getInstance()->getRandomIntInRange(1, 3);
+                        std::cout << "Valor randNumber:" <<randNumber<< std::endl;
+
+                        if(randNumber == 1){                           
+                            aux = 52;
+                            
+                        }else{                            
+                            aux = 15;
+                        }
+                    }
+
                     if (aux != 0)
                     {
                         aux--;
@@ -115,7 +173,7 @@ namespace OgrO // Namespace com o nome do jogo.
         }
 
         // Método que retorna as dimensões do TileMap.
-        const Utilities::myVector2U TileMap::getTileMapDimension() const
+        const Utilities::gameVector2U TileMap::getTileMapDimension() const
         {
             return tileMapDimension;
         }
@@ -133,7 +191,7 @@ namespace OgrO // Namespace com o nome do jogo.
             std::cout.flush();
         }
         // Método que atribui na matriz map qual o id do elemento. Ex -> id:1 é chão.
-        void TileMap::setTile(Utilities::myVector2U position, unsigned short newID)
+        void TileMap::setTile(Utilities::gameVector2U position, unsigned short newID)
         {
             if ((position.coordX > tileMapDimension.coordX) || (position.coordY > tileMapDimension.coordY))
             {

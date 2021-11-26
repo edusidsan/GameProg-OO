@@ -2,35 +2,49 @@
 #define _TEXTINPUTBOX_HPP_
 
 #include "Button.hpp"
-#include "PromisseText.hpp"
-//#include "../Managers/EventsManager.hpp"
-//#include "../Utilities/Vector2D.hpp"
+// #include "PromisseText.hpp"
+#include "../Managers/EventsManager.hpp"
+#include "../Managers/GraphicManager.hpp"
+// #include "../Utilities/Vector2D.hpp"
 //#include "../Utilities/Color.hpp"
 
 #include <string>
 
 namespace OgrO // Namespace com o nome do jogo.
 {
-    namespace Managers
-    {
-        class GraphicManager;
-    }
+    // namespace Managers
+    // {
+    //     class GraphicManager;
+    //     class EventsManager;
+    // }
     namespace Menus // Namespace do Pacote Menus.
     {
-        class TextInputBox : public Button
+        // class TextInputBox : public Button
+        class TextInputBox
         {
         private:
-            PromisseText promisseText;
+            Managers::GraphicManager *pGraphicManager;
+            Managers::EventsManager *pEventsManager;
+            unsigned int idKeyboardEvent;
+            Utilities::gameVector2F centerPosition;
+            unsigned int fontSize;
+            unsigned short maxLenght;
+            bool done;
+            std::string str;
 
         public:
             // Construtora da classe TextInputBox.
-            TextInputBox(Managers::EventsManager &_em, unsigned short _maxLength, Utilities::myVector2F _position = {0.0f, 0.0f}, Utilities::myVector2F _size = {0.0f, 0.0f}, unsigned int _textSize = 15U, Utilities::Color _color = {128, 128, 128});
+            TextInputBox(unsigned short _maxLength = 20, Utilities::gameVector2F _position = {0.0f, 0.0f}, unsigned int _font = 16);
             // Destrutora da classe TextInputBox.
             ~TextInputBox();
-            const std::string &getText() const;
-            bool getReadyText() const;
-            void draw(Managers::GraphicManager *pGraphicManager) const;
-            void inputStart();
+            void initialize();
+            void setCenter(const Utilities::gameVector2F _pos);
+            void setFontSize(const unsigned int _s);
+            void draw() const;
+            void removeListeners();
+            void startStringCapture();
+            bool captureDone() const;
+            std::string getCapture();
         };
     }
 }

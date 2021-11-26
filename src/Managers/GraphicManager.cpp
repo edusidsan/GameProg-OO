@@ -59,7 +59,7 @@ namespace OgrO // Namespace com o nome do jogo.
             window->clear(sf::Color(r, g, b));
         }
         // Método desenhar. Tem como parâmetro um ponteiro que aponta para a window desenhada.
-        void GraphicManager::draw(const std::string path, const Utilities::myVector2F position)
+        void GraphicManager::draw(const std::string path, const Utilities::gameVector2F position)
         {
             // Caso encontre alguma textura que tenha a chave unitária de map igual o parâmetro passado por path, desenha imagem na window.
             if (textures.count(path) == 0)
@@ -98,7 +98,7 @@ namespace OgrO // Namespace com o nome do jogo.
         }
 
         // Método desenhar. Tem como parâmetro um ponteiro que aponta para a window desenhada.
-        void GraphicManager::draw(const std::string path, const Utilities::myVector2F position, int direction)
+        void GraphicManager::draw(const std::string path, const Utilities::gameVector2F position, int direction)
         {
             // Caso encontre alguma textura que tenha a chave unitária de map igual o parâmetro passado por path, desenha imagem na window.
             if (textures.count(path) == 0)
@@ -178,7 +178,7 @@ namespace OgrO // Namespace com o nome do jogo.
             }
         }
         // Método utilizado para centralizar a View.
-        void GraphicManager::centerCamera(const Utilities::myVector2F center)
+        void GraphicManager::centerCamera(const Utilities::gameVector2F center)
         {
             // Centraliza o View (camera)
             camera.setCenter(sf::Vector2f(center.coordX, center.coordY));
@@ -197,10 +197,11 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             // camera{sf::Vector2f(400, 300), sf::Vector2f(400, 300)},
             camera.setCenter(sf::Vector2f(400, 300));
-            camera.setSize(sf::Vector2f(650, 450));
+            // camera.setSize(sf::Vector2f(650, 450));
+            camera.setSize(sf::Vector2f(800, 600));
         }
 
-        Utilities::myVector2F GraphicManager::getScreenSize() const
+        Utilities::gameVector2F GraphicManager::getScreenSize() const
         {
             return {camera.getSize().x, camera.getSize().y};
         }
@@ -211,7 +212,7 @@ namespace OgrO // Namespace com o nome do jogo.
             return window;
         }
         // Método retorna as dimensões da imagem.
-        const Utilities::myVector2F GraphicManager::getDimensionsOfAsset(const std::string &path) const
+        const Utilities::gameVector2F GraphicManager::getDimensionsOfAsset(const std::string &path) const
         {
             // Caso não encontre alguma textura que tenha a chave unitária de map igual o parâmetro passado por path, encerra.
             if (textures.count(path) == 0)
@@ -224,12 +225,12 @@ namespace OgrO // Namespace com o nome do jogo.
             // Variavel dimension unsigned recebe dimensões da textura encontrada.
             sf::Vector2u dimension = (textures.at(path))->getSize();
             // Retorna dimensões.
-            return Utilities::myVector2F(dimension.x, dimension.y);
-            // return Utilities::myVector2F(0.0f, 0.0f);
+            return Utilities::gameVector2F(dimension.x, dimension.y);
+            // return Utilities::gameVector2F(0.0f, 0.0f);
         }
 
         // Método utilizado para desenhar um retangulo sólido na View.
-        void GraphicManager::drawSolidRect(const Utilities::myVector2F center, const Utilities::myVector2F dimension, const Utilities::Color color) const
+        void GraphicManager::drawSolidRect(const Utilities::gameVector2F center, const Utilities::gameVector2F dimension, const Utilities::Color color) const
         {
             sf::RectangleShape rectShape = sf::RectangleShape({dimension.coordX, dimension.coordY});
             rectShape.setFillColor({color.r, color.g, color.b, color.a});
@@ -238,7 +239,7 @@ namespace OgrO // Namespace com o nome do jogo.
             window->draw(rectShape);
         }
         // Método utilizado para desenhar texto na View.
-        void GraphicManager::drawText(const std::string text, const Utilities::myVector2F position, unsigned int size, const bool centralized) const
+        void GraphicManager::drawText(const std::string text, const Utilities::gameVector2F position, unsigned int size, const bool centralized) const
         {
             sf::Text txt = sf::Text(text, font, size);
             txt.setFillColor(sf::Color::White);
@@ -251,7 +252,7 @@ namespace OgrO // Namespace com o nome do jogo.
             window->draw(txt);
         }
         // Método utilizado para retornar a posição do mouse na View.
-        Utilities::myVector2F GraphicManager::getMousePosition() const
+        Utilities::gameVector2F GraphicManager::getMousePosition() const
         {
             sf::Vector2i windowMousePosition = sf::Mouse::getPosition(*window);
             sf::Vector2u windowSize = window->getSize();

@@ -7,7 +7,7 @@ namespace OgrO
 {
     namespace Utilities
     {
-        class MyClock
+        class GameClock
         {
         private:
             clock_t last;
@@ -16,8 +16,8 @@ namespace OgrO
             bool stopped;
 
         public:
-            MyClock();
-            ~MyClock();
+            GameClock();
+            ~GameClock();
             double getTime();
             void restart();
             void pause();

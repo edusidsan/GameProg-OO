@@ -14,13 +14,13 @@ namespace OgrO // Namespace com o nome do jogo.
                 class Enemy : public Character
                 {
                 protected:
-                    Utilities::MyClock clock;
+                    Utilities::GameClock clock;
                     double timeReference;
                     int projectileInterval;
 
                 public:
                     // Construtora da classe Enemy.
-                    Enemy(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath = nullptr, unsigned int life = MAX_LIFE);
+                    Enemy(Utilities::gameVector2F pos, Utilities::gameVector2F s, const char *tPath = nullptr, unsigned int life = MAX_LIFE);
                     Enemy(nlohmann::json source);
                     // Destrutora da classe Enemy.
                     ~Enemy();
@@ -29,7 +29,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     virtual void update(float t);
                     void initialize(Managers::EventsManager &em, Managers::CollisionManager &cm);
                     // Método verifica colisão entre dois objetos da classe Entidade Física.
-                    void collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther);
+                    void collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther);
                 };
             }
         }

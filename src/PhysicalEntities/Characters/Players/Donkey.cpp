@@ -10,7 +10,7 @@ namespace OgrO // Namespace com o nome do jogo.
             namespace Players // Namespace do Pacote Enemies.
             {
                 // Construtora da classe Donkey.
-                Donkey::Donkey(Utilities::myVector2F pos, const char *tPath) : Player(pos, "../assets/Donkey.png")
+                Donkey::Donkey(Utilities::gameVector2F pos, const char *tPath) : Player(pos, "../assets/Donkey.png")
                {
                     // Atribui um ID ao player.
                     id = 101;

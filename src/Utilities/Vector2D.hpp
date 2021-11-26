@@ -57,9 +57,9 @@ namespace OgrO     // Namespace com o nome do jogo.
             // nlohmann::json toJSON() override;
         };
         // Define um novo nome para o Vector2D de float.
-        typedef Vector2D<float> myVector2F;
+        typedef Vector2D<float> gameVector2F;
         // Define um novo nome para o Vector2D de unsigned.
-        typedef Vector2D<unsigned> myVector2U;
+        typedef Vector2D<unsigned> gameVector2U;
 
         // Sobrecarga do operador do fluxo de saída (<<).
         template <typename T>

@@ -23,10 +23,10 @@ namespace OgrO // Namespace com o nome do jogo.
         void Ranking::initialize()
         {
             Menu::initialize();
-            Utilities::myVector2F screenSize = pGraphicManager->getScreenSize();
+            Utilities::gameVector2F screenSize = pGraphicManager->getScreenSize();
             pGraphicManager->centerCamera(pGraphicManager->getScreenSize() * 0.5);
             bm.addButton(new Button(
-                1, Utilities::myVector2F(screenSize.coordX / 7, screenSize.coordY / 10), {100, 30}, "Main Menu", [this]
+                1, Utilities::gameVector2F(screenSize.coordX / 7, screenSize.coordY / 10), {100, 30}, "Main Menu", [this]
                 { setGameCode(Managers::GameCode::MAIN_MENU); },
                 15U, Utilities::Color{127, 0, 0}));
 
@@ -61,9 +61,9 @@ namespace OgrO // Namespace com o nome do jogo.
 
         void Ranking::draw()
         {
-            Utilities::myVector2F screenSize = pGraphicManager->getScreenSize();
+            Utilities::gameVector2F screenSize = pGraphicManager->getScreenSize();
             pGraphicManager->centerCamera(screenSize * 0.5);
-            Utilities::myVector2F positionText = Utilities::myVector2F(screenSize.coordX / 2, screenSize.coordY / 8);
+            Utilities::gameVector2F positionText = Utilities::gameVector2F(screenSize.coordX / 2, screenSize.coordY / 8);
             unsigned int windowMapScroll = scrollOffset;
             std::string str;
             for (auto scoreIterator : scores)
@@ -78,7 +78,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 str += " - ";
                 str += scoreIterator.second;
                 pGraphicManager->drawText(str, positionText, 10);
-                positionText += Utilities::myVector2F(0, 15);
+                positionText += Utilities::gameVector2F(0, 15);
                 if (positionText.coordY >= screenSize.coordY)
                     break;
             }

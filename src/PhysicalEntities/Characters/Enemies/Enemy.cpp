@@ -10,7 +10,7 @@ namespace OgrO // Namespace com o nome do jogo.
             {
 
                 // Construtora da classe Enemy.
-                Enemy::Enemy(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath, unsigned int life) : Character(pos, s, tPath, life),
+                Enemy::Enemy(Utilities::gameVector2F pos, Utilities::gameVector2F s, const char *tPath, unsigned int life) : Character(pos, s, tPath, life),
                                                                                                                          timeReference{0},
                                                                                                                          projectileInterval{0}
                 {
@@ -18,7 +18,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // id = 102;
                 }
 
-                Enemy::Enemy(nlohmann::json source) : Enemy(Utilities::myVector2F{static_cast<float>(source["position x"]), static_cast<float>(source["position y"])}, Utilities::myVector2F{static_cast<float>(source["speed x"]), static_cast<float>(source["speed y"])}, "", static_cast<unsigned int>(source["Life"]))
+                Enemy::Enemy(nlohmann::json source) : Enemy(Utilities::gameVector2F{static_cast<float>(source["position x"]), static_cast<float>(source["position y"])}, Utilities::gameVector2F{static_cast<float>(source["speed x"]), static_cast<float>(source["speed y"])}, "", static_cast<unsigned int>(source["life"]))
                 {
                 }
                 // Destrutora da classe Enemy.
@@ -46,7 +46,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
-                void Enemy::collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
+                void Enemy::collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther)
                 {
                     // Caso colida com Player1.
                     if ((idOther == 100) || (idOther == 101))
@@ -57,7 +57,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     else if ((idOther == 102) || (idOther == 103))
                     {
                         // Cálculo da distância entre os enemy no momento da colisão.
-                        Utilities::myVector2F distance = position - positionOther;
+                        Utilities::gameVector2F distance = position - positionOther;
                         // Medida para não manter um enemy preso dentro do outro.
                         position += distance * (1 / 2);
                         // std::cout << "OBJETO ENEMY >>> COLISAO COM OBJETO ENEMY." << std::endl;

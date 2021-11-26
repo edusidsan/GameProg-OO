@@ -2,6 +2,8 @@
 #define _TILESMAP_HPP_
 
 #include "../Utilities/Vector2D.hpp"
+#include "../Utilities/RandomGenerator.hpp"
+
 
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -12,14 +14,14 @@ namespace OgrO // Namespace com o nome do jogo.
         private:
             // Atributos privados:
             // Atributo de dimensão do TileMap
-            Utilities::myVector2U tileMapDimension;
+            Utilities::gameVector2U tileMapDimension;
             // Atributo ponteiro de ponteiro (matriz) que retorna os dados da matriz desenhavelque representa o TileMap.
             unsigned short **map;
             // Atributo do caminho onde se encontra o arquivo TileMap.
             const char *path;
             // Método privado:
             // Método 
-            //Utilities::myVector2U tileMapSize;
+            //Utilities::gameVector2U tileMapSize;
 
         public:
             //---------------------------------------------------------------- Classe aninhada.
@@ -43,11 +45,11 @@ namespace OgrO // Namespace com o nome do jogo.
             // Destrutora da classe TileMap.
             ~TileMap();
             // Método que retorna as dimensões do TileMap.
-            const Utilities::myVector2U getTileMapDimension() const;
+            const Utilities::gameVector2U getTileMapDimension() const;
             // Método imprime TileMap no terminal.
             void printTileMap() const;
             // Método que atribui na matriz map qual o id do elemento. Ex -> id:1 é chão.
-            void setTile(Utilities::myVector2U position, unsigned short newID);
+            void setTile(Utilities::gameVector2U position, unsigned short newID);
             // Método permite acessar elementos da TileMapLine a partir de [].
             const TileMapLine operator[](unsigned int i) const;
             // Método que carrega o TileMap.

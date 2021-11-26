@@ -2,6 +2,8 @@
 #define _DRAGON_HPP_
 
 #include "Enemy.hpp"
+#include "../../../Menus/RankingInsert.hpp"
+
 
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -15,7 +17,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 public:
                     // Construtora da classe Dragon.
-                    Dragon(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath = nullptr);
+                    Dragon(Utilities::gameVector2F pos, Utilities::gameVector2F s, const char *tPath = nullptr);
                     Dragon(nlohmann::json source);
                     // Destrutora da classe Dragon.
                     ~Dragon();
@@ -25,7 +27,7 @@ namespace OgrO // Namespace com o nome do jogo.
 
                     void update(float t);
                     // Método verifica colisão entre dois objetos da classe Entidade Física.
-                    void collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther);
+                    void collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther);
 
                 };
             }

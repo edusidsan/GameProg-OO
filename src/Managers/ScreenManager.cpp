@@ -3,6 +3,7 @@
 #include "../Menus/MainMenu.hpp"
 #include "../Menus/PauseMenu.hpp"
 #include "../Menus/Ranking.hpp"
+#include "../Menus/RankingInsert.hpp"
 #include "../Entity.hpp"
 #include "../PhysicalEntities/Characters/Character.hpp"
 
@@ -58,7 +59,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 }
                 catch (char const *s)
                 {
-                    // std::cout << s << std::endl;
+                    std::cout << s << std::endl;
                     delete lvl;
                 }
                 return false;
@@ -94,7 +95,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 }
                 catch (char const *s)
                 {
-                    // std::cout << s << std::endl;
+                    std::cout << s << std::endl;
                     delete lvl;
                 }
                 return false;
@@ -143,6 +144,12 @@ namespace OgrO // Namespace com o nome do jogo.
                 push(new Menus::Ranking);
                 return false;
             }
+            case RANKING_INSERT:
+            {
+                push(new Menus::RankingInsert);
+                return false;
+            }
+
             case EXIT_PAUSE_MENU:
                 pop();
                 return false;

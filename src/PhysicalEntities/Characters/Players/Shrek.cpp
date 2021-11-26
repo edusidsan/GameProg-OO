@@ -10,7 +10,7 @@ namespace OgrO // Namespace com o nome do jogo.
             {
 
                 // Construtora da classe Shrek.
-                Shrek::Shrek(Utilities::myVector2F pos, const char *tPath) : Player(pos, "../assets/Shrek.png")
+                Shrek::Shrek(Utilities::gameVector2F pos, const char *tPath) : Player(pos, "../assets/Shrek.png")
                 {
                     // Atribui um ID ao player.
                     id = 100;

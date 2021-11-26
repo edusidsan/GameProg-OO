@@ -7,7 +7,7 @@ namespace OgrO // Namespace com o nome do jogo.
     namespace PhysicalEntities // Namespace do Pacote Entities.
     {
         // Construtora da classe PhysicalEntity. Atributos default configurados
-        PhysicalEntity::PhysicalEntity(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath, unsigned int life) : Entity(),
+        PhysicalEntity::PhysicalEntity(Utilities::gameVector2F pos, Utilities::gameVector2F s, const char *tPath, unsigned int life) : Entity(),
                                                                                                                                    position{pos},
                                                                                                                                    speed{s},
                                                                                                                                    texturePath{tPath},
@@ -40,26 +40,26 @@ namespace OgrO // Namespace com o nome do jogo.
             gm.draw(texturePath, position);
         }
         // Método retorna a posição da entidade física.
-        const Utilities::myVector2F PhysicalEntity::getPosition() const
+        const Utilities::gameVector2F PhysicalEntity::getPosition() const
         {
             return position;
         }
-        void PhysicalEntity::setPosition(Utilities::myVector2F pos)
+        void PhysicalEntity::setPosition(Utilities::gameVector2F pos)
         {
             position = pos;
         }
         // Método retorna a velocidade da entidade física.
-        const Utilities::myVector2F PhysicalEntity::getSpeed() const
+        const Utilities::gameVector2F PhysicalEntity::getSpeed() const
         {
             return speed;
         }
         // Método seta a velocidade da entidade física.
-        void PhysicalEntity::setSpeed(Utilities::myVector2F _speed)
+        void PhysicalEntity::setSpeed(Utilities::gameVector2F _speed)
         {
             speed = _speed;
         }
         // Método retorna a dimensão da entidade fisica.
-        const Utilities::myVector2F PhysicalEntity::getDimension() const
+        const Utilities::gameVector2F PhysicalEntity::getDimension() const
         {
             return dimension;
         }
@@ -70,7 +70,7 @@ namespace OgrO // Namespace com o nome do jogo.
             return id;
         }
         // Método verifica colisão entre dois objetos da classe Entidade Física.
-        void PhysicalEntity::collided(int Id, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
+        void PhysicalEntity::collided(int Id, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther)
         {
         }
 

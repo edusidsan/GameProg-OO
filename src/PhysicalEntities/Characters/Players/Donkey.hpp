@@ -15,7 +15,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 public:
                     // Construtora da classe Donkey.
-                    Donkey(Utilities::myVector2F pos = {0.0f, 0.0f}, const char *tPath = nullptr);
+                    Donkey(Utilities::gameVector2F pos = {0.0f, 0.0f}, const char *tPath = nullptr);
                     // Destrutora da classe Donkey.
                     ~Donkey();
                     // Método de tratamento de evento ocorrido.

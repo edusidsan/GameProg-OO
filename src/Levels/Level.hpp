@@ -10,6 +10,7 @@
 #include "../Tiles/TilesManager.hpp"
 #include "../PhysicalEntities/Characters/Players/Shrek.hpp"
 #include "../PhysicalEntities/Characters/Players/Donkey.hpp"
+#include "../PhysicalEntities/Characters/Players/Player.hpp"
 #include "../PhysicalEntities/PhysicalEntity.hpp"
 #include "../State.hpp"
 #include "../Utilities/Clock.hpp"
@@ -52,7 +53,8 @@ namespace OgrO // Namespace com o nome do jogo.
             // Atributo que indica a chave única do evento de ESC.
             unsigned int idGoToMenu;
             // Atributo de um relógio que será útil para verificação do tempo.
-            Utilities::MyClock clock;
+            Utilities::GameClock clock;
+
 
         public:
             // Construtora da classe Level.
@@ -70,7 +72,8 @@ namespace OgrO // Namespace com o nome do jogo.
             void handleEvents();
             void setPlayers(PhysicalEntities::Characters::Players::Shrek *_player1);
             void setPlayers(PhysicalEntities::Characters::Players::Shrek *_player1, PhysicalEntities::Characters::Players::Donkey *_player2);
-            const Utilities::myVector2F getMainPlayerPosition() const;
+            const Utilities::gameVector2F getMainPlayerPosition() const;
+            int getRankingScore();
             void resetLevel();
             void goNextLevel();
 

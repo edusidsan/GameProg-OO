@@ -15,7 +15,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 public:
                     // Construtora da classe Witch.
-                    Witch(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath = nullptr);
+                    Witch(Utilities::gameVector2F pos, Utilities::gameVector2F s, const char *tPath = nullptr);
                     Witch(nlohmann::json source);
                     // Destrutora da classe Witch.
                     ~Witch();
@@ -25,7 +25,7 @@ namespace OgrO // Namespace com o nome do jogo.
 
                     void update(float t);
                     // Método verifica colisão entre dois objetos da classe Entidade Física.
-                    void collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther);
+                    void collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther);
 
                 };
             }

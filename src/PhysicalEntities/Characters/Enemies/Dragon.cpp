@@ -2,6 +2,8 @@
 #include "Dragon.hpp"
 #include "../../../Levels/Level.hpp"
 #include "../../Projectiles/Fire.hpp"
+#include "../../../Utilities/RandomGenerator.hpp"
+#include "../../../Menus/RankingInsert.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -13,13 +15,17 @@ namespace OgrO // Namespace com o nome do jogo.
             {
 
                 // Construtora da classe Dragon.
-                Dragon::Dragon(Utilities::myVector2F pos, Utilities::myVector2F s, const char *tPath) : Enemy(pos, s, "../assets/Dragon.png")
+                Dragon::Dragon(Utilities::gameVector2F pos, Utilities::gameVector2F s, const char *tPath) : Enemy(pos, s, "../assets/Dragon.png")
                 //"../assets/Dragon.png"
                 {
                     // Atribui um ID ao Dragon.
                     id = 104;
+                    if (Life > (MAX_LIFE / 100))
+                    {
+                        Life = MAX_LIFE / 100;
+                    }
                 }
-                Dragon::Dragon(nlohmann::json source) : Enemy(Utilities::myVector2F{static_cast<float>(source["position x"]), static_cast<float>(source["position y"])}, Utilities::myVector2F{static_cast<float>(source["speed x"]), static_cast<float>(source["speed y"])}, "../assets/Dragon.png")
+                Dragon::Dragon(nlohmann::json source) : Enemy(Utilities::gameVector2F{static_cast<float>(source["position x"]), static_cast<float>(source["position y"])}, Utilities::gameVector2F{static_cast<float>(source["speed x"]), static_cast<float>(source["speed y"])}, "../assets/Dragon.png", static_cast<unsigned int>(source["life"]))
                 {
                     // Atribui um ID ao Dragon.
                     id = 104;
@@ -40,22 +46,33 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Adiciona Dragon na lista de entidades físicas colidiveis.
                     cm.addToLCollidablesPhysicalEntities((this));
                     currentLevel = this->getLevel();
-                    // this->setLife(MAX_LIFE/100);
-                    Life = MAX_LIFE / 100;
                 }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
-                void Dragon::collided(int idOther, Utilities::myVector2F positionOther, Utilities::myVector2F dimensionOther)
+                void Dragon::collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther)
                 {
                     // Caso colida com Player1.
                     if ((idOther == 100) || (idOther == 101))
                     {
-                        // std::cout << "OBJETO ENEMY >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
+                        if (clock.getCurrent() / 1000 - timeReference > 3)
+                        {
+                            // Caso o contato seja maior que 2s causa dano
+                            --Life;
+                            std::cout << "Dano!, Dragao:" << Life << std::endl;
+                            timeReference = clock.getCurrent() / 1000;
+                        }
+                        if (Life == 0)
+                        {
+                            // position.coordX = 100.0f;
+                            // position.coordY = 100.0f;
+                            //currentLevel->resetLevel();
+                            //Life = MAX_LIFE;
+                        }
                     }
                     // Caso colida com Enemy.
                     if ((idOther == 102) || (idOther == 103))
                     {
                         // Cálculo da distância entre os enemy no momento da colisão.
-                        // Utilities::myVector2F distance = position - positionOther;
+                        // Utilities::gameVector2F distance = position - positionOther;
                         // Medida para não manter um enemy preso dentro do outro.
                         // position += distance * (1 / 2);
                         // std::cout << "OBJETO ENEMY >>> COLISAO COM OBJETO ENEMY." << std::endl;
@@ -69,7 +86,7 @@ namespace OgrO // Namespace com o nome do jogo.
                         // else if (idOther == 102)
                         // {
                         //     // Cálculo da distância entre os Dragon no momento da colisão.
-                        //     Utilities::myVector2F distance = position - positionOther;
+                        //     Utilities::gameVector2F distance = position - positionOther;
                         //     // Medida para não manter um Dragon preso dentro do outro.
                         //     position += distance * (1 / 2);
                         //     // std::cout << "OBJETO Dragon >>> COLISAO COM OBJETO Dragon." << std::endl;
@@ -177,18 +194,26 @@ namespace OgrO // Namespace com o nome do jogo.
                 void Dragon::update(float t)
                 {
 
-                    if (abs(speed.coordX) > maxSpeedX)
-                    {
-                        speed.coordX = maxSpeedX * (speed.coordX > 0 ? 1 : -1);
-                    }
-                    if (abs(speed.coordY) > maxSpeedY)
-                    {
-                        speed.coordY = maxSpeedY * (speed.coordY > 0 ? 1 : -1);
-                    }
+                    // if (abs(speed.coordX) > maxSpeedX)
+                    // {
+                    //     speed.coordX = maxSpeedX * (speed.coordX > 0 ? 1 : -1);
+                    // }
+                    // if (abs(speed.coordY) > maxSpeedY)
+                    // {
+                    //     speed.coordY = maxSpeedY * (speed.coordY > 0 ? 1 : -1);
+                    // }
                     // Relação de posição da forma no espaço-tempo. Equação de Movimento Uniforme da Cinemática.
                     position += speed * t;
                     position += adjusts;
-                    adjusts = Utilities::myVector2F(0, 0);
+                    adjusts = Utilities::gameVector2F(0, 0);
+
+                    if (this->Life == 0)
+                    {
+                        pGraphicManager->zoomIn();
+                        // MUDA DE FASE.
+                        Menus::RankingInsert::addNewHighScore(currentLevel->getRankingScore());
+                        currentLevel->goNextLevel();
+                    }
 
                     if (projectileInterval > 0)
                     {
@@ -196,11 +221,12 @@ namespace OgrO // Namespace com o nome do jogo.
                     }
                     else
                     {
-                        projectileInterval = 450;
 
-                        Utilities::myVector2F playerPosition = currentLevel->getMainPlayerPosition();
-                        // Utilities::myVector2F playerPosition;
-                        Utilities::myVector2F playerDirection = (playerPosition - position);
+                        projectileInterval = Utilities::RandomGenerator::getInstance()->getRandomIntInRange(450, 800);
+
+                        Utilities::gameVector2F playerPosition = currentLevel->getMainPlayerPosition();
+                        // Utilities::gameVector2F playerPosition;
+                        Utilities::gameVector2F playerDirection = (playerPosition - position);
 
                         if (playerDirection.vModule() < 500)
                         {

@@ -1,6 +1,7 @@
 #include "Level.hpp"
 #include "../Managers/ScreenManager.hpp"
 #include "../Utilities/RandomGenerator.hpp"
+
 #include <iostream>
 #include <fstream>
 
@@ -52,7 +53,7 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             gameCode = Managers::continueGame;
 
-            pGraphicManager->draw(backgroundPath, Utilities::myVector2F{800.0f, 280.0f});
+            pGraphicManager->draw(backgroundPath, Utilities::gameVector2F{800.0f, 280.0f});
 
             // backgroundImage.draw();
             // Atribui a t o tempo em que a aplicação está rodando.
@@ -114,13 +115,25 @@ namespace OgrO // Namespace com o nome do jogo.
             }
         }
 
-        const Utilities::myVector2F Level::getMainPlayerPosition() const
+        const Utilities::gameVector2F Level::getMainPlayerPosition() const
         {
             if (player1 == nullptr)
             {
                 std::cout << "Ponteiro para player1 ainda não atribuído." << std::endl;
             }
             return player1->getPosition();
+        }
+
+        int Level::getRankingScore()
+        {
+            if ((player1) && (player2))
+            {
+                return (player1->getLife() + player2->getLife()) / 2;
+            }
+            else if (player1)
+            {
+                return player1->getLife();
+            }
         }
 
         void Level::resetLevel()
@@ -143,9 +156,8 @@ namespace OgrO // Namespace com o nome do jogo.
             }
             else if (this->getId() == 2000)
             {
-                setGameCode(Managers::RANKING);
+                setGameCode(Managers::RANKING_INSERT);
             }
-
         }
 
         void Level::goToMenuButton(const sf::Event &event)
