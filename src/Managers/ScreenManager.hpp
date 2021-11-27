@@ -18,7 +18,6 @@ namespace OgrO // Namespace com o nome do jogo.
                 class Donkey;
             }
         }
-
     }
     namespace Managers // Namespace do Pacote Managers.
     {
@@ -42,7 +41,6 @@ namespace OgrO // Namespace com o nome do jogo.
 
         class ScreenManager : public StateManager
         {
-
         private:
             // Atributo que aponta para a classe do player Shrek.
             PhysicalEntities::Characters::Players::Shrek *player1;
@@ -58,5 +56,4 @@ namespace OgrO // Namespace com o nome do jogo.
         };
     }
 }
-
 #endif
