@@ -6,13 +6,13 @@ namespace OgrO // Namespace com o nome do jogo.
     {
         // Construtora da classe Button.
         Button::Button(short int _buttonId, Utilities::gameVector2F _position, Utilities::gameVector2F _size, std::string _text, std::function<void(void)> _buttonPressed, unsigned int _textSize, Utilities::Color _color) : pGraphicManager(Managers::GraphicManager::getInstance()),
-                                                                                                                                                                                                                              buttonId{_buttonId},
-                                                                                                                                                                                                                              position{_position},
-                                                                                                                                                                                                                              size{_size},
-                                                                                                                                                                                                                              text{_text},
-                                                                                                                                                                                                                              buttonPressed{_buttonPressed},
-                                                                                                                                                                                                                              textSize{_textSize},
-                                                                                                                                                                                                                              color{_color}
+                                                                                                                                                                                                                              buttonId(_buttonId),
+                                                                                                                                                                                                                              position(_position),
+                                                                                                                                                                                                                              size(_size),
+                                                                                                                                                                                                                              text(_text),
+                                                                                                                                                                                                                              buttonPressed(_buttonPressed),
+                                                                                                                                                                                                                              textSize(_textSize),
+                                                                                                                                                                                                                              color(_color)
         {
         }
 
