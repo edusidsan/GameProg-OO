@@ -10,8 +10,8 @@ namespace OgrO // Namespace com o nome do jogo.
         Level::Level(Tiles::TilesManager *_tilesManager, PhysicalEntities::Characters::Players::Shrek *_player1, PhysicalEntities::Characters::Players::Donkey *_player2, const std::string _backgroundPath) : Entity(),
                                                                                                                                                                                                                State(),
                                                                                                                                                                                                                Mementos::LevelMemento(),
-                                                                                                                                                                                                               collisionManager(),
-                                                                                                                                                                                                               pEventsManager(Managers::EventsManager::getInstance()),
+                                                                                                                                                                                                            //    collisionManager(),
+                                                                                                                                                                                                            //    pEventsManager(Managers::EventsManager::getInstance()),
                                                                                                                                                                                                                players(),
                                                                                                                                                                                                                player1(_player1),
                                                                                                                                                                                                                player2(_player2),
@@ -35,7 +35,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // Atribui ao gerenciador de eventos a window que está sendo utilizada pelo gerenciador gráfico.
             pEventsManager->setWindow(pGraphicManager->getWindow());
             // Atribui ao gerenciador de collisões o endereço do gerenciador de tiles.
-            collisionManager.setTilesManager(tilesManager);
+            pCollisionManager->setTilesManager(tilesManager);
         }
         // Destrutora da classe Level.
         Level::~Level()
@@ -69,16 +69,16 @@ namespace OgrO // Namespace com o nome do jogo.
         }
         void Level::addPhysicalEntity(PhysicalEntities::PhysicalEntity *_physicalEntity)
         {
-            _physicalEntity->initialize(collisionManager);
+            _physicalEntity->initialize();
             players.insert(_physicalEntity);
-            collisionManager.addToLCollidablesPhysicalEntities((_physicalEntity));
+            pCollisionManager->addToLCollidablesPhysicalEntities((_physicalEntity));
         }
 
         // Método que gerencia as colisões nas fases.
         void Level::handleCollisions()
         {
             // Gerenciador de colissões verifica se houve colisão entre entidades físicas.
-            collisionManager.checkCollisions();
+            pCollisionManager->checkCollisions();
         }
         // Método que gerencia os eventos nas fases.
         void Level::handleEvents()

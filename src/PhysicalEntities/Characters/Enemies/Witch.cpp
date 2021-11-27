@@ -28,7 +28,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 }
                 // Método carrega a textura do Witch na window e inicializa gerenciadores do mesmo.
-                void Witch::initialize( Managers::CollisionManager &cm)
+                void Witch::initialize()
                 {
                     // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);
@@ -36,7 +36,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     dimension = pGraphicManager->getDimensionsOfAsset(texturePath);
 
                     // Adiciona Witch na lista de entidades físicas colidiveis.
-                    cm.addToLCollidablesPhysicalEntities((this));
+                    pCollisionManager->addToLCollidablesPhysicalEntities((this));
 
                     currentLevel = this->getLevel();
                 }

@@ -22,6 +22,9 @@ namespace OgrO // Namespace com o nome do jogo.
         // Utiliza o padrão de projeto Singleton.
         Managers::EventsManager *pEventsManager;
 
+        // Utiliza o padrão de projeto Singleton.
+        Managers::CollisionManager *pCollisionManager;
+
         // Atributo que cria objeto da classe do player Shrek.
         PhysicalEntities::Characters::Players::Shrek player1;
         // Atributo que cria objeto da classe do player Donkey.

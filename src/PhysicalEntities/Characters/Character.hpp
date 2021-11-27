@@ -28,8 +28,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Destrutora da classe Personagem.
                 virtual ~Character();
                 // Método carrega a textura do personagem na window.
-                // virtual void initialize(Managers::GraphicManager &gm,  Managers::CollisionManager &cm);
-                virtual void initialize( Managers::CollisionManager &cm);
+                virtual void initialize();
                 // Método atualizar de Personagem. Tem como parâmetro uma variável float que representa o tempo.
                 virtual void update(float t);
                 // Método desenhar de Personagem. Tem como parâmetro o endereço do gerenciador gráfico que irá desenhar o persoangem na window.

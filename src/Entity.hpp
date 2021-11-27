@@ -3,6 +3,7 @@
 
 #include "Managers/GraphicManager.hpp"
 #include "Managers/EventsManager.hpp"
+#include "Managers/CollisionManager.hpp"
 #include "Mementos/Memento.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
@@ -17,6 +18,7 @@ namespace OgrO // Namespace com o nome do jogo.
         // Atributo que aponta para o gerenciador gráfico criado para o jogo.
         Managers::GraphicManager *pGraphicManager;
         Managers::EventsManager *pEventsManager;
+        Managers::CollisionManager *pCollisionManager;
         static Levels::Level *currentLevel;
         int id;
 

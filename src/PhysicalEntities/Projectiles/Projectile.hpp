@@ -17,7 +17,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Destrutora da classe Projectile.
                 ~Projectile();
                 // Método carrega a textura do Projectile na window.
-                virtual void initialize(Managers::CollisionManager &cm) override;
+                virtual void initialize() override;
                 // Método atualizar do Projectile. Tem como parâmetro uma variável float que representa o tempo.
                 virtual void update(float t) override;
                 // Método verifica colisão entre dois objetos da classe Entidade Física.

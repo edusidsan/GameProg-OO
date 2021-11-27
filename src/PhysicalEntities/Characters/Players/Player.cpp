@@ -19,7 +19,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 }
                 // Método carrega a textura do Player na window.
 
-                void Player::initialize( Managers::CollisionManager &cm)
+                void Player::initialize()
                 {
                     // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);
@@ -31,7 +31,7 @@ namespace OgrO // Namespace com o nome do jogo.
                                                                    { handleEvent(event); });
 
                     // Adiciona player na lista de entidades físicas colidiveis.
-                    cm.addToLCollidablesPhysicalEntities((this));
+                    pCollisionManager->addToLCollidablesPhysicalEntities((this));
                 }
                 // Método atualizar do Player. Tem como parâmetro uma variável float que representa o tempo.
                 void Player::update(float t)

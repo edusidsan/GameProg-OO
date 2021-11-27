@@ -24,15 +24,14 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 }
                 // Método carrega a textura do enemy na window e inicializa gerenciadores do mesmo.
-                // void Enemy::initialize(Managers::GraphicManager &gm,  Managers::CollisionManager &cm)
-                void Enemy::initialize( Managers::CollisionManager &cm)
+                void Enemy::initialize()
                 {
                     // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);
                     // Retorna dimensão da imagem.
                     dimension = pGraphicManager->getDimensionsOfAsset(texturePath);
                     // Adiciona enemy na lista de entidades físicas colidiveis.
-                    cm.addToLCollidablesPhysicalEntities((this));
+                    pCollisionManager->addToLCollidablesPhysicalEntities((this));
                 }
                 void Enemy::update(float t)
                 {

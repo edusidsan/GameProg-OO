@@ -21,10 +21,10 @@ namespace OgrO // Namespace com o nome do jogo.
         class Level : public Entity, public State, public Mementos::LevelMemento
         {
         protected:
-            // Atributo do gerenciador de colisões criado para o jogo.
-            Managers::CollisionManager collisionManager;
-            // Atributo do gerenciador de eventos criado para o jogo.
-            Managers::EventsManager *pEventsManager;
+            // // Atributo do gerenciador de colisões criado para o jogo.
+            // Managers::CollisionManager collisionManager;
+            // // Atributo do gerenciador de eventos criado para o jogo.
+            // Managers::EventsManager *pEventsManager;
             // Atributo referente a lista de entidades físicas.
             Lists::PhysicalEntityList players;
             // Atributo que aponta para a classe do player Shrek.

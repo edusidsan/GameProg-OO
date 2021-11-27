@@ -9,6 +9,16 @@ namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Managers // Namespace do Pacote Managers.
     {
+        CollisionManager *CollisionManager::instanceCollisionManager = NULL;
+
+        CollisionManager *CollisionManager::getInstance()
+        {
+            if (instanceCollisionManager == NULL)
+            {
+                instanceCollisionManager = new CollisionManager();
+            }
+            return instanceCollisionManager;
+        }
 
         // Construtora da classe CollisionManager.
         CollisionManager::CollisionManager() : LCollidablesPhysicalEntities(),

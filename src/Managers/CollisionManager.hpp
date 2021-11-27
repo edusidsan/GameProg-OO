@@ -52,11 +52,16 @@ namespace OgrO // Namespace com o nome do jogo.
             // Atributo que aponta para o gerenciador de tiles que será utilizado.
             Tiles::TilesManager *pTileManager;
 
-        public:
+            // Padrão Singleton
+            static CollisionManager *instanceCollisionManager;
             // Construtora da classe CollisionManager.
             CollisionManager();
+
+        public:
             // Destrutora da classe CollisionManager.
             ~CollisionManager();
+            static CollisionManager *getInstance();
+            
             void addToLCollidablesPhysicalEntities(PhysicalEntities::PhysicalEntity *pP);
             // Método que adiciona um elemento de Enemy na lista de possíveis objetos que colidem.
             void addToLCollidablesPhysicalEntities(PhysicalEntities::Characters::Enemies::Enemy *pPE);
