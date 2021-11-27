@@ -10,31 +10,26 @@ namespace OgrO // Namespace com o nome do jogo.
     {
         //---------------------------------------------------------------- Classe aninhada.
         // Construtora da classe TileMapLine.
-        TileMap::TileMapLine::TileMapLine(unsigned short *__tileLine, unsigned int __tileLength) : tileLine{__tileLine},
-                                                                                                   tileLength{__tileLength}
+        TileMap::TileMapLine::TileMapLine(unsigned short *__tileLine, unsigned int __tileLength) : tileLine(__tileLine),
+                                                                                                   tileLength(__tileLength)
         {
         }
         // Destrutora da classe TileMapLine.
         TileMap::TileMapLine::~TileMapLine()
         {
+            tileLine = nullptr;
         }
 
         // Método permite acessar elementos da TileMapLine a partir de [].
         unsigned short TileMap::TileMapLine::operator[](unsigned int i) const
         {
-            // Condição que limita acesso ao TileMapLine tendo como referência o parâmetro do método.
-            // if (i > tileLength)
-            // {
-            //     std::cout << "Atenção! Não é permitido este tentativa de acesso à memória de TileMapLine." << std::endl;
-            //     exit(1);
-            // }
             return tileLine[i];
         }
         //--------------------------------------------------------------------------------.
 
         // Construtora da classe TileMap.
-        TileMap::TileMap(const char *filePath) : map{nullptr},
-                                                 path{filePath}
+        TileMap::TileMap(const char *filePath) : map(nullptr),
+                                                 path(filePath)
         {
             // Método que carrega o TileMap.
             loadTileMap(filePath);
@@ -204,12 +199,6 @@ namespace OgrO // Namespace com o nome do jogo.
         // Método retorna linha da TileMapLine a partir de [].
         const TileMap::TileMapLine TileMap::operator[](unsigned int i) const
         {
-            // // Condição que limita acesso ao TileMap tendo como referência o parâmetro do método.
-            // if (i > tileMapDimension.coordY)
-            // {
-            //     std::cout << "Atenção! Não é permitido este tentativa de acesso à memória de TileMap." << std::endl;
-            //     exit(1);
-            // }
             // Retorna elemento de TileMapLine alocado na posição i do TileMapLine.
             return TileMap::TileMapLine{map[i], tileMapDimension.coordX};
         }

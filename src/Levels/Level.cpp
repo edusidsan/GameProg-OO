@@ -31,7 +31,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // backgroundImage.initialize();
             pGraphicManager->loadAsset(backgroundPath);
             // Inicializa gerenciador de tiles.
-            tilesManager->initialize(*pGraphicManager, *pEventsManager);
+            tilesManager->initialize();
             // Atribui ao gerenciador de eventos a window que está sendo utilizada pelo gerenciador gráfico.
             pEventsManager->setWindow(pGraphicManager->getWindow());
             // Atribui ao gerenciador de collisões o endereço do gerenciador de tiles.
@@ -61,7 +61,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // Método que gerencia as colisões nas fases.
             handleCollisions();
             // Gerenciador de tiles envia solicitação de desenho na tela para o gerenciador gráfico
-            tilesManager->draw(*pGraphicManager);
+            tilesManager->draw();
             // Desenha as entidades físicas na window.
             players.drawPhysicalEntities(*pGraphicManager);
 

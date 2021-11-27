@@ -43,8 +43,8 @@ namespace OgrO // Namespace com o nome do jogo.
         public:
             TilesManager(std::vector<Tile *> _tiles = {}, float tileSide = 0, Utilities::gameVector2F _tilesDimension = {0.0f, 0.0f}, const char *_filePath = nullptr);
             ~TilesManager();
-            void initialize(Managers::GraphicManager &gm, Managers::EventsManager &em);
-            void draw(Managers::GraphicManager &gm) const;
+            void initialize();
+            void draw() const;
             std::vector<tilesManagerAttributes> checkCollisions(const int id, Utilities::gameVector2F position, Utilities::gameVector2F dimension);
             void randomTilesPlace();
             const std::vector<Utilities::gameVector2F>& getEnemySpawnsWolfs() const;

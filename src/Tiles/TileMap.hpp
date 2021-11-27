@@ -3,8 +3,6 @@
 
 #include "../Utilities/Vector2D.hpp"
 #include "../Utilities/RandomGenerator.hpp"
-
-
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Tiles // Namespace do Pacote Tiles.
@@ -12,16 +10,12 @@ namespace OgrO // Namespace com o nome do jogo.
         class TileMap
         {
         private:
-            // Atributos privados:
             // Atributo de dimensão do TileMap
             Utilities::gameVector2U tileMapDimension;
             // Atributo ponteiro de ponteiro (matriz) que retorna os dados da matriz desenhavelque representa o TileMap.
             unsigned short **map;
             // Atributo do caminho onde se encontra o arquivo TileMap.
             const char *path;
-            // Método privado:
-            // Método 
-            //Utilities::gameVector2U tileMapSize;
 
         public:
             //---------------------------------------------------------------- Classe aninhada.

@@ -2,7 +2,7 @@
 #define _CHARACTER_HPP_
 
 #include "../PhysicalEntity.hpp"
-#define MAXSPEEDX 300
+#define MAXSPEEDX 80
 
 namespace OgrO // Namespace com o nome do jogo.
 {

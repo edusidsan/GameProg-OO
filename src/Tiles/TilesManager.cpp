@@ -8,12 +8,13 @@ namespace OgrO // Namespace com o nome do jogo.
     namespace Tiles // Namespace do Pacote Tiles.
     {
 
-        TilesManager::TilesManager(std::vector<Tile *> _tiles, float TileSide, Utilities::gameVector2F _tilesDimension, const char *_filePath) : tiles{_tiles},
-                                                                                                                               tileSide{TileSide},
-                                                                                                                               tilesDimension{_tilesDimension},
-                                                                                                                               filePath{_filePath},
-                                                                                                                               tileMap{_filePath}
-                                                                                                                               //tileMap{*(new TileMap(filepath, this))}
+        TilesManager::TilesManager(std::vector<Tile *> _tiles, float TileSide, Utilities::gameVector2F _tilesDimension, const char *_filePath) : tiles(_tiles),
+                                                                                                                                                 tilesDimension(_tilesDimension),
+                                                                                                                                                 filePath(_filePath),
+                                                                                                                                                 tileMap(_filePath),
+                                                                                                                                                 tileSide(TileSide),
+                                                                                                                                                 enemySpawnsWolfs(),
+                                                                                                                                                 enemySpawnsWitchs()
         {
         }
         TilesManager::~TilesManager()
@@ -27,17 +28,19 @@ namespace OgrO // Namespace com o nome do jogo.
                 it++;
             }
             t = nullptr;
+
+            filePath = nullptr;
         }
-        void TilesManager::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em)
+        void TilesManager::initialize()
         {
             std::vector<Tile *>::iterator it = tiles.begin();
             while (it != tiles.end())
             {
-                (*it)->initialize(gm, em);
+                (*it)->initialize();
                 it++;
             }
         }
-        void TilesManager::draw(Managers::GraphicManager &gm) const
+        void TilesManager::draw() const
         {
             // for (unsigned int i = 0; i < tilesDimension.coordY; ++i)
             for (unsigned int i = 0; i < tileMap.getTileMapDimension().coordY; ++i)
@@ -45,13 +48,11 @@ namespace OgrO // Namespace com o nome do jogo.
                 // for (unsigned int j = 0; j < tilesDimension.coordX; ++j)
                 for (unsigned int j = 0; j < tileMap.getTileMapDimension().coordX; ++j)
                 {
-                    // std::cout << tilesDimension.coordX << std::endl;
-                    // std::cout << "tileMap[" << i << "][" << j << "] - 1: " << tileMap[i][j] - 1 << std::endl;
                     short index = tileMap[i][j] - 1;
                     if (index >= 0 && index < (long)tiles.size())
                         if (index >= 0)
                         {
-                            tiles[index]->draw(gm, mapToScreenPosition(Utilities::gameVector2U{j, i}));
+                            tiles[index]->draw(mapToScreenPosition(Utilities::gameVector2U{j, i}));
                         }
                 }
             }
@@ -92,35 +93,43 @@ namespace OgrO // Namespace com o nome do jogo.
 
         const Utilities::gameVector2F TilesManager::mapToScreenPosition(const Utilities::gameVector2U pos) const
         {
-            // std::cout << tilesDimension.operator*(0.5f) + Utilities::gameVector2F(tilesDimension.coordX * pos.coordX, tilesDimension.coordY * pos.coordY) << std::endl;
             return tilesDimension.operator*(0.5f) + Utilities::gameVector2F(tilesDimension.coordX * pos.coordX, tilesDimension.coordY * pos.coordY);
         }
-        const TileMap* TilesManager::getTileMap() const {
+        const TileMap *TilesManager::getTileMap() const
+        {
             return &tileMap;
         }
-        const std::vector<Utilities::gameVector2F>& TilesManager::getEnemySpawnsWolfs() const {
+        const std::vector<Utilities::gameVector2F> &TilesManager::getEnemySpawnsWolfs() const
+        {
             return enemySpawnsWolfs;
         }
-        const std::vector<Utilities::gameVector2F>& TilesManager::getEnemySpawnsWitchs() const {
+        const std::vector<Utilities::gameVector2F> &TilesManager::getEnemySpawnsWitchs() const
+        {
             return enemySpawnsWitchs;
-        }   
-        void TilesManager::randomTilesPlace(){
+        }
+        void TilesManager::randomTilesPlace()
+        {
             //tileMap.loadTileMap(filePath);
-            
-            for (unsigned i = 0; i < tileMap.getTileMapDimension().coordY; ++i) {
-                for (unsigned j = 0; j < tileMap.getTileMapDimension().coordX; ++j) {
+
+            for (unsigned i = 0; i < tileMap.getTileMapDimension().coordY; ++i)
+            {
+                for (unsigned j = 0; j < tileMap.getTileMapDimension().coordX; ++j)
+                {
                     // if (tileMap[i][j] == 51 || (i > 0 && tileMap[i][j] == 6  && tileMap[i-1][j] == 14)) { //mudança
-                    if (tileMap[i][j] == 51 ) { //Espinho
+                    if (tileMap[i][j] == 51)
+                    { //Espinho
                         // enemy spawn point
                         enemySpawnsWitchs.push_back(Utilities::gameVector2F(j, i - 1) * tileSide); //mudança
                     }
-                    if( tileMap[i][j] == 6){ //Gosma
-                        enemySpawnsWitchs.push_back(Utilities::gameVector2F(j, i - 1) * tileSide); //mudança                    
-                        enemySpawnsWolfs.push_back(Utilities::gameVector2F(j, i - 1) * tileSide); //mudança
-                    }
-                      if( tileMap[i][j] == 14){ //chão
+                    if (tileMap[i][j] == 6)
+                    {                                                                              //Gosma
                         enemySpawnsWitchs.push_back(Utilities::gameVector2F(j, i - 1) * tileSide); //mudança
-                        enemySpawnsWolfs.push_back(Utilities::gameVector2F(j, i - 1) * tileSide); //mudança
+                        enemySpawnsWolfs.push_back(Utilities::gameVector2F(j, i - 1) * tileSide);  //mudança
+                    }
+                    if (tileMap[i][j] == 14)
+                    {                                                                              //chão
+                        enemySpawnsWitchs.push_back(Utilities::gameVector2F(j, i - 1) * tileSide); //mudança
+                        enemySpawnsWolfs.push_back(Utilities::gameVector2F(j, i - 1) * tileSide);  //mudança
                     }
                 }
             }

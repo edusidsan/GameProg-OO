@@ -5,22 +5,25 @@ namespace OgrO // Namespace com o nome do jogo.
     namespace Tiles // Namespace do Pacote Tiles.
     {
         // Construtora da classe Tile.
-        Tile::Tile(const int _id, const char *_filePath, Utilities::gameVector2F _dimension) : id{_id},
-                                                                                             filePath{_filePath},
-                                                                                             dimension{_dimension}
+        Tile::Tile(const int _id, const char *_filePath, Utilities::gameVector2F _dimension) : pGraphicManager(Managers::GraphicManager::getInstance()),
+                                                                                               id{_id},
+                                                                                               filePath{_filePath},
+                                                                                               dimension{_dimension}
         {
         }
         // Destrutora da classe Tile.
         Tile::~Tile()
         {
+            pGraphicManager= nullptr;
+            filePath = nullptr;
         }
-        void Tile::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em)
+        void Tile::initialize()
         {
-            gm.loadAsset(filePath);
+            pGraphicManager->loadAsset(filePath);
         }
-        void Tile::draw(Managers::GraphicManager &gm, const Utilities::gameVector2F position) const
+        void Tile::draw(const Utilities::gameVector2F position) const
         {
-            gm.draw(filePath, position);
+            pGraphicManager->draw(filePath, position);
         }
         const int Tile::getId() const
         {
