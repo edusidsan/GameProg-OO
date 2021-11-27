@@ -14,16 +14,9 @@
 #include "../PhysicalEntities/PhysicalEntity.hpp"
 #include "../State.hpp"
 #include "../Utilities/Clock.hpp"
-// #include "../Utilities/RandomGenerator.hpp"
 
-// #define PATH_BACKGROUND_MEDIEVALRUINS "../assets/level1/Background_01.png"
 namespace OgrO // Namespace com o nome do jogo.
-{
-    // namespace Utilities
-    // {
-    //     class RandomGenerator;
-    // }
-    namespace Levels // Namespace do Pacote Levels.
+{    namespace Levels // Namespace do Pacote Levels.
     {
         class Level : public Entity, public State, public Mementos::LevelMemento
         {
@@ -31,30 +24,24 @@ namespace OgrO // Namespace com o nome do jogo.
             // Atributo do gerenciador de colisões criado para o jogo.
             Managers::CollisionManager collisionManager;
             // Atributo do gerenciador de eventos criado para o jogo.
-            // Managers::EventsManager eventsManager;
             Managers::EventsManager *pEventsManager;
             // Atributo referente a lista de entidades físicas.
             Lists::PhysicalEntityList players;
-
             // Atributo que aponta para a classe do player Shrek.
             PhysicalEntities::Characters::Players::Shrek *player1;
             // Atributo que aponta para a classe do player Donkey.
             PhysicalEntities::Characters::Players::Donkey *player2;
-
             // Background backgroundImage;
             const std::string backgroundPath;
-
             // Atributo do gerenciador de tiles criado para o jogo.
             Tiles::TilesManager *tilesManager;
-
-            // Utilities::RandomGenerator *Random;
             // Atributo que indica a chave única do evento de fechar a window do jogo.
             unsigned int idClosedWindow;
             // Atributo que indica a chave única do evento de ESC.
             unsigned int idGoToMenu;
             // Atributo de um relógio que será útil para verificação do tempo.
             Utilities::GameClock clock;
-
+            int gameCode;
 
         public:
             // Construtora da classe Level.
@@ -62,9 +49,9 @@ namespace OgrO // Namespace com o nome do jogo.
             Level(Tiles::TilesManager *_tilesManager, PhysicalEntities::Characters::Players::Shrek *_player1 = nullptr, PhysicalEntities::Characters::Players::Donkey *_player2 = nullptr, const std::string _backgroundPath = "");
             // Destrutora da classe Level.
             virtual ~Level();
+            virtual void initialize() = 0;
             // Método run virtual puro -> TORNA CLASSE ABSTRATA.
             int run();
-            virtual void initialize() = 0;
             virtual void addPhysicalEntity(PhysicalEntities::PhysicalEntity *_physicalEntity);
             // Método que gerencia as colisões nas fases.
             void handleCollisions();
@@ -84,7 +71,7 @@ namespace OgrO // Namespace com o nome do jogo.
 
         protected:
             void setGameCode(int _gameCode);
-            int gameCode;
+            
         };
     }
 }

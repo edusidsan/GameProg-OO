@@ -2,9 +2,6 @@
 #include "../Managers/ScreenManager.hpp"
 #include "../Utilities/RandomGenerator.hpp"
 
-#include <iostream>
-#include <fstream>
-
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Levels // Namespace do Pacote Levels.
@@ -12,21 +9,22 @@ namespace OgrO // Namespace com o nome do jogo.
         // Construtora da classe Level.
         Level::Level(Tiles::TilesManager *_tilesManager, PhysicalEntities::Characters::Players::Shrek *_player1, PhysicalEntities::Characters::Players::Donkey *_player2, const std::string _backgroundPath) : Entity(),
                                                                                                                                                                                                                State(),
-                                                                                                                                                                                                               collisionManager{},
-                                                                                                                                                                                                               pEventsManager{Managers::EventsManager::getInstance()},
-                                                                                                                                                                                                               players{},
-                                                                                                                                                                                                               player1{_player1},
-                                                                                                                                                                                                               player2{_player2},
-                                                                                                                                                                                                               backgroundPath{_backgroundPath},
-                                                                                                                                                                                                               tilesManager{_tilesManager},
+                                                                                                                                                                                                               Mementos::LevelMemento(),
+                                                                                                                                                                                                               collisionManager(),
+                                                                                                                                                                                                               pEventsManager(Managers::EventsManager::getInstance()),
+                                                                                                                                                                                                               players(),
+                                                                                                                                                                                                               player1(_player1),
+                                                                                                                                                                                                               player2(_player2),
+                                                                                                                                                                                                               backgroundPath(_backgroundPath),
+                                                                                                                                                                                                               tilesManager(_tilesManager),
                                                                                                                                                                                                                // lambda-expression.
-                                                                                                                                                                                                               idClosedWindow{
+                                                                                                                                                                                                               idClosedWindow(
                                                                                                                                                                                                                    pEventsManager->addOtherListener([this](const sf::Event &event)
-                                                                                                                                                                                                                                                    { closedWindowButton(event); })},
-                                                                                                                                                                                                               idGoToMenu{
+                                                                                                                                                                                                                                                    { closedWindowButton(event); })),
+                                                                                                                                                                                                               idGoToMenu(
                                                                                                                                                                                                                    pEventsManager->addKeyboardListener([this](const sf::Event &event)
-                                                                                                                                                                                                                                                       { goToMenuButton(event); })},
-                                                                                                                                                                                                               clock{},
+                                                                                                                                                                                                                                                       { goToMenuButton(event); })),
+                                                                                                                                                                                                               clock(),
                                                                                                                                                                                                                gameCode{Managers::continueGame}
 
         {
@@ -55,16 +53,10 @@ namespace OgrO // Namespace com o nome do jogo.
 
             pGraphicManager->draw(backgroundPath, Utilities::gameVector2F{800.0f, 280.0f});
 
-            // backgroundImage.draw();
-            // Atribui a t o tempo em que a aplicação está rodando.
-            // sf::Time t = clock.getElapsedTime();
             double t = clock.getTime();
-            // Reseta a contagem do clock.
-            // clock.restart();
             // Método que gerencia os eventos nas fases.
             handleEvents();
             // Atualiza a lista das entidades físicas, passando como parametro o tempo da aplicação em segundos.
-            // players.updatePhysicalEntities(t.asSeconds());
             players.updatePhysicalEntities(t);
             // Método que gerencia as colisões nas fases.
             handleCollisions();
@@ -106,15 +98,6 @@ namespace OgrO // Namespace com o nome do jogo.
             player2 = _player2;
         }
 
-        // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.
-        void Level::closedWindowButton(const sf::Event &event)
-        {
-            if (event.type == sf::Event::Closed)
-            {
-                setGameCode(Managers::END_GAME);
-            }
-        }
-
         const Utilities::gameVector2F Level::getMainPlayerPosition() const
         {
             if (player1 == nullptr)
@@ -122,6 +105,15 @@ namespace OgrO // Namespace com o nome do jogo.
                 std::cout << "Ponteiro para player1 ainda não atribuído." << std::endl;
             }
             return player1->getPosition();
+        }
+
+        // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.
+        void Level::closedWindowButton(const sf::Event &event)
+        {
+            if (event.type == sf::Event::Closed)
+            {
+                setGameCode(Managers::END_GAME);
+            }
         }
 
         int Level::getRankingScore()
