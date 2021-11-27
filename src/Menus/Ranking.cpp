@@ -10,8 +10,8 @@ namespace OgrO // Namespace com o nome do jogo.
     namespace Menus // Namespace do Pacote Menus.
     {
         Ranking::Ranking() : Menu(),
-                             scores{},
-                             scrollOffset{0}
+                             scores(),
+                             scrollOffset(0)
         {
             initialize();
         }
@@ -31,9 +31,24 @@ namespace OgrO // Namespace com o nome do jogo.
                 15U, Utilities::Color{127, 0, 0}));
 
             loadScores();
-            // run();
         }
 
+        int Ranking::run()
+        {
+            gameCode = Managers::RANKING;
+            while (gameCode == Managers::RANKING)
+            {
+                pGraphicManager->clear(0, 0, 0);
+                pEventsManager->handleEvent();
+                bm.draw();
+                this->draw();
+                this->handleEvent();
+                pGraphicManager->display();
+            }
+            removeListeners();
+            return gameCode;
+        }
+        
         void Ranking::loadScores()
         {
             const char *path = "../savedGame/highScore.json";
@@ -84,21 +99,6 @@ namespace OgrO // Namespace com o nome do jogo.
             }
         }
 
-        int Ranking::run()
-        {
-            gameCode = Managers::RANKING;
-            while (gameCode == Managers::RANKING)
-            {
-                pGraphicManager->clear(0, 0, 0);
-                pEventsManager->handleEvent();
-                bm.draw();
-                this->draw();
-                this->handleEvent();
-                pGraphicManager->display();
-            }
-            removeListeners();
-            return gameCode;
-        }
 
         void Ranking::handleEvent()
         {
