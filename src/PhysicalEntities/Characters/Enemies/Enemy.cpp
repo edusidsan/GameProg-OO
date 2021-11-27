@@ -24,8 +24,8 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 }
                 // Método carrega a textura do enemy na window e inicializa gerenciadores do mesmo.
-                // void Enemy::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
-                void Enemy::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
+                // void Enemy::initialize(Managers::GraphicManager &gm,  Managers::CollisionManager &cm)
+                void Enemy::initialize( Managers::CollisionManager &cm)
                 {
                     // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);

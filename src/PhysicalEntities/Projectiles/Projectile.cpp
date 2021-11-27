@@ -15,7 +15,7 @@ namespace OgrO // Namespace com o nome do jogo.
             {
             }
             // Método carrega a textura do Projectile na window.
-            void Projectile::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
+            void Projectile::initialize( Managers::CollisionManager &cm)
             {
                 // Carrega textura no Projectile.
                 pGraphicManager->loadAsset(texturePath);

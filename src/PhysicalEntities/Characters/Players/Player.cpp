@@ -19,7 +19,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 }
                 // Método carrega a textura do Player na window.
 
-                void Player::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
+                void Player::initialize( Managers::CollisionManager &cm)
                 {
                     // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);

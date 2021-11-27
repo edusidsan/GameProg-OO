@@ -19,7 +19,7 @@ namespace OgrO // Namespace com o nome do jogo.
         {
         }
         // Método carrega a textura do PhysicalEntity na window.
-        void PhysicalEntity::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
+        void PhysicalEntity::initialize( Managers::CollisionManager &cm)
         {
             std::cout << "texturePath Player ID: " << texturePath << std::endl;
             pGraphicManager->loadAsset(texturePath);
