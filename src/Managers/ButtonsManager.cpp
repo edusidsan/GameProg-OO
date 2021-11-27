@@ -22,7 +22,7 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             for (Menus::Button *b : buttons)
             {
-                b->draw(pGraphicManager);
+                b->draw();
             }
         }
         void ButtonsManager::handleMouseEvent(const sf::Event &e)
