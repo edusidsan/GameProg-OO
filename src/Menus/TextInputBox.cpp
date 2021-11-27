@@ -5,23 +5,23 @@ namespace OgrO // Namespace com o nome do jogo.
     {
 
         TextInputBox::TextInputBox(unsigned short _maxLength, Utilities::gameVector2F _position, unsigned int _font) : pGraphicManager(Managers::GraphicManager::getInstance()),
-                                                                                                                     pEventsManager(Managers::EventsManager::getInstance()),
-                                                                                                                     idKeyboardEvent{0},
-                                                                                                                     centerPosition{_position},
-                                                                                                                     fontSize{_font},
-                                                                                                                     maxLenght{_maxLength},
-                                                                                                                     done{false},
-                                                                                                                     str{""}
+                                                                                                                       pEventsManager(Managers::EventsManager::getInstance()),
+                                                                                                                       idKeyboardEvent(0),
+                                                                                                                       centerPosition(_position),
+                                                                                                                       fontSize(_font),
+                                                                                                                       maxLenght(_maxLength),
+                                                                                                                       done(false),
+                                                                                                                       str("")
         {
         }
         // Destrutora da classe TextInputBox.
         TextInputBox::~TextInputBox()
         {
+            pGraphicManager = nullptr;
+            pEventsManager = nullptr;
         }
         void TextInputBox::initialize()
         {
-            // pGraphicManager = Managers::GraphicManager::getInstance();
-            // pEventsManager = Managers::EventsManager::getInstance();
         }
         void TextInputBox::setCenter(const Utilities::gameVector2F _pos)
         {
@@ -88,7 +88,6 @@ namespace OgrO // Namespace com o nome do jogo.
 
             done = false;
             std::string cpy{str};
-            // str = "";
             return cpy;
         }
 
