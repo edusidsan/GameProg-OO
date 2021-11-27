@@ -1,11 +1,10 @@
 #include "EventsManager.hpp"
-#include <iostream>
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Managers // Namespace do Pacote Managers.
     {
         // Inicialização do static nextKey.
-        unsigned int EventsManager::nextKey{0};
+        unsigned int EventsManager::nextKey(0);
 
         EventsManager *EventsManager::instanceEventsManager = NULL;
 
@@ -19,12 +18,19 @@ namespace OgrO // Namespace com o nome do jogo.
         }
 
         // Construtora da classe EventsManager.
-        EventsManager::EventsManager()
+        EventsManager::EventsManager() : window(nullptr),
+                                         mouseCallback(),
+                                         keyboardCallback(),
+                                         otherCallback(),
+                                         event()
         {
         }
         // Destrutora da classe EventsManager.
         EventsManager::~EventsManager()
         {
+            nextKey = 0;
+            window = nullptr;
+            instanceEventsManager = nullptr;
         }
         // Método que trata os eventos.
         void EventsManager::handleEvent()

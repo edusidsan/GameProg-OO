@@ -51,10 +51,6 @@ namespace OgrO     // Namespace com o nome do jogo.
             T vModule();
             // Retorna o vetor unitário do Vector2D.
             Vector2D unitVector();
-            // Retorna a projeção ortogonal desse vetor na direção do parâmetro v do tipo Vector2D.
-            Vector2D projection(Vector2D v) const;
-
-            // nlohmann::json toJSON() override;
         };
         // Define um novo nome para o Vector2D de float.
         typedef Vector2D<float> gameVector2F;
@@ -175,21 +171,6 @@ namespace OgrO     // Namespace com o nome do jogo.
             // vunit = v/||v||
             return this->operator*(1.0 / vModule());
         }
-
-        // Retorna a projeção ortogonal desse vetor na direção do parâmetro v do tipo Vector2D<T>.
-        template <typename T>
-        Vector2D<T> Vector2D<T>::projection(Vector2D<T> v) const
-        {
-            // ProjeçãoOrtogonal = prodExt(v,prodInt(u,v)/(||v||²))
-            return v * (this->operator*(v) / pow(v.vModule(), 2));
-        }
-
-        // template <typename T>
-        // nlohmann::json Vector2D<T>::toJSON()
-        // {
-        //     return {{"x", coordX}, {"y", coordY}}; 2F
-        // }
-
         // Sobrecarga do operador do fluxo de saída (<<).
         template <typename T>
         std::ostream &operator<<(std::ostream &out, const Vector2D<T> &vector)

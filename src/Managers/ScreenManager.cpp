@@ -7,20 +7,23 @@
 #include "../Entity.hpp"
 #include "../PhysicalEntities/Characters/Character.hpp"
 
-#define PATH_BACKGROUND_MEDIEVALRUINS "../assets/level1/Background_01.png"
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Managers // Namespace do Pacote Managers.
     {
+
         // GerenciadorTelas(GraphicManager &gg, Heroi *jogador1 = nullptr);
-        ScreenManager::ScreenManager(PhysicalEntities::Characters::Players::Shrek *_player1, PhysicalEntities::Characters::Players::Donkey *_player2) : player1{_player1},
-                                                                                                                                                        player2{_player2}
+        ScreenManager::ScreenManager(PhysicalEntities::Characters::Players::Shrek *_player1, PhysicalEntities::Characters::Players::Donkey *_player2) : StateManager(),
+                                                                                                                                                        player1(_player1),
+                                                                                                                                                        player2(_player2)
 
         {
             push(new Menus::MainMenu());
         }
         ScreenManager::~ScreenManager()
         {
+            player1 = nullptr;
+            player2 = nullptr;
         }
         bool ScreenManager::handleCode(int GameCode)
         {
@@ -133,14 +136,12 @@ namespace OgrO // Namespace com o nome do jogo.
 
             case PAUSE_MENU:
             {
-                // push(new Menus::PauseMenu);
                 push(new Menus::PauseMenu);
                 return false;
             }
 
             case RANKING:
             {
-                // push(new Menus::PauseMenu);
                 push(new Menus::Ranking);
                 return false;
             }

@@ -2,11 +2,11 @@
 #define _GRAPHICMANAGER_HPP_
 
 #include <SFML/Graphics.hpp>
-#include <iostream>
 #include <map>
 #include <string>
 #include "../Utilities/Vector2D.hpp"
 #include "../Utilities/Color.hpp"
+#include <iostream>
 
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -21,7 +21,6 @@ namespace OgrO // Namespace com o nome do jogo.
             sf::View camera;
             // Atributo textures utilizado para encontrar as texturas de cada ente através de uma string.
             std::map<std::string, sf::Texture *> textures;
-            // std::map<const char *, sf::Texture *> textures;
             // Atributo texture que representa a textura a ser carregada no jogo.
             sf::Texture *texture;
             //  Atributo representado por uma classe pertencente a biblioteca SFML, que é uma representação "desenhavel" de uma textura.

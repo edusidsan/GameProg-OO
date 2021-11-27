@@ -2,21 +2,14 @@
 #define _TEXTINPUTBOX_HPP_
 
 #include "Button.hpp"
-// #include "PromisseText.hpp"
 #include "../Managers/EventsManager.hpp"
 #include "../Managers/GraphicManager.hpp"
-// #include "../Utilities/Vector2D.hpp"
-//#include "../Utilities/Color.hpp"
 
 #include <string>
 
 namespace OgrO // Namespace com o nome do jogo.
 {
-    // namespace Managers
-    // {
-    //     class GraphicManager;
-    //     class EventsManager;
-    // }
+
     namespace Menus // Namespace do Pacote Menus.
     {
         // class TextInputBox : public Button

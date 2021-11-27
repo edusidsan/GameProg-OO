@@ -4,7 +4,8 @@ namespace OgrO // Namespace com o nome do jogo.
     namespace Lists // Namespace do Pacote Lists.
     {
         // Construtora da classe PhysicalEntityList.
-        PhysicalEntityList::PhysicalEntityList()
+        PhysicalEntityList::PhysicalEntityList() : Mementos::Memento(),
+                                                   list()
         {
         }
         // Destrutora da classe PhysicalEntityList.
@@ -25,7 +26,6 @@ namespace OgrO // Namespace com o nome do jogo.
             list.removeFirst(p);
         }
         // Método carrega as texturas e inicializa o gerenciador de eventos e de colisão das entidades físicas na window.
-        // void PhysicalEntityList::initializePhysicalEntities(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
         void PhysicalEntityList::initializePhysicalEntities(Managers::EventsManager &em, Managers::CollisionManager &cm)
         {
             // Ponteiro auxiliar que recebe o primeiro elemento da lista.

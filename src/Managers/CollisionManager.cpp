@@ -3,11 +3,8 @@
 #include "../PhysicalEntities/Characters/Enemies/Enemy.hpp"
 #include "../PhysicalEntities/Characters/Players/Player.hpp"
 #include "../PhysicalEntities/Projectiles/Projectile.hpp"
-//#include "../PhysicalEntities/Characters/Players/Shrek.hpp"
 #include "../PhysicalEntities/Obstacles/Obstacle.hpp"
 #include "../PhysicalEntities/PhysicalEntity.hpp"
-#include <algorithm>
-#include <iostream>
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Managers // Namespace do Pacote Managers.
@@ -17,7 +14,8 @@ namespace OgrO // Namespace com o nome do jogo.
         CollisionManager::CollisionManager() : LCollidablesPhysicalEntities(),
                                                LEs(),
                                                LOs(),
-                                               LPs()
+                                               LPs(),
+                                               pTileManager(nullptr)
         //pPlayer{nullptr}
         {
         }
@@ -28,7 +26,7 @@ namespace OgrO // Namespace com o nome do jogo.
             LEs.clear();
             LOs.clear();
             LPs.clear();
-            //pPlayer = nullptr;
+            pTileManager = nullptr;
         }
 
         // Método que retorna se duas entidades físicas colidem.
@@ -94,10 +92,8 @@ namespace OgrO // Namespace com o nome do jogo.
         // Método que verifica se houve colisão entre entidades físicas.
         void CollisionManager::checkCollisions()
         {
-
             // Primeiro iterador do vetor Enemy.
             std::vector<PhysicalEntities::Characters::Enemies::Enemy *>::iterator itLEs1 = LEs.begin();
-            // itLEs1 = LEs.begin();
             // Segundo iterador do vetor Enemy.
             std::vector<PhysicalEntities::Characters::Enemies::Enemy *>::iterator itLEs2 = LEs.begin();
             // Váriavel indica tamanho do vetor Enemy.
@@ -113,9 +109,8 @@ namespace OgrO // Namespace com o nome do jogo.
             // Váriavel indica quantidade de players.
             std::vector<PhysicalEntities::Characters::Players::Player *>::iterator itLPs1 = LPs.begin();
             const short int LPsSize = LPs.size();
-            //std::cout << "LPs:" << LPsSize<<"LOs:"<<LOsSize<<"LEs:"<<LEsSize << std::endl;
-            //std::cout<<"Size Players:"<<LPsSize<<std::endl;
-            // Sequência de veirficação.
+
+            // Sequência de verificação.
             /*----------------------------
                 VETOR ENEMY        LIST OBSTACLES      PLAYER
             {O x * * * * * * *}  {* * * * * * * * *}    **
@@ -178,9 +173,6 @@ namespace OgrO // Namespace com o nome do jogo.
                             // Incremento no primeiro contador da list Obstacle.
                             itLOs1++;
                         }
-
-                        // Nessa condição, está sendo analisado um elemento da classe Player. (secondElement vai ser da classe Player.)
-                        // Montar vector para Player !!!!!!!!!!! <-------------------------------------
                         else
                         {
                             // Forjamento de elemento apontado pelo iterador do vector Player para a classe de entidade física. Necessário para método collided.
@@ -190,7 +182,6 @@ namespace OgrO // Namespace com o nome do jogo.
                             itLPs1++;
                         }
                         // Testa se houve colisão entre os elementos analisados.
-                        // PROBLEMA
                         if (colliding(firstElement, secondElement))
                         {
 
@@ -249,8 +240,6 @@ namespace OgrO // Namespace com o nome do jogo.
                             // Incremento no segundo contador da list Obstacle.
                             itLOs2++;
                         }
-                        // Nessa condição, está sendo analisado um elemento da classe Player. (secondElement vai ser da classe Player.)
-                        // Montar vector para Player !!!!!!!!!!! <-------------------------------------
                         else
                         {
                             // Forjamento de elemento apontado pelo iterador do vector Player para a classe de entidade física. Necessário para método collided.
@@ -261,15 +250,6 @@ namespace OgrO // Namespace com o nome do jogo.
                             itLOs2 = LOs.begin();
                             itLPs1++;
                         }
-                        // else
-                        // {
-                        //     // Forjamento de elemento apontado pelo iterador do vector Player para a classe de entidade física. Necessário para método collided.
-                        //     secondElement = static_cast<PhysicalEntities::PhysicalEntity *>(pPlayer);
-                        //     // Reseta posição do contador da list Obstacle.
-                        //     itLOs1 = LOs.begin();
-                        //     // Reseta posição do contador da list Obstacle.
-                        //     itLOs2 = LOs.begin();
-                        // }
                         // Testa se houve colisão entre os elementos analisados.
                         if (colliding(firstElement, secondElement))
                         {
@@ -307,10 +287,6 @@ namespace OgrO // Namespace com o nome do jogo.
                             firstElement->collided((*itCollidingTiles).id, (*itCollidingTiles).position, (*itCollidingTiles).dimension);
                             itCollidingTiles++;
                         }
-                        //std::cout << "Iterador Players:" << *itLPs1 << std::endl;
-                        //std::cout << "J:" << j << std::endl;
-
-                        // itLPs1++;
                     }
                 }
             }

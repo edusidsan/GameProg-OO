@@ -20,11 +20,10 @@ namespace OgrO // Namespace com o nome do jogo.
             ~Ranking();
 
             void initialize() override;
+            int run() override;
             void loadScores();
             void draw() override;
             void handleEvent();
-
-            int run() override;
         };
     }
 }

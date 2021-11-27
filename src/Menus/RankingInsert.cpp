@@ -12,16 +12,16 @@ namespace OgrO // Namespace com o nome do jogo.
         std::string RankingInsert::playerName = "";
 
         RankingInsert::RankingInsert() : Menu(),
-                                         box{},
-                                         path{nullptr},
-                                         rankingArray{}
-        //  addingScore{false},
+                                         box(),
+                                         path(nullptr),
+                                         rankingArray()
 
         {
             this->initialize();
         }
         RankingInsert::~RankingInsert()
         {
+            path = nullptr;
         }
 
         void RankingInsert::initialize()
@@ -55,7 +55,6 @@ namespace OgrO // Namespace com o nome do jogo.
                 pGraphicManager->clear();
                 pEventsManager->handleEvent();
                 Utilities::gameVector2F viewsize = pGraphicManager->getScreenSize();
-                // std::string name = box.getCapture();
                 if (addingScore)
                 {
                     if (box.captureDone())
@@ -64,7 +63,6 @@ namespace OgrO // Namespace com o nome do jogo.
                         if (name != "")
                         {
                             playerName = name;
-                            // leaderboard.addScore(score, name);
                             if (!save("../savedGame/highScore.json"))
                             {
                                 std::cout << "Score nao foi salva" << std::endl;
@@ -120,6 +118,5 @@ namespace OgrO // Namespace com o nome do jogo.
 
             return true;
         }
-
     }
 }

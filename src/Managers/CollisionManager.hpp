@@ -47,8 +47,6 @@ namespace OgrO // Namespace com o nome do jogo.
             std::vector<PhysicalEntities::Characters::Players::Player *> LPs;
             // Lista representando um conjunto de obstáculos.
             std::list<PhysicalEntities::Obstacles::Obstacle *> LOs;
-            // Atributo que aponta para o player.
-            //PhysicalEntities::Characters::Players::Shrek *pPlayer = nullptr;
             // Atributo que retorna se duas entidades físicas colidem.
             bool colliding(PhysicalEntities::PhysicalEntity *e1, PhysicalEntities::PhysicalEntity *e2);
             // Atributo que aponta para o gerenciador de tiles que será utilizado.

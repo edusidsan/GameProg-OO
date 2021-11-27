@@ -38,9 +38,6 @@ namespace OgrO // Namespace com o nome do jogo.
         ~OtherGrandRandomOgre();
         // Método executar de OtherGrandRandomOgre.
         int run();
-        
-        // // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.
-        // void closedWindow(const sf::Event &event);
     };
 }
 #endif

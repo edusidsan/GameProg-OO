@@ -1,12 +1,11 @@
 #include "LevelMemento.hpp"
-// #include "../json.hpp"
 #include <fstream>
 namespace OgrO
 {
     namespace Mementos
     {
 
-        LevelMemento::LevelMemento()
+        LevelMemento::LevelMemento() : Memento()
         {
         }
         LevelMemento::~LevelMemento()

@@ -1,5 +1,4 @@
 #include "Donkey.hpp"
-#include <cmath>
 
 namespace OgrO // Namespace com o nome do jogo.
 {

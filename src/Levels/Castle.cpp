@@ -6,7 +6,7 @@
 #include "../PhysicalEntities/Projectiles/Fire.hpp"
 #include "../Managers/ScreenManager.hpp"
 #include "../Tiles/TilesManager.hpp"
-//#include "../Utilities/RandomGenerator.hpp"
+#include "../Utilities/RandomGenerator.hpp"
 #include <fstream>
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -92,7 +92,6 @@ namespace OgrO // Namespace com o nome do jogo.
 
         void Castle::initialize()
         {
-
             if (player1)
             {
                 players.insert(player1);
@@ -121,9 +120,9 @@ namespace OgrO // Namespace com o nome do jogo.
             players.initializePhysicalEntities(*pEventsManager, collisionManager);
 
             if (player1)
-                player1->setPosition(Utilities::gameVector2F(64.0f, 230.0f));
+                player1->setPosition(Utilities::gameVector2F(64.0f, 220.0f));
             if (player2)
-                player2->setPosition(Utilities::gameVector2F(64.0f, 230.0f));
+                player2->setPosition(Utilities::gameVector2F(64.0f, 220.0f));
         }
         nlohmann::json Castle::toJSON()
         {

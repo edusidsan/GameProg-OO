@@ -2,7 +2,7 @@
 #define _TILES_HPP_
 
 #include "../Utilities/Vector2D.hpp"
-#include "../Managers/EventsManager.hpp"
+// #include "../Managers/EventsManager.hpp"
 #include "../Managers/GraphicManager.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
@@ -12,6 +12,8 @@ namespace OgrO // Namespace com o nome do jogo.
         class Tile
         {
         private:
+            // Utiliza o padrão de projeto Singleton.
+            Managers::GraphicManager *pGraphicManager;
             const int id;
             const char *filePath;
             const Utilities::gameVector2F dimension;
@@ -21,8 +23,8 @@ namespace OgrO // Namespace com o nome do jogo.
             Tile(const int _id = 0, const char *_filePath = nullptr, Utilities::gameVector2F _dimension = {32.0f, 32.0f});
             // Destrutora da classe Tile.
             virtual ~Tile();
-            virtual void initialize(Managers::GraphicManager &gm, Managers::EventsManager &em);
-            void draw(Managers::GraphicManager &gm, const Utilities::gameVector2F position) const;
+            virtual void initialize();
+            void draw(const Utilities::gameVector2F position) const;
             const int getId() const;
             virtual void collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2U position);
         };

@@ -2,7 +2,7 @@
 #define _CHARACTER_HPP_
 
 #include "../PhysicalEntity.hpp"
-#define MAXSPEEDX 300
+#define MAXSPEEDX 80
 
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -21,7 +21,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 Utilities::gameVector2F adjusts;
                 Utilities::GameClock clock;
                 double timeReference;
-                // unsigned int Life;
+
             public:
                 // Construtora da classe Personagem. Atributos default configurados.
                 Character(Utilities::gameVector2F pos = {0.0f, 0.0f}, Utilities::gameVector2F s = {0.0f, 0.0f}, const char *tPath = nullptr, unsigned int life = MAX_LIFE);
@@ -34,8 +34,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 virtual void update(float t);
                 // Método desenhar de Personagem. Tem como parâmetro o endereço do gerenciador gráfico que irá desenhar o persoangem na window.
                 virtual void draw(Managers::GraphicManager &gm);
-                // Método run
-                // void run();
+
             };
         }
     }

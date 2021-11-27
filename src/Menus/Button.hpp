@@ -3,7 +3,6 @@
 
 #include "../Utilities/Vector2D.hpp"
 #include "../Utilities/Color.hpp"
-// #include "Menu.hpp"
 #include <string>
 #include <functional>
 
@@ -19,6 +18,7 @@ namespace OgrO // Namespace com o nome do jogo.
         {
 
         private:
+            Managers::GraphicManager *pGraphicManager;
             std::function<void(void)> buttonPressed;
 
         protected:
@@ -34,7 +34,8 @@ namespace OgrO // Namespace com o nome do jogo.
             Button(short int _buttonId, Utilities::gameVector2F _position = {0.0f, 0.0f}, Utilities::gameVector2F _size = {0.0f, 0.0f}, std::string _text = "", std::function<void(void)> _buttonPressed = std::function<void(void)>(), unsigned int _textSize = 15U, Utilities::Color _color = {128, 128, 128});
             // Destrutora da classe Button.
             virtual ~Button();
-            virtual void draw(Managers::GraphicManager *pGraphicManager) const;
+            // virtual void draw(Managers::GraphicManager *pGraphicManager) const;
+            virtual void draw() const;
             Utilities::gameVector2F getPosition() const;
             Utilities::gameVector2F getSize() const;
             void pushButton() const;

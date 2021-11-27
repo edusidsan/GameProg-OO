@@ -2,7 +2,6 @@
 #define _DONKEY_HPP_
 
 #include "Player.hpp"
-#include <iostream>
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace PhysicalEntities // Namespace do Pacote Entities.
