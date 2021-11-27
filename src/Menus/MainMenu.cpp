@@ -71,7 +71,6 @@ namespace OgrO // Namespace com o nome do jogo.
                                 if (b->getButtonId() == 6)
                                 {
                                     twoPlayers = !twoPlayers;
-                                    std::cout << "two players selector --> " << twoPlayers << std::endl;
                                 }
                             }
                         }
