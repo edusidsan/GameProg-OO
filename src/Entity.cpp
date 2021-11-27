@@ -8,14 +8,15 @@ namespace OgrO // Namespace com o nome do jogo.
     Levels::Level *Entity::currentLevel = nullptr;
 
     // Construtora da classe Entity. Atributos default configurados
-    Entity::Entity() : id{0},
-                       pGraphicManager(Managers::GraphicManager::getInstance())
+    Entity::Entity() : pGraphicManager(Managers::GraphicManager::getInstance()),
+                       id(0)
 
     {
     }
     // Destrutora da classe Entity.
     Entity::~Entity()
     {
+        currentLevel = nullptr;
     }
     // Método desenhar de Entity.
     void Entity::draw()
@@ -44,9 +45,4 @@ namespace OgrO // Namespace com o nome do jogo.
     {
         return id;
     }
-
-    // void Entity::run()
-    // {
-    // }
-
 }

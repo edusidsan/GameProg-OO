@@ -29,16 +29,10 @@ namespace OgrO // Namespace com o nome do jogo.
 
         void initLevel(Levels::Level *level);
         virtual void initialize();
-        // virtual void init(Managers::EventsManager& e);
-        // Método run virtual puro -> TORNA CLASSE ABSTRATA.
-        virtual int run() = 0;
-
+   
         void setLevel(Levels::Level *_currentLevel);
         Levels::Level *getLevel() const;
         const int getId() const;
-
-
-        // nlohmann::json toJSON();
     };
 
 }

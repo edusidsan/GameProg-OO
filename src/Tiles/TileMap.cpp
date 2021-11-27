@@ -101,26 +101,16 @@ namespace OgrO // Namespace com o nome do jogo.
                     //Os valores escolhidos até agora são 62 e 63, sendo o 62 para espinho e chão, enquanto o 63 é para gosma e chão
                     if (aux == '?')
                     {
-                        std::cout << "ENCONTREI UMA INTERROGACAO" << std::endl;
-
                         // 16 || 8 -> ? 16 8
                         // 0 ? 0 56
                         //MUdar isso
                         int randNumber = Utilities::RandomGenerator::getInstance()->getRandomIntInRange(1, 3);
-                        std::cout << "Valor randNumber:" <<randNumber<< std::endl;
-
                         if(randNumber == 1){                           
                             aux = 7;
                             
                         }else{                            
                             aux = 15;
                         }
-                        // SALVA A POSIÇÃO ?
-                        // GERA O RANDOM DE 1 OU 2 POSIÇÃO
-                        // SALVA O VALOR DO TILE ESCOLHIDO NA POSIÇÃO ?
-                        // DESLOCA UMA POISÇÃO EM X E DEIXA NULO E VOLTA PRA POSIÇÃO DE ?
-                        // DESLOCA UMA POISÇÃO EM X E DEIXA NULO E VOLTA PRA POSIÇÃO DE ?
-
                         // *
                         // ?        9       6
                         // p(0)     p(1)    p(2)
@@ -135,14 +125,10 @@ namespace OgrO // Namespace com o nome do jogo.
                     }
                     if (aux == 62)
                     {
-                        std::cout << "ENCONTREI UMA INTERROGACAO DIFERENTE" << std::endl;
-
                         // 16 || 8 -> ? 16 8
                         // 0 ? 0 56
                         //MUdar isso
                         int randNumber = Utilities::RandomGenerator::getInstance()->getRandomIntInRange(1, 3);
-                        std::cout << "Valor randNumber:" <<randNumber<< std::endl;
-
                         if(randNumber == 1){                           
                             aux = 52;
                             
@@ -158,7 +144,6 @@ namespace OgrO // Namespace com o nome do jogo.
                     map[i][j] = aux;
                     counter++;
                 }
-                // std::cout << std::endl;
                 if (j >= tileMapDimension.coordX)
                 {
                     break;

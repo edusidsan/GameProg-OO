@@ -60,7 +60,6 @@ namespace OgrO // Namespace com o nome do jogo.
                                                                                   str += c;
                                                                               }
                                                                           }
-                                                                          std::cout << "Enter text:" << str << std::endl;
                                                                       }
                                                                       else if (e.type == sf::Event::KeyReleased)
                                                                       {

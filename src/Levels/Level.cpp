@@ -126,6 +126,10 @@ namespace OgrO // Namespace com o nome do jogo.
             {
                 return player1->getLife();
             }
+            else
+            {
+                return 0;
+            }
         }
 
         void Level::resetLevel()
