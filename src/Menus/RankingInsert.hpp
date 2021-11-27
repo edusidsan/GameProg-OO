@@ -11,11 +11,11 @@ namespace OgrO // Namespace com o nome do jogo.
         class RankingInsert : public Menu
         {
         private:
-            TextInputBox box;
-            const char *path;
             static bool addingScore;
             static unsigned int score;
             static std::string playerName;
+            TextInputBox box;
+            const char *path;
             nlohmann::json rankingArray;
 
         public:
