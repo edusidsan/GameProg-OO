@@ -2,10 +2,6 @@
 #define _MEMENTO_HPP_
 
 #include "../json.hpp"
-// #include <string>
-
-// #include <istream>
-// #include <ostream>
 
 namespace OgrO // Namespace com o nome do jogo.
 {
