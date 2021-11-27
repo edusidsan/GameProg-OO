@@ -4,7 +4,6 @@
 #include "Enemy.hpp"
 #include "../../../Menus/RankingInsert.hpp"
 
-
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace PhysicalEntities // Namespace do Pacote Entities.
@@ -22,13 +21,11 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Destrutora da classe Dragon.
                     ~Dragon();
                     // Método carrega a textura do Dragon na window e inicializa gerenciadores do mesmo.
-                    // void initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm);
                     void initialize(Managers::EventsManager &em, Managers::CollisionManager &cm);
 
                     void update(float t);
                     // Método verifica colisão entre dois objetos da classe Entidade Física.
                     void collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther);
-
                 };
             }
         }

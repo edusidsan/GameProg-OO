@@ -28,14 +28,8 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 }
                 // Método carrega a textura do Witch na window e inicializa gerenciadores do mesmo.
-                // void Witch::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
                 void Witch::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
                 {
-                    // // Carrega textura no player.
-                    // gm.loadAsset(texturePath);
-                    // // Retorna dimensão da imagem.
-                    // dimension = gm.getDimensionsOfAsset(texturePath);
-
                     // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);
                     // Retorna dimensão da imagem.
@@ -97,12 +91,6 @@ namespace OgrO // Namespace com o nome do jogo.
                         // Muda o sentido da velocidade em y.
                         speed.coordY *= -1;
                     }
-                    // Caso colida com Player2.
-                    if (idOther == 100)
-                    {
-                        // std::cout << "OBJETO Witch >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
-                    }
-
                     //Chão
                     if ((idOther == 14) || (idOther == 55) || (idOther == 51) || (idOther == 54) || (idOther == 6))
                     {                       

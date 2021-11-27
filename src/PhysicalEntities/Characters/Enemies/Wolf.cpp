@@ -11,8 +11,8 @@ namespace OgrO // Namespace com o nome do jogo.
             {
 
                 // Construtora da classe Wolf.
-                Wolf::Wolf(Utilities::gameVector2F pos, Utilities::gameVector2F s, const char *tPath) : Enemy(pos, s, "../assets/Wolf.png")
-                //"../assets/Wolf.png"
+                Wolf::Wolf(Utilities::gameVector2F pos, Utilities::gameVector2F s, const char *tPath) : Enemy(pos, s, "../assets/Wolf.png"),
+                                                                                                        collidingFlag(false)
                 {
                     // Atribui um ID ao Wolf.
                     id = 103;
@@ -27,7 +27,6 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 }
                 // Método carrega a textura do Wolf na window e inicializa gerenciadores do mesmo.
-                // void Wolf::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
                 void Wolf::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
                 {
                     // Carrega textura no player.
@@ -66,11 +65,6 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
                 void Wolf::collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther)
                 {
-                    // Caso colida com Player1.
-                    if ((idOther == 100) || (idOther == 101))
-                    {
-                        // std::cout << "OBJETO ENEMY >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
-                    }
                     // Caso colida com Enemy.
                     if ((idOther == 102) || (idOther == 103))
                     {
