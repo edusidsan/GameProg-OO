@@ -27,7 +27,6 @@ namespace OgrO // Namespace com o nome do jogo.
             // void Character::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
             void Character::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
             {
-                // gm.loadAsset(texturePath);
                 pGraphicManager->loadAsset(texturePath);
             }
             // Método atualizar de Personagem. Tem como parâmetro uma variável float que representa o tempo.

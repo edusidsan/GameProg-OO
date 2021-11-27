@@ -27,8 +27,8 @@ namespace OgrO // Namespace com o nome do jogo.
                     dimension = pGraphicManager->getDimensionsOfAsset(texturePath);
 
                     // Adiciona chave ouvinte de teclado.
-                    keyEvent = em.addKeyboardListener([this](const sf::Event &event)
-                                                      { handleEvent(event); });
+                    keyEvent = pEventsManager->addKeyboardListener([this](const sf::Event &event)
+                                                                   { handleEvent(event); });
 
                     // Adiciona player na lista de entidades físicas colidiveis.
                     cm.addToLCollidablesPhysicalEntities((this));
@@ -73,7 +73,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
                 void Player::collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther)
                 {
-                    if (idOther == 200 || idOther == 201 )
+                    if (idOther == 200 || idOther == 201)
                     { //Maça
 
                         if (clock.getCurrent() / 1000 - timeReference > 3)
