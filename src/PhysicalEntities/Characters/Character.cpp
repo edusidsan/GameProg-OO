@@ -37,10 +37,10 @@ namespace OgrO // Namespace com o nome do jogo.
                 position += speed * t;
             }
             // Método desenhar de Personagem. Tem como parâmetro o endereço do gerenciador gráfico que irá desenhar o persoangem na window.
-            void Character::draw(Managers::GraphicManager &gm)
+            void Character::draw()
             {
                 // Desenha a forma do personagem atual na window.
-                gm.draw(texturePath, position);
+                pGraphicManager->draw(texturePath, position);
             }
         }
     }

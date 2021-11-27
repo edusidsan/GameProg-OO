@@ -55,15 +55,15 @@ namespace OgrO // Namespace com o nome do jogo.
                     adjusts = Utilities::gameVector2F(0, 0);
                 }
                 // Método desenhar do Player.
-                void Player::draw(Managers::GraphicManager &gm)
+                void Player::draw()
                 {
                     // Desenha a forma do player atual na window.
-                    gm.draw(texturePath, position, this->direction);
+                    pGraphicManager->draw(texturePath, position, this->direction);
                     // Caso seja o Shrek, camera centraliza nele.
                     if (this->id == 100)
                     {
                         // Atribui a posição do player na posição da view.
-                        gm.centerCamera(position);
+                        pGraphicManager->centerCamera(position);
                     }
                 }
                 // Método de tratamento de evento ocorrido.

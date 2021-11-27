@@ -23,7 +23,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Método atualizar do Player. Tem como parâmetro uma variável float que representa o tempo.
                     virtual void update(float t);
                     // Método desenhar do Player.
-                    virtual void draw(Managers::GraphicManager &gm);
+                    virtual void draw();
                     // Método de tratamento de evento ocorrido.
                     virtual void handleEvent(const sf::Event &ev);
                     // Método verifica colisão entre dois objetos da classe Entidade Física.

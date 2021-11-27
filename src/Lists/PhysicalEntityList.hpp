@@ -32,7 +32,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // Método atualiza cada elemento dentro da lista de entidades físicas, passando como parametro o tempo da aplicação em segundos.
             void updatePhysicalEntities(float t);
             // Método desenha na window cada elemento dentro da lista de entidades físicas.
-            void drawPhysicalEntities(Managers::GraphicManager &gm);
+            void drawPhysicalEntities();
             // Método desaloca cada objeto dentro da lista de entidades físicas.
             void destroyPhysicalEntities();
 

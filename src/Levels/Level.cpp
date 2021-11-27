@@ -63,7 +63,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // Gerenciador de tiles envia solicitação de desenho na tela para o gerenciador gráfico
             tilesManager->draw();
             // Desenha as entidades físicas na window.
-            players.drawPhysicalEntities(*pGraphicManager);
+            players.drawPhysicalEntities();
 
             return gameCode;
         }

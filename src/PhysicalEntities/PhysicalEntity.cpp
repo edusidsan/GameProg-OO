@@ -31,10 +31,10 @@ namespace OgrO // Namespace com o nome do jogo.
             position += speed * t;
         }
         // Método desenhar de PhysicalEntity. Tem como parâmetro o endereço do gerenciador gráfico que irá desenhar o persoangem na window.
-        void PhysicalEntity::draw(Managers::GraphicManager &gm)
+        void PhysicalEntity::draw()
         {
             // Desenha a forma da entidade fisica na window.
-            gm.draw(texturePath, position);
+            pGraphicManager->draw(texturePath, position);
         }
         // Método retorna a posição da entidade física.
         const Utilities::gameVector2F PhysicalEntity::getPosition() const

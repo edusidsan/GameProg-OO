@@ -56,7 +56,7 @@ namespace OgrO // Namespace com o nome do jogo.
             }
         }
         // Método desenha na window cada elemento dentro da lista de entidades físicas.
-        void PhysicalEntityList::drawPhysicalEntities(Managers::GraphicManager &gm)
+        void PhysicalEntityList::drawPhysicalEntities()
         {
             // Ponteiro auxiliar que recebe o primeiro elemento da lista.
             PhysicalEntities::PhysicalEntity *p = list.backStart();
@@ -64,7 +64,7 @@ namespace OgrO // Namespace com o nome do jogo.
             while (p)
             {
                 // Desenha o elemento na window.
-                p->draw(gm);
+                p->draw();
                 // Recebe o endereço do próximo elemento da lista.
                 p = list.goNext();
             }
