@@ -28,7 +28,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // Método desloca o ponteiro para o próximo elemento da lista e retorna o mesmo.
             PhysicalEntities::PhysicalEntity *goNext();
             // Método carrega as texturas e inicializa o gerenciador de eventos e de colisões das entidades físicas na window.
-            void initializePhysicalEntities( Managers::CollisionManager &cm);
+            void initializePhysicalEntities(Managers::CollisionManager &cm);
             // Método atualiza cada elemento dentro da lista de entidades físicas, passando como parametro o tempo da aplicação em segundos.
             void updatePhysicalEntities(float t);
             // Método desenha na window cada elemento dentro da lista de entidades físicas.

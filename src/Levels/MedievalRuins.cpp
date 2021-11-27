@@ -112,7 +112,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 players.insert(new PhysicalEntities::Characters::Enemies::Wolf(pos, Utilities::gameVector2F(20, 0)));
             }
             // Carrega as imagens nas entidades físicas e inicializa os gerenciadores de eventos.
-            players.initializePhysicalEntities(*pEventsManager, collisionManager);
+            players.initializePhysicalEntities(collisionManager);
 
             if (player1)
                 player1->setPosition(Utilities::gameVector2F(64.0f, 220.0f));
@@ -172,7 +172,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     break;
                 }
             }
-            players.initializePhysicalEntities(*pEventsManager, collisionManager);
+            players.initializePhysicalEntities(collisionManager);
             file.close();
         }
     }

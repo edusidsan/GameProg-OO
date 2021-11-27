@@ -69,7 +69,7 @@ namespace OgrO // Namespace com o nome do jogo.
         }
         void Level::addPhysicalEntity(PhysicalEntities::PhysicalEntity *_physicalEntity)
         {
-            _physicalEntity->initialize(*pEventsManager, collisionManager);
+            _physicalEntity->initialize(collisionManager);
             players.insert(_physicalEntity);
             collisionManager.addToLCollidablesPhysicalEntities((_physicalEntity));
         }
