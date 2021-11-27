@@ -1,33 +1,30 @@
-
 #include "Menu.hpp"
 #include "../Managers/ScreenManager.hpp"
-#include <iostream>
-
-// #include "../Managers/ButtonsManager.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Menus // Namespace do Pacote Menus.
     {
-        // Construtora da classe Level.
-
+        // Construtora da classe Menu.
         Menu::Menu() : Entity(),
                        State(),
-                       pEventsManager{Managers::EventsManager::getInstance()},
-                       bm{*pGraphicManager, *pEventsManager},
-                       gameCode{Managers::continueGame},
-                       idKeyboardEvent{0},
-                       idMouseEvent{0},
-                       idOtherEvent{0}
-
+                       gameCode(Managers::continueGame),
+                       idKeyboardEvent(0),
+                       idMouseEvent(0),
+                       idOtherEvent(0),
+                       pEventsManager(Managers::EventsManager::getInstance()),
+                       bm(*pGraphicManager, *pEventsManager)
         {
-            // pGraphicManager->centerCamera(pGraphicManager->getScreenSize() * 0.5);
-            // em.setWindow(pGraphicManager->getWindow());
         }
         // Destrutora da classe Level.
         Menu::~Menu()
         {
             removeListeners();
+            gameCode = 0;
+            idKeyboardEvent = 0;
+            idMouseEvent = 0;
+            idOtherEvent = 0;
+            pEventsManager = nullptr;
         }
 
         void Menu::initialize()
@@ -42,19 +39,6 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             gameCode = Managers::continueGame;
             return gameCode;
-        }
-        void Menu::setGameCode(int _gameCode)
-        {
-            gameCode = _gameCode;
-        }
-
-        // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.
-        void Menu::closedWindowButton(const sf::Event &event)
-        {
-            if (event.type == sf::Event::Closed)
-            {
-                setGameCode(Managers::END_GAME);
-            }
         }
 
         void Menu::removeListeners()
@@ -75,5 +59,20 @@ namespace OgrO // Namespace com o nome do jogo.
                 idOtherEvent = 0;
             }
         }
+
+        void Menu::setGameCode(int _gameCode)
+        {
+            gameCode = _gameCode;
+        }
+
+        // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.
+        void Menu::closedWindowButton(const sf::Event &event)
+        {
+            if (event.type == sf::Event::Closed)
+            {
+                setGameCode(Managers::END_GAME);
+            }
+        }
+
     }
 }
