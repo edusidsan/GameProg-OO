@@ -1,6 +1,5 @@
 #include "PhysicalEntity.hpp"
 #include "Characters/Character.hpp"
-// #include "../Levels/Level.hpp"
 #include "../json.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
@@ -9,11 +8,10 @@ namespace OgrO // Namespace com o nome do jogo.
     {
         // Construtora da classe PhysicalEntity. Atributos default configurados
         PhysicalEntity::PhysicalEntity(Utilities::gameVector2F pos, Utilities::gameVector2F s, const char *tPath, unsigned int life) : Entity(),
-                                                                                                                                   position{pos},
-                                                                                                                                   speed{s},
-                                                                                                                                   texturePath{tPath},
-                                                                                                                                //    Life{MAX_LIFE}
-                                                                                                                                   Life{life}
+                                                                                                                                   position(pos),
+                                                                                                                                   speed(s),
+                                                                                                                                   texturePath(tPath),
+                                                                                                                                   Life(life)
         {
         }
         // Destrutora da classe PhysicalEntity.
@@ -21,11 +19,9 @@ namespace OgrO // Namespace com o nome do jogo.
         {
         }
         // Método carrega a textura do PhysicalEntity na window.
-        // void PhysicalEntity::initialize(Managers::GraphicManager &gm, Managers::EventsManager &em, Managers::CollisionManager &cm)
         void PhysicalEntity::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
         {
             std::cout << "texturePath Player ID: " << texturePath << std::endl;
-            // gm.loadAsset(texturePath);
             pGraphicManager->loadAsset(texturePath);
         }
         // Método atualizar de PhysicalEntity. Tem como parâmetro uma variável float que representa o tempo.
