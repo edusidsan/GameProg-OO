@@ -169,7 +169,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     break;
                 }
             }
-            printTileMap();
+            // printTileMap();
         }
 
         // Método que retorna as dimensões do TileMap.

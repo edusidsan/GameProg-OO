@@ -57,17 +57,9 @@ namespace OgrO // Namespace com o nome do jogo.
                     position += speed * t;
                     position += adjusts;
                     adjusts = Utilities::gameVector2F(0, 0);
-                    // std::cout<<"tempo: "<<clock.getCurrent()/1000<<std::endl;
-                    //  std::cout<<"timeReference: "<<timeReference<<std::endl;
-                    //  std::cout<<"time: "<<t*1000<<std::endl;
-            
-                     if ( clock.getCurrent()/1000- timeReference > 5)
-                    {
-                        
-                        // Muda o sentido da velocidade em x.
-                        speed.coordY *= -1;
-                        timeReference = clock.getCurrent()/1000;
-                    }
+
+                    // Gravidade
+                    speed.coordY += 10 * t;
 
                     if (projectileInterval > 0)
                     {
@@ -91,13 +83,9 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
                 void Witch::collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther)
                 {
-                    // Caso colida com Player1.
-                    if ((idOther == 100) || (idOther == 101))
-                    {
-                        // std::cout << "OBJETO ENEMY >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
-                    }
+
                     // Caso colida com Enemy.
-                    else if ((idOther == 102) || (idOther == 103))
+                    if ((idOther == 102) || (idOther == 103))
                     {
                         // Cálculo da distância entre os enemy no momento da colisão.
                         Utilities::gameVector2F distance = position - positionOther;
@@ -114,8 +102,13 @@ namespace OgrO // Namespace com o nome do jogo.
                     {
                         // std::cout << "OBJETO Witch >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
                     }
-                    
-                  
+
+                    //Chão
+                    if ((idOther == 14) || (idOther == 55) || (idOther == 51) || (idOther == 54) || (idOther == 6))
+                    {                       
+                        speed.coordY -= 5.0f;
+                        maxSpeedX = MAXSPEEDX;
+                    }
                 }
             }
         }

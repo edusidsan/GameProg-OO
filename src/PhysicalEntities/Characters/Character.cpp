@@ -8,11 +8,11 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             // Construtora da classe Personagem.
             Character::Character(Utilities::gameVector2F pos, Utilities::gameVector2F s, const char *tPath, unsigned int life) : PhysicalEntity(pos, s, tPath, life),
-                                                                                                                             maxSpeedX{MAXSPEEDX},
-                                                                                                                             maxSpeedY{220},
-                                                                                                                             jumping(false),
-                                                                                                                             adjusts{Utilities::gameVector2F(0, 0)},
-                                                                                                                             timeReference{0}
+                                                                                                                                 maxSpeedX{MAXSPEEDX},
+                                                                                                                                 maxSpeedY{220},
+                                                                                                                                 jumping(false),
+                                                                                                                                 adjusts{Utilities::gameVector2F(0, 0)},
+                                                                                                                                 timeReference{0}
 
             {
             }
@@ -39,6 +39,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Desenha a forma do personagem atual na window.
                 gm.draw(texturePath, position);
             }
+
             // void Character::run()
             // {
             // }

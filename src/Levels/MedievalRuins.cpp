@@ -116,9 +116,9 @@ namespace OgrO // Namespace com o nome do jogo.
             players.initializePhysicalEntities(*pEventsManager, collisionManager);
 
             if (player1)
-                player1->setPosition(Utilities::gameVector2F(64.0f, 230.0f));
+                player1->setPosition(Utilities::gameVector2F(64.0f, 220.0f));
             if (player2)
-                player2->setPosition(Utilities::gameVector2F(64.0f, 230.0f));
+                player2->setPosition(Utilities::gameVector2F(64.0f, 220.0f));
         }
         nlohmann::json MedievalRuins::toJSON()
         {

@@ -77,8 +77,6 @@ namespace OgrO // Namespace com o nome do jogo.
             void resetLevel();
             void goNextLevel();
 
-            // virtual void generateEnemies();
-
         private:
             // Método encarregado de encerrar processo do jogo caso o evento de fechar a janela do jogo tenha ocorrido.
             void closedWindowButton(const sf::Event &event);

@@ -38,6 +38,31 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Adiciona Wolf na lista de entidades físicas colidiveis.
                     cm.addToLCollidablesPhysicalEntities((this));
                 }
+                void Wolf::update(float t)
+                {
+                    // Gravidade
+                    speed.coordY += 100 * t;
+                    if (abs(speed.coordX) > maxSpeedX)
+                    {
+                        speed.coordX = maxSpeedX * (speed.coordX > 0 ? 1 : -1);
+                    }
+                    if (abs(speed.coordY) > maxSpeedY)
+                    {
+                        speed.coordY = maxSpeedY * (speed.coordY > 0 ? 1 : -1);
+                    }
+                    // Relação de posição da forma no espaço-tempo. Equação de Movimento Uniforme da Cinemática.
+                    position += speed * t;
+                    position += adjusts;
+                    adjusts = Utilities::gameVector2F(0, 0);
+
+                    if (clock.getCurrent() / 1000 - timeReference > 5)
+                    {
+
+                        // Muda o sentido da velocidade em x.
+                        speed.coordX *= -1;
+                        timeReference = clock.getCurrent() / 1000;
+                    }
+                }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
                 void Wolf::collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther)
                 {
@@ -52,29 +77,10 @@ namespace OgrO // Namespace com o nome do jogo.
                         // Cálculo da distância entre os enemy no momento da colisão.
                         Utilities::gameVector2F distance = position - positionOther;
                         // Medida para não manter um enemy preso dentro do outro.
-                        position += distance * (1 / 2);
-                        // std::cout << "OBJETO ENEMY >>> COLISAO COM OBJETO ENEMY." << std::endl;
-                        // // std::cout<<"AAAAAAAAA"<<std::endl;
-                        // // Caso colida com Player1.
-                        // if (idOther == 101)
-                        // {
-                        //     // std::cout << "OBJETO Wolf >>> COLISAO COM PLAYER1::SHREK1." << std::endl;
-                        // }
-                        // // Caso colida com Wolf.
-                        // else if (idOther == 102)
-                        // {
-                        //     // Cálculo da distância entre os Wolf no momento da colisão.
-                        //     Utilities::gameVector2F distance = position - positionOther;
-                        //     // Medida para não manter um Wolf preso dentro do outro.
-                        //     position += distance * (1 / 2);
-                        //     // std::cout << "OBJETO Wolf >>> COLISAO COM OBJETO Wolf." << std::endl;
-                        //     // Muda o sentido da velocidade em x.
-                        //     speed.coordX *= -1;
-                        //     // Muda o sentido da velocidade em y.
-                        //     speed.coordY *= -1;
+                        position += distance * (0.5);
                     }
                     //Chão
-                    if ((idOther == 14) || (idOther ==55))
+                    if ((idOther == 14) || (idOther == 55))
                     {
                         collidingFlag = true;
                         float distX = (position.coordX + (dimension.coordX / 2)) - abs(positionOther.coordX - (dimensionOther.coordX / 2));
@@ -104,14 +110,15 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Espinho
                     else if (idOther == 51)
                     {
-                        
+
                         float distY = (position.coordY + (dimension.coordY / 2)) - abs(positionOther.coordY - (dimensionOther.coordY / 2));
                         // colisão em Y
                         if (distY > abs(adjusts.coordY))
                         {
                             adjusts.coordY = distY * (position.coordY + (dimension.coordY / 2) > positionOther.coordY - (dimensionOther.coordY / 2) ? -0.5 : 0.5);
                         }
-                        if(collidingFlag){
+                        if (collidingFlag)
+                        {
                             speed.coordX *= -1;
                             collidingFlag = false;
                         }
@@ -173,31 +180,7 @@ namespace OgrO // Namespace com o nome do jogo.
                         speed.coordY = 0.f;
                     }
                 }
-                void Wolf::update(float t)
-                {
 
-                    speed.coordY += 100 * t;
-                    if (abs(speed.coordX) > maxSpeedX)
-                    {
-                        speed.coordX = maxSpeedX * (speed.coordX > 0 ? 1 : -1);
-                    }
-                    if (abs(speed.coordY) > maxSpeedY)
-                    {
-                        speed.coordY = maxSpeedY * (speed.coordY > 0 ? 1 : -1);
-                    }
-                    // Relação de posição da forma no espaço-tempo. Equação de Movimento Uniforme da Cinemática.
-                    position += speed * t;
-                    position += adjusts;
-                    adjusts = Utilities::gameVector2F(0, 0);
-
-                    if (clock.getCurrent() / 1000 - timeReference > 5)
-                    {
-
-                        // Muda o sentido da velocidade em x.
-                        speed.coordX *= -1;
-                        timeReference = clock.getCurrent() / 1000;
-                    }
-                }
             }
         }
     }

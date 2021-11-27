@@ -21,7 +21,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 Utilities::gameVector2F adjusts;
                 Utilities::GameClock clock;
                 double timeReference;
-                // unsigned int Life;
+
             public:
                 // Construtora da classe Personagem. Atributos default configurados.
                 Character(Utilities::gameVector2F pos = {0.0f, 0.0f}, Utilities::gameVector2F s = {0.0f, 0.0f}, const char *tPath = nullptr, unsigned int life = MAX_LIFE);

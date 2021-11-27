@@ -1,4 +1,5 @@
 #include "PhysicalEntity.hpp"
+#include "Characters/Character.hpp"
 // #include "../Levels/Level.hpp"
 #include "../json.hpp"
 
@@ -77,12 +78,6 @@ namespace OgrO // Namespace com o nome do jogo.
         nlohmann::json PhysicalEntity::toJSON()
         {
             return {
-                // {"id", id},
-                // {"position", position.toJSON()},
-                // {"speed", speed.toJSON()},
-                // {"texturePath", texturePath},
-                // {"dimension", dimension.toJSON()}};
-
                 {"id", id},
                 {"life", Life},
                 {"position x", position.coordX},

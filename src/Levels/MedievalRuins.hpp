@@ -24,8 +24,7 @@ namespace OgrO // Namespace com o nome do jogo.
             MedievalRuins(PhysicalEntities::Characters::Players::Shrek *_player1 = nullptr, PhysicalEntities::Characters::Players::Donkey *_player2 = nullptr, const std::string _backgroundPath = "");
             // Destrutora da classe MedievalRuins.
             virtual ~MedievalRuins();
-            // Método run do MedievalRuins.
-            // int run();
+            // Método initialize do MedievalRuins.
             void initialize() override;
 
             nlohmann::json toJSON() override;
