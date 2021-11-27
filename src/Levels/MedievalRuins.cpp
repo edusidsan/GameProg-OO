@@ -3,7 +3,7 @@
 #include "../PhysicalEntities/Characters/Enemies/Wolf.hpp"
 #include "../Managers/ScreenManager.hpp"
 #include "../Tiles/TilesManager.hpp"
-//#include "../Utilities/RandomGenerator.hpp"
+#include "../Utilities/RandomGenerator.hpp"
 #include <fstream>
 namespace OgrO // Namespace com o nome do jogo.
 {
@@ -89,7 +89,6 @@ namespace OgrO // Namespace com o nome do jogo.
 
         void MedievalRuins::initialize()
         {
-
             if (player1)
             {
                 players.insert(player1);
@@ -120,6 +119,7 @@ namespace OgrO // Namespace com o nome do jogo.
             if (player2)
                 player2->setPosition(Utilities::gameVector2F(64.0f, 220.0f));
         }
+
         nlohmann::json MedievalRuins::toJSON()
         {
             nlohmann::json json;
@@ -160,13 +160,11 @@ namespace OgrO // Namespace com o nome do jogo.
                     break;
                 case 102:
                 {
-
                     players.insert(new PhysicalEntities::Characters::Enemies::Witch(player));
                     break;
                 }
                 case 103:
                 {
-
                     players.insert(new PhysicalEntities::Characters::Enemies::Wolf(player));
                     break;
                 }

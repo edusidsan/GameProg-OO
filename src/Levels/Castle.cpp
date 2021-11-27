@@ -92,7 +92,6 @@ namespace OgrO // Namespace com o nome do jogo.
 
         void Castle::initialize()
         {
-
             if (player1)
             {
                 players.insert(player1);
