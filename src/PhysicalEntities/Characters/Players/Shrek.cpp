@@ -1,5 +1,4 @@
 #include "Shrek.hpp"
-#include <cmath>
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace PhysicalEntities // Namespace do Pacote Entities.

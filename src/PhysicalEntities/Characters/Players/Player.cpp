@@ -12,9 +12,6 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Construtora da classe Player.
                 Player::Player(Utilities::gameVector2F pos, const char *tPath) : Character(pos, Utilities::gameVector2F(), tPath)
                 {
-
-                    // Atribui um ID ao player.
-                    // id = 101;
                 }
                 // Destrutora da classe Player.
                 Player::~Player()
@@ -56,7 +53,6 @@ namespace OgrO // Namespace com o nome do jogo.
                     position += speed * t;
                     position += adjusts;
                     adjusts = Utilities::gameVector2F(0, 0);
-                    // std::cout<<"tempo: "<<clock.getTime()<<std::endl;
                 }
                 // Método desenhar do Player.
                 void Player::draw(Managers::GraphicManager &gm)
@@ -89,8 +85,6 @@ namespace OgrO // Namespace com o nome do jogo.
                         }
                         if (Life == 0)
                         {
-                            // position.coordX = 100.0f;
-                            // position.coordY = 100.0f;
                             currentLevel->resetLevel();
                             Life = MAX_LIFE;
                         }
@@ -108,8 +102,6 @@ namespace OgrO // Namespace com o nome do jogo.
                         }
                         if (Life == 0)
                         {
-                            // position.coordX = 100.0f;
-                            // position.coordY = 100.0f;
                             currentLevel->resetLevel();
                             Life = MAX_LIFE;
                         }
@@ -237,7 +229,6 @@ namespace OgrO // Namespace com o nome do jogo.
                     position.coordX = static_cast<float>(source["position x"]);
                     position.coordY = static_cast<float>(source["position y"]);
                     this->setLife(static_cast<unsigned int>(source["life"]));
-                    // position.coordY = {static_cast<float>(source["position y"])};
                 }
                 const unsigned int Player::getLife() const
                 {

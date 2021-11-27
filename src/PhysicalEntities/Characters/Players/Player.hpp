@@ -13,15 +13,6 @@ namespace OgrO // Namespace com o nome do jogo.
             {
                 class Player : public Character
                 {
-                protected:
-                    // unsigned int keyEvent;
-                    // float maxSpeedX;
-                    // float maxSpeedY;
-                    // int direction;
-                    // bool jumping;
-                    // Utilities::gameVector2F adjusts;
-                    // Utilities::GameClock clock;
-                    // unsigned int Life;
                 public:
                     // Construtora da classe Player.
                     Player(Utilities::gameVector2F pos = {0.0f, 0.0f}, const char *tPath = nullptr);
