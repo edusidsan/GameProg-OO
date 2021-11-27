@@ -14,17 +14,17 @@ namespace OgrO // Namespace com o nome do jogo.
             std::stack<State *> stateStack;
 
         public:
+            StateManager();
             virtual ~StateManager();
             int run();
 
         protected:
             void push(State *p);
             void pop();
-            State* top();
+            State *top();
             void cleanStack();
             virtual bool handleCode(int GameCode) = 0;
         };
     }
 }
-
 #endif
