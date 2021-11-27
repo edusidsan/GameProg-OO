@@ -4,7 +4,6 @@
 #include "GraphicManager.hpp"
 #include "EventsManager.hpp"
 #include "../Menus/Button.hpp"
-
 #include <vector>
 
 namespace OgrO // Namespace com o nome do jogo.
@@ -14,10 +13,11 @@ namespace OgrO // Namespace com o nome do jogo.
         class ButtonsManager
         {
         private:
-            EventsManager &em;
-            GraphicManager &gm;
+            // Utiliza o padrão de projeto Singleton.
+            GraphicManager *pGraphicManager;
+            // Utiliza o padrão de projeto Singleton.
+            EventsManager *pEventsManager;
             unsigned int keyMouseEvent;
-  
 
         public:
             std::vector<Menus::Button *> buttons;
@@ -28,7 +28,6 @@ namespace OgrO // Namespace com o nome do jogo.
             void draw() const;
             void handleMouseEvent(const sf::Event &e);
             void addButton(Menus::Button *b);
-            const short int getButtonId() const;
         };
     }
 }

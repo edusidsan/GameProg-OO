@@ -5,23 +5,24 @@ namespace OgrO // Namespace com o nome do jogo.
     namespace Managers // Namespace do Pacote Managers.
     {
         // Construtora da classe ButtonsManager.
-        ButtonsManager::ButtonsManager(GraphicManager &_gm, EventsManager &_em, std::vector<Menus::Button *> _buttons) : buttons{_buttons},
-                                                                                                                         gm{_gm},
-                                                                                                                         em{_em}
+        ButtonsManager::ButtonsManager(GraphicManager &_gm, EventsManager &_em, std::vector<Menus::Button *> _buttons) : pGraphicManager(Managers::GraphicManager::getInstance()),
+                                                                                                                         pEventsManager(Managers::EventsManager::getInstance()),
+                                                                                                                         keyMouseEvent(0),
+                                                                                                                         buttons(_buttons)
         {
-            keyMouseEvent = em.addMouseListener([this](const sf::Event &e)
-                                                { handleMouseEvent(e); });
+            keyMouseEvent = pEventsManager->addMouseListener([this](const sf::Event &e)
+                                                             { handleMouseEvent(e); });
         }
         // Destrutora da classe ButtonsManager.
         ButtonsManager::~ButtonsManager()
         {
-            em.removeMouseListener(keyMouseEvent);
+            pEventsManager->removeMouseListener(keyMouseEvent);
         }
         void ButtonsManager::draw() const
         {
             for (Menus::Button *b : buttons)
             {
-                b->draw(&gm);
+                b->draw(pGraphicManager);
             }
         }
         void ButtonsManager::handleMouseEvent(const sf::Event &e)
@@ -29,7 +30,7 @@ namespace OgrO // Namespace com o nome do jogo.
             if (e.type == sf::Event::MouseButtonReleased)
             { //se ocorrer um clique, verificar se foi em cima de algum botão
 
-                Utilities::gameVector2F mousePosition = gm.getMousePosition();
+                Utilities::gameVector2F mousePosition = pGraphicManager->getMousePosition();
                 for (Menus::Button *b : buttons)
                 {
                     Utilities::gameVector2F buttonCenterPosition = b->getPosition();
@@ -49,7 +50,6 @@ namespace OgrO // Namespace com o nome do jogo.
                 buttons.push_back(b);
             }
         }
-
 
     }
 }
