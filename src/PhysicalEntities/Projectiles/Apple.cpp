@@ -26,11 +26,6 @@ namespace OgrO // Namespace com o nome do jogo.
             // Método verifica colisão entre dois objetos da classe Entidade Física.
             void Apple::collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther)
             {
-                if (idOther == 100 || idOther == 101)
-                {
-                    // std::cout << "Acertei um dos players" << std::endl;
-                    // delete this;
-                }
             }
         }
     }
