@@ -5,7 +5,6 @@
 #include "../PhysicalEntities/Projectiles/Projectile.hpp"
 #include "../PhysicalEntities/Obstacles/Obstacle.hpp"
 #include "../PhysicalEntities/PhysicalEntity.hpp"
-// #include <algorithm>
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Managers // Namespace do Pacote Managers.
