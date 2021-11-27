@@ -34,8 +34,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 virtual void update(float t);
                 // Método desenhar de Personagem. Tem como parâmetro o endereço do gerenciador gráfico que irá desenhar o persoangem na window.
                 virtual void draw(Managers::GraphicManager &gm);
-                // Método run
-                // void run();
+
             };
         }
     }
