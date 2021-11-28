@@ -33,7 +33,7 @@ namespace OgrO // Namespace com o nome do jogo.
         //
         Managers::ScreenManager screenManager;
         // Atributo que indica se a fase deve ser finalizada.
-        bool endLevel;
+        bool endGame;
 
     public:
         // Construtora da classe OtherGrandRandomOgre.

@@ -1,4 +1,6 @@
 #include "OtherGrandRandomOgre.hpp"
+//#include "PhysicalEntities/Characters/Enemies/Enemy.hpp"
+//#include "PhysicalEntities/Characters/Players/Shrek.hpp"
 #include "Tiles/Tile.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
@@ -13,7 +15,7 @@ namespace OgrO // Namespace com o nome do jogo.
                                                    player1(PhysicalEntities::Characters::Players::Shrek(Utilities::gameVector2F(64.0f, 230.56f))),
                                                    player2(PhysicalEntities::Characters::Players::Donkey(Utilities::gameVector2F(80.0f, 230.56f))),
                                                    screenManager(&player1, &player2),
-                                                   endLevel(false)
+                                                   endGame(false)
     {
         menu.initialize();
     }
@@ -24,12 +26,12 @@ namespace OgrO // Namespace com o nome do jogo.
     // Método executar de OtherGrandRandomOgre
     int OtherGrandRandomOgre::run()
     {
-        while (!endLevel)
+        while (!endGame)
         {
             // Limpa a window.
             pGraphicManager->clear();
 
-            endLevel = screenManager.run();
+            endGame = screenManager.run();
 
             // Mostra a window para o usuário.
             pGraphicManager->display();
