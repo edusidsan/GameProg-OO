@@ -129,6 +129,7 @@ namespace OgrO // Namespace com o nome do jogo.
                         }
                     }
                 }
+                player1->setLevel(lvl);
                 return false;
             }
 

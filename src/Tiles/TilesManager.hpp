@@ -23,7 +23,8 @@ namespace OgrO // Namespace com o nome do jogo.
     /*--------------------------------------------------------------------------------------------------*/
     namespace Tiles // Namespace do Pacote Tiles.
     {
-        class TilesManager : public PhysicalEntities::PhysicalEntity
+        // class TilesManager : public PhysicalEntities::PhysicalEntity
+        class TilesManager
         {
         public:
             struct tilesManagerAttributes
@@ -47,15 +48,11 @@ namespace OgrO // Namespace com o nome do jogo.
             ~TilesManager();
             void initialize();
             void draw() const;
-            void update(float t);
             std::vector<tilesManagerAttributes> checkCollisions(const int id, Utilities::gameVector2F position, Utilities::gameVector2F dimension);
             void randomTilesPlace();
             const std::vector<Utilities::gameVector2F> &getEnemySpawnsWolfs() const;
             const std::vector<Utilities::gameVector2F> &getEnemySpawnsWitchs() const;
             const TileMap *getTileMap() const;
-
-            void collided(int Id, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther);
-
         private:
             const Utilities::gameVector2F mapToScreenPosition(const Utilities::gameVector2U pos) const;
         };

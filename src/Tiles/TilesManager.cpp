@@ -57,11 +57,6 @@ namespace OgrO // Namespace com o nome do jogo.
                 }
             }
         }
-
-        void TilesManager::update(float t)
-        {
-        }
-
         std::vector<TilesManager::tilesManagerAttributes> TilesManager::checkCollisions(const int id, Utilities::gameVector2F position, Utilities::gameVector2F dimension)
         {
             int up = (int)floor((position.coordY - dimension.coordY / 2) / tilesDimension.coordY);
@@ -137,9 +132,6 @@ namespace OgrO // Namespace com o nome do jogo.
                     }
                 }
             }
-        }
-        void TilesManager::collided(int Id, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther)
-        {
         }
     }
 }
