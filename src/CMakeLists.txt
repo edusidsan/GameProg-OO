@@ -31,6 +31,7 @@ set(
     Menus/Ranking.cpp
     Menus/RankingInsert.cpp
     Menus/TextInputBox.cpp
+    
     Lists/PhysicalEntityList.cpp
     PhysicalEntities/Characters/Enemies/Enemy.cpp
     PhysicalEntities/Characters/Enemies/Witch.cpp
@@ -76,6 +77,7 @@ set(
     Menus/Ranking.hpp
     Menus/RankingInsert.hpp
     Menus/TextInputBox.hpp
+    
     Lists/PhysicalEntityList.hpp
     PhysicalEntities/Characters/Enemies/Dragon.hpp
     PhysicalEntities/Characters/Enemies/Enemy.hpp
