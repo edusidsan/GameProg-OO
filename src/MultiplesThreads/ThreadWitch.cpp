@@ -44,10 +44,8 @@ namespace OgrO {
       }
     }
 
-    ThreadWitch::ThreadWitch(Utilities::gameVector2F pos, Utilities::gameVector2F s, const char *tPath) : keep_going{true}, paused{false}
+    ThreadWitch::ThreadWitch(Utilities::gameVector2F pos, Utilities::gameVector2F s, const char *tPath) : PhysicalEntities::Characters::Enemies::Witch(pos,  s, tPath), keep_going{true}, paused{false}
     {
-  
-
     }
 
     ThreadWitch::~ThreadWitch() {
