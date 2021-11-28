@@ -19,7 +19,7 @@ namespace OgrO {
       Threads* threads = static_cast<Threads*>(pThread);
 
       if (threads != nullptr) {
-        threads->run();
+        threads->initialize();
       } else {
         std::cout << "thread inexistente" << std::endl;
       }

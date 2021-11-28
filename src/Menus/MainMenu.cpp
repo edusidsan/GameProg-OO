@@ -41,6 +41,10 @@ namespace OgrO // Namespace com o nome do jogo.
                 7, Utilities::gameVector2F(screenSize.coordX / 4, screenSize.coordY / 8 * 7), {170, 30}, "Exit", [this]
                 { setGameCode(Managers::GameCode::END_GAME); },
                 15U, Utilities::Color{127, 0, 0}));
+            bm.addButton(new Button(
+                8, Utilities::gameVector2F(screenSize.coordX / 2, screenSize.coordY / 8 * 4), {170, 30}, "Extra Level", [this]
+                { setGameCode(Managers::GameCode::START_EXTRALEVEL_LEVEL); },
+                15U, Utilities::Color{127, 0, 0}));
         }
         // Destrutora da classe MainMenu.
         MainMenu::~MainMenu()

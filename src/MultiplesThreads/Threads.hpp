@@ -1,5 +1,5 @@
-#ifndef THREADS_HPP
-#define THREADS_HPP
+#ifndef _THREADS_HPP_
+#define _THREADS_HPP_
 
 #include <pthread.h>
 
@@ -13,7 +13,7 @@ namespace OgrO {
       static pthread_mutex_t mutex;
 
       static void* runThread(void* pThread);
-      virtual void run() = 0;
+      virtual void initialize() = 0;
     public:
       Threads();
       virtual ~Threads();
