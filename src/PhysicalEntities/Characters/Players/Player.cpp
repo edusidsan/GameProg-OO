@@ -18,7 +18,6 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 }
                 // Método carrega a textura do Player na window.
-
                 void Player::initialize()
                 {
                     // Carrega textura no player.
@@ -36,10 +35,14 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Método atualizar do Player. Tem como parâmetro uma variável float que representa o tempo.
                 void Player::update(float t)
                 {
-                    if (abs(speed.coordY) <= 5)
+                    if (abs(speed.coordY) == 0)
+                    {
                         jumping = false;
+                    }
                     else
+                    {
                         jumping = true;
+                    }
                     speed.coordY += 100 * t;
                     if (abs(speed.coordX) > maxSpeedX)
                     {

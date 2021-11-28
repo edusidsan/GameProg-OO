@@ -24,7 +24,6 @@ namespace OgrO // Namespace com o nome do jogo.
             idKeyboardEvent = 0;
             idMouseEvent = 0;
             idOtherEvent = 0;
-            pEventsManager = nullptr;
         }
 
         void Menu::initialize()

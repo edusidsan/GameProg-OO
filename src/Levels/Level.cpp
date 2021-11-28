@@ -10,8 +10,6 @@ namespace OgrO // Namespace com o nome do jogo.
         Level::Level(Tiles::TilesManager *_tilesManager, PhysicalEntities::Characters::Players::Shrek *_player1, PhysicalEntities::Characters::Players::Donkey *_player2, const std::string _backgroundPath) : Entity(),
                                                                                                                                                                                                                State(),
                                                                                                                                                                                                                Mementos::LevelMemento(),
-                                                                                                                                                                                                            //    collisionManager(),
-                                                                                                                                                                                                            //    pEventsManager(Managers::EventsManager::getInstance()),
                                                                                                                                                                                                                players(),
                                                                                                                                                                                                                player1(_player1),
                                                                                                                                                                                                                player2(_player2),
@@ -45,6 +43,7 @@ namespace OgrO // Namespace com o nome do jogo.
             players.removeFirst(player2);
             // Deleta dinamicamente os objetos das entidades físicas.
             players.destroyPhysicalEntities();
+            pCollisionManager->removeAll();
             delete tilesManager;
         }
         int Level::run()

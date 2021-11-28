@@ -23,8 +23,8 @@ namespace OgrO // Namespace com o nome do jogo.
             // Ponteiro que indica o caminho da textura.
             const char *texturePath;
             Utilities::gameVector2F position, // Atributo de posição do PhysicalEntity
-                speed,                      // Atributo de velocidade do PhysicalEntity
-                dimension;                  // Atributo de dimensão do PhysicalEntity
+                speed,                        // Atributo de velocidade do PhysicalEntity
+                dimension;                    // Atributo de dimensão do PhysicalEntity
             unsigned int Life;
 
         public:
@@ -35,8 +35,7 @@ namespace OgrO // Namespace com o nome do jogo.
             // Método carrega a textura do PhysicalEntity na window.
             virtual void initialize();
             // Método atualizar de PhysicalEntity. Tem como parâmetro uma variável float que representa o tempo.
-            virtual void update(float t);
-            // Método desenhar de PhysicalEntity. Tem como parâmetro o endereço do gerenciador gráfico que irá desenhar o persoangem na window.
+            virtual void update(float t) = 0;
             virtual void draw();
             // Método retorna a posição da entidade física.
             const Utilities::gameVector2F getPosition() const;

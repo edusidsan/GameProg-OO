@@ -5,6 +5,7 @@
 #include "../PhysicalEntities/Projectiles/Projectile.hpp"
 #include "../PhysicalEntities/Obstacles/Obstacle.hpp"
 #include "../PhysicalEntities/PhysicalEntity.hpp"
+#include "../Tiles/TilesManager.hpp"
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Managers // Namespace do Pacote Managers.
@@ -37,6 +38,7 @@ namespace OgrO // Namespace com o nome do jogo.
             LOs.clear();
             LPs.clear();
             pTileManager = nullptr;
+            instanceCollisionManager = nullptr;
         }
 
         // Método que retorna se duas entidades físicas colidem.

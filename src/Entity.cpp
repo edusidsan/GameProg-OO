@@ -21,18 +21,10 @@ namespace OgrO // Namespace com o nome do jogo.
         currentLevel = nullptr;
     }
     // Método desenhar de Entity.
-    void Entity::draw()
-    {
-    }
-
-    // Método desenhar de Entity.
     void Entity::initLevel(Levels::Level *level)
     {
         currentLevel = level;
         initialize();
-    }
-    void Entity::initialize()
-    {
     }
 
     void Entity::setLevel(Levels::Level *_currentLevel)

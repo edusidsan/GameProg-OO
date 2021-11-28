@@ -8,10 +8,10 @@ namespace OgrO // Namespace com o nome do jogo.
     {
         // Construtora da classe PhysicalEntity. Atributos default configurados
         PhysicalEntity::PhysicalEntity(Utilities::gameVector2F pos, Utilities::gameVector2F s, const char *tPath, unsigned int life) : Entity(),
-                                                                                                                                   position(pos),
-                                                                                                                                   speed(s),
-                                                                                                                                   texturePath(tPath),
-                                                                                                                                   Life(life)
+                                                                                                                                       position(pos),
+                                                                                                                                       speed(s),
+                                                                                                                                       texturePath(tPath),
+                                                                                                                                       Life(life)
         {
         }
         // Destrutora da classe PhysicalEntity.
@@ -23,12 +23,6 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             std::cout << "texturePath Player ID: " << texturePath << std::endl;
             pGraphicManager->loadAsset(texturePath);
-        }
-        // Método atualizar de PhysicalEntity. Tem como parâmetro uma variável float que representa o tempo.
-        void PhysicalEntity::update(float t)
-        {
-            // Relação de posição da forma no espaço-tempo. Equação de Movimento Uniforme da Cinemática.
-            position += speed * t;
         }
         // Método desenhar de PhysicalEntity. Tem como parâmetro o endereço do gerenciador gráfico que irá desenhar o persoangem na window.
         void PhysicalEntity::draw()
@@ -87,7 +81,6 @@ namespace OgrO // Namespace com o nome do jogo.
 
         int PhysicalEntity::run()
         {
-            std::cout << "Implementar PhysicalEntity::run()" << std::endl;
             return 0;
         }
 

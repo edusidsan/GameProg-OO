@@ -27,12 +27,9 @@ namespace OgrO // Namespace com o nome do jogo.
         Entity();
         // Destrutora da classe Entity.
         virtual ~Entity();
-        // Método desenhar de Entity.
-        virtual void draw();
-
         void initLevel(Levels::Level *level);
-        virtual void initialize();
-   
+        virtual void initialize() = 0;
+        virtual int run() = 0;
         void setLevel(Levels::Level *_currentLevel);
         Levels::Level *getLevel() const;
         const int getId() const;
