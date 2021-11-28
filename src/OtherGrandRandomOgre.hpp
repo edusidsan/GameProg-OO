@@ -4,6 +4,7 @@
 #include "Menus/MainMenu.hpp"
 #include "Managers/GraphicManager.hpp"
 #include "Managers/EventsManager.hpp"
+#include "Managers/CollisionManager.hpp"
 #include "Managers/ScreenManager.hpp"
 #include "PhysicalEntities/Characters/Players/Shrek.hpp"
 #include "PhysicalEntities/Characters/Players/Donkey.hpp"

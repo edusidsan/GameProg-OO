@@ -1,6 +1,4 @@
 #include "OtherGrandRandomOgre.hpp"
-//#include "PhysicalEntities/Characters/Enemies/Enemy.hpp"
-//#include "PhysicalEntities/Characters/Players/Shrek.hpp"
 #include "Tiles/Tile.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
