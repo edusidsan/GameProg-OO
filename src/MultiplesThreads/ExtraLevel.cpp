@@ -82,8 +82,9 @@ namespace OgrO // Namespace com o nome do jogo.
         }
         ExtraLevel::~ExtraLevel()
         {
+            pGraphicManager->zoomIn();
         }
-        
+
         void ExtraLevel::initialize()
         {
             {
