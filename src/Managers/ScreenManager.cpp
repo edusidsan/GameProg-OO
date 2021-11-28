@@ -163,7 +163,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     player2->setLife(MAX_LIFE);
                 push(new Menus::MainMenu());
 
-            case continueGame:
+            case CONTINUE_GAME:
 
             default:
                 return false;

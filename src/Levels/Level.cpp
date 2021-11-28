@@ -23,7 +23,7 @@ namespace OgrO // Namespace com o nome do jogo.
                                                                                                                                                                                                                    pEventsManager->addKeyboardListener([this](const sf::Event &event)
                                                                                                                                                                                                                                                        { goToMenuButton(event); })),
                                                                                                                                                                                                                clock(),
-                                                                                                                                                                                                               gameCode{Managers::continueGame}
+                                                                                                                                                                                                               gameCode{Managers::CONTINUE_GAME}
 
         {
             // backgroundImage.initialize();
@@ -48,7 +48,7 @@ namespace OgrO // Namespace com o nome do jogo.
         }
         int Level::run()
         {
-            gameCode = Managers::continueGame;
+            gameCode = Managers::CONTINUE_GAME;
 
             pGraphicManager->draw(backgroundPath, Utilities::gameVector2F{800.0f, 280.0f});
 

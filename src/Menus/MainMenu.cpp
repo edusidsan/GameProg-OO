@@ -35,7 +35,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 15U, Utilities::Color{127, 0, 0}));
             bm.addButton(new Button(
                 6, Utilities::gameVector2F(screenSize.coordX / 4, screenSize.coordY / 8 * 6), {170, 30}, "Number of players:", [this]
-                { setGameCode(Managers::GameCode::continueGame); },
+                { setGameCode(Managers::GameCode::CONTINUE_GAME); },
                 15U, Utilities::Color{127, 0, 0}));
             bm.addButton(new Button(
                 7, Utilities::gameVector2F(screenSize.coordX / 4, screenSize.coordY / 8 * 7), {170, 30}, "Exit", [this]
@@ -55,7 +55,7 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             Utilities::gameVector2F screenSize = pGraphicManager->getScreenSize();
             pGraphicManager->centerCamera(screenSize * 0.5);
-            gameCode = Managers::continueGame;
+            gameCode = Managers::CONTINUE_GAME;
 
             idMouseEvent = pEventsManager->addMouseListener(
                 [this](const sf::Event e)
@@ -77,7 +77,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     }
                 });
 
-            while (gameCode == Managers::continueGame)
+            while (gameCode == Managers::CONTINUE_GAME)
             {
                 pGraphicManager->clear();
                 pEventsManager->handleEvent();

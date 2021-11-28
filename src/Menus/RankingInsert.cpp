@@ -42,14 +42,14 @@ namespace OgrO // Namespace com o nome do jogo.
         {
             Utilities::gameVector2F screenSize = pGraphicManager->getScreenSize();
             pGraphicManager->centerCamera(screenSize * 0.5);
-            gameCode = Managers::continueGame;
+            gameCode = Managers::CONTINUE_GAME;
 
             if (addingScore)
             {
                 box.startStringCapture();
             }
 
-            while (gameCode == Managers::continueGame)
+            while (gameCode == Managers::CONTINUE_GAME)
             {
                 pGraphicManager->clear();
                 pEventsManager->handleEvent();

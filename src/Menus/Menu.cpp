@@ -8,7 +8,7 @@ namespace OgrO // Namespace com o nome do jogo.
         // Construtora da classe Menu.
         Menu::Menu() : Entity(),
                        State(),
-                       gameCode(Managers::continueGame),
+                       gameCode(Managers::CONTINUE_GAME),
                        idKeyboardEvent(0),
                        idMouseEvent(0),
                        idOtherEvent(0),
@@ -36,7 +36,7 @@ namespace OgrO // Namespace com o nome do jogo.
 
         int Menu::run()
         {
-            gameCode = Managers::continueGame;
+            gameCode = Managers::CONTINUE_GAME;
             return gameCode;
         }
 

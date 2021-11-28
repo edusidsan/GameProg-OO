@@ -23,7 +23,7 @@ namespace OgrO // Namespace com o nome do jogo.
     {
         enum GameCode
         {
-            continueGame,
+            CONTINUE_GAME,
             MAIN_MENU,
             EXIT_PAUSE_MENU,
             PAUSE_MENU,
