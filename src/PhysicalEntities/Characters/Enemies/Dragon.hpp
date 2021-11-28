@@ -21,7 +21,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Destrutora da classe Dragon.
                     ~Dragon();
                     // Método carrega a textura do Dragon na window e inicializa gerenciadores do mesmo.
-                    void initialize(Managers::EventsManager &em, Managers::CollisionManager &cm);
+                    void initialize();
 
                     void update(float t);
                     // Método verifica colisão entre dois objetos da classe Entidade Física.

@@ -20,7 +20,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Destrutora da classe Witch.
                     ~Witch();
                     // Método carrega a textura do Witch na window e inicializa gerenciadores do mesmo.
-                    void initialize(Managers::EventsManager &em, Managers::CollisionManager &cm);
+                    void initialize();
 
                     void update(float t);
                     // Método verifica colisão entre dois objetos da classe Entidade Física.

@@ -31,7 +31,6 @@ namespace OgrO // Namespace com o nome do jogo.
             Utilities::gameVector2F screenSize = pGraphicManager->getScreenSize();
             pGraphicManager->centerCamera(pGraphicManager->getScreenSize() * 0.5);
 
-            box.initialize();
             box.setCenter(Utilities::gameVector2F(screenSize * 0.5));
         }
         void RankingInsert::addNewHighScore(const int _score)

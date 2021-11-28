@@ -22,7 +22,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Destrutora da classe Wolf.
                     ~Wolf();
                     // Método carrega a textura do Wolf na window e inicializa gerenciadores do mesmo.
-                    void initialize(Managers::EventsManager &em, Managers::CollisionManager &cm);
+                    void initialize();
                      // Método verifica colisão entre dois objetos da classe Entidade Física.
                     void collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther);
                     //tentativa de usar tempo

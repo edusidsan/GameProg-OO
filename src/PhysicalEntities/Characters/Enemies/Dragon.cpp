@@ -33,7 +33,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 }
                 // Método carrega a textura do Dragon na window e inicializa gerenciadores do mesmo.
-                void Dragon::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
+                void Dragon::initialize( )
                 {
                     // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);
@@ -41,7 +41,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     dimension = pGraphicManager->getDimensionsOfAsset(texturePath);
 
                     // Adiciona Dragon na lista de entidades físicas colidiveis.
-                    cm.addToLCollidablesPhysicalEntities((this));
+                    pCollisionManager->addToLCollidablesPhysicalEntities((this));
                     currentLevel = this->getLevel();
                 }
                 // Método verifica colisão entre dois objetos da classe Entidade Física.

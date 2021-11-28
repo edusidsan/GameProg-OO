@@ -3,6 +3,7 @@
 
 #include "Managers/GraphicManager.hpp"
 #include "Managers/EventsManager.hpp"
+#include "Managers/CollisionManager.hpp"
 #include "Mementos/Memento.hpp"
 
 namespace OgrO // Namespace com o nome do jogo.
@@ -16,6 +17,8 @@ namespace OgrO // Namespace com o nome do jogo.
     protected:
         // Atributo que aponta para o gerenciador gráfico criado para o jogo.
         Managers::GraphicManager *pGraphicManager;
+        Managers::EventsManager *pEventsManager;
+        Managers::CollisionManager *pCollisionManager;
         static Levels::Level *currentLevel;
         int id;
 
@@ -24,12 +27,9 @@ namespace OgrO // Namespace com o nome do jogo.
         Entity();
         // Destrutora da classe Entity.
         virtual ~Entity();
-        // Método desenhar de Entity.
-        virtual void draw();
-
         void initLevel(Levels::Level *level);
-        virtual void initialize();
-   
+        virtual void initialize() = 0;
+        virtual int run() = 0;
         void setLevel(Levels::Level *_currentLevel);
         Levels::Level *getLevel() const;
         const int getId() const;

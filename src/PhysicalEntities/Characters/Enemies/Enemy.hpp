@@ -24,7 +24,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Destrutora da classe Enemy.
                     ~Enemy();
                     // Método carrega a textura do enemy na window e inicializa gerenciadores do mesmo.
-                    void initialize(Managers::EventsManager &em, Managers::CollisionManager &cm);
+                    void initialize();
                     virtual void update(float t);
                     // Método verifica colisão entre dois objetos da classe Entidade Física.
                     void collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther);

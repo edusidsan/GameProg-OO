@@ -4,7 +4,7 @@
 #include <list>
 #include <vector>
 #include <set>
-#include "../Tiles/TilesManager.hpp"
+
 namespace OgrO // Namespace com o nome do jogo.
 {
     /*---------------------------- Atribuição de classes para não ocorrer conflito de inclusão recursiva.*/
@@ -31,6 +31,10 @@ namespace OgrO // Namespace com o nome do jogo.
             class Projectile;
         }
     }
+    namespace Tiles
+    {
+        class TilesManager;
+    }
     /*--------------------------------------------------------------------------------------------------*/
 
     namespace Managers // Namespace do Pacote Managers.
@@ -43,7 +47,7 @@ namespace OgrO // Namespace com o nome do jogo.
             std::list<PhysicalEntities::PhysicalEntity *> LCollidablesPhysicalEntities;
             // Vetor representando uma lista de inimigos.
             std::vector<PhysicalEntities::Characters::Enemies::Enemy *> LEs;
-             // Vetor representando uma lista de players.
+            // Vetor representando uma lista de players.
             std::vector<PhysicalEntities::Characters::Players::Player *> LPs;
             // Lista representando um conjunto de obstáculos.
             std::list<PhysicalEntities::Obstacles::Obstacle *> LOs;
@@ -52,11 +56,16 @@ namespace OgrO // Namespace com o nome do jogo.
             // Atributo que aponta para o gerenciador de tiles que será utilizado.
             Tiles::TilesManager *pTileManager;
 
-        public:
+            // Padrão Singleton
+            static CollisionManager *instanceCollisionManager;
             // Construtora da classe CollisionManager.
             CollisionManager();
+
+        public:
             // Destrutora da classe CollisionManager.
             ~CollisionManager();
+            static CollisionManager *getInstance();
+
             void addToLCollidablesPhysicalEntities(PhysicalEntities::PhysicalEntity *pP);
             // Método que adiciona um elemento de Enemy na lista de possíveis objetos que colidem.
             void addToLCollidablesPhysicalEntities(PhysicalEntities::Characters::Enemies::Enemy *pPE);

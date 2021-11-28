@@ -22,7 +22,7 @@ namespace OgrO // Namespace com o nome do jogo.
             void initialize() override;
             int run() override;
             void loadScores();
-            void draw() override;
+            void draw();
             void handleEvent();
         };
     }

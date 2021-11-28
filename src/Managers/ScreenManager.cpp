@@ -22,8 +22,6 @@ namespace OgrO // Namespace com o nome do jogo.
         }
         ScreenManager::~ScreenManager()
         {
-            player1 = nullptr;
-            player2 = nullptr;
         }
         bool ScreenManager::handleCode(int GameCode)
         {
@@ -131,6 +129,7 @@ namespace OgrO // Namespace com o nome do jogo.
                         }
                     }
                 }
+                player1->setLevel(lvl);
                 return false;
             }
 

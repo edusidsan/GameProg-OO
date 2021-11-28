@@ -28,7 +28,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 }
                 // Método carrega a textura do Witch na window e inicializa gerenciadores do mesmo.
-                void Witch::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
+                void Witch::initialize()
                 {
                     // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);
@@ -36,7 +36,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     dimension = pGraphicManager->getDimensionsOfAsset(texturePath);
 
                     // Adiciona Witch na lista de entidades físicas colidiveis.
-                    cm.addToLCollidablesPhysicalEntities((this));
+                    pCollisionManager->addToLCollidablesPhysicalEntities((this));
 
                     currentLevel = this->getLevel();
                 }
@@ -53,7 +53,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     adjusts = Utilities::gameVector2F(0, 0);
 
                     // Gravidade
-                    speed.coordY += 10 * t;
+                    speed.coordY += 7 * t;
 
                     if (projectileInterval > 0)
                     {
@@ -61,7 +61,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     }
                     else
                     {
-                        projectileInterval = 800;
+                        projectileInterval = Utilities::RandomGenerator::getInstance()->getRandomIntInRange(450, 800);;
 
                         Utilities::gameVector2F playerPosition = currentLevel->getMainPlayerPosition();
                         // Utilities::gameVector2F playerPosition;
@@ -94,7 +94,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     //Chão
                     if ((idOther == 14) || (idOther == 55) || (idOther == 51) || (idOther == 54) || (idOther == 6))
                     {                       
-                        speed.coordY -= 5.0f;
+                        speed.coordY -= 2.0f;
                         maxSpeedX = MAXSPEEDX;
                     }
                 }

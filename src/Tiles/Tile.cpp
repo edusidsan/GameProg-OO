@@ -14,7 +14,6 @@ namespace OgrO // Namespace com o nome do jogo.
         // Destrutora da classe Tile.
         Tile::~Tile()
         {
-            pGraphicManager= nullptr;
             filePath = nullptr;
         }
         void Tile::initialize()

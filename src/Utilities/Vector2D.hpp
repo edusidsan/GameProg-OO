@@ -19,8 +19,6 @@ namespace OgrO     // Namespace com o nome do jogo.
             T coordX, coordY;
             // Construtora da classe Template Vector2D. Valor default de posição é 0.0.
             Vector2D(T x = 0.0, T y = 0.0);
-            // Construtora classe template com parâmetro de json.
-            // Vector2D(nlohmann::json j);
             // Destrutora da classe Template Vector2D.
             ~Vector2D();
             // Sobrecarga do operador (+) entre objetos da classe Vector2D.

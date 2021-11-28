@@ -18,8 +18,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 }
                 // Método carrega a textura do Player na window.
-
-                void Player::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
+                void Player::initialize()
                 {
                     // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);
@@ -27,19 +26,23 @@ namespace OgrO // Namespace com o nome do jogo.
                     dimension = pGraphicManager->getDimensionsOfAsset(texturePath);
 
                     // Adiciona chave ouvinte de teclado.
-                    keyEvent = em.addKeyboardListener([this](const sf::Event &event)
-                                                      { handleEvent(event); });
+                    keyEvent = pEventsManager->addKeyboardListener([this](const sf::Event &event)
+                                                                   { handleEvent(event); });
 
                     // Adiciona player na lista de entidades físicas colidiveis.
-                    cm.addToLCollidablesPhysicalEntities((this));
+                    pCollisionManager->addToLCollidablesPhysicalEntities((this));
                 }
                 // Método atualizar do Player. Tem como parâmetro uma variável float que representa o tempo.
                 void Player::update(float t)
                 {
-                    if (abs(speed.coordY) <= 5)
+                    if (abs(speed.coordY) == 0)
+                    {
                         jumping = false;
+                    }
                     else
+                    {
                         jumping = true;
+                    }
                     speed.coordY += 100 * t;
                     if (abs(speed.coordX) > maxSpeedX)
                     {
@@ -55,15 +58,15 @@ namespace OgrO // Namespace com o nome do jogo.
                     adjusts = Utilities::gameVector2F(0, 0);
                 }
                 // Método desenhar do Player.
-                void Player::draw(Managers::GraphicManager &gm)
+                void Player::draw()
                 {
                     // Desenha a forma do player atual na window.
-                    gm.draw(texturePath, position, this->direction);
+                    pGraphicManager->draw(texturePath, position, this->direction);
                     // Caso seja o Shrek, camera centraliza nele.
                     if (this->id == 100)
                     {
                         // Atribui a posição do player na posição da view.
-                        gm.centerCamera(position);
+                        pGraphicManager->centerCamera(position);
                     }
                 }
                 // Método de tratamento de evento ocorrido.
@@ -73,7 +76,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 // Método verifica colisão entre dois objetos da classe Entidade Física.
                 void Player::collided(int idOther, Utilities::gameVector2F positionOther, Utilities::gameVector2F dimensionOther)
                 {
-                    if (idOther == 200 || idOther == 201 )
+                    if (idOther == 200 || idOther == 201)
                     { //Maça
 
                         if (clock.getCurrent() / 1000 - timeReference > 3)

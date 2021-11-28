@@ -17,11 +17,6 @@ namespace OgrO // Namespace com o nome do jogo.
         // Destrutora da classe TextInputBox.
         TextInputBox::~TextInputBox()
         {
-            pGraphicManager = nullptr;
-            pEventsManager = nullptr;
-        }
-        void TextInputBox::initialize()
-        {
         }
         void TextInputBox::setCenter(const Utilities::gameVector2F _pos)
         {
@@ -84,7 +79,6 @@ namespace OgrO // Namespace com o nome do jogo.
         }
         std::string TextInputBox::getCapture()
         {
-
             done = false;
             std::string cpy{str};
             return cpy;

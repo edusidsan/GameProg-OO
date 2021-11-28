@@ -19,11 +19,11 @@ namespace OgrO // Namespace com o nome do jogo.
                     // Destrutora da classe Player.
                     virtual ~Player();
                     // Método carrega a textura do Player na window.
-                    virtual void initialize(Managers::EventsManager &em, Managers::CollisionManager &cm);
+                    virtual void initialize();
                     // Método atualizar do Player. Tem como parâmetro uma variável float que representa o tempo.
                     virtual void update(float t);
                     // Método desenhar do Player.
-                    virtual void draw(Managers::GraphicManager &gm);
+                    virtual void draw();
                     // Método de tratamento de evento ocorrido.
                     virtual void handleEvent(const sf::Event &ev);
                     // Método verifica colisão entre dois objetos da classe Entidade Física.

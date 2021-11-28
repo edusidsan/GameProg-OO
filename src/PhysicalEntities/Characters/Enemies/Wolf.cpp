@@ -27,7 +27,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 {
                 }
                 // Método carrega a textura do Wolf na window e inicializa gerenciadores do mesmo.
-                void Wolf::initialize(Managers::EventsManager &em, Managers::CollisionManager &cm)
+                void Wolf::initialize()
                 {
                     // Carrega textura no player.
                     pGraphicManager->loadAsset(texturePath);
@@ -35,7 +35,7 @@ namespace OgrO // Namespace com o nome do jogo.
                     dimension = pGraphicManager->getDimensionsOfAsset(texturePath);
 
                     // Adiciona Wolf na lista de entidades físicas colidiveis.
-                    cm.addToLCollidablesPhysicalEntities((this));
+                    pCollisionManager->addToLCollidablesPhysicalEntities((this));
                 }
                 void Wolf::update(float t)
                 {
