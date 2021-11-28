@@ -3,23 +3,26 @@
 
 #include <pthread.h>
 
-namespace OgrO {
+namespace OgrO
+{
   namespace MultiplesThreads
-   {
+  {
 
-    class Threads {
+    class Threads
+    {
     private:
       pthread_t threadID;
       static pthread_mutex_t mutex;
 
-      static void* runThread(void* pThread);
-      virtual void initialize() = 0;
+      static void *runThread(void *pThread);
+      virtual int run() = 0;
+
     public:
       Threads();
       virtual ~Threads();
 
       void start();
-      void join();
+
       void yield();
 
       void lock();

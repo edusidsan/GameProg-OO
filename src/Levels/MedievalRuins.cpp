@@ -111,7 +111,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 pos = spawnsWolfs[idx] + Utilities::gameVector2F(32.0f, 32.0f);
                 players.insert(new PhysicalEntities::Characters::Enemies::Wolf(pos, Utilities::gameVector2F(20, 0)));
             }
-            // Carrega as imagens nas entidades físicas e inicializa os gerenciadores de eventos.
+            // Carrega as imagens nas entidades físicas e inicializa os gerenciadores de eventos. 
             players.initializePhysicalEntities();
 
             if (player1)

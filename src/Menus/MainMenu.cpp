@@ -42,7 +42,7 @@ namespace OgrO // Namespace com o nome do jogo.
                 { setGameCode(Managers::GameCode::END_GAME); },
                 15U, Utilities::Color{127, 0, 0}));
             bm.addButton(new Button(
-                8, Utilities::gameVector2F(screenSize.coordX / 2, screenSize.coordY / 8 * 4), {170, 30}, "Extra Level", [this]
+                8, Utilities::gameVector2F(screenSize.coordX* 3 / 4, screenSize.coordY / 8 * 7), {170, 30}, "Extra Level - Thread", [this]
                 { setGameCode(Managers::GameCode::START_EXTRALEVEL_LEVEL); },
                 15U, Utilities::Color{127, 0, 0}));
         }
