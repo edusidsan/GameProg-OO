@@ -101,6 +101,24 @@ namespace OgrO // Namespace com o nome do jogo.
                 }
                 return false;
             }
+            case START_EXTRALEVEL_LEVEL:
+            {
+                MultiplesThreads::ExtraLevel *lvl = nullptr;
+                if (Menus::MainMenu::twoPlayers)
+                {
+                    lvl = new MultiplesThreads::ExtraLevel(player1, player2, "../assets/level1/Background2.png");
+                    lvl->setPlayers(player1, player2);
+                }
+                else
+                {
+                    lvl = new MultiplesThreads::ExtraLevel(player1, nullptr, "../assets/level1/Background2.png");
+                    lvl->setPlayers(player1);
+                }
+                player1->setLevel(lvl);
+                lvl->initialize();
+                push(lvl);
+                return false;
+            }
 
             case SAVE_GAME:
             {

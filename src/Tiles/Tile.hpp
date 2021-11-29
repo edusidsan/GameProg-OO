@@ -3,7 +3,6 @@
 
 #include "../Utilities/Vector2D.hpp"
 #include "../Managers/GraphicManager.hpp"
-
 namespace OgrO // Namespace com o nome do jogo.
 {
     namespace Tiles // Namespace do Pacote Tiles.
