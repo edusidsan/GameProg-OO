@@ -9,18 +9,17 @@ namespace OgrO
 
     int ThreadWitch::run()
     {
-
-      continueThreadWitch = true;
+      // double t;      
+      std::cout<<"Witch:"<<continueThreadWitch<<std::endl;
+      // continueThreadWitch = true;
       while (continueThreadWitch)
       {
         if (!paused)
         {
-
           lock();
-          //delay = 0; // sempre que chega aqui atira
-          // update(0.0f); // não sai do lugar mas atira
-
-          // espera por 1 segundo antes de soltar o mutex
+          projectileInterval = 0;
+          
+          update(0);
           std::chrono::duration<double> wait_for = std::chrono::milliseconds(1000);
           auto wait_start = std::chrono::steady_clock::now();
           while (wait_for > std::chrono::milliseconds(0))
@@ -59,19 +58,20 @@ namespace OgrO
 
     ThreadWitch::ThreadWitch(Utilities::gameVector2F pos, Utilities::gameVector2F s, const char *tPath) : Threads(),
                                                                                                           PhysicalEntities::Characters::Enemies::Witch(pos, s, tPath),
-                                                                                                          continueThreadWitch{true},
-                                                                                                          paused{false}
+                                                                                                          continueThreadWitch(true),
+                                                                                                          paused(false)
     {
     }
 
     ThreadWitch::~ThreadWitch()
     {
+      continueThreadWitch = false;
+      
     }
     void ThreadWitch::initialize()
     {
       // Carrega textura no player.
       pGraphicManager->loadAsset(texturePath);
-      // std::cout << "texturePath Player ID: " << texturePath << std::endl;
 
       // Retorna dimensão da imagem.
       dimension = pGraphicManager->getDimensionsOfAsset(texturePath);
@@ -86,6 +86,5 @@ namespace OgrO
     {
       paused = pause;
     }
-
   }
 }

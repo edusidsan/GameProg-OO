@@ -20,6 +20,7 @@ namespace OgrO
             ~ThreadWitch();
             void initialize();
             void setPaused(bool pause);
+            
         };
     }
 

@@ -83,8 +83,9 @@ namespace OgrO // Namespace com o nome do jogo.
         }
         ExtraLevel::~ExtraLevel()
         {
+            
             pGraphicManager->zoomIn();
-            for (auto &w : VectorWitchs){
+            for (auto &w : VectorWitchs){                
                 delete w;
                 }            
             VectorWitchs.clear();
@@ -112,16 +113,11 @@ namespace OgrO // Namespace com o nome do jogo.
                 //Inicialização das Witchs
                 for (auto &w : VectorWitchs){
                     w->initialize();
-                    }
-                //seta pause para todas witchs
-                for (auto &w : VectorWitchs){
+                    w->start();                    
                     w->setPaused(true);
                     }
-                //starta a threads em todas witchs
-                for (auto &w : VectorWitchs){
-                    w->start();
-                    }
-
+                
+              
                 players.initializePhysicalEntities();
 
                 if (player1)
@@ -133,28 +129,30 @@ namespace OgrO // Namespace com o nome do jogo.
         void ExtraLevel::load(const std::string &path) {}
         int ExtraLevel::run()
         {
-            //setando o pause da fase
-            for (auto &w : VectorWitchs){
-                w->setPaused(false);
-                }
-
             gameCode = Managers::CONTINUE_GAME;
             double t = clock.getTime();
+            //desabilitando o pause da witch
+            for (auto &w : VectorWitchs){
+                w->setPaused(false);
+            }
+
+          
             handleEvents();
             pGraphicManager->draw(backgroundPath, Utilities::gameVector2F{800.0f, 280.0f});
             //Update das entidades fisicas
             players.updatePhysicalEntities(t);
             for (auto &w : VectorWitchs){
-                w->update(t);
-                }
+                w->start();
+                // w->update(t);
+            }
             handleCollisions();
             //draw das entidades da fase
             tilesManager->draw();
             players.drawPhysicalEntities();
             for (auto &w : VectorWitchs){
                 w->draw();
-                }
-            //setando o pause da fase
+            }
+            //habilitando o pause da witch
             for (auto &w : VectorWitchs){
                 w->setPaused(true);
                 }
